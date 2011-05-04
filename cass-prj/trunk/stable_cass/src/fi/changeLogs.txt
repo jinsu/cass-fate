@@ -1,0 +1,9 @@
+Jin-Su Change logs
+	Context : added constructors and field to hold ip address
+	
+	contextPassing : modified context creation for sockets to use ip address to identify the nodes.
+	TODO: need to do change inputDataStream...
+	
+	Util : added addIpHistory(InetAddress) function
+				TODO: need to add getNetIOContextFromINetAddr(InetAddress) function...
+	Driver : added IP_HISTORY_DIR variable

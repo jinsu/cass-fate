@@ -1,0 +1,6 @@
+Configure the workload to match the picture in read-repair
+
+map the failrues in completeCoverage to an IO in the picture
+
+consistency level == 0ne, check on seed0.
+

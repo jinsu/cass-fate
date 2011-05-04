@@ -1,0 +1,88 @@
+
+
+<project name="test" default="run" basedir=".">
+  
+  
+  <!-- some shortchuts 
+       in general, grep for all "haryadi" .. if you find my name 
+       that is specific to my setup -->
+  <property name="cassandra.root.dir" 
+    location="/home/jin-su/research/stable_cass"/>
+  <property name="cassandra.build.class" location="${cassandra.root.dir}/build/classes"/>
+  <property name="myJars" value="/home/jin-su/research/java-rtjar"/>
+  <property name="rpclib" location="${myJars}/apache-xmlrpc-3.1.3/lib"/>
+
+
+  <!-- NOTE: we need paths to: -->
+  <path id="required.lib.path">
+    
+    <!-- 1. cassandra's lib such as LogFactory etc. -->
+    <fileset dir="${cassandra.root.dir}/lib" includes="**/*.jar"/>
+
+    <!-- 2. conf/ dir to load hdfs-site.xml and core-site.xml -->
+    <pathelement location="${cassandra.root.dir}/conf"/>
+    <pathelement location="${cassandra.build.class}"/>
+    
+
+
+    <!-- 3. aspectj jars (because we're calling DFS Client and dfs client
+	 might have been woven by us) -->
+    <pathelement location="${myJars}/aspectj/aspectjrt-1.6.4.jar"/>
+    <pathelement location="${myJars}/aspectj/aspectjtools-1.6.4.jar"/>
+    
+    <!-- 3. jsse.jar (because we're booting from woven-rt.jar) -->
+    <pathelement location="${myJars}/sdk/jsse.jar"/>
+
+    <!-- 4. jol.jar (for FROG only, thanh doesn't need this -->
+    <pathelement location="${myJars}/jol/jol.jar"/>
+
+    <!-- 5. xml rpc -->
+    <pathelement location="${rpclib}/xmlrpc-server-3.1.3.jar"/>
+    <pathelement location="${rpclib}/xmlrpc-client-3.1.3.jar"/>
+    <pathelement location="${rpclib}/xmlrpc-common-3.1.3.jar"/>
+    <pathelement location="${rpclib}/ws-commons-util-1.0.2.jar"/>
+    <pathelement location="${rpclib}/commons-logging-1.1.jar"/>
+
+
+ </path>
+
+
+  <!-- init -->
+  <target name="init" >
+    <tstamp/>
+    <mkdir dir="build"/>
+  </target>
+
+  <!-- compile -->
+  <target name="compile" depends="init">
+    <javac srcdir="src" destdir="build" debug="on"
+        includes="*.java"
+        classpathref="required.lib.path"/>
+  </target>
+  
+
+  <!-- run: note that we set dir to cassandra.root.dir so the execution
+       of this driver is on cassandra -->
+  <target name="run" depends="compile">
+    
+    <java classname="org.fi.Main" 
+      classpath="build, ${cassandra.build.class};" 
+	  fork="true"
+	  dir="${cassandra.root.dir}"
+          classpathref="required.lib.path" >
+      <bootclasspath>
+	<!-- since dfs client might be woven, we need to
+	     boot using the woven-rt.jar -->
+	<pathelement location="${cassandra.root.dir}/build/woven-rt.jar"/>
+      </bootclasspath>
+    </java>
+    
+  </target>
+  
+  <!-- clean -->
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
+
+</project>
+

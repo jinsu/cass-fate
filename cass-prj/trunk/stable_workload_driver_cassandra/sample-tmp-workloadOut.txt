@@ -1,0 +1,2690 @@
+- in Hdfs.setupConfiguration ... 
+    dfs replication is 2 
+    fs.default.name is hdfs://localhost:9000 
+## ############################################# ## 
+## ############################################# ## 
+##                                               ## 
+##    DON'T FORGET TO RUN: make kill             ## 
+##                                               ## 
+## ############################################# ## 
+## ############################################# ## 
+- Current directory is [/Users/haryadi/local/1/2009b-HDFS/src/fi-new-0.20.0/trunk] 
+- Killing HDFS ...
+    kill -s KILL 36624, fi 
+    kill -s KILL 36690, namenode 
+    kill -s KILL 37097, pdatanode-1 
+    kill -s KILL 36792, pdatanode-2 
+    kill -s KILL 36809, pdatanode-3 
+    kill -s KILL 36835, secondarynamenode 
+
+
+- Removing images ...
+    Deleting file 'dncp_block_verification.log.curr' 
+    Deleting file 'VERSION' 
+    Deleting dir 'current' 
+    Deleting dir 'detach' 
+    Deleting file 'storage' 
+    Deleting dir 'tmp' 
+    Deleting dir 'data1' 
+    Deleting file 'dncp_block_verification.log.curr' 
+    Deleting file 'VERSION' 
+    Deleting dir 'current' 
+    Deleting dir 'detach' 
+    Deleting file 'storage' 
+    Deleting dir 'tmp' 
+    Deleting dir 'data2' 
+    Deleting file 'dncp_block_verification.log.curr' 
+    Deleting file 'VERSION' 
+    Deleting dir 'current' 
+    Deleting dir 'detach' 
+    Deleting file 'storage' 
+    Deleting dir 'tmp' 
+    Deleting dir 'data3' 
+    Deleting file 'edits' 
+    Deleting file 'fsimage' 
+    Deleting file 'fstime' 
+    Deleting file 'VERSION' 
+    Deleting dir 'current' 
+    Deleting file 'fsimage' 
+    Deleting dir 'image' 
+    Deleting dir 'name1' 
+    Deleting dir 'namesecondary' 
+    Deleting dir 'dfs' 
+    Deleting dir 'hadoop-haryadi' 
+- Removing tmps ...
+    Deleting file 'hadoop-haryadi-fi.pid' 
+    Deleting file 'hadoop-haryadi-namenode.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-3.pid' 
+    Deleting file 'hadoop-haryadi-secondarynamenode.pid' 
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+- Removing fail history ...
+    Deleting file 'h-2118747865.txt' 
+    Deleting file 'h1493845227.txt' 
+- Formating HDFS ...
+
+>> [java.nio.HeapByteBuffer[pos=0 lim=32000 cap=32000]] 
+>> [] 0 / 0 
+
+
+
+- Removing logs ...
+    Deleting file 'hadoop-haryadi-fi-dhcp-153-55.eecs.berkeley.edu.log' 
+    Deleting file 'hadoop-haryadi-fi-dhcp-153-55.eecs.berkeley.edu.out' 
+    Deleting file 'hadoop-haryadi-namenode-dhcp-153-55.eecs.berkeley.edu.log' 
+    Deleting file 'hadoop-haryadi-namenode-dhcp-153-55.eecs.berkeley.edu.out' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-3.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-3.out' 
+    Deleting file 'hadoop-haryadi-secondarynamenode-dhcp-153-55.eecs.berkeley.edu.log' 
+    Deleting file 'hadoop-haryadi-secondarynamenode-dhcp-153-55.eecs.berkeley.edu.out' 
+- Starting Failure Manager ...
+
+# #################################################
+#    FM Driver is starting  [opt=]    
+# #################################################
+
+starting fi, logging to /Users/haryadi/local/1/2009b-HDFS/src/fi-new-0.20.0/trunk/bin/../logs/hadoop-haryadi-fi-dhcp-153-55.eecs.berkeley.edu.out
+FMDriver.Main: Starting ...
+FMServer: Init ...
+
+
+- Starting HDFS ...
+starting namenode, logging to /Users/haryadi/local/1/2009b-HDFS/src/fi-new-0.20.0/trunk/bin/../logs/hadoop-haryadi-namenode-dhcp-153-55.eecs.berkeley.edu.out
+localhost: starting pdatanode-2, logging to /Users/haryadi/local/1/2009b-HDFS/src/fi-new-0.20.0/trunk/bin/../logs/hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out
+localhost: starting pdatanode-1, logging to /Users/haryadi/local/1/2009b-HDFS/src/fi-new-0.20.0/trunk/bin/../logs/hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out
+localhost: starting secondarynamenode, logging to /Users/haryadi/local/1/2009b-HDFS/src/fi-new-0.20.0/trunk/bin/../logs/hadoop-haryadi-secondarynamenode-dhcp-153-55.eecs.berkeley.edu.out
+localhost: starting pdatanode-3, logging to /Users/haryadi/local/1/2009b-HDFS/src/fi-new-0.20.0/trunk/bin/../logs/hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-3.out
+
+
+- Mkdir files ...
+[diff][0.000 secs] >> haryadi, ToolRunner.run(3) ... start new Configuration() 
+[diff][0.619 secs] >> haryadi, ToolRunner.run(3) ... finish new Configuration 
+[diff][0.409 secs] >> haryadi, ToolRunner.run(3) ... finish new GenericOptionsParser 
+# Context creation SC [9000]   
+# Context creation from network .. [NetOutputStream-NameNode:9000] 
+# Context creation SC [9000]   
+# Context creation from network .. [NetOutputStream-NameNode:9000] 
+
+
+- Enable Failure Manager ...
+FMAdmin.Main: Starting ...
+# Context creation SC [16000]   
+# Context creation from network .. [NetOutputStream-FMServer:16000] 
+# Context creation SC [16000]   
+# Context creation from network .. [NetOutputStream-FMServer:16000] 
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0001             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    37659  pdatanode-1     ok   
+    37648  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+
+
+- Reseting single crash ...
+- reconnecting to HDFS ... 
+    connected to fs localhost:9000 ... 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h-2118747865.txt]] 
+
+
+Content of 'h-2118747865.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(boolean java.io.File.createNewFile())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(410)] 
+
+The hash ID is: 
+[[-2118747865]] 
+
+Receive sendContext: [1815]
+  [file][/rhh/dfs/data1/tmp/blk_-1714293578488800601]
+  call(boolean java.io.File.createNewFile())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(410)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset$FSVolume (createTmpFile:410)
+      [3] datanode.FSDataset$FSVolume (createTmpFile:381)
+      [4] datanode.FSDataset (createTmpFile:1149)
+      [5] datanode.FSDataset (writeToBlock:1034)
+      [6] datanode.BlockReceiver (<init>:97)
+      [7] datanode.DataXceiver (writeBlock:261)
+      [8] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1157478790]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0002             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-1714293578488800601' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    37659  pdatanode-1     DEAD 
+    37648  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h1493845227.txt]] 
+
+
+Content of 'h1493845227.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(java.io.RandomAccessFile(File, String))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(784)] 
+
+The hash ID is: 
+[[1493845227]] 
+
+Receive sendContext: [5069]
+  [file][/rhh/dfs/data1/tmp/blk_-91045070996779790]
+  call(java.io.RandomAccessFile(File, String))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(784)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset (createBlockWriteStreams:784)
+      [3] datanode.FSDataset (writeToBlock:1104)
+      [4] datanode.BlockReceiver (<init>:97)
+      [5] datanode.DataXceiver (writeBlock:261)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1062339847]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0003             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-91045070996779790' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    37854  pdatanode-1     DEAD 
+    37648  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h1228347387.txt]] 
+
+
+Content of 'h1228347387.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(java.io.FileOutputStream(FileDescriptor))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(784)] 
+
+The hash ID is: 
+[[1228347387]] 
+
+Receive sendContext: [6860]
+  [file][/rhh/dfs/data1/tmp/blk_5297472437485685325]
+  call(java.io.FileOutputStream(FileDescriptor))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(784)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset (createBlockWriteStreams:784)
+      [3] datanode.FSDataset (writeToBlock:1104)
+      [4] datanode.BlockReceiver (<init>:97)
+      [5] datanode.DataXceiver (writeBlock:261)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1062339847]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0004             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_5297472437485685325' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    37920  pdatanode-1     DEAD 
+    37648  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h1493845258.txt]] 
+
+
+Content of 'h1493845258.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(java.io.RandomAccessFile(File, String))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(785)] 
+
+The hash ID is: 
+[[1493845258]] 
+
+Receive sendContext: [7944]
+  [file][/rhh/dfs/data1/tmp/blk_1717995580803427125_1004.meta]
+  call(java.io.RandomAccessFile(File, String))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(785)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset (createBlockWriteStreams:785)
+      [3] datanode.FSDataset (writeToBlock:1104)
+      [4] datanode.BlockReceiver (<init>:97)
+      [5] datanode.DataXceiver (writeBlock:261)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [-2010024824]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0005             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_1717995580803427125' 
+    Deleting file 'blk_1717995580803427125_1004.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    37978  pdatanode-1     DEAD 
+    37648  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h1228347418.txt]] 
+
+
+Content of 'h1228347418.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(java.io.FileOutputStream(FileDescriptor))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(785)] 
+
+The hash ID is: 
+[[1228347418]] 
+
+Receive sendContext: [4414]
+  [file][/rhh/dfs/data1/tmp/blk_-3329805415811695044_1005.meta]
+  call(java.io.FileOutputStream(FileDescriptor))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(785)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset (createBlockWriteStreams:785)
+      [3] datanode.FSDataset (writeToBlock:1104)
+      [4] datanode.BlockReceiver (<init>:97)
+      [5] datanode.DataXceiver (writeBlock:261)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [-2010024824]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0006             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-3329805415811695044' 
+    Deleting file 'blk_-3329805415811695044_1005.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38036  pdatanode-1     DEAD 
+    37648  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h-517581818.txt]] 
+
+
+Content of 'h-517581818.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(boolean java.io.File.createNewFile())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(410)] 
+
+The hash ID is: 
+[[-517581818]] 
+
+Receive sendContext: [1094]
+  [file][/rhh/dfs/data2/tmp/blk_6684770164518860423]
+  call(boolean java.io.File.createNewFile())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(410)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset$FSVolume (createTmpFile:410)
+      [3] datanode.FSDataset$FSVolume (createTmpFile:381)
+      [4] datanode.FSDataset (createTmpFile:1149)
+      [5] datanode.FSDataset (writeToBlock:1034)
+      [6] datanode.BlockReceiver (<init>:97)
+      [7] datanode.DataXceiver (writeBlock:261)
+      [8] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1157478790]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0007             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_1456354154747617167' 
+    Deleting file 'blk_1456354154747617167_1006.meta' 
+    Deleting file 'blk_4132613650048837341' 
+    Deleting file 'blk_4132613650048837341_1006.meta' 
+    Deleting file 'blk_6684770164518860423' 
+    Deleting file 'blk_6684770164518860423_1006.meta' 
+    Deleting file 'blk_919325286645470496' 
+    Deleting file 'blk_919325286645470496_1006.meta' 
+    Deleting file 'blk_6684770164518860423' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38094  pdatanode-1     ok   
+    37648  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h-1678842870.txt]] 
+
+
+Content of 'h-1678842870.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(java.io.RandomAccessFile(File, String))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(784)] 
+
+The hash ID is: 
+[[-1678842870]] 
+
+Receive sendContext: [9344]
+  [file][/rhh/dfs/data2/tmp/blk_1757311805820185169]
+  call(java.io.RandomAccessFile(File, String))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(784)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset (createBlockWriteStreams:784)
+      [3] datanode.FSDataset (writeToBlock:1104)
+      [4] datanode.BlockReceiver (<init>:97)
+      [5] datanode.DataXceiver (writeBlock:261)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1062339847]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0008             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-2696904908588141804' 
+    Deleting file 'blk_-2696904908588141804_1007.meta' 
+    Deleting file 'blk_-538302681617339270' 
+    Deleting file 'blk_-538302681617339270_1007.meta' 
+    Deleting file 'blk_-6558257413291615556' 
+    Deleting file 'blk_-6558257413291615556_1007.meta' 
+    Deleting file 'blk_1757311805820185169' 
+    Deleting file 'blk_1757311805820185169_1007.meta' 
+    Deleting file 'blk_1757311805820185169' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38094  pdatanode-1     ok   
+    38161  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h1701866330.txt]] 
+
+
+Content of 'h1701866330.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(java.io.FileOutputStream(FileDescriptor))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(784)] 
+
+The hash ID is: 
+[[1701866330]] 
+
+Receive sendContext: [3179]
+  [file][/rhh/dfs/data2/tmp/blk_-7682135118467866266]
+  call(java.io.FileOutputStream(FileDescriptor))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(784)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset (createBlockWriteStreams:784)
+      [3] datanode.FSDataset (writeToBlock:1104)
+      [4] datanode.BlockReceiver (<init>:97)
+      [5] datanode.DataXceiver (writeBlock:261)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1062339847]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0009             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-7682135118467866266' 
+    Deleting file 'blk_-7682135118467866266_1008.meta' 
+    Deleting file 'blk_-8537757391962616695' 
+    Deleting file 'blk_-8537757391962616695_1008.meta' 
+    Deleting file 'blk_3677290257910855096' 
+    Deleting file 'blk_3677290257910855096_1008.meta' 
+    Deleting file 'blk_552395410958149326' 
+    Deleting file 'blk_552395410958149326_1008.meta' 
+    Deleting file 'blk_-7682135118467866266' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38094  pdatanode-1     ok   
+    38219  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h-1678842839.txt]] 
+
+
+Content of 'h-1678842839.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(java.io.RandomAccessFile(File, String))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(785)] 
+
+The hash ID is: 
+[[-1678842839]] 
+
+Receive sendContext: [3212]
+  [file][/rhh/dfs/data2/tmp/blk_-2399951259598589015_1009.meta]
+  call(java.io.RandomAccessFile(File, String))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(785)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset (createBlockWriteStreams:785)
+      [3] datanode.FSDataset (writeToBlock:1104)
+      [4] datanode.BlockReceiver (<init>:97)
+      [5] datanode.DataXceiver (writeBlock:261)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [-2010024824]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0010             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-2399951259598589015' 
+    Deleting file 'blk_-2399951259598589015_1009.meta' 
+    Deleting file 'blk_2782292483168254692' 
+    Deleting file 'blk_2782292483168254692_1009.meta' 
+    Deleting file 'blk_3126860861957693357' 
+    Deleting file 'blk_3126860861957693357_1009.meta' 
+    Deleting file 'blk_5164491234682356551' 
+    Deleting file 'blk_5164491234682356551_1009.meta' 
+    Deleting file 'blk_-2399951259598589015' 
+    Deleting file 'blk_-2399951259598589015_1009.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38094  pdatanode-1     ok   
+    38285  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+
+## ############################################
+## ERROR: putfile 2 fails
+    [00] java.lang.Thread.getStackTrace(Thread.java:1460) 
+    [01] org.fi.Utility.printStackTrace(Utility.java:314) 
+    [02] org.fi.Utility.ERROR(Utility.java:281) 
+    [03] org.fi.Hdfs.putFile(Hdfs.java:166) 
+    [04] org.fi.WorkloadClientWrite.run(WorkloadClientWrite.java:60) 
+    [05] org.fi.Driver.run(Driver.java:51) 
+    [06] org.fi.Main.main(Main.java:37) 
+## ############################################
+
+Latest hashed failure is [[h1701866361.txt]] 
+
+
+Content of 'h1701866361.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(java.io.FileOutputStream(FileDescriptor))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(785)] 
+
+The hash ID is: 
+[[1701866361]] 
+
+Receive sendContext: [693]
+  [file][/rhh/dfs/data2/tmp/blk_7694034644645558158_1010.meta]
+  call(java.io.FileOutputStream(FileDescriptor))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(785)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset (createBlockWriteStreams:785)
+      [3] datanode.FSDataset (writeToBlock:1104)
+      [4] datanode.BlockReceiver (<init>:97)
+      [5] datanode.DataXceiver (writeBlock:261)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [-2010024824]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0011             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-2456162383927825858' 
+    Deleting file 'blk_-2456162383927825858_1010.meta' 
+    Deleting file 'blk_-3089884238995207457' 
+    Deleting file 'blk_-3089884238995207457_1010.meta' 
+    Deleting file 'blk_-4819692229518816771' 
+    Deleting file 'blk_-4819692229518816771_1010.meta' 
+    Deleting file 'blk_7694034644645558158' 
+    Deleting file 'blk_7694034644645558158_1010.meta' 
+    Deleting file 'blk_7694034644645558158' 
+    Deleting file 'blk_7694034644645558158_1010.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38094  pdatanode-1     ok   
+    38343  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h577682328.txt]] 
+
+
+Content of 'h577682328.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.DataOutputStream.writeShort(int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockMetadataHeader.java(108)] 
+
+The hash ID is: 
+[[577682328]] 
+
+Receive sendContext: [4991]
+  [file][/rhh/dfs/data1/tmp/blk_-7933865793804074848_1011.meta]
+  call(void java.io.DataOutputStream.writeShort(int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockMetadataHeader.java(108)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockMetadataHeader (writeHeader:108)
+      [3] datanode.BlockMetadataHeader (writeHeader:120)
+      [4] datanode.BlockReceiver (receiveBlock:519)
+      [5] datanode.DataXceiver (writeBlock:391)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [-382544361]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0012             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-7933865793804074848' 
+    Deleting file 'blk_-7933865793804074848_1011.meta' 
+    Deleting file 'blk_-7933865793804074848' 
+    Deleting file 'blk_-7933865793804074848_1012.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38094  pdatanode-1     DEAD 
+    38401  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h-316252583.txt]] 
+
+
+Content of 'h-316252583.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.DataOutputStream.writeShort(int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockMetadataHeader.java(108)] 
+
+The hash ID is: 
+[[-316252583]] 
+
+Receive sendContext: [4944]
+  [file][/rhh/dfs/data2/tmp/blk_6454664404219055696_1013.meta]
+  call(void java.io.DataOutputStream.writeShort(int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockMetadataHeader.java(108)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockMetadataHeader (writeHeader:108)
+      [3] datanode.BlockMetadataHeader (writeHeader:120)
+      [4] datanode.BlockReceiver (receiveBlock:519)
+      [5] datanode.DataXceiver (writeBlock:391)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [-382544361]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0013             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_6454664404219055696' 
+    Deleting file 'blk_6454664404219055696_1014.meta' 
+    Deleting file 'blk_6454664404219055696' 
+    Deleting file 'blk_6454664404219055696_1013.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38466  pdatanode-1     ok   
+    38401  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1851705768.txt]] 
+
+
+Content of 'h1851705768.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.OutputStream.write(byte[], int, int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(456)] 
+
+The hash ID is: 
+[[1851705768]] 
+
+Receive sendContext: [9961]
+  [file][/rhh/dfs/data1/tmp/blk_-3032625436409145258]
+  call(void java.io.OutputStream.write(byte[], int, int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(456)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (receivePacket:456)
+      [3] datanode.BlockReceiver (receiveBlock:531)
+      [4] datanode.DataXceiver (writeBlock:391)
+      [5] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [-2049424365]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0014             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-3032625436409145258' 
+    Deleting file 'blk_-3032625436409145258_1015.meta' 
+    Deleting file 'blk_-3032625436409145258' 
+    Deleting file 'blk_-3032625436409145258_1016.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38466  pdatanode-1     DEAD 
+    38525  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1886529705.txt]] 
+
+
+Content of 'h1886529705.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.OutputStream.write(byte[], int, int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(456)] 
+
+The hash ID is: 
+[[1886529705]] 
+
+Receive sendContext: [288]
+  [file][/rhh/dfs/data2/tmp/blk_-7316152241731350368]
+  call(void java.io.OutputStream.write(byte[], int, int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(456)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (receivePacket:456)
+      [3] datanode.BlockReceiver (receiveBlock:531)
+      [4] datanode.DataXceiver (writeBlock:391)
+      [5] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [-2049424365]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0015             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-7316152241731350368' 
+    Deleting file 'blk_-7316152241731350368_1018.meta' 
+    Deleting file 'blk_-7316152241731350368' 
+    Deleting file 'blk_-7316152241731350368_1017.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38600  pdatanode-1     ok   
+    38525  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h-2142467870.txt]] 
+
+
+Content of 'h-2142467870.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(474)] 
+
+The hash ID is: 
+[[-2142467870]] 
+
+Receive sendContext: [7342]
+  [file][/rhh/dfs/data1/tmp/blk_-5480488593242640900_1019.meta]
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(474)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (receivePacket:474)
+      [3] datanode.BlockReceiver (receiveBlock:531)
+      [4] datanode.DataXceiver (writeBlock:391)
+      [5] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1383419735]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0016             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-5480488593242640900' 
+    Deleting file 'blk_-5480488593242640900_1019.meta' 
+    Deleting file 'blk_-5480488593242640900' 
+    Deleting file 'blk_-5480488593242640900_1020.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38600  pdatanode-1     DEAD 
+    38667  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h2074509155.txt]] 
+
+
+Content of 'h2074509155.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(474)] 
+
+The hash ID is: 
+[[2074509155]] 
+
+Receive sendContext: [2697]
+  [file][/rhh/dfs/data2/tmp/blk_-1962746951840769309_1021.meta]
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(474)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (receivePacket:474)
+      [3] datanode.BlockReceiver (receiveBlock:531)
+      [4] datanode.DataXceiver (writeBlock:391)
+      [5] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1383419735]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0017             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-1962746951840769309' 
+    Deleting file 'blk_-1962746951840769309_1022.meta' 
+    Deleting file 'blk_-1962746951840769309' 
+    Deleting file 'blk_-1962746951840769309_1021.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38734  pdatanode-1     ok   
+    38667  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h-569559821.txt]] 
+
+
+Content of 'h-569559821.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.DataOutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(166)] 
+
+The hash ID is: 
+[[-569559821]] 
+
+Receive sendContext: [8969]
+  [file][/rhh/dfs/data1/tmp/blk_4056386533170181448_1023.meta]
+  call(void java.io.DataOutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(166)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (flush:166)
+      [3] datanode.BlockReceiver (receivePacket:485)
+      [4] datanode.BlockReceiver (receiveBlock:531)
+      [5] datanode.DataXceiver (writeBlock:391)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1454117654]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0018             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_4056386533170181448' 
+    Deleting file 'blk_4056386533170181448_1023.meta' 
+    Deleting file 'blk_4056386533170181448' 
+    Deleting file 'blk_4056386533170181448_1024.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38734  pdatanode-1     DEAD 
+    38809  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1224625524.txt]] 
+
+
+Content of 'h1224625524.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.DataOutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(166)] 
+
+The hash ID is: 
+[[1224625524]] 
+
+Receive sendContext: [6275]
+  [file][/rhh/dfs/data2/tmp/blk_-5912187963901319133_1025.meta]
+  call(void java.io.DataOutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(166)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (flush:166)
+      [3] datanode.BlockReceiver (receivePacket:485)
+      [4] datanode.BlockReceiver (receiveBlock:531)
+      [5] datanode.DataXceiver (writeBlock:391)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [1454117654]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0019             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-5912187963901319133' 
+    Deleting file 'blk_-5912187963901319133_1026.meta' 
+    Deleting file 'blk_-5912187963901319133' 
+    Deleting file 'blk_-5912187963901319133_1025.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38876  pdatanode-1     ok   
+    38809  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h-557821349.txt]] 
+
+
+Content of 'h-557821349.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.OutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(169)] 
+
+The hash ID is: 
+[[-557821349]] 
+
+Receive sendContext: [2294]
+  [file][/rhh/dfs/data2/tmp/blk_1073989635318089941]
+  call(void java.io.OutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(169)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (flush:169)
+      [3] datanode.BlockReceiver (receivePacket:485)
+      [4] datanode.BlockReceiver (receiveBlock:531)
+      [5] datanode.DataXceiver (writeBlock:391)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [193760819]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0020             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_1073989635318089941' 
+    Deleting file 'blk_1073989635318089941_1028.meta' 
+    Deleting file 'blk_1073989635318089941' 
+    Deleting file 'blk_1073989635318089941_1027.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38876  pdatanode-1     ok   
+    38954  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1345638746.txt]] 
+
+
+Content of 'h1345638746.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.OutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(169)] 
+
+The hash ID is: 
+[[1345638746]] 
+
+Receive sendContext: [6966]
+  [file][/rhh/dfs/data1/tmp/blk_4208684339160696212]
+  call(void java.io.OutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(169)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (flush:169)
+      [3] datanode.BlockReceiver (receivePacket:485)
+      [4] datanode.BlockReceiver (receiveBlock:531)
+      [5] datanode.DataXceiver (writeBlock:391)
+      [6] datanode.DataXceiver (run:103)
+      [T] TOTAL HASH CODE: [193760819]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0021             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_4208684339160696212' 
+    Deleting file 'blk_4208684339160696212_1029.meta' 
+    Deleting file 'blk_4208684339160696212' 
+    Deleting file 'blk_4208684339160696212_1030.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    38876  pdatanode-1     DEAD 
+    39012  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1224622641.txt]] 
+
+
+Content of 'h1224622641.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.DataOutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(136)] 
+
+The hash ID is: 
+[[1224622641]] 
+
+Receive sendContext: [3789]
+  [file][/rhh/dfs/data2/tmp/blk_3617994151553967997_1031.meta]
+  call(void java.io.DataOutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(136)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (close:136)
+      [3] datanode.BlockReceiver$PacketResponder (lastDataNodeRun:834)
+      [4] datanode.BlockReceiver$PacketResponder (run:878)
+      [T] TOTAL HASH CODE: [621054684]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0022             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_3617994151553967997' 
+    Deleting file 'blk_3617994151553967997_1032.meta' 
+    Deleting file 'blk_3617994151553967997' 
+    Deleting file 'blk_3617994151553967997_1031.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39071  pdatanode-1     ok   
+    39012  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1007289820.txt]] 
+
+
+Content of 'h1007289820.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.DataOutputStream.close())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(137)] 
+
+The hash ID is: 
+[[1007289820]] 
+
+Receive sendContext: [2173]
+  [file][/rhh/dfs/data2/tmp/blk_-6787921127928905206_1033.meta]
+  call(void java.io.DataOutputStream.close())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(137)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (close:137)
+      [3] datanode.BlockReceiver$PacketResponder (lastDataNodeRun:834)
+      [4] datanode.BlockReceiver$PacketResponder (run:878)
+      [T] TOTAL HASH CODE: [193784955]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0023             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-6787921127928905206' 
+    Deleting file 'blk_-6787921127928905206_1034.meta' 
+    Deleting file 'blk_-6787921127928905206' 
+    Deleting file 'blk_-6787921127928905206_1033.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39071  pdatanode-1     ok   
+    39146  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h-557823364.txt]] 
+
+
+Content of 'h-557823364.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.OutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(146)] 
+
+The hash ID is: 
+[[-557823364]] 
+
+Receive sendContext: [2695]
+  [file][/rhh/dfs/data2/tmp/blk_-6542627871012916498]
+  call(void java.io.OutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(146)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (close:146)
+      [3] datanode.BlockReceiver$PacketResponder (lastDataNodeRun:834)
+      [4] datanode.BlockReceiver$PacketResponder (run:878)
+      [T] TOTAL HASH CODE: [260594973]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0024             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-6542627871012916498' 
+    Deleting file 'blk_-6542627871012916498_1036.meta' 
+    Deleting file 'blk_-6542627871012916498' 
+    Deleting file 'blk_-6542627871012916498_1035.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39071  pdatanode-1     ok   
+    39204  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h-775156185.txt]] 
+
+
+Content of 'h-775156185.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(void java.io.OutputStream.close())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(147)] 
+
+The hash ID is: 
+[[-775156185]] 
+
+Receive sendContext: [2861]
+  [file][/rhh/dfs/data2/tmp/blk_-5074925483124072273]
+  call(void java.io.OutputStream.close())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(147)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (close:147)
+      [3] datanode.BlockReceiver$PacketResponder (lastDataNodeRun:834)
+      [4] datanode.BlockReceiver$PacketResponder (run:878)
+      [T] TOTAL HASH CODE: [-166674756]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0025             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-5074925483124072273' 
+    Deleting file 'blk_-5074925483124072273_1038.meta' 
+    Deleting file 'blk_-5074925483124072273' 
+    Deleting file 'blk_-5074925483124072273_1037.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39071  pdatanode-1     ok   
+    39262  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h712325231.txt]] 
+
+
+Content of 'h712325231.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(102)] 
+
+The hash ID is: 
+[[712325231]] 
+
+Receive sendContext: [1307]
+  [file][/rhh/dfs/data2/tmp/blk_283779363960701815_1039.meta]
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(102)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset$FSDir (addBlock:102)
+      [3] datanode.FSDataset$FSDir (addBlock:92)
+      [4] datanode.FSDataset$FSVolume (addBlock:422)
+      [5] datanode.FSDataset (finalizeBlock:1179)
+      [6] datanode.BlockReceiver$PacketResponder (lastDataNodeRun:836)
+      [7] datanode.BlockReceiver$PacketResponder (run:878)
+      [T] TOTAL HASH CODE: [1287074472]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0026             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_283779363960701815' 
+    Deleting file 'blk_283779363960701815_1040.meta' 
+    Deleting file 'blk_283779363960701815_1039.meta' 
+    Deleting file 'blk_283779363960701815' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39071  pdatanode-1     ok   
+    39328  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h712325262.txt]] 
+
+
+Content of 'h712325262.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-2
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(103)] 
+
+The hash ID is: 
+[[712325262]] 
+
+Receive sendContext: [5420]
+  [file][/rhh/dfs/data2/tmp/blk_3036625029095129840]
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(103)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset$FSDir (addBlock:103)
+      [3] datanode.FSDataset$FSDir (addBlock:92)
+      [4] datanode.FSDataset$FSVolume (addBlock:422)
+      [5] datanode.FSDataset (finalizeBlock:1179)
+      [6] datanode.BlockReceiver$PacketResponder (lastDataNodeRun:836)
+      [7] datanode.BlockReceiver$PacketResponder (run:878)
+      [T] TOTAL HASH CODE: [-240129623]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0027             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_3036625029095129840' 
+    Deleting file 'blk_3036625029095129840_1042.meta' 
+    Deleting file 'blk_3036625029095129840' 
+    Deleting file 'blk_3036625029095129840_1041.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39071  pdatanode-1     ok   
+    39386  pdatanode-2     DEAD 
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-2     -2 
+    Deleting file 'hadoop-haryadi-pdatanode-2.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+    Dn -2 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-2.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h-569562704.txt]] 
+
+
+Content of 'h-569562704.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.DataOutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(136)] 
+
+The hash ID is: 
+[[-569562704]] 
+
+Receive sendContext: [9697]
+  [file][/rhh/dfs/data1/tmp/blk_8749400718552130851_1043.meta]
+  call(void java.io.DataOutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(136)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (close:136)
+      [3] datanode.BlockReceiver$PacketResponder (run:957)
+      [T] TOTAL HASH CODE: [1787104616]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0028             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_8749400718552130851' 
+    Deleting file 'blk_8749400718552130851_1043.meta' 
+    Deleting file 'blk_8749400718552130851' 
+    Deleting file 'blk_8749400718552130851_1044.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39071  pdatanode-1     DEAD 
+    39453  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h-786895525.txt]] 
+
+
+Content of 'h-786895525.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.DataOutputStream.close())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(137)] 
+
+The hash ID is: 
+[[-786895525]] 
+
+Receive sendContext: [8903]
+  [file][/rhh/dfs/data1/tmp/blk_6324004525777206711_1045.meta]
+  call(void java.io.DataOutputStream.close())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(137)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (close:137)
+      [3] datanode.BlockReceiver$PacketResponder (run:957)
+      [T] TOTAL HASH CODE: [833902983]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0029             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_6324004525777206711' 
+    Deleting file 'blk_6324004525777206711_1045.meta' 
+    Deleting file 'blk_6324004525777206711' 
+    Deleting file 'blk_6324004525777206711_1046.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39512  pdatanode-1     DEAD 
+    39453  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1345636731.txt]] 
+
+
+Content of 'h1345636731.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.OutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(146)] 
+
+The hash ID is: 
+[[1345636731]] 
+
+Receive sendContext: [3864]
+  [file][/rhh/dfs/data1/tmp/blk_5382635388566245896]
+  call(void java.io.OutputStream.flush())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(146)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (close:146)
+      [3] datanode.BlockReceiver$PacketResponder (run:957)
+      [T] TOTAL HASH CODE: [-1992342231]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0030             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_5382635388566245896' 
+    Deleting file 'blk_5382635388566245896_1047.meta' 
+    Deleting file 'blk_5382635388566245896' 
+    Deleting file 'blk_5382635388566245896_1048.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39572  pdatanode-1     DEAD 
+    39453  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1128303910.txt]] 
+
+
+Content of 'h1128303910.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(void java.io.OutputStream.close())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(147)] 
+
+The hash ID is: 
+[[1128303910]] 
+
+Receive sendContext: [926]
+  [file][/rhh/dfs/data1/tmp/blk_5189195987897470431]
+  call(void java.io.OutputStream.close())
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/BlockReceiver.java(147)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.BlockReceiver (close:147)
+      [3] datanode.BlockReceiver$PacketResponder (run:957)
+      [T] TOTAL HASH CODE: [1349423432]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0031             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_5189195987897470431' 
+    Deleting file 'blk_5189195987897470431_1049.meta' 
+    Deleting file 'blk_5189195987897470431' 
+    Deleting file 'blk_5189195987897470431_1050.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39640  pdatanode-1     DEAD 
+    39453  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1353411374.txt]] 
+
+
+Content of 'h1353411374.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(102)] 
+
+The hash ID is: 
+[[1353411374]] 
+
+Receive sendContext: [4546]
+  [file][/rhh/dfs/data1/tmp/blk_-3229660438001992224_1051.meta]
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(102)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset$FSDir (addBlock:102)
+      [3] datanode.FSDataset$FSDir (addBlock:92)
+      [4] datanode.FSDataset$FSVolume (addBlock:422)
+      [5] datanode.FSDataset (finalizeBlock:1179)
+      [6] datanode.BlockReceiver$PacketResponder (run:959)
+      [T] TOTAL HASH CODE: [-1494570444]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0032             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-3229660438001992224_1051.meta' 
+    Deleting file 'blk_-3229660438001992224' 
+    Deleting file 'blk_-3229660438001992224' 
+    Deleting file 'blk_-3229660438001992224_1052.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39700  pdatanode-1     DEAD 
+    39453  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1353411405.txt]] 
+
+
+Content of 'h1353411405.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(103)] 
+
+The hash ID is: 
+[[1353411405]] 
+
+Receive sendContext: [6410]
+  [file][/rhh/dfs/data1/tmp/blk_-4546847949852811292]
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(103)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset$FSDir (addBlock:103)
+      [3] datanode.FSDataset$FSDir (addBlock:92)
+      [4] datanode.FSDataset$FSVolume (addBlock:422)
+      [5] datanode.FSDataset (finalizeBlock:1179)
+      [6] datanode.BlockReceiver$PacketResponder (run:959)
+      [T] TOTAL HASH CODE: [-1870403915]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   #  0033             ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Removing all blocks ...
+    Deleting file 'blk_-4546847949852811292' 
+    Deleting file 'blk_-4546847949852811292_1053.meta' 
+    Deleting file 'blk_-4546847949852811292' 
+    Deleting file 'blk_-4546847949852811292_1054.meta' 
+
+
+- Checking dead nodes ...
+    37484  fi              ok   
+    37542  namenode        ok   
+    39768  pdatanode-1     DEAD 
+    39453  pdatanode-2     ok   
+    37710  pdatanode-3     ok   
+    37649  secondarynamenode ok   
+
+
+- Restarting dead datanodes ...
+    Restarting pdatanode-1     -1 
+    Deleting file 'hadoop-haryadi-pdatanode-1.pid' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log' 
+    Deleting file 'hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.out' 
+    Waiting for registration ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+    Dn -1 is not registered, sleeping ...
+grep dnRegistration /tmp/ramdisk1/logs//hadoop-haryadi-pdatanode-dhcp-153-55.eecs.berkeley.edu-1.log
+
+
+- Reseting single crash ...
+    Deleting file 'mode-single-crash' 
+Latest hashed failure is [[h1353411405.txt]] 
+
+
+Content of 'h1353411405.txt' is: 
+
+
+The hash ID string is: 
+## [DataNode-1
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(103)] 
+
+The hash ID is: 
+[[1353411405]] 
+
+Receive sendContext: [6410]
+  [file][/rhh/dfs/data1/tmp/blk_-4546847949852811292]
+  call(boolean java.io.File.renameTo(File))
+    SourceLoc: org/apache/hadoop/hdfs/server/datanode/FSDataset.java(103)
+      [0] org.fi.FMClient (failureHook:116)
+      [1] org.fi.FMClient (crashHookAfter:137)
+      [2] datanode.FSDataset$FSDir (addBlock:103)
+      [3] datanode.FSDataset$FSDir (addBlock:92)
+      [4] datanode.FSDataset$FSVolume (addBlock:422)
+      [5] datanode.FSDataset (finalizeBlock:1179)
+      [6] datanode.BlockReceiver$PacketResponder (run:959)
+      [T] TOTAL HASH CODE: [-1870403915]
+
+
+
+
+
+## ################################################# ##
+## ################################################# ##
+##                                                   ##
+##         E X P E R I M E N T   F I N I S H !!!     ##
+##                                                   ##
+## ################################################# ##
+## ################################################# ##
+
+
+- Ls ...
+[diff][0.000 secs] >> haryadi, ToolRunner.run(3) ... start new Configuration() 
+[diff][0.142 secs] >> haryadi, ToolRunner.run(3) ... finish new Configuration 
+[diff][0.084 secs] >> haryadi, ToolRunner.run(3) ... finish new GenericOptionsParser 
+# Context creation SC [9000]   
+# Context creation from network .. [NetOutputStream-NameNode:9000] 
+# Context creation SC [9000]   
+# Context creation from network .. [NetOutputStream-NameNode:9000] 
+Found 33 items
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-001
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-002
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-003
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-004
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-005
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-006
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-007
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-008
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-009
+-rw-r--r--   2 haryadi supergroup          0 2010-04-08 21:12 /user/haryadi/files/file-010
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:12 /user/haryadi/files/file-011
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:12 /user/haryadi/files/file-012
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:12 /user/haryadi/files/file-013
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:12 /user/haryadi/files/file-014
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:12 /user/haryadi/files/file-015
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:12 /user/haryadi/files/file-016
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-017
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-018
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-019
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-020
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-021
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-022
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-023
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-024
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-025
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-026
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-027
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-028
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-029
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-030
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-031
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-032
+-rw-r--r--   2 haryadi supergroup       4000 2010-04-08 21:13 /user/haryadi/files/file-033
+
+

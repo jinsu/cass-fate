@@ -1,0 +1,138 @@
+10
+
+dir
+1
+file:///home/jinsu/research/svnrepo/cass/trunk/stable_cass/test/unit/org/apache/cassandra
+file:///home/jinsu/research/svnrepo/cass
+
+
+
+2011-01-05T07:42:08.086498Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8c8d7ad9-3266-4d06-a74a-5cf118133208
+
+dht
+dir
+
+concurrent
+dir
+
+db
+dir
+
+net
+dir
+
+gms
+dir
+
+streaming
+dir
+
+Util.java
+file
+
+
+
+
+2011-03-18T23:36:07.386639Z
+d6bafc2e11c3163293ec27df14065d69
+2011-01-05T07:42:08.086498Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3642
+
+utils
+dir
+
+tools
+dir
+
+service
+dir
+
+locator
+dir
+
+config
+dir
+
+io
+dir
+
+CleanupHelper.java
+file
+
+
+
+
+2011-03-18T23:36:07.386639Z
+1be6ef34193c71274b2d3254c2665ce1
+2011-01-05T07:42:08.086498Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2985
+
+hadoop
+dir
+
+client
+dir
+

@@ -1,0 +1,64 @@
+10
+
+dir
+1
+file:///home/jinsu/research/svnrepo/cass/trunk/stable_cass/contrib
+file:///home/jinsu/research/svnrepo/cass
+
+
+
+2011-01-05T07:42:08.086498Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8c8d7ad9-3266-4d06-a74a-5cf118133208
+
+client_only
+dir
+
+pig
+dir
+
+cassandra_browser
+dir
+
+circuit
+dir
+
+javautils
+dir
+
+mutex
+dir
+
+word_count
+dir
+
+maven
+dir
+
+redhat
+dir
+
+py_stress
+dir
+
+property_snitch
+dir
+
+bmt_example
+dir
+

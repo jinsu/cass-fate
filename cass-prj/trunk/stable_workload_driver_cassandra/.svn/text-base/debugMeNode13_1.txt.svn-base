@@ -1,0 +1,892 @@
+Mon Aug 02 16:09:45 PDT 2010- CD main(1) --- [hd-diff][0.000 secs] [585] (t-1) 
+ - pidFile : /tmp/fi/pids/node0.pid
+Mon Aug 02 16:09:45 PDT 2010- CD setup(1) --- [hd-diff][0.003 secs] [585] (t-1) 
+Mon Aug 02 16:09:45 PDT 2010- CD setup(1.5) --- [hd-diff][0.038 secs] [585] (t-1) 
+DEBUG 16:09:45,239 Loading settings from /home/jin-su/research/cassandra-fi/conf/storage-conf.xml
+DEBUG 16:09:45,752 Syncing log with a period of 100000
+ INFO 16:09:45,757 Auto DiskAccessMode determined to be mmap
+DEBUG 16:09:46,070 setting autoBootstrap to false
+DEBUG 16:09:46,231 setting hintedHandoffEnabled to true
+Mon Aug 02 16:09:46 PDT 2010- CD setup(2) --- [hd-diff][1.325 secs] [586] (t-1) *LONG!!*
+Mon Aug 02 16:09:46 PDT 2010- CD setup(3) --- [hd-diff][0.001 secs] [586] (t-1) 
+Mon Aug 02 16:09:46 PDT 2010- CD setup(4) --- [hd-diff][0.001 secs] [586] (t-1) 
+DEBUG 16:09:46,530 opening keyspace Keyspace1
+DEBUG 16:09:46,644 adding Super1 as 0
+DEBUG 16:09:46,645 adding Standard2 as 1
+DEBUG 16:09:46,645 adding Super2 as 2
+DEBUG 16:09:46,645 adding Standard1 as 3
+DEBUG 16:09:46,671 adding StandardByUUID1 as 4
+DEBUG 16:09:46,671 adding LocationInfo as 5
+DEBUG 16:09:46,672 adding HintsColumnFamily as 6
+DEBUG 16:09:47,023 Starting CFS Standard2
+DEBUG 16:09:47,043 key cache capacity for Standard2 is 1
+DEBUG 16:09:47,044 Starting CFS Super1
+DEBUG 16:09:47,045 key cache capacity for Super1 is 200000
+DEBUG 16:09:47,046 Starting CFS Standard1
+DEBUG 16:09:47,059 key cache capacity for Standard1 is 200000
+DEBUG 16:09:47,059 Starting CFS Super2
+DEBUG 16:09:47,060 key cache capacity for Super2 is 1
+DEBUG 16:09:47,061 row cache capacity for Super2 is 10000
+DEBUG 16:09:47,062 Starting CFS StandardByUUID1
+DEBUG 16:09:47,063 key cache capacity for StandardByUUID1 is 200000
+DEBUG 16:09:47,064 opening keyspace system
+DEBUG 16:09:47,064 Starting CFS LocationInfo
+DEBUG 16:09:47,065 key cache capacity for LocationInfo is 1
+DEBUG 16:09:47,065 Starting CFS HintsColumnFamily
+DEBUG 16:09:47,066 key cache capacity for HintsColumnFamily is 1
+Mon Aug 02 16:09:47 PDT 2010- CD setup(5) --- [hd-diff][0.536 secs] [587] (t-1) 
+Mon Aug 02 16:09:47 PDT 2010- CD setup(6) --- [hd-diff][0.001 secs] [587] (t-1) 
+DEBUG 16:09:47,126 Estimating compactions for Super1
+DEBUG 16:09:47,139 Estimating compactions for Standard2
+DEBUG 16:09:47,140 Estimating compactions for Super2
+DEBUG 16:09:47,140 Estimating compactions for Standard1
+DEBUG 16:09:47,140 Estimating compactions for StandardByUUID1
+DEBUG 16:09:47,141 Estimating compactions for LocationInfo
+DEBUG 16:09:47,141 Estimating compactions for HintsColumnFamily
+DEBUG 16:09:47,141 Checking to see if compaction of Super1 would be useful
+DEBUG 16:09:47,142 Checking to see if compaction of Standard2 would be useful
+DEBUG 16:09:47,142 Checking to see if compaction of Super2 would be useful
+DEBUG 16:09:47,142 Checking to see if compaction of Standard1 would be useful
+DEBUG 16:09:47,143 Checking to see if compaction of StandardByUUID1 would be useful
+DEBUG 16:09:47,143 Checking to see if compaction of LocationInfo would be useful
+DEBUG 16:09:47,143 Checking to see if compaction of HintsColumnFamily would be useful
+ INFO 16:09:47,186 Saved Token not found. Using 147348759961528312718000973511272780090
+ INFO 16:09:47,187 Saved ClusterName not found. Using Test Cluster
+ INFO 16:09:47,196 Creating new commitlog segment /tmp/fi/cassandra/node0/commitLogs/CommitLog-1280790587196.log
+ INFO 16:09:47,322 Starting up server gossip
+  Listening on port: localhost/127.0.0.1 : 7000
+  SUCCESS
+    - Gossiper.handle map.put ep=localhost/127.0.0.1 live=true
+Mon Aug 02 16:09:47 PDT 2010- CD setup(6.5) --- [hd-diff][0.407 secs] [587] (t-1) 
+Mon Aug 02 16:09:47 PDT 2010- CD setup(6.6) --- [hd-diff][0.014 secs] [587] (t-1) 
+Mon Aug 02 16:09:47 PDT 2010- CD setup(7) --- [hd-diff][0.104 secs] [587] (t-1) 
+ INFO 16:09:47,595 Binding thrift service to localhost/127.0.0.1:9160
+Mon Aug 02 16:09:47 PDT 2010 - CD main(2) daemon.setup() --- took 2458 ms 
+ INFO 16:09:47,624 
+
+ INFO 16:09:47,624 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+ INFO 16:09:47,624 &&&&&&&&&&&&&&    CASS     Starting &&&&&&&&&&&&&
+ INFO 16:09:47,625 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+ INFO 16:09:47,625 
+
+ INFO 16:09:47,625 - cluster optQuest : CD.start()
+ INFO 16:09:47,625 Cassandra starting up...
+- Nodes not connected...
+DEBUG 16:09:48,022 attempting to connect to /127.0.0.12
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+Node /127.0.0.12 is now part of the cluster
+ INFO 16:09:48,334 Node /127.0.0.12 is now part of the cluster
+    - Gossiper.handle map.put ep=/127.0.0.12 live=true
+DEBUG 16:09:48,355 GC for ParNew: 18 ms, 20895120 reclaimed leaving 18879656 used; max is 1299906560
+DEBUG 16:09:48,357 GC for ConcurrentMarkSweep: -3233502507334315 ms, 0 reclaimed leaving 0 used; max is 0
+    - Gossiper.isAlive addr=/127.0.0.12 live=true
+DEBUG 16:09:48,425 Disseminating load info ...
+DEBUG 16:09:48,459 Started hinted handoff for endPoint /127.0.0.12
+DEBUG 16:09:48,459 Node /127.0.0.12 state normal, token 117637568011803324301863124851787013099
+DEBUG 16:09:48,462 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+- Nodes not connected...
+DEBUG 16:09:48,496 Finished hinted handoff for endpoint /127.0.0.12
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+DEBUG 16:09:48,507 attempting to connect to /127.0.0.13
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43907]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+DEBUG 16:09:48,711 attempting to connect to /127.0.0.11
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.13,port=35934,localport=7000]
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43907]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:48 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+- Nodes not connected...
+Node /127.0.0.11 is now part of the cluster
+ INFO 16:09:48,984 Node /127.0.0.11 is now part of the cluster
+    - Gossiper.handle map.put ep=/127.0.0.11 live=true
+    - Gossiper.isAlive addr=/127.0.0.11 live=true
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+DEBUG 16:09:49,095 Started hinted handoff for endPoint /127.0.0.11
+DEBUG 16:09:49,096 Node /127.0.0.11 state normal, token 25802072312925671726588948088781457574
+DEBUG 16:09:49,098 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+DEBUG 16:09:49,109 Finished hinted handoff for endpoint /127.0.0.11
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+Node /127.0.0.13 is now part of the cluster
+ INFO 16:09:49,391 Node /127.0.0.13 is now part of the cluster
+    - Gossiper.handle map.put ep=/127.0.0.13 live=true
+    - Gossiper.isAlive addr=/127.0.0.13 live=true
+- Nodes not connected...
+DEBUG 16:09:49,524 Node /127.0.0.13 state normal, token 96922748189801666055923760685569779596
+DEBUG 16:09:49,524 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+DEBUG 16:09:49,527 Started hinted handoff for endPoint /127.0.0.13
+DEBUG 16:09:49,529 Finished hinted handoff for endpoint /127.0.0.13
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43907]
+-- incoming run(): Socket[addr=/127.0.0.13,port=35934,localport=7000]
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43907]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.13,port=35934,localport=7000]
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43907]
+-- incoming run(): Socket[addr=/127.0.0.13,port=35934,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:09:49 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:50 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+DEBUG 16:09:50,301 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+liveNodes 3 [part of workload]
+DEBUG 16:09:50,360 insert writing local key key-001
+DEBUG 16:09:50,362 insert writing key key-001 to 20@/127.0.0.12
+sp line 261 sendoneway [part of workload]
+DEBUG 16:09:50,374 insert writing key key-001 to 20@/127.0.0.13
+sp line 261 sendoneway [part of workload]
+DEBUG 16:09:50,375 attempting to connect to /127.0.0.12
+Mon Aug 02 16:09:50 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=56577] [part of workload]
+DEBUG 16:09:50,389 attempting to connect to /127.0.0.13
+Mon Aug 02 16:09:50 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=57308] [part of workload]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000] [part of workload]
+-- incoming run(): Socket[addr=/127.0.0.13,port=35934,localport=7000] [part of workload]
+DEBUG 16:09:50,476 Processing response on a callback from 20@/127.0.0.12
+- Nodes connected, returning  [part of workload]
+DEBUG 16:09:50,486 Processing response on a callback from 20@/127.0.0.13
+mutate done
+DEBUG 16:09:50,504 get
+token size : 4
+DEBUG 16:09:50,536 weakreadlocal reading SliceByNamesReadCommand(table='Keyspace1', key='key-001', columnParent='QueryPath(columnFamilyName='Standard1', superColumnName='null', columnName='null')', columns=[6578706572696d656e7456616c7565,])
+token size : 4
+DEBUG 16:09:50,564 Reading consistency digest for key-001 from 21@[/127.0.0.13, /127.0.0.12, localhost/127.0.0.1]
+cc line 78 sendoneway
+Mon Aug 02 16:09:50 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=57308]
+Mon Aug 02 16:09:50 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=56577]
+DEBUG 16:09:50,601 remove
+token size : 4
+all nodes alive num = 3
+liveNodes 3
+DEBUG 16:09:50,638 insert writing local key key-001
+DEBUG 16:09:50,639 insert writing key key-001 to 22@/127.0.0.12
+sp line 261 sendoneway
+DEBUG 16:09:50,666 insert writing key key-001 to 22@/127.0.0.13
+sp line 261 sendoneway
+Mon Aug 02 16:09:50 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=56577]
+Mon Aug 02 16:09:50 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=57308]
+-- incoming run(): Socket[addr=/127.0.0.13,port=35934,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+DEBUG 16:09:50,760 Processing response on a callback from 21@/127.0.0.13
+DEBUG 16:09:50,772 Processing response on a callback from 21@/127.0.0.12
+-- incoming run(): Socket[addr=/127.0.0.13,port=35934,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=35957,localport=7000]
+DEBUG 16:09:50,796 Processing response on a callback from 22@/127.0.0.13
+DEBUG 16:09:50,809 Processing response on a callback from 22@/127.0.0.12
+mutate done
+
+
+
+
+================EXP2 STARTING
+
+- Nodes not connected...
+Mon Aug 02 16:09:51 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+DEBUG 16:09:51,323 GC for ParNew: 7 ms, 21173248 reclaimed leaving 20703064 used; max is 1299906560
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:51 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=60398]
+Mon Aug 02 16:09:51 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+ INFO 16:09:51,512 error writing to /127.0.0.12
+ INFO 16:09:51,512  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:09:51 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43907]
+- Nodes not connected...
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+DEBUG 16:09:52,512 attempting to connect to /127.0.0.12
+    - OTCP.reset() executed
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+ INFO 16:09:52,631 InetAddress /127.0.0.13 is now dead.
+    - Gossiper.isAlive addr=/127.0.0.13 live=false
+    - Gossiper.convict /127.0.0.13 is now dead.
+Mon Aug 02 16:09:52 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=57597]
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=57597]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - OTCP.reset() executed
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - Gossiper.convict /127.0.0.13 is now dead.
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+fd interpret(1) convicting /127.0.0.12 in org.apache.cassandra.net.MessagingService@242da5a6
+    - OTCP.reset() executed
+    - MS.convict /127.0.0.12 is now dead.
+fd interpret(1) convicting /127.0.0.12 in org.apache.cassandra.gms.Gossiper@60a415a3
+ INFO 16:09:53,290 InetAddress /127.0.0.12 is now dead.
+    - Gossiper.isAlive addr=/127.0.0.12 live=false
+    - Gossiper.convict /127.0.0.12 is now dead.
+ INFO 16:09:53,317 Node /127.0.0.12 has restarted, now UP again
+    - Gossiper.handle map.put ep=/127.0.0.12 live=true
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - Gossiper.isAlive addr=/127.0.0.12 live=true
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+DEBUG 16:09:53,380 Node /127.0.0.12 state normal, token 94894789006626469714589013691146269307
+DEBUG 16:09:53,382 Started hinted handoff for endPoint /127.0.0.12
+DEBUG 16:09:53,384 Finished hinted handoff for endpoint /127.0.0.12
+ INFO 16:09:53,385 Node /127.0.0.12 state jump to normal
+DEBUG 16:09:53,386 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+DEBUG 16:09:53,388 attempting to connect to /127.0.0.12
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+DEBUG 16:09:53,556 attempting to connect to /127.0.0.13
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - OTCP.reset() executed
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - MS.convict /127.0.0.13 is now dead.
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+    - Gossiper.convict /127.0.0.13 is now dead.
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:53 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:54 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - OTCP.reset() executed
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+    - Gossiper.convict /127.0.0.13 is now dead.
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:09:54 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:09:54 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:54 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - OTCP.reset() executed
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+    - Gossiper.convict /127.0.0.13 is now dead.
+Mon Aug 02 16:09:54 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:54 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - OTCP.reset() executed
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - Gossiper.convict /127.0.0.13 is now dead.
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+    - OTCP.reset() executed
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - Gossiper.convict /127.0.0.13 is now dead.
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:09:55 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+- Nodes not connected...
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - OTCP.reset() executed
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+    - Gossiper.convict /127.0.0.13 is now dead.
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - OTCP.reset() executed
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - Gossiper.convict /127.0.0.13 is now dead.
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:56 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+- Nodes not connected...
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:57 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:09:57 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - OTCP.reset() executed
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - Gossiper.convict /127.0.0.13 is now dead.
+Mon Aug 02 16:09:57 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:09:57 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+- Nodes not connected...
+Mon Aug 02 16:09:57 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:09:57 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:57 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - OTCP.reset() executed
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - MS.convict /127.0.0.13 is now dead.
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+    - Gossiper.convict /127.0.0.13 is now dead.
+- Nodes not connected...
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - OTCP.reset() executed
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - MS.convict /127.0.0.13 is now dead.
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+    - Gossiper.convict /127.0.0.13 is now dead.
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - OTCP.reset() executed
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - Gossiper.convict /127.0.0.13 is now dead.
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:09:58 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:59 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:59 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+    - OTCP.reset() executed
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:09:59 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=51667]
+    - Gossiper.convict /127.0.0.13 is now dead.
+- Nodes not connected...
+Mon Aug 02 16:09:59 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:09:59 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:09:59 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:09:59 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+    - OTCP.reset() executed
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - MS.convict /127.0.0.13 is now dead.
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - Gossiper.convict /127.0.0.13 is now dead.
+- Nodes not connected...
+Mon Aug 02 16:10:00 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:10:00 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.net.MessagingService@242da5a6
+Mon Aug 02 16:10:00 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:10:00 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+DEBUG 16:10:00,336 GC for ParNew: 60 ms, 21304640 reclaimed leaving 20965472 used; max is 1299906560
+    - OTCP.reset() executed
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+    - MS.convict /127.0.0.13 is now dead.
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+fd interpret(1) convicting /127.0.0.13 in org.apache.cassandra.gms.Gossiper@60a415a3
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+    - Gossiper.convict /127.0.0.13 is now dead.
+- Nodes not connected...
+ INFO 16:10:00,799 Node /127.0.0.13 has restarted, now UP again
+    - Gossiper.handle map.put ep=/127.0.0.13 live=true
+DEBUG 16:10:00,800 attempting to connect to /127.0.0.13
+Mon Aug 02 16:10:00 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:10:00 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:10:00 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+    - Gossiper.isAlive addr=/127.0.0.13 live=true
+DEBUG 16:10:01,116 Node /127.0.0.13 state normal, token 87862926179775740889613397173593837251
+ INFO 16:10:01,117 Node /127.0.0.13 state jump to normal
+DEBUG 16:10:01,118 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+DEBUG 16:10:01,118 Started hinted handoff for endPoint /127.0.0.13
+DEBUG 16:10:01,119 Finished hinted handoff for endpoint /127.0.0.13
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+- Nodes not connected...
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+Mon Aug 02 16:10:01 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+Mon Aug 02 16:10:02 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+
+==INSERT WORKLOAD
+DEBUG 16:10:03,212 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+liveNodes 3 [part of workload]
+DEBUG 16:10:03,255 insert writing key key-002 to 105@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+DEBUG 16:10:03,269 insert writing key key-002 to 105@/127.0.0.12
+sp line 261 sendoneway [part of workload]
+DEBUG 16:10:03,270 attempting to connect to /127.0.0.11
+Mon Aug 02 16:10:03 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=60705] [part of workload]
+DEBUG 16:10:03,292 insert writing key key-002 to 105@/127.0.0.13
+sp line 261 sendoneway [part of workload]
+DEBUG 16:10:03,294 attempting to connect to /127.0.0.12
+Mon Aug 02 16:10:03 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=36092] [part of workload]
+- Nodes connected, returning  [part of workload]
+DEBUG 16:10:03,326 attempting to connect to /127.0.0.13
+Mon Aug 02 16:10:03 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48524] [part of workload]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000] [part of workload]
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000] [part of workload]
+DEBUG 16:10:03,454 Processing response on a callback from 105@/127.0.0.11
+DEBUG 16:10:03,465 Processing response on a callback from 105@/127.0.0.13
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000] [part of workload]
+DEBUG 16:10:03,484 Processing response on a callback from 105@/127.0.0.12
+mutate done
+DEBUG 16:10:03,486 get
+token size : 4
+DEBUG 16:10:03,489 weakreadremote reading SliceByNamesReadCommand(table='Keyspace1', key='key-002', columnParent='QueryPath(columnFamilyName='Standard1', superColumnName='null', columnName='null')', columns=[6578706572696d656e7456616c7565,])
+token size : 4
+DEBUG 16:10:03,491 weakreadremote reading SliceByNamesReadCommand(table='Keyspace1', key='key-002', columnParent='QueryPath(columnFamilyName='Standard1', superColumnName='null', columnName='null')', columns=[6578706572696d656e7456616c7565,]) from 106@/127.0.0.11
+sendRR ms line 325 sendoneway
+Mon Aug 02 16:10:03 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=60705]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+DEBUG 16:10:03,606 Processing response on an async result from 106@/127.0.0.11
+DEBUG 16:10:03,608 remove
+token size : 4
+all nodes alive num = 3
+liveNodes 3
+DEBUG 16:10:03,648 insert writing key key-002 to 107@/127.0.0.11
+sp line 261 sendoneway
+DEBUG 16:10:03,676 insert writing key key-002 to 107@/127.0.0.12
+sp line 261 sendoneway
+Mon Aug 02 16:10:03 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=60705]
+DEBUG 16:10:03,703 insert writing key key-002 to 107@/127.0.0.13
+sp line 261 sendoneway
+Mon Aug 02 16:10:03 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=36092]
+Mon Aug 02 16:10:03 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48524]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes connected, returning 
+-- incoming run(): Socket[addr=/127.0.0.12,port=56701,localport=7000]
+DEBUG 16:10:03,847 Processing response on a callback from 107@/127.0.0.11
+-- incoming run(): Socket[addr=/127.0.0.13,port=51236,localport=7000]
+DEBUG 16:10:03,882 Processing response on a callback from 107@/127.0.0.12
+DEBUG 16:10:03,887 Processing response on a callback from 107@/127.0.0.13
+mutate done
+
+
+
+
+===========
+START OF EXP3
+==========
+
+
+
+
+- Nodes not connected...
+Mon Aug 02 16:10:04 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:04 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:04 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49978]
+ INFO 16:10:04,844 error writing to /127.0.0.12
+ INFO 16:10:04,844  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:04 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:05 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+- Nodes not connected...
+Mon Aug 02 16:10:05 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:05 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+- Nodes not connected...
+Mon Aug 02 16:10:06 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:06 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+DEBUG 16:10:06,706 attempting to connect to /127.0.0.12
+Mon Aug 02 16:10:06 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+ INFO 16:10:06,774 Node /127.0.0.12 has restarted, now UP again
+    - Gossiper.handle map.put ep=/127.0.0.12 live=true
+    - Gossiper.isAlive addr=/127.0.0.12 live=true
+- Nodes not connected...
+DEBUG 16:10:06,814 Started hinted handoff for endPoint /127.0.0.12
+DEBUG 16:10:06,814 Node /127.0.0.12 state normal, token 14646464845356707822750639904261978396
+ INFO 16:10:06,816 Node /127.0.0.12 state jump to normal
+DEBUG 16:10:06,817 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+DEBUG 16:10:06,817 Finished hinted handoff for endpoint /127.0.0.12
+
+==NODE2 USING PORT 37706
+
+Mon Aug 02 16:10:06 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49299]
+ INFO 16:10:06,861 error writing to /127.0.0.13
+ INFO 16:10:06,862  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+Mon Aug 02 16:10:07 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:07 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:07 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+Mon Aug 02 16:10:07 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:07 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:07 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+Mon Aug 02 16:10:07 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+Mon Aug 02 16:10:08 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:08 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:08 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:08 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+- Nodes not connected...
+DEBUG 16:10:08,844 attempting to connect to /127.0.0.13
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:08 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+Mon Aug 02 16:10:09 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:09 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:09 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:09 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+Mon Aug 02 16:10:09 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+Mon Aug 02 16:10:09 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+- Nodes not connected...
+Mon Aug 02 16:10:09 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000]
+ INFO 16:10:10,001 Node /127.0.0.13 has restarted, now UP again
+    - Gossiper.handle map.put ep=/127.0.0.13 live=true
+    - Gossiper.isAlive addr=/127.0.0.13 live=true
+DEBUG 16:10:10,065 Started hinted handoff for endPoint /127.0.0.13
+DEBUG 16:10:10,067 Finished hinted handoff for endpoint /127.0.0.13
+DEBUG 16:10:10,065 Node /127.0.0.13 state normal, token 31262599069482153859964411583558503443
+ INFO 16:10:10,068 Node /127.0.0.13 state jump to normal
+DEBUG 16:10:10,068 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+
+==NODE3 REVIVED NODE3 USING PORT 43664
+
+Mon Aug 02 16:10:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+Mon Aug 02 16:10:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000]
+- Nodes not connected...
+Mon Aug 02 16:10:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes not connected...
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=38574]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37706]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.12,port=56719,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes not connected...
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=43664]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+
+
+DEBUG 16:10:11,642 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+liveNodes 3 [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:11,645 insert writing local key key-003
+DEBUG 16:10:11,646 insert writing key key-003 to 150@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:11,647 insert writing key key-003 to 150@/127.0.0.13
+sp line 261 sendoneway [part of workload]
+Mon Aug 02 16:10:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=60705] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48524] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:11,713 Processing response on a callback from 150@/127.0.0.11
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+
+
+DEBUG 16:10:21,858 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+liveNodes 3 [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:21,862 insert writing local key key-003
+DEBUG 16:10:21,863 insert writing key key-003 to 151@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:21 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=60705] [part of workload]
+DEBUG 16:10:21,865 insert writing key key-003 to 151@/127.0.0.13
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+sp line 261 sendoneway [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:21 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48524] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+ INFO 16:10:21,869 error writing to /127.0.0.13
+ INFO 16:10:21,870  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+ INFO 16:10:21,870  - hack OTC.wC(2) repairing the connection ...
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:21,912 Processing response on a callback from 151@/127.0.0.11
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:22,358 GC for ParNew: 4 ms, 21332184 reclaimed leaving 21185576 used; max is 1299906560
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+
+
+
+DEBUG 16:10:32,071 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+liveNodes 3 [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:32,074 insert writing local key key-003
+DEBUG 16:10:32,075 insert writing key key-003 to 152@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+Mon Aug 02 16:10:32 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=60705] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:32,077 insert writing key key-003 to 152@/127.0.0.13
+sp line 261 sendoneway [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:32,079 attempting to connect to /127.0.0.13
+Mon Aug 02 16:10:32 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=56982] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+-- incoming run(): Socket[addr=/127.0.0.11,port=60339,localport=7000] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:32,087 Processing response on a callback from 152@/127.0.0.11
+-- incoming run(): Socket[addr=/127.0.0.13,port=54503,localport=7000] [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files
+DEBUG 16:10:32,135 Processing response on a callback from 152@/127.0.0.13
+mutate done
+- Nodes connected, returning  [part of workload]
+runcmd!!! java.io.IOException: Cannot run program "touch": java.io.IOException: error=24, Too many open files

@@ -1,0 +1,569 @@
+Mon Aug 02 10:43:07 PDT 2010- CD main(1) --- [hd-diff][0.000 secs] [987] (t-1) 
+ - pidFile : /tmp/fi/pids/node0.pid
+Mon Aug 02 10:43:07 PDT 2010- CD setup(1) --- [hd-diff][0.002 secs] [987] (t-1) 
+Mon Aug 02 10:43:07 PDT 2010- CD setup(1.5) --- [hd-diff][0.044 secs] [987] (t-1) 
+DEBUG 10:43:07,499 Loading settings from /home/jin-su/research/cassandra-fi/conf/storage-conf.xml
+DEBUG 10:43:07,881 Syncing log with a period of 100000
+ INFO 10:43:07,887 Auto DiskAccessMode determined to be mmap
+DEBUG 10:43:08,207 setting autoBootstrap to false
+DEBUG 10:43:08,381 setting hintedHandoffEnabled to true
+Mon Aug 02 10:43:08 PDT 2010- CD setup(2) --- [hd-diff][1.167 secs] [988] (t-1) *LONG!!*
+Mon Aug 02 10:43:08 PDT 2010- CD setup(3) --- [hd-diff][0.000 secs] [988] (t-1) 
+Mon Aug 02 10:43:08 PDT 2010- CD setup(4) --- [hd-diff][0.002 secs] [988] (t-1) 
+DEBUG 10:43:08,631 opening keyspace Keyspace1
+DEBUG 10:43:08,654 adding Super1 as 0
+DEBUG 10:43:08,654 adding Standard2 as 1
+DEBUG 10:43:08,655 adding Super2 as 2
+DEBUG 10:43:08,655 adding Standard1 as 3
+DEBUG 10:43:08,655 adding StandardByUUID1 as 4
+DEBUG 10:43:08,656 adding LocationInfo as 5
+DEBUG 10:43:08,656 adding HintsColumnFamily as 6
+DEBUG 10:43:09,047 Starting CFS Standard2
+DEBUG 10:43:09,082 key cache capacity for Standard2 is 1
+DEBUG 10:43:09,083 Starting CFS Super1
+DEBUG 10:43:09,087 key cache capacity for Super1 is 200000
+DEBUG 10:43:09,088 Starting CFS Standard1
+DEBUG 10:43:09,100 key cache capacity for Standard1 is 200000
+DEBUG 10:43:09,106 Starting CFS Super2
+DEBUG 10:43:09,107 key cache capacity for Super2 is 1
+DEBUG 10:43:09,108 row cache capacity for Super2 is 10000
+DEBUG 10:43:09,108 Starting CFS StandardByUUID1
+DEBUG 10:43:09,109 key cache capacity for StandardByUUID1 is 200000
+DEBUG 10:43:09,110 opening keyspace system
+DEBUG 10:43:09,111 Starting CFS LocationInfo
+DEBUG 10:43:09,111 key cache capacity for LocationInfo is 1
+DEBUG 10:43:09,112 Starting CFS HintsColumnFamily
+DEBUG 10:43:09,112 key cache capacity for HintsColumnFamily is 1
+Mon Aug 02 10:43:09 PDT 2010- CD setup(5) --- [hd-diff][0.483 secs] [989] (t-1) 
+Mon Aug 02 10:43:09 PDT 2010- CD setup(6) --- [hd-diff][0.001 secs] [989] (t-1) 
+DEBUG 10:43:09,223 Estimating compactions for Super1
+DEBUG 10:43:09,237 Estimating compactions for Standard2
+DEBUG 10:43:09,238 Estimating compactions for Super2
+DEBUG 10:43:09,238 Estimating compactions for Standard1
+DEBUG 10:43:09,238 Estimating compactions for StandardByUUID1
+DEBUG 10:43:09,239 Estimating compactions for LocationInfo
+DEBUG 10:43:09,239 Estimating compactions for HintsColumnFamily
+DEBUG 10:43:09,239 Checking to see if compaction of Super1 would be useful
+DEBUG 10:43:09,240 Checking to see if compaction of Standard2 would be useful
+DEBUG 10:43:09,240 Checking to see if compaction of Super2 would be useful
+DEBUG 10:43:09,240 Checking to see if compaction of Standard1 would be useful
+DEBUG 10:43:09,241 Checking to see if compaction of StandardByUUID1 would be useful
+DEBUG 10:43:09,241 Checking to see if compaction of LocationInfo would be useful
+DEBUG 10:43:09,241 Checking to see if compaction of HintsColumnFamily would be useful
+ INFO 10:43:09,311 Saved Token not found. Using 80156123917972527308708638695768810893
+ INFO 10:43:09,312 Saved ClusterName not found. Using Test Cluster
+ INFO 10:43:09,326 Creating new commitlog segment /tmp/fi/cassandra/node0/commitLogs/CommitLog-1280770989326.log
+ INFO 10:43:09,440 Starting up server gossip
+  Listening on port: localhost/127.0.0.1 : 7000
+  SUCCESS
+    - Gossiper.handle map.put ep=localhost/127.0.0.1 live=true
+Mon Aug 02 10:43:09 PDT 2010- CD setup(6.5) --- [hd-diff][0.410 secs] [989] (t-1) 
+Mon Aug 02 10:43:09 PDT 2010- CD setup(6.6) --- [hd-diff][0.019 secs] [989] (t-1) 
+Mon Aug 02 10:43:09 PDT 2010- CD setup(7) --- [hd-diff][0.053 secs] [989] (t-1) 
+ INFO 10:43:09,609 Binding thrift service to localhost/127.0.0.1:9160
+Mon Aug 02 10:43:09 PDT 2010 - CD main(2) daemon.setup() --- took 2198 ms 
+ INFO 10:43:09,615 
+
+ INFO 10:43:09,615 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+ INFO 10:43:09,616 &&&&&&&&&&&&&&    CASS     Starting &&&&&&&&&&&&&
+ INFO 10:43:09,616 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+ INFO 10:43:09,616 
+
+ INFO 10:43:09,616 - cluster optQuest : CD.start()
+ INFO 10:43:09,616 Cassandra starting up...
+- Nodes not connected...
+DEBUG 10:43:10,090 attempting to connect to /127.0.0.13
+Mon Aug 02 10:43:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48910]
+-- incoming run(): Socket[addr=/127.0.0.13,port=39391,localport=7000]
+Mon Aug 02 10:43:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48910]
+DEBUG 10:43:10,448 GC for ParNew: 27 ms, 20891168 reclaimed leaving 18880544 used; max is 1299906560
+DEBUG 10:43:10,449 GC for ConcurrentMarkSweep: -3233502507334315 ms, 0 reclaimed leaving 0 used; max is 0
+DEBUG 10:43:10,497 Disseminating load info ...
+- Nodes not connected...
+DEBUG 10:43:10,545 attempting to connect to /127.0.0.11
+Mon Aug 02 10:43:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.13,port=39391,localport=7000]
+Mon Aug 02 10:43:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48910]
+-- incoming run(): Socket[addr=/127.0.0.13,port=39391,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Node /127.0.0.11 is now part of the cluster
+ INFO 10:43:10,663 Node /127.0.0.11 is now part of the cluster
+    - Gossiper.handle map.put ep=/127.0.0.11 live=true
+    - Gossiper.isAlive addr=/127.0.0.11 live=true
+DEBUG 10:43:10,770 Started hinted handoff for endPoint /127.0.0.11
+DEBUG 10:43:10,769 Node /127.0.0.11 state normal, token 54241366497414831672933612762059260641
+DEBUG 10:43:10,783 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+Node /127.0.0.13 is now part of the cluster
+ INFO 10:43:10,786 Node /127.0.0.13 is now part of the cluster
+    - Gossiper.handle map.put ep=/127.0.0.13 live=true
+DEBUG 10:43:10,793 Finished hinted handoff for endpoint /127.0.0.11
+    - Gossiper.isAlive addr=/127.0.0.13 live=true
+DEBUG 10:43:10,847 Node /127.0.0.13 state normal, token 126364758544492335837051835356706229319
+DEBUG 10:43:10,848 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+DEBUG 10:43:10,848 Started hinted handoff for endPoint /127.0.0.13
+DEBUG 10:43:10,853 Finished hinted handoff for endpoint /127.0.0.13
+Mon Aug 02 10:43:10 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+- Nodes not connected...
+Mon Aug 02 10:43:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+DEBUG 10:43:11,047 attempting to connect to /127.0.0.12
+Mon Aug 02 10:43:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=57216]
+-- incoming run(): Socket[addr=/127.0.0.13,port=39391,localport=7000]
+Mon Aug 02 10:43:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48910]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.13,port=39391,localport=7000]
+Node /127.0.0.12 is now part of the cluster
+ INFO 10:43:11,178 Node /127.0.0.12 is now part of the cluster
+    - Gossiper.handle map.put ep=/127.0.0.12 live=true
+    - Gossiper.isAlive addr=/127.0.0.12 live=true
+DEBUG 10:43:11,216 Node /127.0.0.12 state normal, token 5649586298332430812941061890814897308
+DEBUG 10:43:11,216 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+DEBUG 10:43:11,218 Started hinted handoff for endPoint /127.0.0.12
+DEBUG 10:43:11,221 Finished hinted handoff for endpoint /127.0.0.12
+-- incoming run(): Socket[addr=/127.0.0.12,port=59845,localport=7000]
+Mon Aug 02 10:43:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=57216]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+- Nodes not connected...
+Mon Aug 02 10:43:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=57216]
+-- incoming run(): Socket[addr=/127.0.0.12,port=59845,localport=7000]
+Mon Aug 02 10:43:11 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=57216]
+- Nodes connected, returning  [part of workload]
+DEBUG 10:43:12,072 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+liveNodes 3 [part of workload]
+DEBUG 10:43:12,121 insert writing local key key-001
+DEBUG 10:43:12,125 insert writing key key-001 to 13@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+DEBUG 10:43:12,137 insert writing key key-001 to 13@/127.0.0.13
+DEBUG 10:43:12,137 attempting to connect to /127.0.0.11
+sp line 261 sendoneway [part of workload]
+Mon Aug 02 10:43:12 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712] [part of workload]
+DEBUG 10:43:12,159 attempting to connect to /127.0.0.13
+Mon Aug 02 10:43:12 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=45500] [part of workload]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000] [part of workload]
+DEBUG 10:43:12,220 Processing response on a callback from 13@/127.0.0.11
+-- incoming run(): Socket[addr=/127.0.0.13,port=39391,localport=7000] [part of workload]
+DEBUG 10:43:12,233 Processing response on a callback from 13@/127.0.0.13
+mutate done
+DEBUG 10:43:12,249 get
+token size : 4
+DEBUG 10:43:12,254 weakreadlocal reading SliceByNamesReadCommand(table='Keyspace1', key='key-001', columnParent='QueryPath(columnFamilyName='Standard1', superColumnName='null', columnName='null')', columns=[6578706572696d656e7456616c7565,])
+token size : 4
+DEBUG 10:43:12,273 Reading consistency digest for key-001 from 14@[/127.0.0.11, localhost/127.0.0.1, /127.0.0.13]
+cc line 78 sendoneway
+Mon Aug 02 10:43:12 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=45500]
+Mon Aug 02 10:43:12 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712]
+DEBUG 10:43:12,305 remove
+token size : 4
+all nodes alive num = 3
+liveNodes 3
+DEBUG 10:43:12,371 insert writing local key key-001
+DEBUG 10:43:12,372 insert writing key key-001 to 15@/127.0.0.11
+sp line 261 sendoneway
+-- incoming run(): Socket[addr=/127.0.0.13,port=39391,localport=7000]
+Mon Aug 02 10:43:12 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712]
+DEBUG 10:43:12,391 insert writing key key-001 to 15@/127.0.0.13
+sp line 261 sendoneway
+DEBUG 10:43:12,407 Processing response on a callback from 14@/127.0.0.13
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:12 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=45500]
+DEBUG 10:43:12,432 Processing response on a callback from 14@/127.0.0.11
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.13,port=39391,localport=7000]
+DEBUG 10:43:12,478 Processing response on a callback from 15@/127.0.0.11
+DEBUG 10:43:12,482 Processing response on a callback from 15@/127.0.0.13
+mutate done
+- Nodes not connected...
+Mon Aug 02 10:43:12 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:12 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+- Nodes not connected...
+Mon Aug 02 10:43:13 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=57216]
+- Nodes not connected...
+Mon Aug 02 10:43:13 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:13 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:13 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+- Nodes not connected...
+Mon Aug 02 10:43:14 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:14 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+- Nodes not connected...
+Mon Aug 02 10:43:14 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48910]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+Mon Aug 02 10:43:14 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=57216]
+ INFO 10:43:14,671 error writing to /127.0.0.12
+ INFO 10:43:14,671  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+- Nodes not connected...
+DEBUG 10:43:15,048 attempting to connect to /127.0.0.12
+Mon Aug 02 10:43:15 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+Mon Aug 02 10:43:15 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+ INFO 10:43:15,165 Node /127.0.0.12 has restarted, now UP again
+    - Gossiper.handle map.put ep=/127.0.0.12 live=true
+    - Gossiper.isAlive addr=/127.0.0.12 live=true
+DEBUG 10:43:15,190 Node /127.0.0.12 state normal, token 30635421837190350790936909482190195921
+DEBUG 10:43:15,191 Started hinted handoff for endPoint /127.0.0.12
+ INFO 10:43:15,191 Node /127.0.0.12 state jump to normal
+DEBUG 10:43:15,192 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+DEBUG 10:43:15,192 Finished hinted handoff for endpoint /127.0.0.12
+Mon Aug 02 10:43:15 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:15 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+DEBUG 10:43:15,444 GC for ParNew: 7 ms, 21170264 reclaimed leaving 20711024 used; max is 1299906560
+- Nodes not connected...
+Mon Aug 02 10:43:15 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=48910]
+ INFO 10:43:15,555 error writing to /127.0.0.13
+ INFO 10:43:15,556  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+Mon Aug 02 10:43:15 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+- Nodes not connected...
+DEBUG 10:43:16,043 attempting to connect to /127.0.0.13
+- Nodes not connected...
+- Nodes not connected...
+Mon Aug 02 10:43:17 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+Mon Aug 02 10:43:17 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:17 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+- Nodes not connected...
+Mon Aug 02 10:43:17 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+Mon Aug 02 10:43:17 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+Mon Aug 02 10:43:17 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54507]
+Mon Aug 02 10:43:17 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54507]
+-- incoming run(): Socket[addr=/127.0.0.13,port=41196,localport=7000]
+ INFO 10:43:18,020 Node /127.0.0.13 has restarted, now UP again
+    - Gossiper.handle map.put ep=/127.0.0.13 live=true
+-- incoming run(): Socket[addr=/127.0.0.13,port=41196,localport=7000]
+- Nodes not connected...
+    - Gossiper.isAlive addr=/127.0.0.13 live=true
+DEBUG 10:43:18,142 Started hinted handoff for endPoint /127.0.0.13
+DEBUG 10:43:18,142 Node /127.0.0.13 state normal, token 126876979410316554810721665204651904982
+ INFO 10:43:18,143 Node /127.0.0.13 state jump to normal
+DEBUG 10:43:18,143 Finished hinted handoff for endpoint /127.0.0.13
+DEBUG 10:43:18,144 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+Mon Aug 02 10:43:18 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+Mon Aug 02 10:43:18 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54507]
+Mon Aug 02 10:43:18 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54507]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+Mon Aug 02 10:43:18 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:18 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+- Nodes not connected...
+Mon Aug 02 10:43:18 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54507]
+-- incoming run(): Socket[addr=/127.0.0.13,port=41196,localport=7000]
+Mon Aug 02 10:43:18 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54507]
+- Nodes not connected...
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+DEBUG 10:43:19,401 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+liveNodes 3 [part of workload]
+DEBUG 10:43:19,426 insert writing local key key-002
+DEBUG 10:43:19,427 insert writing key key-002 to 49@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+DEBUG 10:43:19,439 insert writing key key-002 to 49@/127.0.0.12
+sp line 261 sendoneway [part of workload]
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712] [part of workload]
+DEBUG 10:43:19,457 attempting to connect to /127.0.0.12
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=51521] [part of workload]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000] [part of workload]
+DEBUG 10:43:19,503 Processing response on a callback from 49@/127.0.0.11
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000] [part of workload]
+- Nodes connected, returning  [part of workload]
+DEBUG 10:43:19,533 Processing response on a callback from 49@/127.0.0.12
+mutate done
+DEBUG 10:43:19,536 get
+token size : 4
+DEBUG 10:43:19,539 weakreadlocal reading SliceByNamesReadCommand(table='Keyspace1', key='key-002', columnParent='QueryPath(columnFamilyName='Standard1', superColumnName='null', columnName='null')', columns=[6578706572696d656e7456616c7565,])
+token size : 4
+DEBUG 10:43:19,540 Reading consistency digest for key-002 from 50@[/127.0.0.12, /127.0.0.11, localhost/127.0.0.1]
+DEBUG 10:43:19,541 remove
+cc line 78 sendoneway
+token size : 4
+all nodes alive num = 3
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712]
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=51521]
+liveNodes 3
+DEBUG 10:43:19,589 insert writing local key key-002
+DEBUG 10:43:19,590 insert writing key key-002 to 51@/127.0.0.11
+sp line 261 sendoneway
+DEBUG 10:43:19,626 insert writing key key-002 to 51@/127.0.0.12
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712]
+sp line 261 sendoneway
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:19 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=51521]
+DEBUG 10:43:19,669 Processing response on a callback from 50@/127.0.0.11
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+DEBUG 10:43:19,717 Processing response on a callback from 50@/127.0.0.12
+-- incoming run(): Socket[addr=/127.0.0.12,port=44968,localport=7000]
+DEBUG 10:43:19,756 Processing response on a callback from 51@/127.0.0.11
+DEBUG 10:43:19,760 Processing response on a callback from 51@/127.0.0.12
+mutate done
+
+
+
+
+
+
+
+
+
+
+
+######################################################################
+#####################################################################
+###################################################################
+START OF EXPERIMENT 3
+###################################################################
+###################################################################
+###################################################################
+KILLED NODE 2 and 3
+
+
+- Nodes not connected...
+Mon Aug 02 10:43:20 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+
+
+Mon Aug 02 10:43:20 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+- Nodes not connected...
+Mon Aug 02 10:43:20 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:20 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+
+
+- Nodes not connected...
+Mon Aug 02 10:43:21 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=37159]
+ INFO 10:43:21,064 error writing to /127.0.0.12
+ INFO 10:43:21,065  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+
+==NODE2 DEAD
+
+- Nodes not connected...
+Mon Aug 02 10:43:21 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54507]
+- Nodes not connected...
+Mon Aug 02 10:43:22 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:22 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+
+
+- Nodes not connected...
+Mon Aug 02 10:43:22 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54507]
+ INFO 10:43:22,573 error writing to /127.0.0.13
+ INFO 10:43:22,574  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+
+==NODE3 DEAD
+
+==RECONNECTING
+
+- Nodes not connected...
+DEBUG 10:43:23,047 attempting to connect to /127.0.0.13
+
+==PACKETS IN FROM NODE2
+-- incoming run(): Socket[addr=/127.0.0.12,port=36104,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+DEBUG 10:43:23,359 attempting to connect to /127.0.0.12
+Mon Aug 02 10:43:23 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49632]
+Mon Aug 02 10:43:23 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.12,port=36104,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+ INFO 10:43:23,413 Node /127.0.0.12 has restarted, now UP again
+    - Gossiper.handle map.put ep=/127.0.0.12 live=true
+    - Gossiper.isAlive addr=/127.0.0.12 live=true
+
+
+
+DEBUG 10:43:23,439 Node /127.0.0.12 state normal, token 142144208362993105160117575767068719003
+ INFO 10:43:23,441 Node /127.0.0.12 state jump to normal
+DEBUG 10:43:23,441 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+DEBUG 10:43:23,440 Started hinted handoff for endPoint /127.0.0.12
+DEBUG 10:43:23,443 Finished hinted handoff for endpoint /127.0.0.12
+==NODE2 ALIVE
+
+- Nodes not connected...
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:23 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+- Nodes not connected...
+Mon Aug 02 10:43:24 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49632]
+-- incoming run(): Socket[addr=/127.0.0.12,port=36104,localport=7000]
+Mon Aug 02 10:43:24 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49632]
+- Nodes not connected...
+- Nodes not connected...
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.12,port=36104,localport=7000]
+
+
+==PACKETS IN FROM NODE3
+-- incoming run(): Socket[addr=/127.0.0.13,port=47300,localport=7000]
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49632]
+-- incoming run(): Socket[addr=/127.0.0.13,port=47300,localport=7000]
+ INFO 10:43:25,455 Node /127.0.0.13 has restarted, now UP again
+    - Gossiper.handle map.put ep=/127.0.0.13 live=true
+    - Gossiper.isAlive addr=/127.0.0.13 live=true
+
+
+-- incoming run(): Socket[addr=/127.0.0.13,port=47300,localport=7000]
+- Nodes not connected...
+DEBUG 10:43:25,565 Started hinted handoff for endPoint /127.0.0.13
+DEBUG 10:43:25,565 Node /127.0.0.13 state normal, token 65549815500908267297988747250409666426
+ INFO 10:43:25,567 Node /127.0.0.13 state jump to normal
+DEBUG 10:43:25,568 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+DEBUG 10:43:25,568 Finished hinted handoff for endpoint /127.0.0.13
+
+==NODE3 ALIVE
+
+
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+-- incoming run(): Socket[addr=/127.0.0.12,port=36104,localport=7000]
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+Mon Aug 02 10:43:25 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+-- incoming run(): Socket[addr=/127.0.0.13,port=47300,localport=7000]
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+- Nodes not connected...
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+-- incoming run(): Socket[addr=/127.0.0.13,port=47300,localport=7000]
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+-- incoming run(): Socket[addr=/127.0.0.12,port=36104,localport=7000]
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.12,port=7000,localport=49632]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=32768]
+-- incoming run(): Socket[addr=/127.0.0.12,port=36104,localport=7000]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000]
+- Nodes not connected...
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+-- incoming run(): Socket[addr=/127.0.0.13,port=47300,localport=7000]
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=49180]
+
+
+==INSERT WORKLOAD
+DEBUG 10:43:26,758 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+liveNodes 3 [part of workload]
+DEBUG 10:43:26,784 insert writing local key key-003
+DEBUG 10:43:26,785 insert writing key key-003 to 83@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+DEBUG 10:43:26,798 insert writing key key-003 to 83@/127.0.0.13
+sp line 261 sendoneway [part of workload]
+
+==FIRST TRY
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712] [part of workload]
+
+=====================PROBLEM==========
+==OHHH connection to node3 is using different port.
+==it should use 49180 but its using 45500 to send it away
+
+Mon Aug 02 10:43:26 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=45500] [part of workload]
+
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000] [part of workload]
+DEBUG 10:43:26,870 Processing response on a callback from 83@/127.0.0.11
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+
+==SECOND TRY
+DEBUG 10:43:37,006 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+liveNodes 3 [part of workload]
+DEBUG 10:43:37,036 insert writing local key key-003
+DEBUG 10:43:37,037 insert writing key key-003 to 84@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+- Nodes connected, returning  [part of workload]
+Mon Aug 02 10:43:37 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712] [part of workload]
+DEBUG 10:43:37,052 insert writing key key-003 to 84@/127.0.0.13
+sp line 261 sendoneway [part of workload]
+
+==BROKEN PIPE
+Mon Aug 02 10:43:37 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=45500] [part of workload]
+ INFO 10:43:37,107 error writing to /127.0.0.13
+ INFO 10:43:37,108  - OTC(e in wC(1)): java.net.SocketException: Broken pipe
+ INFO 10:43:37,108  - hack OTC.wC(2) repairing the connection ...
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000] [part of workload]
+DEBUG 10:43:37,122 Processing response on a callback from 84@/127.0.0.11
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+DEBUG 10:43:39,454 GC for ParNew: 8 ms, 21306224 reclaimed leaving 20983128 used; max is 1299906560
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+- Nodes connected, returning  [part of workload]
+
+
+==THIRD TRY
+DEBUG 10:43:47,246 insert
+token size : 4
+all nodes alive num = 3 [part of workload]
+liveNodes 3 [part of workload]
+DEBUG 10:43:47,278 insert writing local key key-003
+DEBUG 10:43:47,280 insert writing key key-003 to 85@/127.0.0.11
+sp line 261 sendoneway [part of workload]
+DEBUG 10:43:47,293 insert writing key key-003 to 85@/127.0.0.13
+Mon Aug 02 10:43:47 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.11,port=7000,localport=48712] [part of workload]
+sp line 261 sendoneway [part of workload]
+DEBUG 10:43:47,314 attempting to connect to /127.0.0.13
+Mon Aug 02 10:43:47 PDT 2010- outgoing wC(): Socket[addr=/127.0.0.13,port=7000,localport=54434] [part of workload]
+-- incoming run(): Socket[addr=/127.0.0.11,port=33419,localport=7000] [part of workload]
+DEBUG 10:43:47,381 Processing response on a callback from 85@/127.0.0.11
+-- incoming run(): Socket[addr=/127.0.0.13,port=47300,localport=7000] [part of workload]
+DEBUG 10:43:47,403 Processing response on a callback from 85@/127.0.0.13
+mutate done
+- Nodes connected, returning  [part of workload]

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+
+if [ $# != 1 ]; then
+    echo "Usage: cnode <nodeId>"
+    exit
+fi
+    
+
+
+
+export NODE_ID=$1
+#BIN_DIR=`dirname $0`
+BIN_DIR=/home/jinsu/research/cass-prj/trunk/stable_cass/bin
+CASSANDRA_INCLUDE=$BIN_DIR/cnode.in.sh
+#CASSANDRA_INCLUDE=/home/jin-su/cnode.in.sh
+
+export CASSANDRA_INCLUDE
+$BIN_DIR/cassandra -p $NODE_ID
+
+

@@ -1,0 +1,16 @@
+By Jinsu Oh
+Date : May 4th, 2011
+
+Cassandra Automated Fault Injection
+snapshot of my research project.
+
+prereq:
+need ant installed
+
+uses thrift
+
+java-rtjar contains some jars needed for the project.
+java-rtjar/sdk should contain either rt.jar(for linux) or __blank__(for mac).
+
+cass-prj/trunk contains the modified code for cassandra and its workload driver.
+see cass-prj/trunk/README for more details regarding the code.
