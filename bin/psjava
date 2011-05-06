@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [ $# != 0 ]
-then
-	echo "Usage : no argument needed..."
-fi 
-
-bash ps -e | grep 'java'
-
