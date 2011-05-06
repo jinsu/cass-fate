@@ -1,0 +1,449 @@
+diff -ru src/Cass.java /home/jin-su/workload-driver-cassandra/src/Cass.java
+--- src/Cass.java	2010-07-24 12:47:20.912330317 -0700
++++ /home/jin-su/workload-driver-cassandra/src/Cass.java	2010-07-24 00:24:32.441842548 -0700
+@@ -35,7 +35,8 @@
+ import org.apache.thrift.transport.TTransport;
+ 
+ public class Cass {
+-
++	public static boolean testing = true;
++	public static boolean debug = false;
+ 
+   Cassandra.Client client;
+   Utility u;
+@@ -59,17 +60,13 @@
+   // we only want to do this if client is null
+   // we cannot create start this in Cass construct
+   // because we don't know when namenode is up or down
+-  // *******************************************
+   private void reconnectToCass() {
+ 
+     int trial = 1;
+ 
+     TTransport tr = new TSocket("localhost", 9160);
+     TProtocol proto = new TBinaryProtocol(tr);
+-
+-    waitForNodesToJoin();
+     
+-
+     while (client == null) {
+ 
+       try {
+@@ -82,13 +79,14 @@
+ 
+ 
+         client = new Cassandra.Client(proto);
+-
++	
+         tr.open();
+-
++	
+         u.print(String.format("- Connected to client ... \n"));
+-
+-
+-
++				//jinsu checking if all nodes are part of the cluster
++				if(testing) {
++					waitForNodesToJoin();
++				}
+       } catch (Exception e) {
+         //u.EXCEPTION(" In Cass construct", e);
+         client = null;
+@@ -96,67 +94,31 @@
+       }
+     }
+   }
+-
+-  // *******************************************
++  
++  //jinsu it's just a stupid hack to grep a specific line from .log file.
++  //this needs to be improved...how can i ensure that all nodes know each other??
+   private void waitForNodesToJoin() {
+-    while(true) {
+-
+-      boolean allgood = true;
+-
+-
+-      for (int i = 0; i < Driver.NUM_OF_CASS_NODES; i++) {
+-
+-	String fileLocation = String.format("%s/node%d.log",
+-					    Driver.CASS_LOGS_DIR, i);
+-	String pattern = String.format("cluster");
+-	String cmdout = u.runCommand(String.format("grep %s %s",
+-						   pattern, fileLocation));
+-
+-	if (i == 0 && (!cmdout.contains("127.0.0.11") ||
+-		       !cmdout.contains("127.0.0.12") || 
+-		       !cmdout.contains("127.0.0.13"))) {
+-	  allgood = false;
+-	  break;
+-	}
+-	if (i == 1 && (!cmdout.contains("127.0.0.1") ||
+-		       !cmdout.contains("127.0.0.12") || 
+-		       !cmdout.contains("127.0.0.13"))) {
+-	  allgood = false;
+-	  break;
+-	}
+-	if (i == 2 && (!cmdout.contains("127.0.0.1") ||
+-		       !cmdout.contains("127.0.0.11") || 
+-		       !cmdout.contains("127.0.0.13"))) {
+-	  allgood = false;
+-	  break;
+-	}
+-	if (i == 3 && (!cmdout.contains("127.0.0.1") ||
+-		       !cmdout.contains("127.0.0.11") || 
+-		       !cmdout.contains("127.0.0.12"))) {
+-	  allgood = false;
+-	  break;
+-	}
+-	
+-      }
+-
+-      
+-      if (allgood) {
+-	u.print("- Seed knows about All non-seed nodes in the cluster...");
+-	break;
+-      }
+-      
+-      u.print("- Waiting until all nodes are in the cluster ... \n");
+-      u.sleep(500);
+-    }
+-    
+-    u.createNewFile(Driver.NODES_CONNECTED_FLAG);
+-    u.print("- All nodes connected");
+-
++  	String cmdout = "";
++  	String fileLocation = "/tmp/fi/logs/node0.log";
++  	String pattern = String.format("cluster");
++  	String cmd = String.format("grep %s %s", pattern, fileLocation);
++  	while(!(cmdout.contains("127.0.0.2") && cmdout.contains("127.0.0.3") && cmdout.contains("127.0.0.4"))) {
++  			if(debug) {
++					u.print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
++					u.print(cmdout);
++					u.print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n");
++				}
++  			u.print("- Waiting until all nodes are in the cluster ... \n");
++				u.sleep(500);
++				cmdout =u.runCommand(cmd);
++		}
++		u.print("Seed knows about All non-seed nodes in the cluster...\n");
++		//all nodes have joined
++		//u.createNewFile("/tmp/fi/allNodes");
++		
+   }
+ 
+ 
+-
+-
+   public void setKeyspace(String ks) {
+     keyspace = ks;
+   }
+@@ -195,7 +157,7 @@
+ 
+ 
+   // *******************************************
+-  public void assertConnection() {
++  private void assertConnection() {
+     if (client == null)
+       reconnectToCass();
+   }
+@@ -203,18 +165,17 @@
+ 
+   // *******************************************
+   public void insertEntry(String key, String value, Experiment exp) {
+-    
+-    u.print("- Cass.insertEntry : [ " + key + ", " + value + " ]" + "...\n");
+-    
+-    try {
+-      
+-
+-      u.println("inserting for key... ");
+-
+ 
+-      u.sleep(3000);
++    u.print("- Cass.insertEntry : [ " + key + ", " + value + " ]" + "...\n");
+ 
++    assertConnection();
+ 
++		u.sleep(3000);
++    try {
++		
++      // insert data
++      // String exp_key = key + exp.getExpNum();
++      u.println("inserting for key... ");
+       long timestamp = System.currentTimeMillis();
+       client.insert(keyspace, key, columnPath, value.getBytes(encoding),
+                     timestamp, ConsistencyLevel.ALL);
+@@ -259,9 +220,7 @@
+       //String exp_key = key + exp.getExpNum();
+       u.println("single column:");
+       Column col = client.get(keyspace, key, columnPath,
+-                              //ConsistencyLevel.QUORUM)
+-                              ConsistencyLevel.ONE)
+-			      .getColumn();
++                              ConsistencyLevel.QUORUM).getColumn();
+ 
+       u.println("column name: " + new String(col.name, encoding));
+       u.println("column value: " + new String(col.value, encoding));
+@@ -269,8 +228,8 @@
+     } catch (Exception e) {
+       u.EXCEPTION("Cass.getEntry fails", e);
+ 
+-      // u.ERROR("Cass.getEntry fails");
+-      
++      u.ERROR("Cass.getEntry fails");
++
+       //exp.markFailFromNonFrog();
+       //exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
+       //exp.addExceptionToNonFrogReport(e);
+@@ -289,4 +248,4 @@
+     }
+   }
+ 
+-}
+\ No newline at end of file
++}
+Only in /home/jin-su/workload-driver-cassandra/src/: Cass.java~
+diff -ru src/ClientInsertWorkload.java /home/jin-su/workload-driver-cassandra/src/ClientInsertWorkload.java
+--- src/ClientInsertWorkload.java	2010-07-24 12:47:20.922296039 -0700
++++ /home/jin-su/workload-driver-cassandra/src/ClientInsertWorkload.java	2010-07-23 16:15:57.806577731 -0700
+@@ -60,13 +60,9 @@
+     // prepare the new file we want to put to hdfs, and put it
+     // if there is exception it's caught inside hdfs and
+     // put it in exp
+-    
+-    u.createNewFile(Driver.EXPERIMENT_RUN_FLAG);
+-    
+     String key = String.format("key-%03d", exp.getExpNum());
+     cass.insertEntry(key, VALUE , exp);
+     
+-    u.deleteFile(Driver.EXPERIMENT_RUN_FLAG);    
+   }
+ 
+ 
+@@ -87,10 +83,6 @@
+     Driver.enableCoverage();
+     
+     
+-    // 3. let's make sure, we setup the connection before we go
+-    // into the run with failure
+-    cass.assertConnection();
+-    
+   }
+ 
+   // *******************************************
+@@ -107,9 +99,15 @@
+     cass.getEntry(key, exp);
+     
+     // then delete the file
+-    //cass.delete(key, exp);
++    cass.delete(key, exp);
+     
++    //jinsu
++    if(false) {
++    String cmdout =u.runCommand("bin/nodetool " + "-h localhost ring");
++    u.print(cmdout);
++    u.print("\n\n");
++    }
+   }
+ 
+   
+-}
+\ No newline at end of file
++}
+diff -ru src/Driver.java /home/jin-su/workload-driver-cassandra/src/Driver.java
+--- src/Driver.java	2010-07-24 12:47:20.942284963 -0700
++++ /home/jin-su/workload-driver-cassandra/src/Driver.java	2010-07-23 16:30:33.054075315 -0700
+@@ -61,6 +61,8 @@
+   public static final String FLAGS_FAILURE_DIR     = TMPFI + "flagsFailure/";
+   public static final String EXP_RESULT_DIR        = TMPFI + "expResult/";
+   public static final String SOCKET_HISTORY_DIR    = TMPFI + "socketHistory/";
++  //jinsu adding ip history
++  public static final String IP_HISTORY_DIR = TMPFI + "ipHistory/";
+   public static final String CASS_LOGS_DIR         = TMPFI + "logs/";
+   public static final String CASS_PIDS_DIR         = TMPFI + "pids/";
+ 
+@@ -75,9 +77,7 @@
+   public static final String CLIENT_OPTIMIZE_FLAG = TMPFI + "clientOptimizeFlag";
+   public static final String ENABLE_COVERAGE_FLAG = TMPFI + "enableCoverageFlag";
+ 
+-  public static final String NODES_CONNECTED_FLAG = TMPFI + "nodesConnectedFlag";
+-  public static final String EXPERIMENT_RUN_FLAG  = TMPFI + "experimentRunning";
+-  
++
+ 
+   // vars
+   private static Utility u;
+@@ -151,7 +151,11 @@
+     rmRpcFiles();    // rm all rpc files
+     rmCoverageFiles();
+     rmFmStat();
+-    rmFlags();
++    
++    //jinsu
++    rmIpHistory();
++    rmAllNodeFile();
++    
+ 
+     // 5. clear any failure flags
+     clearAllFlagsFailure();
+@@ -368,7 +372,7 @@
+     // and remove all ports otherwise the directory gets too big !!!
+     // and it could contain thousands of files
+     rmSocketHistory();
+-
++    
+   }
+ 
+ 
+@@ -611,6 +615,23 @@
+       u.ERROR("Can't delete " + SOCKET_HISTORY_DIR);
+     }
+   }
++  
++  //jinsu
++  //remove IP_HISTORY
++  public void rmIpHistory() {
++  	u.print("- Removing ip history ...\n");
++    if (!u.deleteDirContent(IP_HISTORY_DIR)) {
++      u.ERROR("Can't delete " + IP_HISTORY_DIR);
++    }
++  }
++  //jinsu
++  //remove allnodesfile
++  public void rmAllNodeFile() {
++  	u.print("- Removing allNodes file ...\n");
++  	if (!u.deleteFile(TMPFI + "allNodes")) {
++      u.ERROR("Can't delete " + IP_HISTORY_DIR);
++    }
++  }
+ 
+   // *******************************************
+   // remove rpc files
+@@ -677,7 +698,7 @@
+   // rm all logs file ..
+   // *******************************************
+   public void rmPids() {
+-    u.print("- Removing logs ...\n");
++    u.print("- Removing pid files ...\n");
+     if (!u.deleteDirContent(CASS_PIDS_DIR)) {
+       u.ERROR("Can't delete " + CASS_PIDS_DIR);
+     }
+@@ -779,19 +800,12 @@
+   public void rmFmStat() {
+     u.deleteFile("/tmp/fmStat.txt");
+   }
+-  
+-  // *******************************************
+-  public void rmFlags() {
+-    u.print("- Deleting flags ...\n");
+-    u.deleteFile(Driver.NODES_CONNECTED_FLAG);
+-    u.deleteFile(Driver.EXPERIMENT_RUN_FLAG);
+-  }
+-  
++	
+   // *******************************************
+   // just call start-cass
+   public void startCass() {
+     u.print("- Starting Cassandra ...\n");
+-
++    
+     String cmdout = u.runCommand("bin/cassandra -p 0");
+     u.print(cmdout);
+     u.print("\n\n");
+@@ -801,7 +815,6 @@
+       u.print(cmdout);
+       u.print("\n\n");
+     }
+-
+   }
+ 
+ 
+@@ -1139,7 +1152,11 @@
+     u.mkDir(CASS_LOGS_DIR);
+     u.mkDir(RPC_FILES_DIR);
+     u.mkDir(SOCKET_HISTORY_DIR);
++    //jinsu why not create pid dir??
+     u.mkDir(CASS_PIDS_DIR);
++    //jinsu ip history
++    u.mkDir(IP_HISTORY_DIR);
++    
+   }
+ 
+ 
+@@ -1162,4 +1179,4 @@
+ 
+ 
+   }
+-}
+\ No newline at end of file
++}
+Only in /home/jin-su/workload-driver-cassandra/src/: Driver.java~
+Only in /home/jin-su/workload-driver-cassandra/src/: ._.DS_Store
+diff -ru src/Experiment.java /home/jin-su/workload-driver-cassandra/src/Experiment.java
+--- src/Experiment.java	2010-07-24 12:47:20.952278063 -0700
++++ /home/jin-su/workload-driver-cassandra/src/Experiment.java	2010-07-14 13:30:32.000000000 -0700
+@@ -317,7 +317,7 @@
+ 
+     markFailExperiment();
+ 
+-    
++
+     // print non frog report
+     u.print("From nonFrog report: \n");
+     u.print("--------------------\n\n");
+Only in /home/jin-su/workload-driver-cassandra/src/OLD: ._.DS_Store
+Only in /home/jin-su/workload-driver-cassandra/src/OLD: Hdfs.java~
+Only in /home/jin-su/workload-driver-cassandra/src/: TODO.txt
+Only in /home/jin-su/workload-driver-cassandra/src/: ._Utility.java
+diff -ru src/Utility.java /home/jin-su/workload-driver-cassandra/src/Utility.java
+--- src/Utility.java	2010-07-24 12:47:21.022275858 -0700
++++ /home/jin-su/workload-driver-cassandra/src/Utility.java	2010-07-22 16:40:04.713684434 -0700
+@@ -203,6 +203,40 @@
+     return msg;
+   }
+ 
++	// jinsu
++  // overloading so we can run commands with multiple arguments
++  // *****************************************
++  // a tool to run the command
++  public String runCommand(String[] cmd) {
++		//im just trying to make a function for grep call...
++		/*
++    if (cmd.contains("killall java")) {
++    	if(DEBUG) {
++    		System.out.println("&&&&&&&&&&KILLALL EXECUTED\n");
++    	}
++      String buf = getStackTrace();
++      File f = new File ("/tmp/killallJavaOut");
++      boolean flush = true;
++      stringToFileContent(buf, f, flush);
++    }
++		*/
++
++    String msg = "";
++    try {
++      String line;
++      Process p = java.lang.Runtime.getRuntime().exec(cmd);
++      BufferedReader input =new BufferedReader
++        (new InputStreamReader(p.getInputStream()));
++      while ((line = input.readLine()) != null) {
++        msg = msg + line + "\n";
++      }
++      input.close();
++    } catch (Exception e) {
++      EXCEPTION("runCommand", e);
++    }
++
++    return msg;
++  }
+ 
+ 
+   // ############################################################
+@@ -597,4 +631,4 @@
+ 
+ 
+ 
+-}
+\ No newline at end of file
++}

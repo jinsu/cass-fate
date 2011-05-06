@@ -1,0 +1,31 @@
+
+double failure logic 
+
+
+Run:
+
+
+ make prepare
+
+ ant
+
+ make result
+
+
+
+Configurable:
+
+
+
+  Driver.MAX_FSN 
+
+   example choose: 1, 2, or 3
+
+  FMLogic.hashes
+
+   example :   [AA, BB, CC, DD]  or
+               [AA, BB, CC]
+
+
+
+

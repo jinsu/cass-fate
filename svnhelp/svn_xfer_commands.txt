@@ -1,0 +1,131 @@
+
+[all][popular]
+
+   svn log -r 100:1 
+   svn log -r 1:100 -v
+
+
+
+[svnversion][]
+  report the state of our program
+
+[svnlook][]
+  tool for inspecting 
+
+[svnadmin][]
+  create a repository
+
+[svn][cat]
+
+  svn cat <file> -r HEAD 
+
+[svn][info]
+
+  svn info -r HEAD
+  gives you the latest version number of this directory
+
+
+[svn][diff]
+  
+  svn diff --revision PREV:COMMITTED foo.c
+
+  svn diff --revision HEAD
+
+  four keywords: HEAD, BASE, COMMITTED, PREV
+
+  HEAD: latest revision in repository
+  BASE: revision in working diretory
+  COMMITTED: last revision in which an item changed before (or at) BASE  
+
+
+[svn][log]
+
+  svn log --revision HEAD
+
+  svn log --revision BASE:HEAD
+  (Basic to show all recent changes)
+ 
+[svn][update]
+
+  svn update --revision PREV foo.c
+  (rewinds the last change on foo.c)
+
+  output files are marked from the repo to working:
+  U   updated
+  A   added
+  D   deleted
+  R   replaced
+  G   merged
+  C   conflict
+
+[svn][checkout]
+
+  svn checkout --revision {2002-02-17}
+
+  svn checkout http://...../dir1/dir2/dir3
+  (just checkout that dir)
+
+  svn checkout <sourceDir> <targetDir>
+  (put the checkout stuffs in the targetDir)
+
+  svn checkout file://<SVN-REPO-SOURCES>/<new-project> <new-project>
+
+  svn checkout file:///Users/haryadi/local/1/2009b-HDFS/SVN-REPO-SOURCES/fi-new-0.20.0
+
+  svn co svn+ssh://srl.cs.berkeley.edu/projects/faultInjection/hdfs
+
+  svn checkout svn+ssh://login.eecs.berkeley.edu/home/eecs/haryadi/SVN-REPO-SOURCES/hdfs/cloudera-fi-0.20.2+737
+
+  svn checkout svn+ssh://bteam@dhcp-153-95.eecs.berkeley.edu/Users/bteam/1/SVN-REPO-SOURCES/fateDestini/haryadi/cloudera-fi-0.20.2+737
+
+
+[svn][add]
+
+  svn add new-dir (in your working directory)
+ 
+  this way the svn know that newdir has been added
+
+
+[svn][delete]
+
+[svn][copy]
+
+  rather than: cp -r, svn add, just use this svn copy
+
+[svn][move]
+
+  rather than: mv, svn delete, svn add, just use this svn move
+
+[svn][status]
+
+  check your status
+  
+  flags: A, C, D, M, X, ?, !, ~
+
+
+[svn][revert]
+
+   Removing conflict, run:
+   mv <offending-file> /somewhere-safe/
+   svn cleanup
+   svn up
+   svn status
+   touch <offending-file>
+   svn revert <offending-file>
+   svn status
+
+[svn][merge]
+[svn][resolved]
+
+
+[svn][dump/move repository to new servers]
+  
+  svnadmin dump <old-repository> > repo_name.svn_dump
+  svnadmin create <new-repository>
+  svnadmin load <new-repository> < repo_name.svn_dump
+
+[][]
+[][]
+[][]
+[][]
+[][]

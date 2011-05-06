@@ -1,0 +1,32 @@
+#!/bin/sh
+
+if [ $# != 1 ]; then
+	echo "Usage: allCnode <num of nodes to run>"
+	exit
+fi
+ 
+numNodes=$1
+HOME_DIR=`dirname $0`/..
+cd $HOME_DIR
+i=0
+while [ $i -lt $numNodes ]
+do
+	if [ "$i" -eq "0" ]
+	then
+		bin/cassandra -p $i &
+	else
+                bin/cnode $i &
+	fi
+	i=`expr $i + 1`
+done
+
+#for ((i=0; i <= numNodes ; i++ ))
+#do
+#	if [ $i == 0 ] 
+#	then
+#		bin/cassandra -p $i &
+#	else
+#		bin/cnode $i &
+#	fi
+#done
+

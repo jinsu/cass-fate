@@ -207,7 +207,7 @@ public final class Util {
   public static void println(PrintStream ps, String msg) {
     print(ps, msg + "\n");
   }
-  
+
   public static void sleepWhileExperimentRunning(String who) {
 
     boolean sleep = true;
@@ -251,25 +251,25 @@ public final class Util {
 
     String msg = "";
     try {
-      
+
       String line;
-      
+
       Process p = Runtime.getRuntime().exec(cmd);
       BufferedReader input =new BufferedReader
-        (new InputStreamReader(p.getInputStream()));      
-      
+        (new InputStreamReader(p.getInputStream()));
+
       while ((line = input.readLine()) != null) {
         msg = msg + line + "\n";
       }
-      
+
       input.close();
-      
+
       //JINSU HACK
       //JINSU: I was getting TOO MANY FILE OPENED...
       p.getErrorStream().close();
       p.getOutputStream().close();
     } catch (Exception e) {
-      System.out.println("runcmd!!! " + e); 
+      System.out.println("runcmd!!! " + e);
       //System.err.println("runcmd!!!");
     }
 
@@ -350,7 +350,7 @@ public final class Util {
 
   }
 
-  
+
 
   //JINSU : I haven't tested this out thoroughly.
   //tested this for naturalEndpoints list that is not empty.
@@ -366,9 +366,9 @@ public final class Util {
     Iterator<Token> iter = TokenMetadata.ringIterator(tokens, token);
 
     TreeMap ipMap = sortTokens(iter, metadata);
-    
+
     endpoints = getOrderedEndpoints(ipMap, replicas);
-    
+
       /* JINSU for testing purpose
          String elements = "";
          for(InetAddress e : sorted) {
@@ -381,13 +381,13 @@ public final class Util {
       for(InetAddress e : endpoints) {
         debug("Util.orderEndpoints ==>" + e);
       }
-     
-      
-      
+
+
+
       return endpoints;
-    
+
   }
-  
+
   private static TreeMap sortTokens(Iterator<Token> iter, TokenMetadata metadata) {
     TreeMap ipMap = new TreeMap();
 
@@ -404,16 +404,25 @@ public final class Util {
     return ipMap;
   }
 
-  private static ArrayList<InetAddress> getOrderedEndpoints(TreeMap tmap, int replicas) {
-   Iterator<InetAddress> ipIter = tmap.values().iterator();
-   ArrayList<InetAddress> endpoints = new ArrayList<InetAddress>();
-   while (endpoints.size() < replicas && ipIter.hasNext()) {
-     endpoints.add(ipIter.next());
-   }
-   return endpoints;
+private static ArrayList<InetAddress> getOrderedEndpoints(TreeMap tmap, int replicas) {
+    Iterator<InetAddress> ipIter = tmap.values().iterator();
+    ArrayList<InetAddress> endpoints = new ArrayList<InetAddress>();
 
-  }
-  
+    /* This change made so that seed0 is always the client.
+     * And seed1, 2, and 3 always stores the data.
+     */
+    if(ipIter.hasNext()) {
+        //burn off the first item which is seed0
+        ipIter.next();
+    }
+
+    while (endpoints.size() < replicas && ipIter.hasNext()) {
+        endpoints.add(ipIter.next());
+    }
+    return endpoints;
+
+}
+
 }
 
 

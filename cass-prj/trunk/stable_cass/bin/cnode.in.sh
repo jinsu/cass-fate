@@ -70,11 +70,14 @@ FM_BOOT_OPTS="-Xbootclasspath:$FM_WOVENRT"
 # setting up node address and jmx address automatically
 # ------------------------------------------------------
 #nodeAddr=127.0.0.2:8889
-#jmxPort=8082 
-#jmxPort=`expr 8082 + $nodeId`
+#jmxPort=8082
+#jmxPort=`expr 808 + $nodeId`
 #nodePort=`expr 8889 + $nodeId`
 #node0 starts at 127.0.0.1
 #node1 starts at 127.0.0.11
+
+#node0 has 127.0.0.1:8888
+#jmxport=8080
 
 nodePort=`expr 9000 + $nodeId`
 nodeIpLast=`expr 10 + $nodeId`

@@ -200,23 +200,22 @@ public class StorageProxy implements StorageProxyMBean
                 mostRecentRowMutation = rm;
                 String table = rm.getTable();
                 AbstractReplicationStrategy rs = ss.getReplicationStrategy(table);
-                List<InetAddress> naturalEndpoints = ss.getNaturalEndpoints(table, rm.key()); 
-                
+                List<InetAddress> naturalEndpoints = ss.getNaturalEndpoints(table, rm.key());
+
                 //JINSU
                 Util.debug("nep : " + naturalEndpoints.size());
 
 
                 Collection<InetAddress> writeEndpoints = rs.getWriteEndpoints(StorageService.getPartitioner().getToken(rm.key()), table, naturalEndpoints);
-                
+
                 //JINSU
                 Util.debug("wep : " + writeEndpoints.size());
 
                 Multimap<InetAddress, InetAddress> hintedEndpoints = rs.getHintedEndpoints(table, writeEndpoints);
-                
+
 
                 //JINSU
-                Util.debug("hep : "+hintedEndpoints.size());
-                Util.debug("hep => " + hintedEndpoints);
+                Util.debug(hintedEndpoints.size() + " hep => " + hintedEndpoints);
                 Util.debug("token size : " + ss.getTokenMetadata().sortedTokens().size());
 
 
@@ -227,7 +226,7 @@ public class StorageProxy implements StorageProxyMBean
 
                 // avoid starting a write we know can't achieve the required consistency
                 assureSufficientLiveNodes(blockFor, writeEndpoints, hintedEndpoints, consistency_level);
-                
+
                 // send out the writes, as in mutate() above, but this time with a callback that tracks responses
                 final WriteResponseHandler responseHandler = ss.getWriteResponseHandler(blockFor, consistency_level, table);
                 responseHandlers.add(responseHandler);
@@ -496,7 +495,7 @@ public class StorageProxy implements StorageProxyMBean
                 messages[n++] = m;
                 if (logger.isDebugEnabled())
                     logger.debug("strongread reading " + (m == message ? "data" : "digest") + " for " + command + " from " + m.getMessageId() + "@" + endpoint);
-		
+
 		//JINSU
 		 Util.debug("RRPATH strongread reading " + (m == message ? "data" : "digest") + " for " + command + " from " + m.getMessageId() + "@" + endpoint);            }
             QuorumResponseHandler<Row> quorumResponseHandler = new QuorumResponseHandler<Row>(responseCount, new ReadResponseResolver(command.table, responseCount));
@@ -515,10 +514,10 @@ public class StorageProxy implements StorageProxyMBean
             try
             {
                 long startTime2 = System.currentTimeMillis();
-                
+
                 //JINSU
                 //get() calls responseResolver.resolve
-                
+
                 row = quorumResponseHandler.get();
                 if (row != null)
                     rows.add(row);
@@ -534,7 +533,7 @@ public class StorageProxy implements StorageProxyMBean
             //THIS IS WHERE YOU CHECK FOR DIGEST MISMATCH FOR CONSISTENCY > ONE.
             //DIGEST mismatch so the mismatch could be old or new.
             //get the actual data from the endpoint i.
-            
+
             catch (DigestMismatchException ex)
             {
                 if (DatabaseDescriptor.getConsistencyCheck())
@@ -544,12 +543,12 @@ public class StorageProxy implements StorageProxyMBean
 
                     //JINSU
                     Util.debug("RRPATH SP.strongRead() : Digest mismatch handling for "+ ex);
-                    
-                    
+
+
                     int responseCount = determineBlockFor(DatabaseDescriptor.getReplicationFactor(command.table), consistency_level);
                     QuorumResponseHandler<Row> qrhRepair = new QuorumResponseHandler<Row>(responseCount, new ReadResponseResolver(command.table, responseCount));
                     Message messageRepair = command.makeReadMessage();
-			
+
 			//JINSU from
 			for(InetAddress ep : commandEndPoints.get(i)) {
 				Util.debug("RRPATH SP.strongRead() : sending ReadRepair message to " + ep);

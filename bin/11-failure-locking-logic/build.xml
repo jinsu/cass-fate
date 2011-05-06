@@ -1,0 +1,30 @@
+
+<project name="test" default="run" basedir=".">
+  
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+  
+  <target name="init" >
+    <tstamp/>
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <javac srcdir="${src}" destdir="${build}" debug="yes"/>
+  </target>
+  
+  <target name="run" depends="compile">
+    <java classname="org.fi.Main"
+          classpath="build"
+          fork="true"/>
+  </target>
+
+
+  <target name="clean">
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+
+</project>
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+machine=dhcp-153-95.eecs.berkeley.edu
+
+echo ""
+echo "ssh jinsu@$machine"
+ssh jinsu@$machine
+
+
+

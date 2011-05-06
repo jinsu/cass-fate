@@ -1,0 +1,48 @@
+
+
+- go to the repository server folder
+
+    cd <SVN-REPO-SOURCES>
+    svnadmin create <new-project>
+
+- then go to the source you want to import
+  then must make 3 dirs: branches, tags, trunk
+  and put all source files in trunk
+
+    cd <origin-dir>
+    mkdir trunk
+    mv * trunk/
+    mkdir branches
+    mkdir tags
+
+- import 
+
+    svn import <origin-dir> file://<SVN-REPO-SOURCES>/<new-project> -m "initial import"
+
+- now create a working directory, by checking out
+
+    cd <the-parent-dir-where-you-want-to-modify-the-project>
+
+    svn checkout file://<SVN-REPO-SOURCES>/<new-project> <new-project>
+
+   svn checkout http://svn.example.com/repos/calc
+   (some options: file:// http:// https:// svn:// svn+ssh:// )
+
+- now svn-working is your working directory, do all work there
+
+- then just go inside your working directory, do whatever you want
+  there, and you can do anything below in any directory in the project:
+
+    % svn diff
+
+    % svn commit
+
+  (don't forget to set $SVN_EDITOR to emacs)
+
+  (must do at the root to propagate everything)
+
+    % svn update
+    (not used if working alone)
+
+
+

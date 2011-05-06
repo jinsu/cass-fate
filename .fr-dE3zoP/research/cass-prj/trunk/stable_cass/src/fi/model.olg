@@ -1,0 +1,180 @@
+program model;
+
+
+
+
+// ####################################################################
+// ####################################################################
+// ####                                                            ####
+// ####                 GENERAL                                    ####
+// ####                                                            ####
+// ####################################################################
+// ####################################################################
+
+// reset <Random>
+define(reset, {Integer});
+
+// server_storage <PathServer, StorageFile, Status>
+// user_state <PathUser>
+// storage_file <StorageFile>
+
+delete dead_nodes(A, B)        :- reset(_), dead_nodes(A, B);
+delete user_state(A)           :- reset(_), user_state(A);
+delete storage_file(A)         :- reset(_), storage_file(A);
+delete server_storage(A, B, C) :- reset(_), server_storage(A, B, C);
+
+  
+
+
+
+
+
+
+
+// ####################################################################
+// ####################################################################
+// ####                                                            ####
+// ####                 NETWORK MODEL                              ####
+// ####                                                            ####
+// ####################################################################
+// ####################################################################
+
+// *************************************************** REAL TABLE: 
+
+// dead_nodes <NodeId, ObservedBy>
+define(dead_nodes, keys(0,1), {String, String});
+
+
+// *************************************************** EVENT TABLE:
+
+
+
+// failed_connection <NodeId, ObservedBy>
+define(failed_connection, {String, String});
+
+// returned_node <NodeId>
+define(returned_node, {String});
+
+
+// *************************************************** EVENTS:
+
+// If someone sees a failed connection to NodeId, and FAAS
+// already killed that node, then mark dead_nodes NodeId
+// seen by the new ObservedBy (e.g. "Client")
+public
+  dead_nodes(NodeId, ObservedBy) :-
+  failed_connection(NodeId, ObservedBy),
+  dead_nodes(NodeId, "FAAS");
+
+
+
+
+
+
+// ####################################################################
+// ####################################################################
+// ####                                                            ####
+// ####                 STORAGE MODEL                              ####
+// ####                                                            ####
+// ####################################################################
+// ####################################################################
+
+
+// *************************************************** REAL TABLE: 
+
+// server_storage <PathServer, StorageFile, Status>
+define(server_storage, keys(0,1), {String, String, String}); 
+
+// user_state <PathUser>
+define(user_state, keys(0), {String});
+
+// storage_file <StorageFile>
+define(storage_file, keys(0), {String});
+
+
+
+// *************************************************** EVENT TABLE:
+
+// XXX: I don't need event that directly changes the table
+
+// add_path_server <PathServer, StorageFile, Status>
+define(add_path_server, {String, String, String}); 
+
+// truncate_storage_file <StorageFile>
+define(truncate_storage_file, {String});
+
+// add_path_user <PathUser>
+define(add_path_user, {String});
+
+// add_storage_file <StorageFile>
+define(add_storage_file, {String});
+
+// rename_storage_file <Source, Dest>
+define(rename_storage_file, {String, String});
+
+
+// *************************************************** EVENTS:
+
+// EVENT: add path to the server state
+public
+server_storage(PathServer, StorageFile, Status) :- 
+  add_path_server(PathServer, StorageFile, Status);
+
+// EVENT: add path to user state
+public
+user_state(PathUser) :- 
+  add_path_user(PathUser);
+
+// EVENT: add storage file to show it exists
+public
+storage_file(StorageFile) :-
+  add_storage_file(StorageFile);
+
+// EVENT: truncate storage file
+public
+delete
+  server_storage(Path, StorageFile, Status) :-
+  truncate_storage_file(StorageFile),
+  server_storage(Path, StorageFile, Status);
+
+// EVENT: rename storage file
+// couple of things must happen here: (1, 2, 3)
+
+// 1) first all metadata in server_storage that stored in
+//    the source file needs to be moved to target file
+public
+server_storage(Path, DestFile, Status) :-
+  rename_storage_file(SourceFile, DestFile),
+  server_storage(Path, SourceFile, Status);
+
+// 2) since metadata could be replicated in many storage files,
+//    the keys for server_storage includes the storage files,
+//    and hence the move in (1) does not delete the Source File
+//    so let's delete explicitly
+public
+delete
+  server_storage(Path, SourceFile, Status) :-
+  rename_storage_file(SourceFile, _),
+  server_storage(Path, SourceFile, Status);
+
+// 2b) then clean up old entries from the destination file
+public
+delete
+  server_storage(Path, DestFile, Status) :-
+  rename_storage_file( _, DestFile),
+  server_storage(Path, DestFile, Status);
+
+
+// 3) add dest storage file to the storage_file table
+public
+storage_file(DestFile) :-
+  rename_storage_file(_, DestFile);
+
+// 4) delete source storage file from the storage_file table
+public
+delete
+  storage_file(SourceFile) :-
+  rename_storage_file(SourceFile, _),
+  storage_file(SourceFile);
+
+

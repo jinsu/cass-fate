@@ -133,7 +133,7 @@ aspect contextOrigin {
   		System.out.println("&&&Outbound socket.new cut");
   	}
   	Util.addIpHistory(lp);
-  	//Util.addIpHistory(ep);
+  	Util.addIpHistory(ep);
   	Object tmp = proceed(ep, eport, lp, lport);
   	if (tmp instanceof Socket) {
 			Socket s = (Socket) tmp;

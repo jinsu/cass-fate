@@ -1,0 +1,10 @@
+
+
+add to your .bashrc or .cshrc
+
+.bashrc:
+PATH="$PATH:~/bin/"
+
+.cshrc:
+set path = ( $path ~/bin )  
+

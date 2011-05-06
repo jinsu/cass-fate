@@ -13,7 +13,7 @@ import java.util.TreeMap;
 
 
 public class ClientReadRepairWorkload implements Workload {
-  
+
   private Driver     driver;
   private Cass       cass;
   private Utility    u;
@@ -43,32 +43,32 @@ public class ClientReadRepairWorkload implements Workload {
 
     // 1. setup for this specific workload
     preSetup();
-    
+
 
     // 3. the exact workload where we want to run with failure
     runWithFailure();
-    
-    // 5. run post setup 
+
+    // 5. run post setup
     postSetup();
   }
-  
-  
+
+
   // *******************************************
   public void runWithFailure() {
     //TODO remove this
     //temporary measure
     u.createNewFile(Driver.EXPERIMENT_RUN_FLAG);
-    
+
     //create a flag for this repairworkload
     u.createNewFile(Driver.READ_REPAIR_FLAG);
 
     // get entry which is reading the data.
     String key = String.format("key-%03d", exp.getExpNum());
-	u.println("performing consistency all");
-    cass.getEntry(key, exp, "all");
-//	u.println("performing consistency one");
-  //  cass.getEntry(key, exp, "one");
-   // u.sleep(5000);
+	//u.println("performing consistency all");
+    //cass.getEntry(key, exp, "all");
+	u.println("performing consistency one");
+    cass.getEntry(key, exp, "one");
+    u.sleep(3000);
 
     //delete the repair flag
     u.deleteFile(Driver.READ_REPAIR_FLAG);
@@ -89,43 +89,43 @@ public class ClientReadRepairWorkload implements Workload {
       cass.setColumnFamily(COLUMNFAMILY);
       cass.setColumnPath(COLUMNPATH);
 
-    
-    
+
+
     // 2. enable failures (and optimizer)
     Driver.enableFailureManager();
     Driver.enableClientOptimizer();
     Driver.enableFrog();
     Driver.enableCoverage();
-    
+
     // 3. let's make sure, we setup the connection before we go
     // into the run with failure
     cass.assertConnection();
 
     // let's insert a keypair that we are going to test for the
     // read repair functionality.
-    
+
     String key = String.format("key-%03d", exp.getExpNum());
     cass.insertEntry(key, VALUE , exp);
 
   }
 
   // *******************************************
-  public void postSetup() {    
+  public void postSetup() {
 
     // 4. stop the failure
     Driver.disableCoverage();
     Driver.disableFrog();
     Driver.disableFailureManager();
     Driver.disableClientOptimizer();
-    
+
     // get entry
     String key = String.format("key-%03d", exp.getExpNum());
     //cass.getEntry(key, exp);
-    
+
     // then delete the file
     cass.delete(key, exp);
-    
-    
+
+
     //Doesn't work when the experiment fails because the folder name changes to wiped-exp-..s.dfa
     //REMOVE THIS LATER
     		//JINSU: I want to see the out file for successful this experiment.
@@ -143,8 +143,8 @@ public class ClientReadRepairWorkload implements Workload {
 				u.copyFile(from+"node1.out", to+"/node1.out");
 				u.copyFile(from+"node2.out", to+"/node2.out");
 				u.copyFile(from+"node3.out", to+"/node3.out");
-    
+
   }
 
-  
+
 }
