@@ -20,13 +20,13 @@ public class FMDriver {
 
       // this option is used when we run this normally
       // if (cmd.equals(enableFailureArg))  {
-      // enableFailure = true; 
+      // enableFailure = true;
       // System.out.println("  Failure is ON ... !!!");
       // }
 
       // else {
       // Util.ERROR("Unrecognized command arg [" + cmd + "]");
-      // System.exit(0);      
+      // System.exit(0);
       // }
     }
   }
@@ -36,10 +36,9 @@ public class FMDriver {
 
 
     System.out.println("FMDriver.Main: Starting ...");
-    
+
     // parseArguments(args);
-    System.out.println("hi234"); 
-    // create new falure scheduler instance                                   
+    // create new falure scheduler instance
     FMServer fm = new FMServer();
     System.out.println("FMDRIVER.Main: before calling fm.start()");
     System.out.flush();

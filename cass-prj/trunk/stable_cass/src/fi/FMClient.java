@@ -126,13 +126,13 @@ public class FMClient {
   private static synchronized FailType syncedTryFiHook(FMJoinPoint fjp) {
 
 		//System.out.println("- stf (0)\n");
-		
+
     if(!isExperimentRunning()) {
 			//System.out.println("- stf (1)\n");
 
 			return FailType.NONE;
 		}
-		
+
 		// TODO: this is a bit wrong, because for FNFException ..
     // which is thrown by RAF.new FOS.new .. we haven't seen
     // the context so it's still null, but we might want to
@@ -152,15 +152,15 @@ public class FMClient {
     return ft;
 
   }
-	
-	
+
+
 	private static boolean isExperimentRunning() {
 		File f = new File(FMLogic.EXPERIMENT_RUN_FLAG);
 		if(f.exists())
 			return true;
 		return false;
 	}
-	
+
 
   // ******************************************************
   // context is okay to be null here because we're not weaving
@@ -178,7 +178,7 @@ public class FMClient {
 
       // FIXME, hack:
       // check fi cwc is an instance of file or not
-      // if so let's get the absolute path .. 
+      // if so let's get the absolute path ..
       // the reason why File doesn't have context is because
       // sometimes File is obtained from File.listFile()
       ClassWC cwc = fjp.getClassWC();
@@ -187,8 +187,8 @@ public class FMClient {
 	f.context = new Context(f.getAbsolutePath());
 	return false;
       }
-      
-      // 
+
+      //
       Util.WARNING(fjp.getJoinPoint(), "null context at failure hook (FMClient)");
       return true;
     }
@@ -257,8 +257,8 @@ public class FMClient {
     // So, do check each argument
     // ****************************
     FMAllContext fac = new FMAllContext(fjp, ctx, fst);
-		
-		
+
+
     FailType ft = sendContextOptimizer(fac);
 
 
@@ -272,7 +272,7 @@ public class FMClient {
     // ****************************
     // 4. let's process the failure
     // ****************************
-    
+
     printFailType(fjp, fst, ctx, ft);
     processFailure(fjp, fst, ctx, ft);
 
@@ -294,7 +294,7 @@ public class FMClient {
     // we're checking this to the fm server logic
     // but remember we still need to check for persistent failures
     if (isClientOptimizeFlagExist()) {
-      
+
       if (!FMLogic.isEnableFailureFlagExist()) {
 	return FailType.NONE;
       }
@@ -381,7 +381,7 @@ public class FMClient {
     // 1) let's do the forceful way, use kill
     // String cmd = String.format("kill -s KILL %5s", pidToCrash);
     // String cmdout = Util.runCommand(cmd);
-		
+
 		//#################################
 		//#################################
 		//JINSU: We are crashing a node so all nodes aren't connected anymore.
@@ -390,7 +390,7 @@ public class FMClient {
 		//#################################
 		org.apache.cassandra.Util.debug("In FMClient processCrash(), deleting nodeConnectedFlag");
 		Util.deleteNodeConnectedFlag();
-		
+
     // )2 or, let's do the normal way
     System.exit(FAAS_SYSTEM_EXIT_STATUS);
     Util.ERROR("if you see this, we are not crashing properly");
@@ -559,22 +559,22 @@ public class FMClient {
 
       fac.write(dos);
       dos.close();
-      
+
       // System.out.format("- Sending %d \n", randId);
-      
+
       Object[] params = new Object[]{new Integer(randId)};
       Integer result = 0;
       result = (Integer) fmClient.execute("FMServer.sendContext", params);
-      
+
       ft = Util.intToFailType(result);
-      
+
       // System.out.format("- Received %d %s \n", result, ft);
-      
+
       f.delete();
 
     } catch (Exception e) {
       f.delete();
-      
+
       Util.EXCEPTION("RPC client error", e);
       // Util.FATAL("RPC client error"); // it's okay that if we cannot connect
     }
@@ -641,4 +641,23 @@ public class FMClient {
 
   */
 
+
+
+  /////////////////////////////////////////////////
+  /////////////////////////////////////////////////
+  //////////// Jinsu's Cassandra Utility //////////
+  /////////////////////////////////////////////////
+  /////////////////////////////////////////////////
+
+  public static FailType doCfiHook(FMJoinPoint fjp, Context c) {
+        Thread t = Thread.currentThread();
+        FMStackTrace fst = new FMStackTrace(t.getStackTrace());
+        FMContext ctx = new FMContext(c.getTargetIO(), c.getMessageType());
+        ctx.setCutpointRandomId();
+        FMAllContext fac = new FMAllContext(fjp, ctx, fst);
+        //System.out.println(fac);
+
+        FailType ft = sendContextViaXmlRpc(fac);
+        return ft;
+  }
 }

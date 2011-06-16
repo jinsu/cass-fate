@@ -35,17 +35,17 @@ public class Coverage {
 
   //********************************************
   private static void setup() {
-    
+
     if (out == null) {
       try {
 	out = new BufferedWriter(new FileWriter(RAW_COVERAGE_FILE));
-	
+
       } catch (IOException e) {
 	Util.EXCEPTION(" can't open " + RAW_COVERAGE_FILE, e);
 	Util.ERROR    (" can't open " + RAW_COVERAGE_FILE);
       }
     }
-    
+
     if (statps == null) {
       try {
         FileOutputStream fos = new FileOutputStream(STAT_FILE);
@@ -72,10 +72,10 @@ public class Coverage {
   public static void recordBeforeFilter(FMAllContext fac) {
 
 
-    
+
     setup(); // !!!
-    
-    
+
+
     String key = String.format("%s:%d",
                                fac.fjp.getFileName(),
                                fac.fjp.getLine());
@@ -96,6 +96,10 @@ public class Coverage {
                     fac.fjp.getFileName(),
                     fac.fjp.getLine()) +
       //String.format("   %s \n", fac.fjp.getJoinPointStr());
+
+      //JINSU HACK
+      String.format("     [messageType] %s\n", fac.ctx.getMessageType());
+
       String.format("\n");
 
 
@@ -139,17 +143,17 @@ public class Coverage {
   // KeyJp:  hash of source location and join point
   // ********************************************
   public static void recordStatAfterFilter(FMAllContext fac, FailType ft, FIState fis) {
-    
+
     if (!isEnableCoverageFlagExist())
       return;
-    
+
     // I always want to do this!!
     recordCompleteHashId(fac, fis);
 
     recordStaticHashId(fac, fis);
 
 
-    // just disable this, take too much storage ... 
+    // just disable this, take too much storage ...
     // recordToTmpFmStat(fac, ft, fis);
 
 
@@ -157,12 +161,12 @@ public class Coverage {
 
   // *************************************************
   public static void recordToTmpFmStat(FMAllContext fac, FailType ft, FIState fis) {
-    
+
     if (!FMServer.debug)
       return;
-    
+
     setup(); // !!!
-    
+
     prepare(fac, ft);
     recordSourceLoc(fac, ft);
     recordJoinPoint(fac, ft);
@@ -237,15 +241,15 @@ public class Coverage {
 
   // *************************************************
   private static void recordCompleteHashId(FMAllContext fac, FIState fis) {
-    
+
     File f = getCompleteHashIdFile(fis.getCompleteHashId());
     if (f.exists()) {
       return;
     }
-    
+
     // just create this first, in case, we're doing crashes
     Util.createNewFile(f);
-    
+
     String buf = getCompleteHashIdContent(fac, fis);
     Util.stringToFileContent(buf, f);
   }
@@ -258,29 +262,29 @@ public class Coverage {
 
     buf += "\n";
     buf += "# ctx / fsj / fst \n";
-    buf += "# ------------------------------------------\n";    
+    buf += "# ------------------------------------------\n";
     buf += fac.ctx + "\n";
     buf += fac.fjp + "\n";
     buf += fac.fst + "\n";
     buf += "\n";
-    
-    buf += "\n";    
+
+    buf += "\n";
     buf += "# Complete Hash Id Str: \n";
-    buf += "# ------------------------------------------\n";    
+    buf += "# ------------------------------------------\n";
     buf += fis.getCompleteHashIdStr();
     buf += "\n";
-    
+
     buf += "\n";
     buf += "# Cross-info: \n";
     buf += "# ------------------------------------------\n";
     buf += "\n";
-    
+
     buf += "The completeHashId is  : [[ " + fis.getCompleteHashId() + " ]] \n";
     buf += "The staticHashId       : [[ " + fis.getStaticHashId()   + " ]] \n";
-    
+
     return buf;
   }
-  
+
 
   // ********************************************
   private static File getCompleteHashIdFile(int hashId) {
@@ -294,20 +298,20 @@ public class Coverage {
 
   // *************************************************
   private static void recordStaticHashId(FMAllContext fac, FIState fis) {
-    
+
     File f = getStaticHashIdFile(fis.getStaticHashId());
     if (f.exists()) {
       return;
     }
-    
+
     // just create this first, in case, we're doing crashes
     Util.createNewFile(f);
-    
+
     String buf = getStaticHashIdContent(fac, fis);
     Util.stringToFileContent(buf, f);
   }
 
-  
+
   // ********************************************
   private static String getStaticHashIdContent(FMAllContext fac, FIState fis) {
 
@@ -315,29 +319,29 @@ public class Coverage {
 
     buf += "\n";
     buf += "# fsj / fst \n";
-    buf += "# ------------------------------------------\n";    
+    buf += "# ------------------------------------------\n";
     buf += fac.ctx + "\n";
     buf += fac.fjp + "\n";
     buf += fac.fst + "\n";
     buf += "\n";
-    
+
     buf += "\n";
     buf += "# Static Hash Id Str: \n";
-    buf += "# ------------------------------------------\n";    
+    buf += "# ------------------------------------------\n";
     buf += fis.getStaticHashIdStr();
     buf += "\n";
-    
+
     buf += "\n";
     buf += "# Cross-info: \n";
     buf += "# ------------------------------------------\n";
     buf += "\n";
-    
+
     buf += "The completeHashId is  : [[ " + fis.getCompleteHashId() + " ]] \n";
     buf += "The staticHashId       : [[ " + fis.getStaticHashId()   + " ]] \n";
-    
+
     return buf;
   }
-  
+
 
   // ********************************************
   private static File getStaticHashIdFile(int hashId) {

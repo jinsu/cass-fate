@@ -42,7 +42,7 @@ public class Util {
   private static int dfsDatanodePort = 50010;
   private static int dfsDatanodeIpcPort = 50020;
   private static int dfsNamenodePort = 9000;
-	
+
 	//jinsu cass specific nodes
 	private static int cassNodePort = 9000;
 	private static int cassStorPort = 7000;
@@ -137,7 +137,7 @@ public class Util {
       Util.FATAL("getRpcFile Not exist: " + dir.getAbsolutePath());
       }
     }
-    
+
     String fname = String.format("rpc-%08d", randId);
     File f = new File(dir, fname);
     return f;
@@ -406,7 +406,7 @@ public class Util {
   // .../tmp/blk_
   //********************************************
   public static boolean isTmpMeta(String targetIO) {
-    if (isBlockFile(targetIO) && targetIO.contains(".meta") && 
+    if (isBlockFile(targetIO) && targetIO.contains(".meta") &&
 	targetIO.contains("/tmp/blk_"))
       return true;
     return false;
@@ -417,7 +417,7 @@ public class Util {
   //   current/blk_2387194899189267252_1001.meta_tmp1002
   //********************************************
   public static boolean isCurrentTmpMeta(String targetIO) {
-    if (isBlockFile(targetIO) && targetIO.contains(".meta") && 
+    if (isBlockFile(targetIO) && targetIO.contains(".meta") &&
 	targetIO.contains("_tmp") && targetIO.contains("current"))
       return true;
     return false;
@@ -470,26 +470,26 @@ public class Util {
       return true;
     return false;
   }
-	
+
 	//##############################################################################
 	//Jungmin change made
-	
+
 	//********************************************
 	public static boolean isLogFile(String targetIO) {
     if (targetIO.contains("/commitLogs/CommitLog") && targetIO.contains(".log"))
       return true;
     return false;
   }
-	
+
 	//********************************************
   public static boolean isDiskIO(String targetIO) {
     if (targetIO.contains("/tmp/fi/cassandra/node"))
       return true;
     return false;
   }
-	
+
 	//##############################################################################
-	
+
 
 	//##########################################################
 	//JINSU : changes
@@ -501,7 +501,7 @@ public class Util {
 		}
 		return true;
 	}
-	
+
 	//#########################################################
 
   //********************************************
@@ -545,14 +545,14 @@ public class Util {
 
     int support = 10;
     int dnId;
-		
+
 		//jinsu dfsNamenodePort and cassNodePort are the same so i want to do this first.
 		// cassandra node
 		//if (port >= cassNodePort && port < cassNodePort + support) {
 		//	int cnode = getCnodeIdFromPort(port);
 		//	return String.format("Node%d", cnode);
 		//}
-		
+
     // namenode
     if (port == dfsNamenodePort) {
       return String.format("NameNode", port);
@@ -573,8 +573,8 @@ public class Util {
       dnId = getDnIdFromIpcPort(port);
       return String.format("DataNode-%d:IPC", dnId, port);
     }
-		
-		
+
+
 
     // return the port whatever it is
     return String.format("Unknown-Port-%d", port);
@@ -590,8 +590,8 @@ public class Util {
     }
     return ctx;
   }
-  
-  
+
+
   // jinsu
   // *******************************************
   public static String getNetIOContextFromInetAddr(InetAddress iaddr) {
@@ -620,7 +620,7 @@ public class Util {
     }
     return ctx;
   }
-  
+
   //jinsu get nodeId using ip address
   //***************************************************
   public static String getNodeIdFromINetAddr(InetAddress iaddr) {
@@ -667,7 +667,7 @@ public class Util {
       return "0";
     }
   }
-	
+
 	//jinsu for cassandra to be compatible with getNodeIdFromKnownPort function
 	private static int getCnodeIdFromPort(int port) {
 	//look inside sockethistory and get it from there
@@ -711,7 +711,7 @@ public class Util {
       tmpPid += nodeId.replace("DataNode", "pdatanode");
     if (nodeId.contains("NameNode"))
       tmpPid += nodeId.replace("NameNode", "namenode");
-    
+
     //jinsu making changes appropriate for cassandra node naming
     if (nodeId.contains("Node"))
     	tmpPid = FMLogic.TMPFI + "pids/" + nodeId.toLowerCase();
@@ -743,7 +743,7 @@ public class Util {
 			pidCacheMap.put(pid, nodeId);
 			return nodeId;
 		}
-		
+
 		//jinsu it prints too many lines...
 		if(ENABLE_OLD) {
 		/*
@@ -778,14 +778,14 @@ public class Util {
       pidCacheMap.put(pid, nodeId);
       return nodeId;
     }
-    */		 
+    */
 		}
     return nodeId;
 
   }
-  
+
   //jinsu making a function to get how many nodes are running.
-  
+
   private static int getNumCassNodes() {
   String fname = String.format(FMLogic.TMPFI + "pids/");
   File f = new File(fname);
@@ -793,12 +793,12 @@ public class Util {
   	String[] children = f.list();
   	if(DEBUG) {
   		System.out.print("In " + FMLogic.TMPFI + "pids/... [ ");
-  		if(children != null) 
+  		if(children != null)
  				System.out.print(children);
   		System.out.print(" ] \n");
   	}
   	int rtNum = 0;
-  	if(children != null) { 
+  	if(children != null) {
 			for(String child: children) {
 				if (child.contains("node")) {
 					rtNum++;
@@ -806,11 +806,11 @@ public class Util {
 			}
   	}
   	return rtNum;
-  	
+
 	}
 	return -1;
 	}
-  
+
   //jinsu making a function to check all node#.pid files.
   private static int getCnodeIdFromPid(String pid) {
   	//start from 0!!
@@ -822,7 +822,7 @@ public class Util {
   	for (int i = 0; i < max_nodes; i++) {
   		String fname = String.format(FMLogic.TMPFI + "pids/" + "node%d.pid", i);
   		if (isPidMatch(fname, pid))
-  			return i;	
+  			return i;
   	}
   	return -1;
   }
@@ -925,7 +925,7 @@ public class Util {
       }
     } catch (Exception e) {}
   }
-	
+
 	//jinsu adds IP address and to identify nodes
 	//********************************************
   public static void addIpHistory(InetAddress iaddr) {
@@ -937,7 +937,7 @@ public class Util {
       //jinsu
       File ipf = new File(fname);
 
-      
+
       boolean exists_but_dif_node = ipf.exists() && !nodeId.equalsIgnoreCase(fileContentToString(fname).trim());
 			if(DEBUG) {
 				System.out.println("ipf exists? " + ipf.exists());
@@ -951,7 +951,7 @@ public class Util {
 		    if(DEBUG) {
 		    System.out.println("&&&Added IP : " + iaddr.getHostAddress() + " hashCode : " + iaddr.hashCode());
 		    //jinsu debugging
-		    
+
 				  File f = new File(fname);
 				  System.out.println("&&&Checking if file got created... file " + fname + " f.exists? == " + f.exists());
 		    }
@@ -978,6 +978,7 @@ public class Util {
     nodeId = nodeId.replace("\n","");
     return nodeId;
   }
+
 
 
 

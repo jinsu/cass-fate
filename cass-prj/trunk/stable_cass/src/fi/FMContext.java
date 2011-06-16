@@ -21,6 +21,7 @@ public class FMContext {
   private String targetIO = "";
   private String nodeId = "Unknown";
   private int pid = 0;
+  private String messageType = "Undecided";
 
 
   //********************************************
@@ -35,6 +36,7 @@ public class FMContext {
     out.writeUTF(targetIO);
     out.writeUTF(nodeId);
     out.writeInt(pid);
+    out.writeUTF(messageType);
 
     // hadoop rpc
     // out.writeInt(cutpointRandomId);
@@ -50,6 +52,7 @@ public class FMContext {
     targetIO = in.readUTF();
     nodeId = in.readUTF();
     pid = in.readInt();
+    messageType = in.readUTF();
 
     // hadoop rpc
     // cutpointRandomId = in.readInt();
@@ -72,6 +75,11 @@ public class FMContext {
   public FMContext(String s) {
     targetIO = new String(s);
     setAttributes();
+  }
+
+  public FMContext(String s, String mtype) {
+   this(s);
+   setMessageType(mtype);
   }
 
   private void setAttributes() {
@@ -128,13 +136,21 @@ public class FMContext {
       tmp = tmp.replaceFirst("/tmp/" + FMLogic.CASS_USERNAME, "/thh/");
     if (targetIO.contains(FMLogic.CASS_STORAGE_DIR))
       tmp = tmp.replaceFirst(FMLogic.CASS_STORAGE_DIR, "/rhh/");
-    String buf = String.format("  [targetIO][%s] at *%s* \n", tmp, nodeId);
+    String buf = String.format("  [targetIO][%s] at *%s* :: [%s] message \n", tmp, nodeId, messageType);
     return buf;
   }
 
 
   public void setTargetIO(String f) {
     targetIO = new String (f);
+  }
+
+  public String getMessageType() {
+    return messageType;
+  }
+
+  public void setMessageType(String t) {
+    messageType = new String (t);
   }
 
 

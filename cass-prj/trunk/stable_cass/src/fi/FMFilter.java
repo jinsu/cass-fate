@@ -31,6 +31,10 @@ public class FMFilter {
       passFilter = true;
     }
 
+    //JINSU hack for Cassandra corruption to pass by.
+    if (passFilter || cassCorruptTest(fis))
+        passFilter = true;
+
 
     // passFilter = filterWriteBug1(fac, ft, fis);
     // passFilter = filterWriteBug3(fac, ft, fis);
@@ -55,6 +59,13 @@ public class FMFilter {
 
   }
 
+    private static boolean cassCorruptTest(FIState fis) {
+        FMJoinPoint fjp = fis.fjp;
+        FMContext ctx = fis.ctx;
+        if ( ctx.getMessageType().equalsIgnoreCase("Digest") )
+            return true;
+        return false;
+    }
 	// ************************************************************
 	// JINSU: A small filter function that only returns true when the failure type is CRASH and the join place is before.
 	private static boolean filterTest(FMAllContext fac, FailType ft, FIState fis) {
@@ -64,14 +75,14 @@ public class FMFilter {
 		boolean containsCondition = //fjp.getJoinPointStr().contains("DataInputStream.readFully");
 																 ctx.getNodeId().contains("Node0");
 //																&& ctx.getTargetIO().contains("Node0");
-		
-		if(ft == FailType.CRASH 
-		&& fjp.getJoinPlc() == JoinPlc.AFTER 
-//		&& fjp.getJoinIot() == JoinIot.READ 
+
+		if(ft == FailType.CRASH
+		&& fjp.getJoinPlc() == JoinPlc.AFTER
+//		&& fjp.getJoinIot() == JoinIot.READ
 //		&& fjp.getJoinExc() == JoinExc.IO
 //		&& fjp.getJoinRbl() == JoinRbl.NO
 		&& containsCondition) {
-			
+
 				return true;
 			}
 		return false;
@@ -103,7 +114,7 @@ public class FMFilter {
   // Append-Bug 2:
   // http://hdfswiki.pbworks.com/Block-lost-when-primary-crashes-in-recoverBlock
   // Block is lost if primary datanode crashes in the middle tryUpdateBlock.
-  // # available datanode = 2 
+  // # available datanode = 2
   // # replica = 2
   // # disks / datanode = 1
   // # failures = 1

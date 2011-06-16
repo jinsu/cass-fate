@@ -23,7 +23,7 @@ public class FMLogic {
 
   public static final String TMPFI = "/tmp/fi/";
   public static final String CASS_STORAGE_DIR      = TMPFI + "cassandra/";
-  
+
   public static final String FAIL_HISTORY_DIR      = TMPFI + "failHistory/";
   public static final String FLAGS_FAILURE_DIR     = TMPFI + "flagsFailure/";
   public static final String EXP_RESULT_DIR        = TMPFI + "expResult/";
@@ -36,16 +36,16 @@ public class FMLogic {
 	//public static final String CASS_STORAGE_DIR      = TMPFI + "cassandra/";
 	public static final String IP_HISTORY_DIR = TMPFI + "ipHistory/";
 
-	
+
 
   public static final String ENABLE_FAILURE_FLAG  = TMPFI + "enableFailureFlag";
   public static final String CLIENT_OPTIMIZE_FLAG = TMPFI + "clientOptimizeFlag";
   public static final String ENABLE_COVERAGE_FLAG = TMPFI + "enableCoverageFlag";
-	
+
 	public static final String NODES_CONNECTED_FLAG = TMPFI + "nodesConnectedFlag";
 	public static final String EXPERIMENT_RUN_FLAG = TMPFI + "experimentRunning";
 
-  
+
 
   // ########################################################################
   // ########################################################################
@@ -266,7 +266,7 @@ public class FMLogic {
     FIState fis = new FIState(fac, ft);
 
 
- 
+
     if (FMFilter.passServerFilter(fac, ft, fis)) {
 
       // if pass the server filter, we want to measure the stats
@@ -278,6 +278,14 @@ public class FMLogic {
       // so no need to continue ...
       // just check if
       if (isEnableFailureFlagExist()) {
+
+        //JINSU hack for cass corruption
+        //if(fac.ctx.getMessageType().equalsIgnoreCase("Digest")
+        //        && ft == FailType.CORRUPTION ) {
+
+            //System.out.println("POW POW kitty");
+            //System.out.println("FMLogic can run the corruption!!!");
+        //}
 
         FailType retFt = runFailLogic(fac, ft, fis);
         return retFt;

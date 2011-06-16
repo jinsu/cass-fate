@@ -26,7 +26,7 @@ import org.aspectj.lang.reflect.SourceLocation;
 //   1. For constructors:
 //
 //      ClassWC context can only be gotten after we run proceed()
-//      So, ther eis no point to insert fiHook before the proceed()
+//      So, there is no point to insert fiHook before the proceed()
 //
 // ***************************************************
 public aspect fiHooks {

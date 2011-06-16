@@ -37,10 +37,10 @@ import org.apache.xmlrpc.server.*;
 // public class FMServer implements FMProtocol {
 public class FMServer {
 
-  
+
   public static boolean debug = false;
   //public static boolean debug = true;
-  
+
 
 
   // private FrogServer frogServer;
@@ -87,9 +87,9 @@ public class FMServer {
 
     // print and return
     if (debug || true) printFailure(fac, ft);
-    
+
     return ft;
-    
+
   }
 
 
@@ -102,7 +102,6 @@ public class FMServer {
 
   // ***********************************************************
   private static void printAllContext(FMAllContext fac) {
-
 
     // print context
     System.out.println("Receive sendContext: [" + fac.ctx.getCutpointRandomId() + "]\n");
@@ -127,10 +126,10 @@ public class FMServer {
   private static FailType doFail(FMAllContext fac) {
 
     FailType ft = FailType.NONE;
-    
+
     // By default we want to call the fmlogic
     ft = FMLogic.run(fac);
-    
+
 
     // or do manual stuffs
     // boolean isFail = manualFI.doFail_02(fac);
@@ -177,7 +176,7 @@ public class FMServer {
   // ####                                                               ####
   // #######################################################################
   // #######################################################################
-  
+
   public final static int PORT = 16000;
 
 
