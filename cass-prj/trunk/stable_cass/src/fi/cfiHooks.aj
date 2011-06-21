@@ -52,7 +52,8 @@ public aspect cfiHooks {
 
             System.out.println("corrupt :: failType returned :: " + ft);
             //add a check for FailType
-            if (c.getMessageType().equalsIgnoreCase("Digest")) {
+            //if (c.getMessageType().equalsIgnoreCase("Digest")) {
+            if (ft == FailType.CORRUPTION) {
                 byte[] corrupted_digest = result.digest();
                 if(debug) System.out.println("corrupt :: byte array length " + corrupted_digest.length);
                 //Corrupting the digest!

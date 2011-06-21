@@ -472,7 +472,8 @@ aspect contextPassing {
   //Jin-Su Making changes
   pointcut classWCNew()
     : call (ClassWC+.new(..,ClassWC+,..)) &&
-    !within(org.fi.*) && !withincode(* org.apache.cassandra.net.IncomingTcpConnection.run());
+    !within(org.fi.*) && !withincode(* org.apache.cassandra.net.IncomingTcpConnection.run()) 
+    && !withincode(* org.apache.cassandra.db.ReadVerbHandler.doVerb(..));
 
   // pass the context (this is a generic advice)
   Object around() : classWCNew () {

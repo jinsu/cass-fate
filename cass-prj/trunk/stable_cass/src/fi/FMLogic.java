@@ -60,14 +60,32 @@ public class FMLogic {
   public FMLogic() {  }
 
 
+  //JINSU hack for cass corruption
+
+  private static boolean isDigestReadResponse(FMAllContext fac) {
+      if(fac.ctx.getMessageType().equalsIgnoreCase("Digest")
+              && fac.fjp.contains("sendOneWay")) {
+
+          //System.out.println("POW POW kitty");
+          //System.out.println("FMLogic can run the corruption!!!");
+          return true;
+    }
+    return false;
+  }
+
   // *********************************************
   // the brain of fm logic begins. have fun!
   // *********************************************
   public static FailType run(FMAllContext fac) {
 
+      if (isDigestReadResponse(fac)) {
+          return FailType.CORRUPTION;
+      }
+
+
     FailType ft;
 
-    // check if we need to reset anything?
+     // check if we need to reset anything?
     checkResetExperiment();
 
     // generate all possible failures
@@ -279,14 +297,6 @@ public class FMLogic {
       // just check if
       if (isEnableFailureFlagExist()) {
 
-        //JINSU hack for cass corruption
-        //if(fac.ctx.getMessageType().equalsIgnoreCase("Digest")
-        //        && ft == FailType.CORRUPTION ) {
-
-            //System.out.println("POW POW kitty");
-            //System.out.println("FMLogic can run the corruption!!!");
-        //}
-
         FailType retFt = runFailLogic(fac, ft, fis);
         return retFt;
 
@@ -315,12 +325,13 @@ public class FMLogic {
   // *************************************************
   private static FailType runFailLogic(FMAllContext fac, FailType ft, FIState fis) {
 
-
+    System.out.println("corrupt :: rfl1 :: show me FailType => " + ft);
     // if i have reached max fsn ...
     // just continue ...
     if (hasReachedMaxFsn()) {
       return FailType.NONE;
     }
+     System.out.println("corrupt :: rfl2 :: checkpoint");
 
     // let's get current failure number
     int fsn = getCurrentFsn();
@@ -330,7 +341,7 @@ public class FMLogic {
       return FailType.NONE;
     }
 
-
+     System.out.println("corrupt :: rfl3 :: checkpoint");
     // if we reach this point we're doing failure ..
     recordFailure(fac, ft, fis, fsn);
 
@@ -359,9 +370,11 @@ public class FMLogic {
     if (isFsnLocked(fsn)) {
       if (isFsnAndHashMatched(fsn, fis.getHashId())) {
         shouldFail = true;
+        System.out.println("corrupt :: sf1 checkpoint");
       }
       else {
         shouldFail = false;
+        System.out.println("corrupt :: sf2 checkpoint");
       }
     }
     else {
@@ -369,9 +382,12 @@ public class FMLogic {
         // System.out.format("_We have injected %d in the past_\n",
         // fis.getHashId());
         shouldFail = false;
+        System.out.println("corrupt :: sf3 checkpoint");
       }
       else  {
         shouldFail = true;
+        System.out.println("corrupt :: sf4 checkpoint");
+
       }
     }
     return shouldFail;
@@ -413,8 +429,10 @@ public class FMLogic {
   public static boolean hasReachedMaxFsn() {
 
     int maxFsn = getMaxFsn();
-    if (isFsnInjected(maxFsn))
+    if (isFsnInjected(maxFsn)) {
+        System.out.println("corrupt :: hr1 : checkpoint");
       return true;
+    }
     return false;
   }
 
