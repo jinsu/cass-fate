@@ -97,6 +97,8 @@ public class ReadVerbHandler implements IVerbHandler
 
 	//JINSU
 		Util.debug("wRRPATH ReadVerbHanlder doVerb(): Read key " + command.key + "; sending response to " + message.getMessageId() + "@" + message.getFrom());
+        Util.printStackTrace();
+
             MessagingService.instance.sendOneWay(response, message.getFrom());
 
             /* Do read repair if header of the message says so */

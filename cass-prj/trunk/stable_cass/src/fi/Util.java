@@ -35,7 +35,8 @@ import jol.types.table.Table;
 
 public class Util {
 	//jinsu added for testing purpose
-	private static boolean DEBUG = false;
+	//private static boolean DEBUG = false;
+    private static boolean DEBUG = true;
 	private static boolean ENABLE_OLD = true;
 	private static boolean ENABLE_FATAL = true;
 
@@ -222,6 +223,7 @@ public class Util {
     String fullPid = ManagementFactory.getRuntimeMXBean().getName();
     String [] split = fullPid.split("@", 2);
     String pid = split[0];
+    if(DEBUG) System.out.println("getPid : " + pid);
     return pid;
   }
 

@@ -356,6 +356,7 @@
         includes="		    
         org/apache/cassandra/net/OutboundTcpConnection.java,
         org/apache/cassandra/net/IncomingTcpConnection.java,
+        org/apache/cassandra/db/ReadVerbHandler.java,
         contextPassing.aj,
         *.aj, *.java"
         destdir="${build.classes}"

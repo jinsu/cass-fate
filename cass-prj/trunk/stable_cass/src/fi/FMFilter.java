@@ -26,13 +26,13 @@ public class FMFilter {
     //boolean passFilter = true;
 
     FMJoinPoint fjp = fac.fjp;
-
+/*
     if (ft == FailType.CRASH && fjp.getJoinPlc() == JoinPlc.AFTER) {
       passFilter = true;
     }
-
+*/
     //JINSU hack for Cassandra corruption to pass by.
-    if (passFilter || cassCorruptTest(fis))
+    if (passFilter || ( FMLogic.getCurrentFsn() ==1 && cassCorruptTest(fis) ) )
         passFilter = true;
 
 
@@ -62,7 +62,8 @@ public class FMFilter {
     private static boolean cassCorruptTest(FIState fis) {
         FMJoinPoint fjp = fis.fjp;
         FMContext ctx = fis.ctx;
-        if ( ctx.getMessageType().equalsIgnoreCase("Digest") )
+        FailType ft = fis.ft;
+        if ( ctx.getMessageType().equalsIgnoreCase("Digest") && ft == FailType.CORRUPTION)
             return true;
         return false;
     }

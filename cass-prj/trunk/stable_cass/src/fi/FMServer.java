@@ -38,8 +38,8 @@ import org.apache.xmlrpc.server.*;
 public class FMServer {
 
 
-  public static boolean debug = false;
-  //public static boolean debug = true;
+  //public static boolean debug = false;
+  public static boolean debug = true;
 
 
 

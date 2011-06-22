@@ -61,7 +61,8 @@ public class FMLogic {
 
 
   //JINSU hack for cass corruption
-
+   // private boolean debug = false;
+    private static boolean debug = true;
   private static boolean isDigestReadResponse(FMAllContext fac) {
       if(fac.ctx.getMessageType().equalsIgnoreCase("Digest")
               && fac.fjp.contains("sendOneWay")) {
@@ -77,16 +78,19 @@ public class FMLogic {
   // the brain of fm logic begins. have fun!
   // *********************************************
   public static FailType run(FMAllContext fac) {
-
+    /*
       if (isDigestReadResponse(fac)) {
           return FailType.CORRUPTION;
       }
+    */
 
 
     FailType ft;
-
-     // check if we need to reset anything?
+      // check if we need to reset anything?
     checkResetExperiment();
+
+   //JINSU
+   if(debug) System.out.println("FMLogic run : chkpnt 1");
 
     // generate all possible failures
     FailType [] failures = listPossibleFailures(fac);
@@ -145,9 +149,14 @@ public class FMLogic {
     }
 
     // corruption only if iot is read (must after)
+    /*
     if (fac.fjp.getJoinIot() == JoinIot.READ &&
         fac.fjp.getJoinPlc() == JoinPlc.AFTER) {
       corruption = true;
+    }
+    */
+    if (isDigestReadResponse(fac)) {
+        corruption = true;
     }
 
     // crash for read and write (before or after is fine)
@@ -263,6 +272,10 @@ public class FMLogic {
     FailType ft = FailType.NONE;
     if (failures == null)
       return ft;
+
+    //JINSU
+    if(debug) System.out.println("FMLogic tTF : chkpt 1");
+
     for (int i = 0; i < failures.length; i++) {
       ft = tryThisFailure(fac, failures[i]);
       if (ft != FailType.NONE) {
@@ -286,7 +299,8 @@ public class FMLogic {
 
 
     if (FMFilter.passServerFilter(fac, ft, fis)) {
-
+        //JINSU
+        if(debug) System.out.println("FMLogic tThisF : chkpt 1");
       // if pass the server filter, we want to measure the stats
       // that have been filtered ..
       Coverage.recordStatAfterFilter(fac, ft, fis);
@@ -297,12 +311,14 @@ public class FMLogic {
       // just check if
       if (isEnableFailureFlagExist()) {
 
+        if(debug) System.out.println("FMLogic tThisF : chkpt 2");
+
         FailType retFt = runFailLogic(fac, ft, fis);
         return retFt;
 
       }
     }
-
+    if(debug) System.out.println("FMLogic tThisF : chkpt 3");
     return FailType.NONE;
   }
 

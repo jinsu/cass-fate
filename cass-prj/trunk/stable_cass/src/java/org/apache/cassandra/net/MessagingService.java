@@ -50,6 +50,8 @@ import org.apache.cassandra.utils.GuidGenerator;
 import org.apache.cassandra.utils.SimpleCondition;
 import org.cliffc.high_scale_lib.NonBlockingHashMap;
 
+import org.apache.cassandra.Util;
+
 public class MessagingService
 {
     private static int version_ = 1;
@@ -62,21 +64,21 @@ public class MessagingService
     /* This records all the results mapped by message Id */
     private static ExpiringMap<String, IAsyncCallback> callbackMap_;
     private static ExpiringMap<String, IAsyncResult> taskCompletionMap_;
-    
+
     /* Lookup table for registering message handlers based on the verb. */
     private static Map<StorageService.Verb, IVerbHandler> verbHandlers_;
 
     /* Thread pool to handle messages without a specialized stage */
     private static ExecutorService defaultExecutor_;
-    
+
     /* Thread pool to handle messaging write activities */
     private static ExecutorService streamExecutor_;
-    
+
     private static NonBlockingHashMap<InetAddress, OutboundTcpConnectionPool> connectionManagers_ = new NonBlockingHashMap<InetAddress, OutboundTcpConnectionPool>();
-    
+
     private static Logger logger_ = Logger.getLogger(MessagingService.class);
     private static int LOG_DROPPED_INTERVAL_IN_MS = 1000;
-    
+
     public static final MessagingService instance = new MessagingService();
 
     private SocketThread socketThread;
@@ -96,7 +98,7 @@ public class MessagingService
         /*
          * Leave callbacks in the cachetable long enough that any related messages will arrive
          * before the callback is evicted from the table. The concurrency level is set at 128
-         * which is the sum of the threads in the pool that adds shit into the table and the 
+         * which is the sum of the threads in the pool that adds shit into the table and the
          * pool that retrives the callback from here.
         */
         callbackMap_ = new ExpiringMap<String, IAsyncCallback>( 2 * DatabaseDescriptor.getRpcTimeout() );
@@ -143,7 +145,7 @@ public class MessagingService
      * @param localEp InetAddress whose port to listen on.
      */
     public void listen(InetAddress localEp) throws IOException
-    {        
+    {
         ServerSocketChannel serverChannel = ServerSocketChannel.open();
         final ServerSocket ss = serverChannel.socket();
         ss.setReuseAddress(true);
@@ -180,7 +182,7 @@ public class MessagingService
     {
         return getConnectionPool(to).getConnection(msg);
     }
-        
+
     /**
      * Register a verb and the corresponding verb handler with the
      * Messaging Service.
@@ -192,7 +194,7 @@ public class MessagingService
     	assert !verbHandlers_.containsKey(verb);
     	verbHandlers_.put(verb, verbHandler);
     }
-        
+
     /**
      * This method returns the verb handler associated with the registered
      * verb. If no handler has been registered then null is returned.
@@ -238,7 +240,7 @@ public class MessagingService
      * @return an reference to message id used to match with the result
      */
     public String sendRR(Message message, InetAddress to, IAsyncCallback cb)
-    {        
+    {
         String messageId = message.getMessageId();
         addCallback(cb, messageId);
         sendOneWay(message, to);
@@ -272,8 +274,8 @@ public class MessagingService
             sendOneWay(messages[i], to[i]);
         }
         return groupId;
-    } 
-    
+    }
+
     /**
      * Send a message to a given endpoint. This method adheres to the fire and forget
      * style messaging.
@@ -287,7 +289,7 @@ public class MessagingService
         {
             MessagingService.receive(message);
             return;
-        }
+       }
 
         // message sinks are a testing hook
         Message processedMessage = SinkManager.processClientMessageSink(message);
@@ -304,6 +306,12 @@ public class MessagingService
         try
         {
             DataOutputBuffer buffer = new DataOutputBuffer();
+
+
+            //JINSU
+            Util.debug("Sending message ::\n-->" + message);
+
+
             Message.serializer().serialize(message, buffer);
             data = buffer.getData();
         }
@@ -317,7 +325,7 @@ public class MessagingService
         // write it
         connection.write(buffer);
     }
-    
+
     public IAsyncResult sendRR(Message message, InetAddress to)
     {
         IAsyncResult iar = new AsyncResult();
@@ -325,7 +333,7 @@ public class MessagingService
         sendOneWay(message, to);
         return iar;
     }
-    
+
     /**
      * Stream a file from source to destination. This is highly optimized
      * to not hold any of the contents of the file in memory.
@@ -341,7 +349,7 @@ public class MessagingService
         Runnable streamingTask = new FileStreamTask(file, startPosition, endPosition, from, to);
         streamExecutor_.execute(streamingTask);
     }
-    
+
     /** blocks until the processing pools are empty and done. */
     public static void waitFor() throws InterruptedException
     {
@@ -397,12 +405,12 @@ public class MessagingService
     {
         return callbackMap_.get(key);
     }
-    
+
     public static void removeRegisteredCallback(String key)
     {
         callbackMap_.remove(key);
     }
-    
+
     public static IAsyncResult getAsyncResult(String key)
     {
         return taskCompletionMap_.remove(key);
@@ -428,7 +436,7 @@ public class MessagingService
     {
         return x >>> (p + 1) - n & ~(-1 << n);
     }
-        
+
     public static ByteBuffer packIt(byte[] bytes, boolean compress)
     {
         /*
@@ -438,8 +446,8 @@ public class MessagingService
              is turned on or off. It is turned off by default. The 4th
              bit indicates if we are in streaming mode. It is turned off
              by default. The 5th-8th bits are reserved for future use.
-             The next 8 bits indicate a version number. Remaining 15 bits 
-             are not used currently.            
+             The next 8 bits indicate a version number. Remaining 15 bits
+             are not used currently.
         */
         int header = 0;
         // Setting up the serializer bit
@@ -458,18 +466,18 @@ public class MessagingService
         buffer.flip();
         return buffer;
     }
-        
+
     public static ByteBuffer constructStreamHeader(boolean compress)
     {
-        /* 
+        /*
         Setting up the protocol header. This is 4 bytes long
         represented as an integer. The first 2 bits indicate
         the serializer type. The 3rd bit indicates if compression
         is turned on or off. It is turned off by default. The 4th
         bit indicates if we are in streaming mode. It is turned off
-        by default. The following 4 bits are reserved for future use. 
-        The next 8 bits indicate a version number. Remaining 15 bits 
-        are not used currently.            
+        by default. The following 4 bits are reserved for future use.
+        The next 8 bits indicate a version number. Remaining 15 bits
+        are not used currently.
         */
         int header = 0;
         // Setting up the serializer bit
@@ -494,7 +502,7 @@ public class MessagingService
     {
         return droppedMessages.incrementAndGet();
     }
-               
+
     private static void logDroppedMessages()
     {
         if (droppedMessages.get() > 0)
@@ -505,7 +513,7 @@ public class MessagingService
     private class SocketThread extends Thread
     {
         private final ServerSocket server;
-        
+
         SocketThread(ServerSocket server, String name)
         {
             super(name);
@@ -533,7 +541,7 @@ public class MessagingService
                 }
             }
         }
-        
+
         void close() throws IOException
         {
             server.close();

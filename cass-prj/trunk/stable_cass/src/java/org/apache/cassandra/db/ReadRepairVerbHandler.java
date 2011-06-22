@@ -25,20 +25,23 @@ import org.apache.cassandra.net.Message;
 
 import org.apache.log4j.Logger;
 
+import org.apache.cassandra.Util;
+
 public class ReadRepairVerbHandler implements IVerbHandler
 {
-    private static Logger logger_ = Logger.getLogger(ReadRepairVerbHandler.class);    
-    
+    private static Logger logger_ = Logger.getLogger(ReadRepairVerbHandler.class);
+
     public void doVerb(Message message)
-    {          
+    {
+        Util.debug("RRVerbHandler being called");
         byte[] body = message.getMessageBody();
         ByteArrayInputStream buffer = new ByteArrayInputStream(body);
-        
+
         try
         {
             RowMutationMessage rmMsg = RowMutationMessage.serializer().deserialize(new DataInputStream(buffer));
             RowMutation rm = rmMsg.getRowMutation();
-            rm.apply();                                   
+            rm.apply();
         }
         catch (IOException e)
         {

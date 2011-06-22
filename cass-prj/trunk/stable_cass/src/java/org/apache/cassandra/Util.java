@@ -410,6 +410,7 @@ private static ArrayList<InetAddress> getOrderedEndpoints(TreeMap tmap, int repl
 
     /* This change made so that seed0 is always the client.
      * And seed1, 2, and 3 always stores the data.
+     * Assuming that the first item in the iterator is seed0.
      */
     if(ipIter.hasNext()) {
         //burn off the first item which is seed0

@@ -19,10 +19,15 @@ import org.apache.cassandra.net.*;
 import org.apache.cassandra.db.ReadResponse;
 import org.apache.cassandra.service.StorageService;
 import org.apache.cassandra.io.util.DataOutputBuffer;
-
+import org.apache.cassandra.dht.Token;
+import org.apache.cassandra.locator.AbstractReplicationStrategy;
 
 public aspect cfiHooks {
-    boolean debug = false;
+    boolean debug = true;
+
+    pointcut cutNaturalEndpoint(Token token, String table) :
+    ( call (* AbstractReplicationStrategy.getNaturalEndpoints(Token, String) ) &&
+    args(token, table) );
 
     pointcut cutSendOneWay(Message m, InetAddress t) : 
     ( call (* MessagingService.*(Message, InetAddress) ) && 
@@ -59,6 +64,9 @@ public aspect cfiHooks {
                 //Corrupting the digest!
                 int cor = ~corrupted_digest[1];
                 corrupted_digest[1] = new Integer(cor).byteValue();
+                
+                //Type mismatch: cannot convert from int to byte
+                //corrupted_digest[1] =~ corrupted_digest[1];
                 
                 //Make a new digest message
                 ReadResponse corrupted = new ReadResponse(corrupted_digest);

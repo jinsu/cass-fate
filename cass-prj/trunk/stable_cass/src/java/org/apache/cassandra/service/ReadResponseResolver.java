@@ -77,18 +77,18 @@ public class ReadResponseResolver implements IResponseResolver<Row>
 		String key = null;
 		byte[] digest = new byte[0];
 		boolean isDigestQuery = false;
-        
+
         /*
 		 * Populate the list of rows from each of the messages
-		 * Check to see if there is a digest query. If a digest 
-         * query exists then we need to compare the digest with 
+		 * Check to see if there is a digest query. If a digest
+         * query exists then we need to compare the digest with
          * the digest of the data that is received.
         */
 		for (Message response : responses)
-		{					            
+		{
             byte[] body = response.getMessageBody();
             ByteArrayInputStream bufIn = new ByteArrayInputStream(body);
-            ReadResponse result = ReadResponse.serializer().deserialize(new DataInputStream(bufIn)); 
+            ReadResponse result = ReadResponse.serializer().deserialize(new DataInputStream(bufIn));
             if (result.isDigestQuery())
             {
                 digest = result.digest();
@@ -106,7 +106,7 @@ public class ReadResponseResolver implements IResponseResolver<Row>
 
             }
         }
-		// If there was a digest query compare it with all the data digests 
+		// If there was a digest query compare it with all the data digests
 		// If there is a mismatch then throw an exception so that read repair can happen.
         if (isDigestQuery)
 	{
@@ -123,7 +123,7 @@ public class ReadResponseResolver implements IResponseResolver<Row>
 		i++;
 		last_cf = cf;
 		//JINSU to
-	
+
 		//JINSU hack changes
 		//original
 		//if (!Arrays.equals(ColumnFamily.digest(cf), digest))
@@ -137,14 +137,16 @@ public class ReadResponseResolver implements IResponseResolver<Row>
             }
 
 		//JINSU hacks
+/*
 		if(Util.checkRRFlag()) {
-			
+
 			Util.debug("RRPATH RRResolver.resolve(3) : throwing a digestMismatch");
                     String s = String.format("Mismatch for key %s (%s vs %s)", key, FBUtilities.bytesToHex(ColumnFamily.digest(last_cf)), FBUtilities.bytesToHex(digest));
 
                     throw new DigestMismatchException(s);
-	
+
 		}
+*/
         }
 
         ColumnFamily resolved = resolveSuperset(versions);
@@ -152,7 +154,7 @@ public class ReadResponseResolver implements IResponseResolver<Row>
 	//JINSU
 	Util.debug("RRPATH RRResolver.resolve(4) : resolveSuperset - resolved data messages... " + resolved);
         maybeScheduleRepairs(resolved, table, key, versions, endPoints);
-
+    Util.printStackTrace();
         if (logger_.isDebugEnabled())
             logger_.debug("resolve: " + (System.currentTimeMillis() - startTime) + " ms.");
 		return new Row(key, resolved);

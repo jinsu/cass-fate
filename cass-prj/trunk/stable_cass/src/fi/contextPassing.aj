@@ -117,7 +117,7 @@ aspect contextOrigin {
 		Object tmp = proceed();
 		if(tmp instanceof InetAddress) {
 			InetAddress iaddr = (InetAddress) tmp;
-			System.out.println("&&& Calling from ip-creating helper");
+			//System.out.println("&&& Calling from ip-creating helper");
 			Util.addIpHistory(iaddr);
 		}
 		return tmp;

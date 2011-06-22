@@ -30,10 +30,10 @@ public class ResponseVerbHandler implements IVerbHandler, ILatencyPublisher
 {
     private static final Logger logger_ = Logger.getLogger( ResponseVerbHandler.class );
     private List<ILatencySubscriber>  subscribers = new ArrayList<ILatencySubscriber>();
-    
+
     public void doVerb(Message message)
-    {     
-        String messageId = message.getMessageId();        
+    {
+        String messageId = message.getMessageId();
         IAsyncCallback cb = MessagingService.getRegisteredCallback(messageId);
         double age = 0;
         if (cb != null)
