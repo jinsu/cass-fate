@@ -28,10 +28,10 @@ public class Driver {
 
   public static boolean
 
-   // enableFailure = false,
-                  enableFailure = true,
+               //  enableFailure = false,
+                enableFailure = true,
 
-                  // enableOptimizer = true,
+                  //enableOptimizer = true,
                   enableOptimizer = false,
 
                   enableCoverage = true,
@@ -62,7 +62,7 @@ public class Driver {
   public static final String SOCKET_HISTORY_DIR    = TMPFI + "socketHistory/";
   public static final String CASS_LOGS_DIR         = TMPFI + "logs/";
   public static final String CASS_PIDS_DIR         = TMPFI + "pids/";
-  
+
   //jinsu for net stuff
   public static final String IP_HISTORY_DIR        = TMPFI + "ipHistory/";
   public static final String TOKENS_DIR        = TMPFI + "tokens/";
@@ -80,11 +80,11 @@ public class Driver {
   public static final String ENABLE_COVERAGE_FLAG = TMPFI + "enableCoverageFlag";
 
   public static final String NODES_CONNECTED_FLAG = TMPFI + "nodesConnectedFlag";
-  
+
   //public static final String EXPERIMENT_RUN_FLAG  = TMPFI + "experimentRunningblah";
   public static final String EXPERIMENT_RUN_FLAG  = TMPFI + "experimentRunning";
   public static final String NODE_REBOOTING_FLAG = TMPFI + "nodesRebootingFlag";
-  
+
   //flag for repair workload
   public static final String READ_REPAIR_FLAG = TMPFI + "readRepairFlag";
 
@@ -177,7 +177,7 @@ public class Driver {
 
     // 9. start the failure manager
     startFailureManager();
-    
+
     //10. start the Cassandra server
     startCass();
 
@@ -322,13 +322,13 @@ public class Driver {
     recordCurrentExpNumber(exp.getExpNum());
     clearAllInjectedFsn();
     clearAllBadDiskFlags();
-    
-		
-	
+
+
+
     u.print("- check dead nodes (1) ...\n");
     checkDeadNodes();
 
-		
+
 		restartDeadDataNodes();
 
     u.print("- check dead nodes (2) ...\n");
@@ -387,14 +387,14 @@ public class Driver {
       }
     }
 		  rmSocketHistory();
-		  
+
 		if(BREAK_EXP_NUMBER != exp.getExpNum()) {
-		
+
 			if(TESTING) {
 				//waiting until all the lagging message queries are completed.
 				//u.print("waiting some time til other nodes process the messages already delivered to them...\n");
 				//u.sleep(5000);
-				
+
 				killNode("node1");//just kills the node using kill command
 				// jinsu : then I need to remove the data because we want the node to start at a clean state
 				// sometimes if data isn't deleted before the node is restarted, its commitLog gets corrupted.
@@ -408,15 +408,15 @@ public class Driver {
 				restartDeadDataNodes();
 			} else {
 				//For Insert Workload I don't need to do anything ...
-				
+
 				//rmPids();
 				//rmLogs();
 				rmImages();
 				rmRpcFiles();
-				rmIpHistory();
-			
+				//rmIpHistory();
+
 			}
-		
+
 		//u.mkDir(CASS_STORAGE_DIR);
 		}
 		//u.println("checking DeadNodes after worklaod");
@@ -426,11 +426,11 @@ public class Driver {
 
     // and remove all ports otherwise the directory gets too big !!!
     // and it could contain thousands of files
-  
-		
-		
+
+
+
   }
-  
+
 
   // *******************************************
   // check the algorithm below
@@ -441,7 +441,7 @@ public class Driver {
     // here, we can write whatever experiments we want
     // so now, I've created the workload client write class
     // which will run the client write workloads
-    
+
     //remove this later to enable insert workload.
     //ClientInsertWorkload ciw = new ClientInsertWorkload(this, exp);
     //ciw.run();
@@ -746,7 +746,7 @@ public class Driver {
       u.ERROR("Can't delete " + CASS_PIDS_DIR);
     }
   }
-  
+
   // *******************************************
   // rm all ipHistory file ..
   // *******************************************
@@ -774,7 +774,7 @@ public class Driver {
 
     u.print("- Starting Failure Manager ...\n");
     String cmdout = u.runCommand("bin/cfi");
-    
+
     u.print(cmdout);
     u.print("\n\n");
   }
@@ -909,7 +909,7 @@ public class Driver {
 		//jinsu change made
 		cass.client = null;
 		u.deleteFile(NODES_CONNECTED_FLAG);
-		
+
     //u.MESSAGE(" Killing cassandra, FIXME \n");
     NodeProcess[] nps = getNodeProcesses();
     if (nps == null) return;
@@ -929,7 +929,7 @@ public class Driver {
 		String killPid = "";
 		for(NodeProcess node : nps) {
 			if(node.getName().equals(nodeId)) {
-				
+
 				killPid = u.getPidFromTmpPid(new File(node.getTmpPidFile()));
 				String cmd = String.format("kill -s KILL %5s", killPid);
 				String cmdOut = u.runCommand(cmd);
@@ -941,7 +941,7 @@ public class Driver {
 		}
 		u.deleteFile(NODES_CONNECTED_FLAG);
 	}
-	
+
   // *******************************************
   // a bit stupid method to find out if a datanode is dead or not
   // just do ps -p pid .. then search if there is the word java in it or not
@@ -990,24 +990,24 @@ public class Driver {
 
       // then I need to remove the logs
       rmNodeLogFile(nps[i].getName());
-			
+
 			//JINSU
 			//TODO: Sometimes, we need to clear the commitLogs or data in the dead node because commitLogs get corrupted at times.
 			//need to call u.deleteDirContent(CASS_STORAGE_DIR+nps[i].getName()) but it shouldn't be called for rebootWorkload.
-			
+
 			u.createNewFile(NODE_REBOOTING_FLAG);
 			//u.stringToFileContent(nps[i].get);
-      
+
       // let's resetart the datanode
       restartNode(nps[i].getName());
-      
+
       u.deleteFile(NODE_REBOOTING_FLAG);
-      
+
       // okay so we must wait until that datanode is registered
     	u.print("    Waiting for registration ...\n");
 			waitForNodeRegistration(nps[i].getName());
     }
-    
+
     u.createNewFile(NODES_CONNECTED_FLAG);
     u.sleep(1000);
     u.print("\n\n");
@@ -1053,7 +1053,7 @@ public class Driver {
 	//JINSU: maybe more general than getNumAliveNodes
 	public NodeProcess[] getLiveNodes(NodeProcess[] nps) {
 		LinkedList<NodeProcess> liveNps = new LinkedList<NodeProcess>();
-		
+
     for (int i=0; i < nps.length; i++) {
       boolean isAlive = u.isPidAlive(nps[i].getPid());
       if (isAlive) liveNps.add(nps[i]);
@@ -1134,7 +1134,7 @@ public class Driver {
     //Taking it temporarily for easy porting for now
     //Jin-Su Oct/6/2010
     //Jin-Su Nov/22/2010
-    
+
     String tokenCmd = String.format("grep -a %s %s", "TokenSizeTest", TOKENS_DIR + "nodeToken" + nodeNum);
     //boolean waiting = true;
     while(true) {
@@ -1148,7 +1148,7 @@ public class Driver {
       u.print("- (Waiting for TokenSizeTest)...\n");
       u.sleep(1000);
     }
-    
+
 
     u.print("- Node"+nodeNum+" is alive\n");
   }

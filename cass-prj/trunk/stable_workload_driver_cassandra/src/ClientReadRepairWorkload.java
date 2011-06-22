@@ -64,10 +64,10 @@ public class ClientReadRepairWorkload implements Workload {
 
     // get entry which is reading the data.
     String key = String.format("key-%03d", exp.getExpNum());
-	//u.println("performing consistency all");
-    //cass.getEntry(key, exp, "all");
-	u.println("performing consistency one");
-    cass.getEntry(key, exp, "one");
+	u.println("performing consistency all");
+    cass.getEntry(key, exp, "all");
+	//u.println("performing consistency one");
+    //cass.getEntry(key, exp, "one");
     u.sleep(3000);
 
     //delete the repair flag
