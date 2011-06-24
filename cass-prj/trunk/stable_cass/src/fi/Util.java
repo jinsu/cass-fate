@@ -35,8 +35,8 @@ import jol.types.table.Table;
 
 public class Util {
 	//jinsu added for testing purpose
-	//private static boolean DEBUG = false;
-    private static boolean DEBUG = true;
+	private static boolean DEBUG = false;
+    //private static boolean DEBUG = true;
 	private static boolean ENABLE_OLD = true;
 	private static boolean ENABLE_FATAL = true;
 

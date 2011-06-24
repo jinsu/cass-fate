@@ -22,7 +22,7 @@ public class Driver {
   public static int BREAK_EXP_NUMBER = 100000;
   //public static int BREAK_EXP_NUMBER = 2;
 
-  public static final int MAX_FSN = 1;
+  public static final int MAX_FSN = 2;
 
 
 

@@ -5,6 +5,7 @@ import org.fi.FMServer.*;
 import org.fi.FMJoinPoint.*;
 
 import java.io.*;
+import java.nio.ByteBuffer;
 import java.util.*;
 import java.net.*;
 import java.lang.Thread;
@@ -33,6 +34,8 @@ public aspect cfiHooks {
     ( call (* MessagingService.*(Message, InetAddress) ) && 
     args(m, t) ); 
     
+    //Object around()
+
     Object around(Message message, InetAddress addr) : cutSendOneWay(message, addr) {
         Context c = new Context();
         byte[] body = message.getMessageBody();
@@ -60,11 +63,24 @@ public aspect cfiHooks {
             //if (c.getMessageType().equalsIgnoreCase("Digest")) {
             if (ft == FailType.CORRUPTION) {
                 byte[] corrupted_digest = result.digest();
-                if(debug) System.out.println("corrupt :: byte array length " + corrupted_digest.length);
-                //Corrupting the digest!
-                int cor = ~corrupted_digest[1];
-                corrupted_digest[1] = new Integer(cor).byteValue();
+                if(debug) {
+                System.out.println("corrupt :: byte array length " + corrupted_digest.length);
+                System.out.println("corrupt :: array " + corrupted_digest);
+                }
                 
+                //Corrupting the digest!
+                /*
+                int cor = corrupted_digest[1] << 2;
+                corrupted_digest[1] = new Integer(cor).byteValue();
+                int cor2 = ~corrupted_digest[2];
+                corrupted_digest[2] = new Integer(cor2).byteValue();
+                int cor3 = ~corrupted_digest[3];
+                corrupted_digest[3] = new Integer(cor3).byteValue();
+                */
+                corrupted_digest = ByteBuffer.allocate(16).putInt(52).array();
+
+                if(debug) System.out.println("corrupt :: cor_array " + corrupted_digest);
+
                 //Type mismatch: cannot convert from int to byte
                 //corrupted_digest[1] =~ corrupted_digest[1];
                 

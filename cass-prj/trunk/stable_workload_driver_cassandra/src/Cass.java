@@ -145,28 +145,28 @@ public class Cass {
         }
 
       }
-			
+
 			u.println(new Date(u.now()) + " wFNTJ(loop 2) ---- "+ u.diff());
       if (allgood) {
         u.print("- Seed knows about All non-seed nodes in the cluster...\n");
         break;
       }
-			
+
       u.print("- Waiting until all nodes are in the cluster ... \n");
       u.sleep(500);
     }
 		*/
 		//**********THIS NEEDS IMPROVEMENT.
 		//Jinsu:
-		
+
 		for(int i = 0; i < Driver.NUM_OF_CASS_NODES; i++) {
 			driver.waitForNodeRegistration("node"+i);
 		}
-		
+
     u.createNewFile(Driver.NODES_CONNECTED_FLAG);
-    
+
     u.print("- All nodes connected\n");
-		
+
   }
 
 
@@ -217,7 +217,7 @@ public class Cass {
     	u.println(new Date(u.now()) + " aC(1.5)---- "+ u.diff());
     	reconnectToCass();
     }
-      
+
     u.println(new Date(u.now()) + " ac(2)---- "+ u.diff());
   }
 
@@ -239,7 +239,7 @@ public class Cass {
 
         client.insert(keyspace, key, columnPath, value.getBytes(encoding),
                       timestamp, ConsistencyLevel.ALL);
-                      
+
 
 
       } catch (Exception e) {
@@ -247,7 +247,7 @@ public class Cass {
         u.EXCEPTION("Cass.insertEntry fails", e);
 
         u.ERROR("Cass.insertEntry fails");
-				
+
 				//REMOVE THIS LATER
     		//JINSU: I want to see the out file for successful this experiment.
     		String from = Driver.CASS_LOGS_DIR;
@@ -257,22 +257,22 @@ public class Cass {
 				u.copyFile(from+"node1.out", to+"/node1.out");
 				u.copyFile(from+"node2.out", to+"/node2.out");
 				u.copyFile(from+"node3.out", to+"/node3.out");
-				
+
         // if we get here, the experiment has failed
         exp.markFailFromNonFrog();
         exp.addNonFrogReport("Cass.insertEntry() " + exp.getExpNum() +" FAILS!");
-        
+
         //REMOVE THIS LATER
         //JINSU: I want to see the exception's name..
         exp.addNonFrogReport("--- Exception =>\t" + e.toString());
-        
-        
+
+
         exp.addExceptionToNonFrogReport(e);
-				
+
       }
 
       u.print("- End of Cass.insertEntry!!! Yay\n");
-      
+
   }
 
 
@@ -306,15 +306,15 @@ public class Cass {
     } catch (Exception e) {
       u.EXCEPTION("Cass.getEntry fails", e);
 
-      // u.ERROR("Cass.getEntry fails");
+      u.ERROR("Cass.getEntry fails");
 
-      //exp.markFailFromNonFrog();
-      //exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
-      //exp.addExceptionToNonFrogReport(e);
+      exp.markFailFromNonFrog();
+      exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
+      exp.addExceptionToNonFrogReport(e);
     }
   }
- 
-  
+
+
   // *******************************************
   public void getEntry(String key, Experiment exp, String consistency) {
     ConsistencyLevel consis;
@@ -352,11 +352,11 @@ public class Cass {
     } catch (Exception e) {
       u.EXCEPTION("Cass.getEntry fails", e);
 
-      // u.ERROR("Cass.getEntry fails");
+      u.ERROR("Cass.getEntry fails");
 
-      //exp.markFailFromNonFrog();
-      //exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
-      //exp.addExceptionToNonFrogReport(e);
+      exp.markFailFromNonFrog();
+      exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
+      exp.addExceptionToNonFrogReport(e);
     }
   }
 
@@ -368,6 +368,11 @@ public class Cass {
       client.remove(keyspace, key, columnPath, timestamp, ConsistencyLevel.ALL);
     } catch (Exception e) {
       u.EXCEPTION("Cass.delete fails", e);
+
+    exp.markFailFromNonFrog();
+      exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
+      exp.addExceptionToNonFrogReport(e);
+
     }
   }
 

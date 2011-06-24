@@ -25,15 +25,8 @@ public class FMFilter {
     boolean passFilter = false;
     //boolean passFilter = true;
 
-    FMJoinPoint fjp = fac.fjp;
-/*
-    if (ft == FailType.CRASH && fjp.getJoinPlc() == JoinPlc.AFTER) {
-      passFilter = true;
-    }
-*/
     //JINSU hack for Cassandra corruption to pass by.
-    if (passFilter || ( FMLogic.getCurrentFsn() ==1 && cassCorruptTest(fis) ) )
-        passFilter = true;
+        passFilter = filterReadRepairTest(fac, ft, fis);
 
 
     // passFilter = filterWriteBug1(fac, ft, fis);
@@ -69,15 +62,26 @@ public class FMFilter {
     }
 	// ************************************************************
 	// JINSU: A small filter function that only returns true when the failure type is CRASH and the join place is before.
-	private static boolean filterTest(FMAllContext fac, FailType ft, FIState fis) {
+	private static boolean filterReadRepairTest(FMAllContext fac, FailType ft, FIState fis) {
 		FMJoinPoint fjp = fac.fjp;
 		FMContext ctx = fac.ctx;
 		//boolean condition = ctx.getTargetIO().contains("Node3") && ctx.getTargetIO().contains("Node1");
-		boolean containsCondition = //fjp.getJoinPointStr().contains("DataInputStream.readFully");
-																 ctx.getNodeId().contains("Node0");
+		//boolean containsCondition = //fjp.getJoinPointStr().contains("DataInputStream.readFully");
+		//														 ctx.getNodeId().contains("Node0");
 //																&& ctx.getTargetIO().contains("Node0");
+        if ( FMLogic.getCurrentFsn() == 1 && cassCorruptTest(fis) )
+            return true;
 
-		if(ft == FailType.CRASH
+		if( FMLogic.getCurrentFsn() == 2 && ft == FailType.CRASH
+                && fjp.getJoinPlc() == JoinPlc.BEFORE ) {
+                //&& ctx.getNodeId().contains("Node3")) {
+            System.out.println("|| ctx || " + ctx);
+            return true;
+
+                }
+
+/*
+        if(ft == FailType.CRASH
 		&& fjp.getJoinPlc() == JoinPlc.AFTER
 //		&& fjp.getJoinIot() == JoinIot.READ
 //		&& fjp.getJoinExc() == JoinExc.IO
@@ -86,6 +90,7 @@ public class FMFilter {
 
 				return true;
 			}
+            */
 		return false;
 	}
 
