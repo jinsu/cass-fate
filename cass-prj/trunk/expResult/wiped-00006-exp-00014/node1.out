@@ -1,0 +1,594 @@
+Listening for transport dt_socket at address: 9001
+ INFO 15:44:06,735 JNA not found. Native methods will be disabled.
+DEBUG 15:44:06,751 Loading settings from /home/jinsu/research/cass-prj/trunk/stable_cass/conf/conf1/storage-conf.xml
+DEBUG 15:44:06,984 Syncing log with a period of 10000
+ INFO 15:44:06,989 DiskAccessMode 'auto' determined to be standard, indexAccessMode is standard
+DEBUG 15:44:07,069 setting autoBootstrap to false
+DEBUG 15:44:07,110 setting hintedHandoffEnabled to true
+DEBUG 15:44:07,282 adding Super1 as 0
+DEBUG 15:44:07,282 adding Standard2 as 1
+DEBUG 15:44:07,283 adding Super2 as 2
+DEBUG 15:44:07,284 adding Standard1 as 3
+DEBUG 15:44:07,284 adding StandardByUUID1 as 4
+DEBUG 15:44:07,285 adding LocationInfo as 5
+DEBUG 15:44:07,285 adding HintsColumnFamily as 6
+DEBUG 15:44:07,415 Starting CFS LocationInfo
+DEBUG 15:44:07,433 key cache capacity for LocationInfo is 1
+DEBUG 15:44:07,435 Starting CFS HintsColumnFamily
+DEBUG 15:44:07,436 key cache capacity for HintsColumnFamily is 1
+DEBUG 15:44:07,478 opening keyspace Keyspace1
+DEBUG 15:44:07,478 Starting CFS Standard2
+DEBUG 15:44:07,479 key cache capacity for Standard2 is 1
+DEBUG 15:44:07,480 Starting CFS Super1
+DEBUG 15:44:07,480 key cache capacity for Super1 is 200000
+DEBUG 15:44:07,481 Starting CFS Standard1
+DEBUG 15:44:07,481 key cache capacity for Standard1 is 200000
+DEBUG 15:44:07,482 Starting CFS Super2
+DEBUG 15:44:07,488 key cache capacity for Super2 is 1
+DEBUG 15:44:07,488 row cache capacity for Super2 is 10000
+DEBUG 15:44:07,489 Starting CFS StandardByUUID1
+DEBUG 15:44:07,490 key cache capacity for StandardByUUID1 is 200000
+DEBUG 15:44:07,490 opening keyspace system
+ INFO 15:44:07,518 Saved Token not found. Using 115334859289675963285972157264705071312
+ INFO 15:44:07,519 Saved ClusterName not found. Using Test Cluster
+DEBUG 15:44:07,523 Estimating compactions for Super1
+ INFO 15:44:07,530 Creating new commitlog segment /tmp/fi/cassandra/node1/commitlog/CommitLog-1308955447530.log
+DEBUG 15:44:07,533 Estimating compactions for Standard2
+DEBUG 15:44:07,533 Estimating compactions for Super2
+DEBUG 15:44:07,533 Estimating compactions for Standard1
+DEBUG 15:44:07,534 Estimating compactions for StandardByUUID1
+DEBUG 15:44:07,534 Estimating compactions for LocationInfo
+DEBUG 15:44:07,534 Estimating compactions for HintsColumnFamily
+DEBUG 15:44:07,535 Checking to see if compaction of Super1 would be useful
+DEBUG 15:44:07,535 Checking to see if compaction of Standard2 would be useful
+DEBUG 15:44:07,536 Checking to see if compaction of Super2 would be useful
+DEBUG 15:44:07,536 Checking to see if compaction of Standard1 would be useful
+DEBUG 15:44:07,536 Checking to see if compaction of StandardByUUID1 would be useful
+DEBUG 15:44:07,537 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:44:07,537 Checking to see if compaction of HintsColumnFamily would be useful
+ INFO 15:44:07,572 LocationInfo has reached its threshold; switching in a fresh Memtable at CommitLogContext(file='/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955447530.log', position=419)
+ INFO 15:44:07,577 Enqueuing flush of Memtable-LocationInfo@3743136(169 bytes, 4 operations)
+ INFO 15:44:07,579 Writing Memtable-LocationInfo@3743136(169 bytes, 4 operations)
+TRACE 15:44:07,695 wrote DecoratedKey(61078635599166706937511052402724559481, L) at 0
+TRACE 15:44:07,695 wrote index of DecoratedKey(61078635599166706937511052402724559481, L) at 0
+ INFO 15:44:07,704 Completed flushing /tmp/fi/cassandra/node1/data/system/LocationInfo-1-Data.db
+DEBUG 15:44:07,712 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:44:07,713 discard completed log segments for CommitLogContext(file='/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955447530.log', position=419), column family 5. CFIDs are {Keyspace1: TableMetadata({Standard2: 1, Super1: 0, Standard1: 3, Super2: 2, StandardByUUID1: 4, }), system: TableMetadata({LocationInfo: 5, HintsColumnFamily: 6, }), }
+DEBUG 15:44:07,714 Marking replay position 419 on commit log CommitLogSegment(/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955447530.log)
+ INFO 15:44:07,734 Starting up server gossip
+- TM uNT(1) : size of sortedToken = 0
+- TM uNT(2) : size of sortedToken = 1 ... leavingEndPoints = []
+TokenSizeTest:1:-1009577
+ INFO 15:44:07,808 Binding thrift service to /127.0.0.11:9160
+ INFO 15:44:07,826 Cassandra starting up...
+TRACE 15:44:07,874 eof reading from socket; closing
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+	at org.apache.cassandra.net.IncomingTcpConnection.readInt_aroundBody4(IncomingTcpConnection.java:59)
+	at org.apache.cassandra.net.IncomingTcpConnection.readInt_aroundBody5$advice(IncomingTcpConnection.java:236)
+	at org.apache.cassandra.net.IncomingTcpConnection.run(IncomingTcpConnection.java:59)
+TRACE 15:44:07,875 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:44:07,883 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,883 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,888 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,889 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:1
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,895 Received a GossipDigestSynMessage from /127.0.0.12
+DEBUG 15:44:07,895 attempting to connect to /127.0.0.13
+TRACE 15:44:07,896 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,896 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,897 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,897 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:2
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,898 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:44:07,899 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,899 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,899 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,899 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+DEBUG 15:44:07,900 attempting to connect to /127.0.0.12
+Sending message ::
+-->ID:3
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,902 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:44:07,902 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,903 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,903 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,903 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:4
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,904 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:44:07,904 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,904 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,905 @@@@ Size of GossipDigestAckMessage is 136
+&&&Added socket : 57497
+TRACE 15:44:07,905 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:5
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,906 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:44:07,906 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,906 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+&&&Added socket : 59078
+TRACE 15:44:07,907 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,907 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:6
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,907 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:44:07,908 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,908 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,908 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,909 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:7
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,909 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:44:07,910 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,910 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,910 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,910 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:8
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,911 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:44:07,911 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,911 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,912 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,912 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:9
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,912 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:44:07,913 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,913 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,913 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,914 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:10
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,914 Received a GossipDigestSynMessage from /127.0.0.13
+DEBUG 15:44:07,915 attempting to connect to /127.0.0.1
+&&&Added socket : 50851
+TRACE 15:44:07,936 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,937 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,937 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,941 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:11
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,942 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:44:07,942 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:44:07,942 Adding state MOVE: NORMAL,115334859289675963285972157264705071312
+TRACE 15:44:07,943 @@@@ Size of GossipDigestAckMessage is 136
+TRACE 15:44:07,946 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:12
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:07,948 Received a GossipDigestAck2Message from /127.0.0.12
+ INFO 15:44:07,951 Node /127.0.0.12 is now part of the cluster
+DEBUG 15:44:07,952 Resetting pool for /127.0.0.12
+DEBUG 15:44:07,958 Node /127.0.0.12 state normal, token 95763128674829263755597563476114486239
+- TM uNT(1) : size of sortedToken = 1
+- TM uNT(2) : size of sortedToken = 2 ... leavingEndPoints = []
+TokenSizeTest:2:-1009577
+DEBUG 15:44:07,959 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:44:07,959 Node /127.0.0.13 is now part of the cluster
+DEBUG 15:44:07,960 Resetting pool for /127.0.0.13
+DEBUG 15:44:07,960 Node /127.0.0.13 state normal, token 20902772761227803006582482381914476626
+- TM uNT(1) : size of sortedToken = 2
+- TM uNT(2) : size of sortedToken = 3 ... leavingEndPoints = []
+TokenSizeTest:3:-1009577
+DEBUG 15:44:07,961 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:44:07,962 Node /127.0.0.1 is now part of the cluster
+DEBUG 15:44:07,962 Resetting pool for /127.0.0.1
+DEBUG 15:44:07,962 Node /127.0.0.1 state normal, token 151364447406687126714367278325169556726
+- TM uNT(1) : size of sortedToken = 3
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009577
+DEBUG 15:44:07,963 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+TRACE 15:44:07,964 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:44:07,964 reporting /127.0.0.13
+TRACE 15:44:07,966 reporting /127.0.0.1
+TRACE 15:44:07,967 marking as alive /127.0.0.13
+ INFO 15:44:07,970 InetAddress /127.0.0.13 is now UP
+ INFO 15:44:07,970 Started hinted handoff for endPoint /127.0.0.13
+ INFO 15:44:07,970 /127.0.0.13is cassReady
+TRACE 15:44:07,971 Updating heartbeat state version to 31 from 30 for /127.0.0.13 ...
+TRACE 15:44:07,972 marking as alive /127.0.0.1
+ INFO 15:44:07,972 InetAddress /127.0.0.1 is now UP
+ INFO 15:44:07,972 /127.0.0.1is cassReady
+TRACE 15:44:07,972 Updating heartbeat state version to 128 from 126 for /127.0.0.1 ...
+TRACE 15:44:07,973 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:44:07,973 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:44:07,974 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:44:07,974 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:44:07,975 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:44:07,975 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:44:07,976 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:44:07,976 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:44:07,977 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:44:07,978 Received a GossipDigestAck2Message from /127.0.0.13
+ INFO 15:44:07,991 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+ INFO 15:44:07,992 Started hinted handoff for endPoint /127.0.0.1
+ INFO 15:44:07,993 Finished hinted handoff of 0 rows to endpoint /127.0.0.1
+TRACE 15:44:08,060 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:44:08,061 reporting /127.0.0.12
+TRACE 15:44:08,061 reporting /127.0.0.12
+TRACE 15:44:08,062 Scanning for state greater than 30 for /127.0.0.13
+TRACE 15:44:08,063 Scanning for state greater than 126 for /127.0.0.1
+TRACE 15:44:08,063 @@@@ Size of GossipDigestAckMessage is 69
+TRACE 15:44:08,064 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:13
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:44:08,064 attempting to connect to /127.0.0.12
+&&&Added socket : 51856
+TRACE 15:44:08,070 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:44:08,071 reporting /127.0.0.12
+TRACE 15:44:08,071 marking as alive /127.0.0.12
+ INFO 15:44:08,071 InetAddress /127.0.0.12 is now UP
+ INFO 15:44:08,072 /127.0.0.12is cassReady
+ INFO 15:44:08,071 Started hinted handoff for endPoint /127.0.0.12
+TRACE 15:44:08,072 Updating heartbeat state version to 17 from 16 for /127.0.0.12 ...
+ INFO 15:44:08,073 Finished hinted handoff of 0 rows to endpoint /127.0.0.12
+TRACE 15:44:08,260 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:44:08,261 reporting /127.0.0.13
+TRACE 15:44:08,261 reporting /127.0.0.13
+TRACE 15:44:08,262 Scanning for state greater than 15 for /127.0.0.12
+TRACE 15:44:08,263 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:44:08,263 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:14
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:44:08,264 attempting to connect to /127.0.0.13
+&&&Added socket : 48341
+TRACE 15:44:08,274 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:44:08,275 reporting /127.0.0.13
+TRACE 15:44:08,275 marking as alive /127.0.0.13
+TRACE 15:44:08,275 Updating heartbeat state version to 32 from 31 for /127.0.0.13 ...
+TRACE 15:44:08,342 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:44:08,342 reporting /127.0.0.1
+TRACE 15:44:08,343 reporting /127.0.0.1
+TRACE 15:44:08,344 Scanning for state greater than 15 for /127.0.0.12
+TRACE 15:44:08,344 Scanning for state greater than 31 for /127.0.0.13
+TRACE 15:44:08,345 @@@@ Size of GossipDigestAckMessage is 69
+TRACE 15:44:08,346 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:15
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:44:08,347 attempting to connect to /127.0.0.1
+&&&Added socket : 35902
+TRACE 15:44:08,355 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:44:08,356 reporting /127.0.0.1
+TRACE 15:44:08,357 marking as alive /127.0.0.1
+TRACE 15:44:08,357 Updating heartbeat state version to 129 from 128 for /127.0.0.1 ...
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:44:08,745 Gossip Digests are : /127.0.0.11:1308955447:2 /127.0.0.1:1308955160:129 /127.0.0.12:1308955413:17 /127.0.0.11:1308955447:2 /127.0.0.13:1308955372:32 
+TRACE 15:44:08,748 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:16
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:44:08,750 Performing status check ...
+TRACE 15:44:08,753 Received a GossipDigestAckMessage from /127.0.0.1
+DEBUG 15:44:08,755 GC for ParNew: 42 ms, 30357480 reclaimed leaving 44987536 used; max is 654114816
+TRACE 15:44:08,754 PHI for /127.0.0.13 : 1.0272941078106548
+TRACE 15:44:08,756 PHI for /127.0.0.1 : 0.7768503541460413
+TRACE 15:44:08,756 PHI for /127.0.0.12 : 1.7499512947278093
+DEBUG 15:44:08,757 GC for ConcurrentMarkSweep: -3077252 ms, 0 reclaimed leaving 0 used; max is 0
+TRACE 15:44:08,757 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:44:08,757 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:44:08,757 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:17
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:44:09,059 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:44:09,060 reporting /127.0.0.12
+TRACE 15:44:09,060 reporting /127.0.0.12
+TRACE 15:44:09,061 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:44:09,061 Scanning for state greater than 31 for /127.0.0.13
+TRACE 15:44:09,061 Scanning for state greater than 128 for /127.0.0.1
+TRACE 15:44:09,061 @@@@ Size of GossipDigestAckMessage is 86
+TRACE 15:44:09,062 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:18
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:44:09,065 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:44:09,066 reporting /127.0.0.12
+TRACE 15:44:09,066 marking as alive /127.0.0.12
+TRACE 15:44:09,066 Updating heartbeat state version to 18 from 17 for /127.0.0.12 ...
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:44:09,762 Disseminating load info ...
+DEBUG 15:44:10,330 Applying RowMutation(table='Keyspace1', key='key-014', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955450321,])])
+DEBUG 15:44:10,338 RowMutation(table='Keyspace1', key='key-014', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955450321,])]) applied.  Sending response to 453@/127.0.0.1
+Sending message ::
+-->ID:453
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node1 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:47901] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:47901] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:47901] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:47901] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:47901] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:47901] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:47901] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+DEBUG 15:44:10,832 Read key key-014; sending response to D852BFFE-D301-0BB4-4857-1C123ECA6A48@/127.0.0.1
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:47901] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+wRRPATH ReadVerbHanlder doVerb(): Read key key-014; sending response to D852BFFE-D301-0BB4-4857-1C123ECA6A48@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node0:127.0.0.11
+corrupt :: failType returned :: NONE
+Sending message ::
+-->ID:D852BFFE-D301-0BB4-4857-1C123ECA6A48
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node1:127.0.0.1:7000] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node1:127.0.0.1:7000] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node1:127.0.0.1:7000] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node1:127.0.0.1:7000] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+node1 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+DEBUG 15:44:13,945 Applying RowMutation(table='Keyspace1', key='key-014', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955453939,])])
+DEBUG 15:44:13,951 RowMutation(table='Keyspace1', key='key-014', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955453939,])]) applied.  Sending response to 456@/127.0.0.1
+Sending message ::
+-->ID:456
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+

@@ -1,0 +1,3102 @@
+Listening for transport dt_socket at address: 9001
+ INFO 15:39:54,310 JNA not found. Native methods will be disabled.
+DEBUG 15:39:54,325 Loading settings from /home/jinsu/research/cass-prj/trunk/stable_cass/conf/conf1/storage-conf.xml
+DEBUG 15:39:54,546 Syncing log with a period of 10000
+ INFO 15:39:54,551 DiskAccessMode 'auto' determined to be standard, indexAccessMode is standard
+DEBUG 15:39:54,626 setting autoBootstrap to false
+DEBUG 15:39:54,662 setting hintedHandoffEnabled to true
+DEBUG 15:39:54,779 adding Super1 as 0
+DEBUG 15:39:54,780 adding Standard2 as 1
+DEBUG 15:39:54,780 adding Super2 as 2
+DEBUG 15:39:54,781 adding Standard1 as 3
+DEBUG 15:39:54,782 adding StandardByUUID1 as 4
+DEBUG 15:39:54,782 adding LocationInfo as 5
+DEBUG 15:39:54,783 adding HintsColumnFamily as 6
+DEBUG 15:39:54,910 Starting CFS LocationInfo
+DEBUG 15:39:54,929 key cache capacity for LocationInfo is 1
+DEBUG 15:39:54,930 Starting CFS HintsColumnFamily
+DEBUG 15:39:54,931 key cache capacity for HintsColumnFamily is 1
+DEBUG 15:39:54,968 opening keyspace Keyspace1
+DEBUG 15:39:54,969 Starting CFS Standard2
+DEBUG 15:39:54,970 key cache capacity for Standard2 is 1
+DEBUG 15:39:54,970 Starting CFS Super1
+DEBUG 15:39:54,971 key cache capacity for Super1 is 200000
+DEBUG 15:39:54,971 Starting CFS Standard1
+DEBUG 15:39:54,972 key cache capacity for Standard1 is 200000
+DEBUG 15:39:54,973 Starting CFS Super2
+DEBUG 15:39:54,973 key cache capacity for Super2 is 1
+DEBUG 15:39:54,974 row cache capacity for Super2 is 10000
+DEBUG 15:39:54,974 Starting CFS StandardByUUID1
+DEBUG 15:39:54,975 key cache capacity for StandardByUUID1 is 200000
+DEBUG 15:39:54,976 opening keyspace system
+ INFO 15:39:55,005 Saved Token not found. Using 15453506791999469697616307346078709122
+ INFO 15:39:55,006 Saved ClusterName not found. Using Test Cluster
+DEBUG 15:39:55,006 Estimating compactions for Super1
+ INFO 15:39:55,014 Creating new commitlog segment /tmp/fi/cassandra/node1/commitlog/CommitLog-1308955195014.log
+DEBUG 15:39:55,015 Estimating compactions for Standard2
+DEBUG 15:39:55,016 Estimating compactions for Super2
+DEBUG 15:39:55,016 Estimating compactions for Standard1
+DEBUG 15:39:55,016 Estimating compactions for StandardByUUID1
+DEBUG 15:39:55,017 Estimating compactions for LocationInfo
+DEBUG 15:39:55,017 Estimating compactions for HintsColumnFamily
+DEBUG 15:39:55,017 Checking to see if compaction of Super1 would be useful
+DEBUG 15:39:55,018 Checking to see if compaction of Standard2 would be useful
+DEBUG 15:39:55,018 Checking to see if compaction of Super2 would be useful
+DEBUG 15:39:55,019 Checking to see if compaction of Standard1 would be useful
+DEBUG 15:39:55,019 Checking to see if compaction of StandardByUUID1 would be useful
+DEBUG 15:39:55,019 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:39:55,020 Checking to see if compaction of HintsColumnFamily would be useful
+ INFO 15:39:55,052 LocationInfo has reached its threshold; switching in a fresh Memtable at CommitLogContext(file='/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955195014.log', position=419)
+ INFO 15:39:55,056 Enqueuing flush of Memtable-LocationInfo@29881213(169 bytes, 4 operations)
+ INFO 15:39:55,058 Writing Memtable-LocationInfo@29881213(169 bytes, 4 operations)
+TRACE 15:39:55,167 wrote DecoratedKey(61078635599166706937511052402724559481, L) at 0
+TRACE 15:39:55,168 wrote index of DecoratedKey(61078635599166706937511052402724559481, L) at 0
+ INFO 15:39:55,184 Completed flushing /tmp/fi/cassandra/node1/data/system/LocationInfo-1-Data.db
+DEBUG 15:39:55,188 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:39:55,189 discard completed log segments for CommitLogContext(file='/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955195014.log', position=419), column family 5. CFIDs are {Keyspace1: TableMetadata({Standard2: 1, Super1: 0, Standard1: 3, Super2: 2, StandardByUUID1: 4, }), system: TableMetadata({LocationInfo: 5, HintsColumnFamily: 6, }), }
+DEBUG 15:39:55,189 Marking replay position 419 on commit log CommitLogSegment(/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955195014.log)
+ INFO 15:39:55,203 Starting up server gossip
+- TM uNT(1) : size of sortedToken = 0
+- TM uNT(2) : size of sortedToken = 1 ... leavingEndPoints = []
+TokenSizeTest:1:-1009830
+ INFO 15:39:55,260 Binding thrift service to /127.0.0.11:9160
+ INFO 15:39:55,265 Cassandra starting up...
+TRACE 15:39:55,343 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:39:55,347 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,347 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,350 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,350 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:1
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,359 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:39:55,360 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,360 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,360 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,361 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:2
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,361 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:39:55,362 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,362 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,362 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,363 Sending a GossipDigestAckMessage to /127.0.0.1
+DEBUG 15:39:55,363 attempting to connect to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:3
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,363 Received a GossipDigestSynMessage from /127.0.0.13
+DEBUG 15:39:55,364 attempting to connect to /127.0.0.13
+TRACE 15:39:55,367 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,367 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,367 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,368 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:4
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,368 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:39:55,369 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,369 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,370 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,370 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:5
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,370 Received a GossipDigestSynMessage from /127.0.0.1
+&&&Added socket : 45063
+TRACE 15:39:55,371 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,371 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,371 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,372 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:6
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,372 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:39:55,373 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,373 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,373 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,373 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:7
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,374 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:39:55,374 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,374 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,375 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,375 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:8
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,376 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:39:55,376 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,376 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,377 @@@@ Size of GossipDigestAckMessage is 135
+&&&Added socket : 33436
+TRACE 15:39:55,391 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:9
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,392 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:39:55,395 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,396 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,396 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,396 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:10
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,397 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:39:55,398 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:39:55,398 Adding state MOVE: NORMAL,15453506791999469697616307346078709122
+TRACE 15:39:55,398 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:39:55,399 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:11
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:39:55,400 Received a GossipDigestAck2Message from /127.0.0.1
+ INFO 15:39:55,404 Node /127.0.0.12 is now part of the cluster
+DEBUG 15:39:55,404 Resetting pool for /127.0.0.12
+DEBUG 15:39:55,405 Node /127.0.0.12 state normal, token 50016043385412673101145352720806872521
+- TM uNT(1) : size of sortedToken = 1
+- TM uNT(2) : size of sortedToken = 2 ... leavingEndPoints = []
+TokenSizeTest:2:-1009829
+DEBUG 15:39:55,410 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:39:55,413 Node /127.0.0.13 is now part of the cluster
+DEBUG 15:39:55,414 Resetting pool for /127.0.0.13
+DEBUG 15:39:55,414 Node /127.0.0.13 state normal, token 134140860703304622046874136584427140839
+- TM uNT(1) : size of sortedToken = 2
+- TM uNT(2) : size of sortedToken = 3 ... leavingEndPoints = []
+TokenSizeTest:3:-1009829
+DEBUG 15:39:55,415 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:39:55,415 Node /127.0.0.1 is now part of the cluster
+DEBUG 15:39:55,416 Resetting pool for /127.0.0.1
+DEBUG 15:39:55,416 Node /127.0.0.1 state normal, token 151364447406687126714367278325169556726
+- TM uNT(1) : size of sortedToken = 3
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009829
+DEBUG 15:39:55,417 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+TRACE 15:39:55,417 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:39:55,418 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:39:55,418 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:39:55,419 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:39:55,419 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:39:55,420 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:39:55,420 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:39:55,421 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:39:55,421 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:39:55,422 Received a GossipDigestAck2Message from /127.0.0.1
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:39:56,214 Gossip Digests are : /127.0.0.11:1308955195:2 /127.0.0.11:1308955195:2 /127.0.0.12:1308955161:20 /127.0.0.1:1308955160:22 /127.0.0.13:1308955161:20 
+TRACE 15:39:56,217 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:12
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:39:56,218 attempting to connect to /127.0.0.13
+TRACE 15:39:56,218 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+&&&Added socket : 49873
+DEBUG 15:39:56,224 GC for ParNew: 37 ms, 30357456 reclaimed leaving 44988112 used; max is 654114816
+Sending message ::
+-->ID:12
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:39:56,225 Performing status check ...
+DEBUG 15:39:56,225 attempting to connect to /127.0.0.12
+TRACE 15:39:56,227 Received a GossipDigestAckMessage from /127.0.0.13
+TRACE 15:39:56,228 reporting /127.0.0.13
+TRACE 15:39:56,230 marking as alive /127.0.0.13
+&&&Added socket : 33533
+ INFO 15:39:56,233 InetAddress /127.0.0.13 is now UP
+ INFO 15:39:56,234 /127.0.0.13is cassReady
+TRACE 15:39:56,234 Updating heartbeat state version to 21 from 20 for /127.0.0.13 ...
+TRACE 15:39:56,234 Scanning for state greater than 1 for /127.0.0.11
+ INFO 15:39:56,234 Started hinted handoff for endPoint /127.0.0.13
+TRACE 15:39:56,235 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:39:56,235 Sending a GossipDigestAck2Message to /127.0.0.13
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:13
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+ INFO 15:39:56,246 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+TRACE 15:39:56,250 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:39:56,250 reporting /127.0.0.12
+TRACE 15:39:56,251 marking as alive /127.0.0.12
+ INFO 15:39:56,251 InetAddress /127.0.0.12 is now UP
+ INFO 15:39:56,251 /127.0.0.12is cassReady
+TRACE 15:39:56,252 Updating heartbeat state version to 21 from 20 for /127.0.0.12 ...
+TRACE 15:39:56,252 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:39:56,252 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:39:56,252 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:14
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+ INFO 15:39:56,253 Started hinted handoff for endPoint /127.0.0.12
+ INFO 15:39:56,254 Finished hinted handoff of 0 rows to endpoint /127.0.0.12
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:39:57,213 Gossip Digests are : /127.0.0.11:1308955195:3 /127.0.0.12:1308955161:21 /127.0.0.13:1308955161:21 /127.0.0.1:1308955160:22 /127.0.0.11:1308955195:3 
+TRACE 15:39:57,214 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:15
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:39:57,215 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:15
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:39:57,220 Performing status check ...
+TRACE 15:39:57,222 Received a GossipDigestAckMessage from /127.0.0.13
+TRACE 15:39:57,223 reporting /127.0.0.12
+TRACE 15:39:57,223 reporting /127.0.0.13
+TRACE 15:39:57,224 reporting /127.0.0.1
+DEBUG 15:39:57,224 Disseminating load info ...
+TRACE 15:39:57,226 PHI for /127.0.0.13 : 0.5765433429544505
+TRACE 15:39:57,228 PHI for /127.0.0.1 : 0.001737177927613002
+TRACE 15:39:57,229 PHI for /127.0.0.12 : 0.0029503701216253347
+TRACE 15:39:57,229 marking as alive /127.0.0.12
+TRACE 15:39:57,230 Updating heartbeat state version to 22 from 21 for /127.0.0.12 ...
+TRACE 15:39:57,230 marking as alive /127.0.0.13
+TRACE 15:39:57,231 Updating heartbeat state version to 22 from 21 for /127.0.0.13 ...
+TRACE 15:39:57,231 marking as alive /127.0.0.1
+ INFO 15:39:57,232 InetAddress /127.0.0.1 is now UP
+ INFO 15:39:57,232 Started hinted handoff for endPoint /127.0.0.1
+ INFO 15:39:57,239 Finished hinted handoff of 0 rows to endpoint /127.0.0.1
+ INFO 15:39:57,239 /127.0.0.1is cassReady
+TRACE 15:39:57,240 Updating heartbeat state version to 23 from 22 for /127.0.0.1 ...
+TRACE 15:39:57,240 Scanning for state greater than 2 for /127.0.0.11
+TRACE 15:39:57,240 Adding state LOAD-INFORMATION: 495.0
+TRACE 15:39:57,241 Scanning for state greater than 2 for /127.0.0.11
+TRACE 15:39:57,241 Adding state LOAD-INFORMATION: 495.0
+TRACE 15:39:57,241 Sending a GossipDigestAck2Message to /127.0.0.13
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:16
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:39:57,242 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:39:57,242 Scanning for state greater than 2 for /127.0.0.11
+TRACE 15:39:57,242 Adding state LOAD-INFORMATION: 495.0
+TRACE 15:39:57,243 Scanning for state greater than 2 for /127.0.0.11
+TRACE 15:39:57,243 Adding state LOAD-INFORMATION: 495.0
+TRACE 15:39:57,243 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:17
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:39:58,727 Applying RowMutation(table='Keyspace1', key='key-002', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955198707,])])
+DEBUG 15:39:58,730 RowMutation(table='Keyspace1', key='key-002', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955198707,])]) applied.  Sending response to 91@/127.0.0.1
+Sending message ::
+-->ID:91
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+DEBUG 15:39:58,735 attempting to connect to /127.0.0.1
+&&&Added socket : 40346
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+DEBUG 15:39:59,195 Read key key-002; sending response to 8F2E4680-D8CC-5753-E798-39B9347E4F88@/127.0.0.1
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+wRRPATH ReadVerbHanlder doVerb(): Read key key-002; sending response to 8F2E4680-D8CC-5753-E798-39B9347E4F88@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node1:127.0.0.11
+corrupt :: failType returned :: NONE
+Sending message ::
+-->ID:8F2E4680-D8CC-5753-E798-39B9347E4F88
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node1:127.0.0.1:7000] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node1:127.0.0.1:7000] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node1:127.0.0.1:7000] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node1:127.0.0.1:7000] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+TRACE 15:39:59,362 eof reading from socket; closing
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+	at org.apache.cassandra.net.IncomingTcpConnection.readInt_aroundBody4(IncomingTcpConnection.java:59)
+	at org.apache.cassandra.net.IncomingTcpConnection.readInt_aroundBody5$advice(IncomingTcpConnection.java:236)
+	at org.apache.cassandra.net.IncomingTcpConnection.run(IncomingTcpConnection.java:59)
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+DEBUG 15:40:11,770 Applying RowMutation(table='Keyspace1', key='key-002', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955211763,])])
+DEBUG 15:40:11,772 RowMutation(table='Keyspace1', key='key-002', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955211763,])]) applied.  Sending response to 94@/127.0.0.1
+Sending message ::
+-->ID:94
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:12,219 Gossip Digests are : /127.0.0.11:1308955195:5 /127.0.0.11:1308955195:5 /127.0.0.12:1308955161:22 /127.0.0.13:1308955161:22 /127.0.0.1:1308955160:23 
+TRACE 15:40:12,219 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:18
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:12,220 Performing status check ...
+TRACE 15:40:12,220 PHI for /127.0.0.13 : 8.706791508234314
+ INFO 15:40:12,221 InetAddress /127.0.0.13 is now dead.
+DEBUG 15:40:12,221 Resetting pool for /127.0.0.13
+TRACE 15:40:12,222 PHI for /127.0.0.1 : 13.02619391793429
+ INFO 15:40:12,222 InetAddress /127.0.0.1 is now dead.
+DEBUG 15:40:12,223 Resetting pool for /127.0.0.1
+TRACE 15:40:12,224 PHI for /127.0.0.12 : 8.85170043161499
+ INFO 15:40:12,224 InetAddress /127.0.0.12 is now dead.
+DEBUG 15:40:12,225 Resetting pool for /127.0.0.12
+TRACE 15:40:12,290 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:12,291 reporting /127.0.0.1
+TRACE 15:40:12,291 reporting /127.0.0.1
+TRACE 15:40:12,291 Scanning for state greater than 4 for /127.0.0.11
+TRACE 15:40:12,292 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:40:12,292 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:19
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:40:12,293 attempting to connect to /127.0.0.1
+&&&Added socket : 38168
+TRACE 15:40:12,299 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:12,299 reporting /127.0.0.1
+TRACE 15:40:12,299 marking as alive /127.0.0.1
+ INFO 15:40:12,300 InetAddress /127.0.0.1 is now UP
+ INFO 15:40:12,300 Started hinted handoff for endPoint /127.0.0.1
+ INFO 15:40:12,300 /127.0.0.1is cassReady
+TRACE 15:40:12,300 Updating heartbeat state version to 25 from 23 for /127.0.0.1 ...
+ INFO 15:40:12,301 Finished hinted handoff of 0 rows to endpoint /127.0.0.1
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:13,219 Gossip Digests are : /127.0.0.11:1308955195:6 /127.0.0.12:1308955161:22 /127.0.0.11:1308955195:6 /127.0.0.13:1308955161:22 /127.0.0.1:1308955160:25 
+TRACE 15:40:13,220 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:20
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:13,222 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:20
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:40:13,223 attempting to connect to /127.0.0.12
+TRACE 15:40:13,226 Received a GossipDigestAckMessage from /127.0.0.1
+&&&Added socket : 35396
+TRACE 15:40:13,227 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:20
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:13,231 Performing status check ...
+DEBUG 15:40:13,231 attempting to connect to /127.0.0.13
+TRACE 15:40:13,231 PHI for /127.0.0.13 : 9.293785837403433
+TRACE 15:40:13,232 PHI for /127.0.0.1 : 0.10406337120147258
+TRACE 15:40:13,232 PHI for /127.0.0.12 : 9.44649510219309
+TRACE 15:40:13,232 Scanning for state greater than 5 for /127.0.0.11
+TRACE 15:40:13,233 Scanning for state greater than 5 for /127.0.0.11
+TRACE 15:40:13,233 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:21
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:13,233 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:13,234 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:13,234 reporting /127.0.0.12
+TRACE 15:40:13,234 marking as alive /127.0.0.12
+ INFO 15:40:13,235 InetAddress /127.0.0.12 is now UP
+ INFO 15:40:13,235 /127.0.0.12is cassReady
+TRACE 15:40:13,235 Updating heartbeat state version to 23 from 22 for /127.0.0.12 ...
+TRACE 15:40:13,235 Scanning for state greater than 4 for /127.0.0.11
+TRACE 15:40:13,236 Scanning for state greater than 4 for /127.0.0.11
+TRACE 15:40:13,236 Scanning for state greater than 24 for /127.0.0.1
+ INFO 15:40:13,236 Started hinted handoff for endPoint /127.0.0.12
+ INFO 15:40:13,237 Finished hinted handoff of 0 rows to endpoint /127.0.0.12
+TRACE 15:40:13,236 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:22
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:13,291 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:13,292 reporting /127.0.0.1
+TRACE 15:40:13,292 reporting /127.0.0.1
+TRACE 15:40:13,294 Scanning for state greater than 22 for /127.0.0.12
+TRACE 15:40:13,294 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:40:13,295 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:23
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:13,302 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:13,303 reporting /127.0.0.1
+TRACE 15:40:13,306 marking as alive /127.0.0.1
+TRACE 15:40:13,306 Updating heartbeat state version to 26 from 25 for /127.0.0.1 ...
+TRACE 15:40:13,337 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:13,442 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:13,545 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:13,648 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:13,750 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:13,852 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:13,955 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,060 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,163 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:14,219 Gossip Digests are : /127.0.0.11:1308955195:7 /127.0.0.1:1308955160:26 /127.0.0.13:1308955161:22 /127.0.0.12:1308955161:23 /127.0.0.11:1308955195:7 
+TRACE 15:40:14,220 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:24
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:14,221 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:24
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:14,222 Performing status check ...
+TRACE 15:40:14,223 PHI for /127.0.0.13 : 9.869748349748269
+TRACE 15:40:14,223 PHI for /127.0.0.1 : 0.1683117025939507
+TRACE 15:40:14,224 PHI for /127.0.0.12 : 0.07377764750058104
+TRACE 15:40:14,228 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:14,229 reporting /127.0.0.12
+TRACE 15:40:14,229 marking as alive /127.0.0.12
+TRACE 15:40:14,230 Updating heartbeat state version to 24 from 23 for /127.0.0.12 ...
+TRACE 15:40:14,230 Scanning for state greater than 6 for /127.0.0.11
+TRACE 15:40:14,232 Scanning for state greater than 6 for /127.0.0.11
+TRACE 15:40:14,233 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:25
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:14,234 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:14,234 Scanning for state greater than 6 for /127.0.0.11
+TRACE 15:40:14,235 Scanning for state greater than 6 for /127.0.0.11
+TRACE 15:40:14,236 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:26
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:14,267 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,292 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:14,292 reporting /127.0.0.1
+TRACE 15:40:14,293 reporting /127.0.0.1
+TRACE 15:40:14,294 Scanning for state greater than 6 for /127.0.0.11
+TRACE 15:40:14,299 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:40:14,299 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:27
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:14,305 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:14,306 reporting /127.0.0.1
+TRACE 15:40:14,306 marking as alive /127.0.0.1
+TRACE 15:40:14,306 Updating heartbeat state version to 27 from 26 for /127.0.0.1 ...
+TRACE 15:40:14,370 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,474 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,577 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,681 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,785 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,889 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:14,993 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:15,097 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:15,201 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:15,219 Gossip Digests are : /127.0.0.11:1308955195:8 /127.0.0.12:1308955161:24 /127.0.0.13:1308955161:22 /127.0.0.1:1308955160:27 /127.0.0.11:1308955195:8 
+TRACE 15:40:15,220 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:28
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:15,222 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:28
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:15,225 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:28
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:15,242 Performing status check ...
+TRACE 15:40:15,242 PHI for /127.0.0.13 : 10.461388328489715
+TRACE 15:40:15,243 PHI for /127.0.0.1 : 0.23144916934555054
+TRACE 15:40:15,243 PHI for /127.0.0.12 : 0.0953294955406207
+TRACE 15:40:15,243 Received a GossipDigestAckMessage from /127.0.0.1
+TRACE 15:40:15,244 reporting /127.0.0.12
+TRACE 15:40:15,244 marking as alive /127.0.0.12
+TRACE 15:40:15,244 Updating heartbeat state version to 25 from 24 for /127.0.0.12 ...
+TRACE 15:40:15,244 Scanning for state greater than 7 for /127.0.0.11
+TRACE 15:40:15,245 Scanning for state greater than 7 for /127.0.0.11
+TRACE 15:40:15,245 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:29
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:15,245 Received a GossipDigestAckMessage from /127.0.0.1
+TRACE 15:40:15,246 Scanning for state greater than 7 for /127.0.0.11
+TRACE 15:40:15,246 Scanning for state greater than 7 for /127.0.0.11
+TRACE 15:40:15,246 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:30
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:15,292 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:15,293 reporting /127.0.0.1
+TRACE 15:40:15,294 reporting /127.0.0.1
+TRACE 15:40:15,295 @@@@ Size of GossipDigestAckMessage is 35
+TRACE 15:40:15,296 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:31
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:15,301 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:15,302 reporting /127.0.0.1
+TRACE 15:40:15,302 marking as alive /127.0.0.1
+TRACE 15:40:15,303 Updating heartbeat state version to 28 from 27 for /127.0.0.1 ...
+TRACE 15:40:15,304 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:15,408 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:15,512 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:15,615 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:15,719 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:15,822 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:15,926 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,030 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,134 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+DEBUG 15:40:16,206 GC for ParNew: 14 ms, 32833600 reclaimed leaving 47239152 used; max is 654114816
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:16,219 Gossip Digests are : /127.0.0.11:1308955195:9 /127.0.0.13:1308955161:22 /127.0.0.1:1308955160:28 /127.0.0.11:1308955195:9 /127.0.0.12:1308955161:25 
+TRACE 15:40:16,220 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:32
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:16,221 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:32
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:16,222 Performing status check ...
+TRACE 15:40:16,222 PHI for /127.0.0.13 : 11.030382872575311
+TRACE 15:40:16,223 PHI for /127.0.0.1 : 0.27989061426567086
+TRACE 15:40:16,223 PHI for /127.0.0.12 : 0.10905819981103049
+TRACE 15:40:16,225 Received a GossipDigestAckMessage from /127.0.0.1
+TRACE 15:40:16,226 Scanning for state greater than 8 for /127.0.0.11
+TRACE 15:40:16,226 Scanning for state greater than 8 for /127.0.0.11
+TRACE 15:40:16,226 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:33
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:16,227 Received a GossipDigestAckMessage from /127.0.0.1
+TRACE 15:40:16,227 Scanning for state greater than 8 for /127.0.0.11
+TRACE 15:40:16,227 Scanning for state greater than 8 for /127.0.0.11
+TRACE 15:40:16,228 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:34
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:16,236 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,338 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,442 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,545 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,649 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,752 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,856 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:16,959 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,063 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,167 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:17,219 Gossip Digests are : /127.0.0.11:1308955195:10 /127.0.0.1:1308955160:28 /127.0.0.12:1308955161:25 /127.0.0.11:1308955195:10 /127.0.0.13:1308955161:22 
+TRACE 15:40:17,220 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:35
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:17,221 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:35
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:17,223 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:35
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:17,224 Performing status check ...
+TRACE 15:40:17,225 PHI for /127.0.0.13 : 11.61273994610625
+TRACE 15:40:17,225 PHI for /127.0.0.1 : 0.5843970154537299
+TRACE 15:40:17,226 PHI for /127.0.0.12 : 0.220789940781882
+TRACE 15:40:17,226 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:17,227 reporting /127.0.0.12
+TRACE 15:40:17,227 reporting /127.0.0.1
+TRACE 15:40:17,228 marking as alive /127.0.0.12
+TRACE 15:40:17,228 Updating heartbeat state version to 27 from 25 for /127.0.0.12 ...
+TRACE 15:40:17,229 marking as alive /127.0.0.1
+TRACE 15:40:17,229 Updating heartbeat state version to 29 from 28 for /127.0.0.1 ...
+TRACE 15:40:17,230 Scanning for state greater than 9 for /127.0.0.11
+TRACE 15:40:17,230 Scanning for state greater than 9 for /127.0.0.11
+TRACE 15:40:17,231 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:36
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:17,271 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,375 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,478 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,583 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,686 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,739 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:17,740 reporting /127.0.0.12
+TRACE 15:40:17,740 reporting /127.0.0.1
+TRACE 15:40:17,740 reporting /127.0.0.12
+TRACE 15:40:17,741 @@@@ Size of GossipDigestAckMessage is 48
+TRACE 15:40:17,741 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:37
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:17,745 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:17,745 reporting /127.0.0.12
+TRACE 15:40:17,745 reporting /127.0.0.1
+TRACE 15:40:17,746 marking as alive /127.0.0.12
+TRACE 15:40:17,746 Updating heartbeat state version to 28 from 27 for /127.0.0.12 ...
+TRACE 15:40:17,746 marking as alive /127.0.0.1
+TRACE 15:40:17,746 Updating heartbeat state version to 30 from 29 for /127.0.0.1 ...
+TRACE 15:40:17,788 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,891 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:17,995 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:18,099 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:18,202 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:18,219 Gossip Digests are : /127.0.0.11:1308955195:11 /127.0.0.12:1308955161:28 /127.0.0.1:1308955160:30 /127.0.0.11:1308955195:11 /127.0.0.13:1308955161:22 
+TRACE 15:40:18,219 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:38
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:18,220 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:38
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:18,220 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:38
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:18,223 Received a GossipDigestAckMessage from /127.0.0.1
+TRACE 15:40:18,224 Performing status check ...
+TRACE 15:40:18,224 PHI for /127.0.0.13 : 12.19273707572462
+TRACE 15:40:18,225 PHI for /127.0.0.1 : 0.15833093470205126
+TRACE 15:40:18,226 PHI for /127.0.0.12 : 0.08548062254065548
+TRACE 15:40:18,226 Scanning for state greater than 10 for /127.0.0.11
+TRACE 15:40:18,226 Scanning for state greater than 10 for /127.0.0.11
+TRACE 15:40:18,226 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:39
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:18,227 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:18,227 Scanning for state greater than 10 for /127.0.0.11
+TRACE 15:40:18,228 Scanning for state greater than 10 for /127.0.0.11
+TRACE 15:40:18,228 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:40
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:18,291 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:18,292 reporting /127.0.0.1
+TRACE 15:40:18,292 reporting /127.0.0.1
+TRACE 15:40:18,293 @@@@ Size of GossipDigestAckMessage is 35
+TRACE 15:40:18,294 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:41
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:18,300 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:18,300 reporting /127.0.0.1
+TRACE 15:40:18,301 marking as alive /127.0.0.1
+TRACE 15:40:18,301 Updating heartbeat state version to 31 from 30 for /127.0.0.1 ...
+TRACE 15:40:18,306 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:18,412 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:18,515 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:18,620 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:18,724 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:18,740 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:18,740 reporting /127.0.0.12
+TRACE 15:40:18,741 reporting /127.0.0.12
+TRACE 15:40:18,742 Scanning for state greater than 30 for /127.0.0.1
+TRACE 15:40:18,742 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:40:18,743 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:42
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:18,750 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:18,751 reporting /127.0.0.12
+TRACE 15:40:18,751 marking as alive /127.0.0.12
+TRACE 15:40:18,752 Updating heartbeat state version to 29 from 28 for /127.0.0.12 ...
+TRACE 15:40:18,828 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:18,931 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,036 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,139 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:19,219 Gossip Digests are : /127.0.0.11:1308955195:12 /127.0.0.12:1308955161:29 /127.0.0.1:1308955160:31 /127.0.0.13:1308955161:22 /127.0.0.11:1308955195:12 
+TRACE 15:40:19,220 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:43
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:19,221 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:43
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:19,221 Performing status check ...
+TRACE 15:40:19,222 PHI for /127.0.0.13 : 12.772175117756449
+TRACE 15:40:19,222 PHI for /127.0.0.1 : 0.35221389158942407
+TRACE 15:40:19,226 Received a GossipDigestAckMessage from /127.0.0.1
+TRACE 15:40:19,226 PHI for /127.0.0.12 : 0.10762950203689287
+TRACE 15:40:19,227 Scanning for state greater than 11 for /127.0.0.11
+TRACE 15:40:19,227 Scanning for state greater than 11 for /127.0.0.11
+TRACE 15:40:19,228 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:44
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:19,243 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,347 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,451 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,561 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,666 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,770 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,874 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:19,977 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:20,080 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:20,184 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:20,219 Gossip Digests are : /127.0.0.11:1308955195:13 /127.0.0.1:1308955160:31 /127.0.0.12:1308955161:29 /127.0.0.11:1308955195:13 /127.0.0.13:1308955161:22 
+TRACE 15:40:20,219 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:45
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:20,227 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:20,228 reporting /127.0.0.12
+TRACE 15:40:20,228 reporting /127.0.0.1
+TRACE 15:40:20,231 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:45
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:20,232 Performing status check ...
+TRACE 15:40:20,232 PHI for /127.0.0.13 : 13.35909354836543
+TRACE 15:40:20,232 PHI for /127.0.0.1 : 0.0011086011024971317
+TRACE 15:40:20,233 PHI for /127.0.0.12 : 0.0011532925327332455
+TRACE 15:40:20,233 marking as alive /127.0.0.12
+TRACE 15:40:20,233 Updating heartbeat state version to 30 from 29 for /127.0.0.12 ...
+TRACE 15:40:20,233 marking as alive /127.0.0.1
+TRACE 15:40:20,234 Updating heartbeat state version to 32 from 31 for /127.0.0.1 ...
+TRACE 15:40:20,234 Scanning for state greater than 12 for /127.0.0.11
+TRACE 15:40:20,234 Scanning for state greater than 12 for /127.0.0.11
+TRACE 15:40:20,234 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:46
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:20,236 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:20,237 Scanning for state greater than 12 for /127.0.0.11
+TRACE 15:40:20,237 Scanning for state greater than 12 for /127.0.0.11
+TRACE 15:40:20,237 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:47
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:20,287 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:20,291 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:20,291 reporting /127.0.0.1
+TRACE 15:40:20,291 reporting /127.0.0.1
+TRACE 15:40:20,292 Scanning for state greater than 12 for /127.0.0.11
+TRACE 15:40:20,292 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:40:20,292 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:48
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:20,296 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:20,296 reporting /127.0.0.1
+TRACE 15:40:20,296 marking as alive /127.0.0.1
+TRACE 15:40:20,296 Updating heartbeat state version to 33 from 32 for /127.0.0.1 ...
+TRACE 15:40:20,389 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:20,492 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:20,596 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:20,700 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:20,740 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:20,741 reporting /127.0.0.12
+TRACE 15:40:20,741 reporting /127.0.0.12
+TRACE 15:40:20,741 @@@@ Size of GossipDigestAckMessage is 35
+TRACE 15:40:20,742 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:49
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:20,744 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:20,745 reporting /127.0.0.12
+TRACE 15:40:20,745 marking as alive /127.0.0.12
+TRACE 15:40:20,745 Updating heartbeat state version to 31 from 30 for /127.0.0.12 ...
+TRACE 15:40:20,803 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:20,907 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,010 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,114 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,217 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:21,219 Gossip Digests are : /127.0.0.11:1308955195:14 /127.0.0.12:1308955161:31 /127.0.0.13:1308955161:22 /127.0.0.11:1308955195:14 /127.0.0.1:1308955160:33 
+TRACE 15:40:21,219 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:50
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:21,220 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:50
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:21,221 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:50
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:21,227 Received a GossipDigestAckMessage from /127.0.0.1
+TRACE 15:40:21,227 Performing status check ...
+TRACE 15:40:21,228 PHI for /127.0.0.13 : 13.937556430892222
+TRACE 15:40:21,228 PHI for /127.0.0.1 : 0.3949404596164138
+TRACE 15:40:21,229 PHI for /127.0.0.12 : 0.1345593529590615
+TRACE 15:40:21,229 Scanning for state greater than 13 for /127.0.0.11
+TRACE 15:40:21,229 Scanning for state greater than 13 for /127.0.0.11
+TRACE 15:40:21,230 Sending a GossipDigestAck2Message to /127.0.0.1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:51
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:21,231 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:21,231 Scanning for state greater than 13 for /127.0.0.11
+TRACE 15:40:21,231 Scanning for state greater than 13 for /127.0.0.11
+TRACE 15:40:21,232 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:52
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:21,291 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:21,291 reporting /127.0.0.1
+TRACE 15:40:21,292 reporting /127.0.0.1
+TRACE 15:40:21,292 @@@@ Size of GossipDigestAckMessage is 35
+TRACE 15:40:21,292 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:53
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:21,295 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:21,296 reporting /127.0.0.1
+TRACE 15:40:21,296 marking as alive /127.0.0.1
+TRACE 15:40:21,296 Updating heartbeat state version to 34 from 33 for /127.0.0.1 ...
+TRACE 15:40:21,320 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,422 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,526 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,629 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,733 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,837 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:21,940 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,042 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,145 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:22,219 Gossip Digests are : /127.0.0.11:1308955195:15 /127.0.0.11:1308955195:15 /127.0.0.13:1308955161:22 /127.0.0.1:1308955160:34 /127.0.0.12:1308955161:31 
+TRACE 15:40:22,219 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:54
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:22,219 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:54
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:22,220 Performing status check ...
+TRACE 15:40:22,220 PHI for /127.0.0.13 : 14.507431738848783
+TRACE 15:40:22,220 PHI for /127.0.0.1 : 0.42460893021503016
+TRACE 15:40:22,220 PHI for /127.0.0.12 : 0.41007240829466046
+TRACE 15:40:22,223 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:22,224 reporting /127.0.0.12
+TRACE 15:40:22,224 marking as alive /127.0.0.12
+TRACE 15:40:22,224 Updating heartbeat state version to 32 from 31 for /127.0.0.12 ...
+TRACE 15:40:22,224 Scanning for state greater than 14 for /127.0.0.11
+TRACE 15:40:22,224 Scanning for state greater than 14 for /127.0.0.11
+TRACE 15:40:22,225 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:55
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:22,247 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,290 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:22,290 reporting /127.0.0.1
+TRACE 15:40:22,290 reporting /127.0.0.1
+TRACE 15:40:22,291 Scanning for state greater than 14 for /127.0.0.11
+TRACE 15:40:22,291 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:40:22,291 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:56
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:22,294 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:22,294 reporting /127.0.0.1
+TRACE 15:40:22,294 marking as alive /127.0.0.1
+TRACE 15:40:22,295 Updating heartbeat state version to 35 from 34 for /127.0.0.1 ...
+TRACE 15:40:22,349 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,452 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,554 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,656 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,739 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:22,740 reporting /127.0.0.12
+TRACE 15:40:22,740 reporting /127.0.0.12
+TRACE 15:40:22,740 Scanning for state greater than 34 for /127.0.0.1
+TRACE 15:40:22,741 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:40:22,741 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:57
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:22,746 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:22,747 reporting /127.0.0.12
+TRACE 15:40:22,747 marking as alive /127.0.0.12
+TRACE 15:40:22,747 Updating heartbeat state version to 33 from 32 for /127.0.0.12 ...
+TRACE 15:40:22,758 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,860 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:22,963 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:23,065 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+TRACE 15:40:23,167 unable to connect to /127.0.0.13
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+	at java.net.Socket.connect(Socket.java:529)
+	at java.net.Socket.connect(Socket.java:478)
+	at java.net.Socket.<init>(Socket.java:375)
+	at java.net.Socket.<init>(Socket.java:276)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody4(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.init$_aroundBody5$advice(OutboundTcpConnection.java:137)
+	at org.apache.cassandra.net.OutboundTcpConnection.connect(OutboundTcpConnection.java:156)
+	at org.apache.cassandra.net.OutboundTcpConnection.run(OutboundTcpConnection.java:89)
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:23,219 Gossip Digests are : /127.0.0.11:1308955195:16 /127.0.0.1:1308955160:35 /127.0.0.13:1308955161:22 /127.0.0.11:1308955195:16 /127.0.0.12:1308955161:33 
+TRACE 15:40:23,219 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:58
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:23,220 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:58
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:23,220 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:58
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:23,220 Performing status check ...
+TRACE 15:40:23,221 PHI for /127.0.0.13 : 15.109491730176746
+TRACE 15:40:23,221 PHI for /127.0.0.1 : 0.4565951723506108
+TRACE 15:40:23,221 PHI for /127.0.0.12 : 0.15250821189964536
+TRACE 15:40:23,226 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:23,227 Scanning for state greater than 15 for /127.0.0.11
+TRACE 15:40:23,227 Scanning for state greater than 15 for /127.0.0.11
+TRACE 15:40:23,227 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:59
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:23,227 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:23,228 Scanning for state greater than 15 for /127.0.0.11
+TRACE 15:40:23,228 Scanning for state greater than 15 for /127.0.0.11
+TRACE 15:40:23,228 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:60
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:23,291 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:23,291 reporting /127.0.0.1
+TRACE 15:40:23,291 reporting /127.0.0.1
+TRACE 15:40:23,292 Scanning for state greater than 15 for /127.0.0.11
+TRACE 15:40:23,292 @@@@ Size of GossipDigestAckMessage is 52
+TRACE 15:40:23,292 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:61
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:23,300 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:23,300 reporting /127.0.0.1
+TRACE 15:40:23,301 marking as alive /127.0.0.1
+TRACE 15:40:23,301 Updating heartbeat state version to 36 from 35 for /127.0.0.1 ...
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:24,220 Gossip Digests are : /127.0.0.11:1308955195:17 /127.0.0.13:1308955161:22 /127.0.0.1:1308955160:36 /127.0.0.12:1308955161:33 /127.0.0.11:1308955195:17 
+TRACE 15:40:24,221 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:62
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:24,222 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:62
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:24,224 Performing status check ...
+TRACE 15:40:24,224 PHI for /127.0.0.13 : 15.653559774527022
+TRACE 15:40:24,225 PHI for /127.0.0.1 : 0.4826474702748409
+TRACE 15:40:24,225 PHI for /127.0.0.12 : 0.4755424835183036
+TRACE 15:40:24,228 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:24,229 reporting /127.0.0.12
+TRACE 15:40:24,230 reporting /127.0.0.13
+TRACE 15:40:24,230 marking as alive /127.0.0.12
+TRACE 15:40:24,230 Updating heartbeat state version to 34 from 33 for /127.0.0.12 ...
+ INFO 15:40:24,231 Node /127.0.0.13 has restarted, now UP again
+ INFO 15:40:24,231 Started hinted handoff for endPoint /127.0.0.13
+DEBUG 15:40:24,231 Node /127.0.0.13 state normal, token 58047798338695792608178760357740705284
+ INFO 15:40:24,232 Node /127.0.0.13 state jump to normal
+- TM uNT(1) : size of sortedToken = 4
+ INFO 15:40:24,232 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009801
+DEBUG 15:40:24,233 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+TRACE 15:40:24,234 marking as alive /127.0.0.1
+TRACE 15:40:24,234 Scanning for state greater than 16 for /127.0.0.11
+TRACE 15:40:24,234 Scanning for state greater than 16 for /127.0.0.11
+TRACE 15:40:24,235 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:63
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:24,235 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:24,238 Scanning for state greater than 16 for /127.0.0.11
+TRACE 15:40:24,238 Scanning for state greater than 16 for /127.0.0.11
+TRACE 15:40:24,239 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:64
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:24,291 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:24,291 reporting /127.0.0.1
+TRACE 15:40:24,292 reporting /127.0.0.1
+TRACE 15:40:24,292 Scanning for state greater than 16 for /127.0.0.11
+TRACE 15:40:24,292 Scanning for state greater than 33 for /127.0.0.12
+TRACE 15:40:24,292 Adding state LOAD-INFORMATION: 495.0
+TRACE 15:40:24,293 @@@@ Size of GossipDigestAckMessage is 98
+TRACE 15:40:24,293 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:65
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:24,296 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:24,296 reporting /127.0.0.1
+TRACE 15:40:24,296 marking as alive /127.0.0.1
+TRACE 15:40:24,296 Updating heartbeat state version to 38 from 36 for /127.0.0.1 ...
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:25,220 Gossip Digests are : /127.0.0.11:1308955195:18 /127.0.0.11:1308955195:18 /127.0.0.13:1308955223:1 /127.0.0.1:1308955160:38 /127.0.0.12:1308955161:35 
+TRACE 15:40:25,221 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:66
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:25,222 Performing status check ...
+TRACE 15:40:25,222 PHI for /127.0.0.13 : 0.04534630475559881
+TRACE 15:40:25,222 PHI for /127.0.0.1 : 0.5104992078370952
+TRACE 15:40:25,223 PHI for /127.0.0.12 : 0.3180007314557572
+TRACE 15:40:25,227 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:25,227 reporting /127.0.0.12
+TRACE 15:40:25,228 reporting /127.0.0.13
+TRACE 15:40:25,228 marking as alive /127.0.0.12
+TRACE 15:40:25,228 Updating heartbeat state version to 36 from 34 for /127.0.0.12 ...
+TRACE 15:40:25,229 marking as alive /127.0.0.13
+TRACE 15:40:25,229 Updating heartbeat state version to 2 from 0 for /127.0.0.13 ...
+TRACE 15:40:25,229 Scanning for state greater than 17 for /127.0.0.11
+TRACE 15:40:25,230 Scanning for state greater than 17 for /127.0.0.11
+TRACE 15:40:25,230 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:67
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:40:27,202 Applying RowMutation(table='Keyspace1', key='key-003', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955227197,])])
+DEBUG 15:40:27,202 RowMutation(table='Keyspace1', key='key-003', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955227197,])]) applied.  Sending response to 159@/127.0.0.1
+Sending message ::
+-->ID:159
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+DEBUG 15:40:27,397 Read key key-003; sending response to EBBD2043-86A0-3738-B741-114A438625DD@/127.0.0.1
+wRRPATH ReadVerbHanlder doVerb(): Read key key-003; sending response to EBBD2043-86A0-3738-B741-114A438625DD@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node1:127.0.0.11
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:35135] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+corrupt :: failType returned :: NONE
+Sending message ::
+-->ID:EBBD2043-86A0-3738-B741-114A438625DD
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+
+## ############################################
+## WARNING: I'm crahing here, and should see no more output
+## ############################################
+
+In FMClient processCrash(), deleting nodeConnectedFlag [part of workload]

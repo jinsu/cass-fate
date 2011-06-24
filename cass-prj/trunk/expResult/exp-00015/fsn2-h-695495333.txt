@@ -1,0 +1,36 @@
+
+The hash ID string is: 
+## [
+CRASH
+noDisk(net)
+Node2
+NetIO
+SocketStream
+Node2
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+] 
+
+The hash ID is: 
+[[-695495333]] 
+
+Receive sendContext: [66862910]
+
+FailType: **CRASH**
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+

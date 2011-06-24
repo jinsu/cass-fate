@@ -1,0 +1,307 @@
+Listening for transport dt_socket at address: 9002
+ INFO 15:44:39,072 JNA not found. Native methods will be disabled.
+DEBUG 15:44:39,087 Loading settings from /home/jinsu/research/cass-prj/trunk/stable_cass/conf/conf2/storage-conf.xml
+DEBUG 15:44:39,325 Syncing log with a period of 10000
+ INFO 15:44:39,333 DiskAccessMode 'auto' determined to be standard, indexAccessMode is standard
+DEBUG 15:44:39,411 setting autoBootstrap to false
+DEBUG 15:44:39,451 setting hintedHandoffEnabled to true
+DEBUG 15:44:39,602 adding Super1 as 0
+DEBUG 15:44:39,603 adding Standard2 as 1
+DEBUG 15:44:39,604 adding Super2 as 2
+DEBUG 15:44:39,604 adding Standard1 as 3
+DEBUG 15:44:39,605 adding StandardByUUID1 as 4
+DEBUG 15:44:39,606 adding LocationInfo as 5
+DEBUG 15:44:39,606 adding HintsColumnFamily as 6
+DEBUG 15:44:39,734 Starting CFS LocationInfo
+DEBUG 15:44:39,753 key cache capacity for LocationInfo is 1
+DEBUG 15:44:39,755 Starting CFS HintsColumnFamily
+DEBUG 15:44:39,756 key cache capacity for HintsColumnFamily is 1
+DEBUG 15:44:39,799 opening keyspace Keyspace1
+DEBUG 15:44:39,799 Starting CFS Standard2
+DEBUG 15:44:39,800 key cache capacity for Standard2 is 1
+DEBUG 15:44:39,801 Starting CFS Super1
+DEBUG 15:44:39,801 key cache capacity for Super1 is 200000
+DEBUG 15:44:39,802 Starting CFS Standard1
+DEBUG 15:44:39,803 key cache capacity for Standard1 is 200000
+DEBUG 15:44:39,803 Starting CFS Super2
+DEBUG 15:44:39,804 key cache capacity for Super2 is 1
+DEBUG 15:44:39,805 row cache capacity for Super2 is 10000
+DEBUG 15:44:39,805 Starting CFS StandardByUUID1
+DEBUG 15:44:39,806 key cache capacity for StandardByUUID1 is 200000
+DEBUG 15:44:39,806 opening keyspace system
+ INFO 15:44:39,835 Saved Token not found. Using 12584762868799540719939945854827922091
+ INFO 15:44:39,836 Saved ClusterName not found. Using Test Cluster
+DEBUG 15:44:39,838 Estimating compactions for Super1
+DEBUG 15:44:39,840 Estimating compactions for Standard2
+DEBUG 15:44:39,840 Estimating compactions for Super2
+DEBUG 15:44:39,840 Estimating compactions for Standard1
+DEBUG 15:44:39,841 Estimating compactions for StandardByUUID1
+DEBUG 15:44:39,841 Estimating compactions for LocationInfo
+DEBUG 15:44:39,841 Estimating compactions for HintsColumnFamily
+DEBUG 15:44:39,842 Checking to see if compaction of Super1 would be useful
+DEBUG 15:44:39,842 Checking to see if compaction of Standard2 would be useful
+DEBUG 15:44:39,843 Checking to see if compaction of Super2 would be useful
+DEBUG 15:44:39,843 Checking to see if compaction of Standard1 would be useful
+DEBUG 15:44:39,843 Checking to see if compaction of StandardByUUID1 would be useful
+DEBUG 15:44:39,844 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:44:39,844 Checking to see if compaction of HintsColumnFamily would be useful
+ INFO 15:44:39,850 Creating new commitlog segment /tmp/fi/cassandra/node2/commitlog/CommitLog-1308955479850.log
+ INFO 15:44:39,885 LocationInfo has reached its threshold; switching in a fresh Memtable at CommitLogContext(file='/tmp/fi/cassandra/node2/commitlog/CommitLog-1308955479850.log', position=419)
+ INFO 15:44:39,891 Enqueuing flush of Memtable-LocationInfo@3743136(169 bytes, 4 operations)
+ INFO 15:44:39,892 Writing Memtable-LocationInfo@3743136(169 bytes, 4 operations)
+ INFO 15:44:40,035 Completed flushing /tmp/fi/cassandra/node2/data/system/LocationInfo-1-Data.db
+DEBUG 15:44:40,042 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:44:40,043 discard completed log segments for CommitLogContext(file='/tmp/fi/cassandra/node2/commitlog/CommitLog-1308955479850.log', position=419), column family 5. CFIDs are {Keyspace1: TableMetadata({Standard2: 1, Super1: 0, Standard1: 3, Super2: 2, StandardByUUID1: 4, }), system: TableMetadata({LocationInfo: 5, HintsColumnFamily: 6, }), }
+DEBUG 15:44:40,044 Marking replay position 419 on commit log CommitLogSegment(/tmp/fi/cassandra/node2/commitlog/CommitLog-1308955479850.log)
+ INFO 15:44:40,057 Starting up server gossip
+- TM uNT(1) : size of sortedToken = 0
+- TM uNT(2) : size of sortedToken = 1 ... leavingEndPoints = []
+TokenSizeTest:1:-1009545
+ INFO 15:44:40,120 Binding thrift service to /127.0.0.12:9160
+ INFO 15:44:40,143 Cassandra starting up...
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:1
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+DEBUG 15:44:40,226 attempting to connect to /127.0.0.1
+Sending message ::
+-->ID:2
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:3
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:44:40,236 attempting to connect to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:4
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:5
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:6
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:7
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:8
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:9
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:10
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:11
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:12
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:13
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:14
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:15
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:16
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:44:40,244 attempting to connect to /127.0.0.11
+&&&Added socket : 42929
+&&&Added socket : 33649
+&&&Added socket : 36488
+ INFO 15:44:40,259 Node /127.0.0.13 is now part of the cluster
+DEBUG 15:44:40,260 Resetting pool for /127.0.0.13
+DEBUG 15:44:40,272 Node /127.0.0.13 state normal, token 20902772761227803006582482381914476626
+- TM uNT(1) : size of sortedToken = 1
+- TM uNT(2) : size of sortedToken = 2 ... leavingEndPoints = []
+TokenSizeTest:2:-1009545
+DEBUG 15:44:40,273 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:44:40,274 Node /127.0.0.1 is now part of the cluster
+DEBUG 15:44:40,274 Resetting pool for /127.0.0.1
+DEBUG 15:44:40,275 Node /127.0.0.1 state normal, token 151364447406687126714367278325169556726
+- TM uNT(1) : size of sortedToken = 2
+- TM uNT(2) : size of sortedToken = 3 ... leavingEndPoints = []
+TokenSizeTest:3:-1009545
+DEBUG 15:44:40,275 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:44:40,276 Node /127.0.0.11 is now part of the cluster
+DEBUG 15:44:40,281 Resetting pool for /127.0.0.11
+DEBUG 15:44:40,282 Node /127.0.0.11 state normal, token 115334859289675963285972157264705071312
+- TM uNT(1) : size of sortedToken = 3
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009544
+DEBUG 15:44:40,283 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:17
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:44:40,286 attempting to connect to /127.0.0.13
+&&&Added socket : 38627
+ INFO 15:44:40,299 InetAddress /127.0.0.11 is now UP
+ INFO 15:44:40,300 /127.0.0.11is cassReady
+ INFO 15:44:40,300 InetAddress /127.0.0.13 is now UP
+ INFO 15:44:40,301 /127.0.0.13is cassReady
+ INFO 15:44:40,306 Started hinted handoff for endPoint /127.0.0.11
+ INFO 15:44:40,321 Finished hinted handoff of 0 rows to endpoint /127.0.0.11
+ INFO 15:44:40,321 Started hinted handoff for endPoint /127.0.0.13
+ INFO 15:44:40,322 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:18
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:18
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+DEBUG 15:44:41,073 attempting to connect to /127.0.0.1
+Sending message ::
+-->ID:18
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:44:41,076 attempting to connect to /127.0.0.11
+ INFO 15:44:41,080 InetAddress /127.0.0.1 is now UP
+&&&Added socket : 38338
+ INFO 15:44:41,080 /127.0.0.1is cassReady
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:19
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+ INFO 15:44:41,081 Started hinted handoff for endPoint /127.0.0.1
+ INFO 15:44:41,082 Finished hinted handoff of 0 rows to endpoint /127.0.0.1
+DEBUG 15:44:41,080 GC for ParNew: 54 ms, 30358136 reclaimed leaving 44986400 used; max is 654114816
+&&&Added socket : 54933
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:20
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:21
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:44:42,082 Disseminating load info ...
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+DEBUG 15:44:55,638 Applying RowMutation(table='Keyspace1', key='key-016', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955495619,])])
+DEBUG 15:44:55,641 RowMutation(table='Keyspace1', key='key-016', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955495619,])]) applied.  Sending response to 498@/127.0.0.1
+Sending message ::
+-->ID:498
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+

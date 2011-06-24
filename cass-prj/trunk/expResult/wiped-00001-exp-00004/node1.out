@@ -1,0 +1,516 @@
+Listening for transport dt_socket at address: 9001
+ INFO 15:40:51,134 JNA not found. Native methods will be disabled.
+DEBUG 15:40:51,157 Loading settings from /home/jinsu/research/cass-prj/trunk/stable_cass/conf/conf1/storage-conf.xml
+DEBUG 15:40:51,419 Syncing log with a period of 10000
+ INFO 15:40:51,423 DiskAccessMode 'auto' determined to be standard, indexAccessMode is standard
+DEBUG 15:40:51,507 setting autoBootstrap to false
+DEBUG 15:40:51,547 setting hintedHandoffEnabled to true
+DEBUG 15:40:51,710 adding Super1 as 0
+DEBUG 15:40:51,711 adding Standard2 as 1
+DEBUG 15:40:51,711 adding Super2 as 2
+DEBUG 15:40:51,711 adding Standard1 as 3
+DEBUG 15:40:51,712 adding StandardByUUID1 as 4
+DEBUG 15:40:51,712 adding LocationInfo as 5
+DEBUG 15:40:51,713 adding HintsColumnFamily as 6
+DEBUG 15:40:51,888 Starting CFS LocationInfo
+DEBUG 15:40:51,904 key cache capacity for LocationInfo is 1
+DEBUG 15:40:51,906 Starting CFS HintsColumnFamily
+DEBUG 15:40:51,907 key cache capacity for HintsColumnFamily is 1
+DEBUG 15:40:51,940 opening keyspace Keyspace1
+DEBUG 15:40:51,941 Starting CFS Standard2
+DEBUG 15:40:51,942 key cache capacity for Standard2 is 1
+DEBUG 15:40:51,944 Starting CFS Super1
+DEBUG 15:40:51,945 key cache capacity for Super1 is 200000
+DEBUG 15:40:51,946 Starting CFS Standard1
+DEBUG 15:40:51,946 key cache capacity for Standard1 is 200000
+DEBUG 15:40:51,947 Starting CFS Super2
+DEBUG 15:40:51,948 key cache capacity for Super2 is 1
+DEBUG 15:40:51,948 row cache capacity for Super2 is 10000
+DEBUG 15:40:51,949 Starting CFS StandardByUUID1
+DEBUG 15:40:51,949 key cache capacity for StandardByUUID1 is 200000
+DEBUG 15:40:51,950 opening keyspace system
+ INFO 15:40:51,982 Saved Token not found. Using 90155846607461294516970726905988850646
+ INFO 15:40:51,984 Saved ClusterName not found. Using Test Cluster
+DEBUG 15:40:51,984 Estimating compactions for Super1
+DEBUG 15:40:51,985 Estimating compactions for Standard2
+DEBUG 15:40:51,986 Estimating compactions for Super2
+DEBUG 15:40:51,986 Estimating compactions for Standard1
+DEBUG 15:40:51,986 Estimating compactions for StandardByUUID1
+DEBUG 15:40:51,987 Estimating compactions for LocationInfo
+DEBUG 15:40:51,987 Estimating compactions for HintsColumnFamily
+DEBUG 15:40:51,988 Checking to see if compaction of Super1 would be useful
+DEBUG 15:40:51,989 Checking to see if compaction of Standard2 would be useful
+DEBUG 15:40:51,989 Checking to see if compaction of Super2 would be useful
+DEBUG 15:40:51,990 Checking to see if compaction of Standard1 would be useful
+DEBUG 15:40:51,990 Checking to see if compaction of StandardByUUID1 would be useful
+DEBUG 15:40:51,990 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:40:51,991 Checking to see if compaction of HintsColumnFamily would be useful
+ INFO 15:40:51,998 Creating new commitlog segment /tmp/fi/cassandra/node1/commitlog/CommitLog-1308955251998.log
+ INFO 15:40:52,034 LocationInfo has reached its threshold; switching in a fresh Memtable at CommitLogContext(file='/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955251998.log', position=419)
+ INFO 15:40:52,047 Enqueuing flush of Memtable-LocationInfo@4368107(169 bytes, 4 operations)
+ INFO 15:40:52,049 Writing Memtable-LocationInfo@4368107(169 bytes, 4 operations)
+TRACE 15:40:52,170 wrote DecoratedKey(61078635599166706937511052402724559481, L) at 0
+TRACE 15:40:52,170 wrote index of DecoratedKey(61078635599166706937511052402724559481, L) at 0
+ INFO 15:40:52,189 Completed flushing /tmp/fi/cassandra/node1/data/system/LocationInfo-1-Data.db
+DEBUG 15:40:52,192 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:40:52,192 discard completed log segments for CommitLogContext(file='/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955251998.log', position=419), column family 5. CFIDs are {Keyspace1: TableMetadata({Standard2: 1, Super1: 0, Standard1: 3, Super2: 2, StandardByUUID1: 4, }), system: TableMetadata({LocationInfo: 5, HintsColumnFamily: 6, }), }
+DEBUG 15:40:52,193 Marking replay position 419 on commit log CommitLogSegment(/tmp/fi/cassandra/node1/commitlog/CommitLog-1308955251998.log)
+ INFO 15:40:52,208 Starting up server gossip
+- TM uNT(1) : size of sortedToken = 0
+- TM uNT(2) : size of sortedToken = 1 ... leavingEndPoints = []
+TokenSizeTest:1:-1009773
+ INFO 15:40:52,267 Binding thrift service to /127.0.0.11:9160
+ INFO 15:40:52,272 Cassandra starting up...
+TRACE 15:40:52,366 eof reading from socket; closing
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:375)
+	at org.apache.cassandra.net.IncomingTcpConnection.readInt_aroundBody4(IncomingTcpConnection.java:59)
+	at org.apache.cassandra.net.IncomingTcpConnection.readInt_aroundBody5$advice(IncomingTcpConnection.java:236)
+	at org.apache.cassandra.net.IncomingTcpConnection.run(IncomingTcpConnection.java:59)
+TRACE 15:40:52,367 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:52,391 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,391 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,394 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,394 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:1
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,398 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:52,399 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,399 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,399 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,399 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+DEBUG 15:40:52,400 attempting to connect to /127.0.0.12
+Sending message ::
+-->ID:2
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,407 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:52,408 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,408 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,408 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,409 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:3
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,409 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:52,409 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,410 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,410 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,410 Sending a GossipDigestAckMessage to /127.0.0.13
+DEBUG 15:40:52,410 attempting to connect to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:4
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,411 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:52,411 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,412 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,412 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,412 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+&&&Added socket : 33126
+&&&Added socket : 55020
+Sending message ::
+-->ID:5
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,416 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:52,417 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,417 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,417 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,418 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:6
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,418 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:52,419 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,419 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,419 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,419 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:7
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,420 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:52,420 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,421 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,421 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,422 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:8
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,422 Received a GossipDigestSynMessage from /127.0.0.1
+TRACE 15:40:52,422 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,423 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,423 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,423 Sending a GossipDigestAckMessage to /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:9
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,424 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:52,424 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,424 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,425 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,425 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:10
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,425 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:52,426 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,426 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,426 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,427 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:11
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:40:52,427 attempting to connect to /127.0.0.1
+&&&Added socket : 47769
+TRACE 15:40:52,432 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:52,432 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,433 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,437 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,437 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:12
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,438 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:52,439 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,439 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,439 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,440 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:13
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,441 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:52,441 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,441 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,442 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,442 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:14
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,443 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:52,443 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,444 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,444 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,444 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:15
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,445 Received a GossipDigestSynMessage from /127.0.0.12
+TRACE 15:40:52,446 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,446 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,446 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,447 Sending a GossipDigestAckMessage to /127.0.0.12
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:16
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,448 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:52,455 Scanning for state greater than 0 for /127.0.0.11
+TRACE 15:40:52,455 Adding state MOVE: NORMAL,90155846607461294516970726905988850646
+TRACE 15:40:52,455 @@@@ Size of GossipDigestAckMessage is 135
+TRACE 15:40:52,456 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:17
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:52,456 Received a GossipDigestAck2Message from /127.0.0.12
+ INFO 15:40:52,468 Node /127.0.0.12 is now part of the cluster
+DEBUG 15:40:52,468 Resetting pool for /127.0.0.12
+DEBUG 15:40:52,470 Node /127.0.0.12 state normal, token 50016043385412673101145352720806872521
+- TM uNT(1) : size of sortedToken = 1
+- TM uNT(2) : size of sortedToken = 2 ... leavingEndPoints = []
+TokenSizeTest:2:-1009772
+DEBUG 15:40:52,471 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:40:52,472 Node /127.0.0.13 is now part of the cluster
+DEBUG 15:40:52,473 Resetting pool for /127.0.0.13
+DEBUG 15:40:52,473 Node /127.0.0.13 state normal, token 58047798338695792608178760357740705284
+- TM uNT(1) : size of sortedToken = 2
+- TM uNT(2) : size of sortedToken = 3 ... leavingEndPoints = []
+TokenSizeTest:3:-1009772
+DEBUG 15:40:52,474 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:40:52,475 Node /127.0.0.1 is now part of the cluster
+DEBUG 15:40:52,475 Resetting pool for /127.0.0.1
+DEBUG 15:40:52,487 Node /127.0.0.1 state normal, token 151364447406687126714367278325169556726
+- TM uNT(1) : size of sortedToken = 3
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009772
+DEBUG 15:40:52,488 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+TRACE 15:40:52,488 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:52,489 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:52,489 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:52,490 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:52,490 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:52,491 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:52,491 Received a GossipDigestAck2Message from /127.0.0.12
+TRACE 15:40:52,492 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:40:52,492 reporting /127.0.0.1
+TRACE 15:40:52,494 marking as alive /127.0.0.1
+ INFO 15:40:52,498 InetAddress /127.0.0.1 is now UP
+ INFO 15:40:52,498 Started hinted handoff for endPoint /127.0.0.1
+ INFO 15:40:52,498 /127.0.0.1is cassReady
+TRACE 15:40:52,499 Updating heartbeat state version to 52 from 51 for /127.0.0.1 ...
+TRACE 15:40:52,500 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:40:52,500 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:40:52,501 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:40:52,501 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:52,502 Received a GossipDigestAck2Message from /127.0.0.1
+TRACE 15:40:52,502 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:40:52,503 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:40:52,503 Received a GossipDigestAck2Message from /127.0.0.13
+ INFO 15:40:52,507 Finished hinted handoff of 0 rows to endpoint /127.0.0.1
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:53,219 Gossip Digests are : /127.0.0.11:1308955251:2 /127.0.0.13:1308955223:16 /127.0.0.1:1308955160:52 /127.0.0.12:1308955161:49 /127.0.0.11:1308955251:2 
+TRACE 15:40:53,220 Sending a GossipDigestSynMessage to /127.0.0.1 ...
+DEBUG 15:40:53,220 GC for ParNew: 51 ms, 31020544 reclaimed leaving 44987096 used; max is 654114816
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:18
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:53,221 Sending a GossipDigestSynMessage to /127.0.0.12 ...
+DEBUG 15:40:53,221 attempting to connect to /127.0.0.1
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:18
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:40:53,222 attempting to connect to /127.0.0.12
+TRACE 15:40:53,222 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+&&&Added socket : 33819
+&&&Added socket : 46682
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:18
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:40:53,225 attempting to connect to /127.0.0.13
+&&&Added socket : 38417
+TRACE 15:40:53,228 Performing status check ...
+TRACE 15:40:53,229 PHI for /127.0.0.1 : 0.6392814773615865
+TRACE 15:40:53,230 Received a GossipDigestAckMessage from /127.0.0.1
+TRACE 15:40:53,230 reporting /127.0.0.12
+TRACE 15:40:53,230 reporting /127.0.0.13
+TRACE 15:40:53,231 marking as alive /127.0.0.12
+ INFO 15:40:53,231 InetAddress /127.0.0.12 is now UP
+ INFO 15:40:53,231 /127.0.0.12is cassReady
+TRACE 15:40:53,231 Updating heartbeat state version to 50 from 49 for /127.0.0.12 ...
+TRACE 15:40:53,232 marking as alive /127.0.0.13
+ INFO 15:40:53,232 InetAddress /127.0.0.13 is now UP
+ INFO 15:40:53,232 /127.0.0.13is cassReady
+TRACE 15:40:53,232 Updating heartbeat state version to 17 from 16 for /127.0.0.13 ...
+TRACE 15:40:53,233 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:40:53,233 Scanning for state greater than 1 for /127.0.0.11
+ INFO 15:40:53,232 Started hinted handoff for endPoint /127.0.0.12
+TRACE 15:40:53,234 Sending a GossipDigestAck2Message to /127.0.0.1
+ INFO 15:40:53,235 Finished hinted handoff of 0 rows to endpoint /127.0.0.12
+ INFO 15:40:53,238 Started hinted handoff for endPoint /127.0.0.13
+ INFO 15:40:53,239 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:19
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:53,241 Received a GossipDigestAckMessage from /127.0.0.12
+TRACE 15:40:53,242 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:40:53,242 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:40:53,242 Sending a GossipDigestAck2Message to /127.0.0.12
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:20
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:53,244 Received a GossipDigestAckMessage from /127.0.0.13
+TRACE 15:40:53,245 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:40:53,245 Scanning for state greater than 1 for /127.0.0.11
+TRACE 15:40:53,245 Sending a GossipDigestAck2Message to /127.0.0.13
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:21
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+TRACE 15:40:53,522 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:53,523 reporting /127.0.0.13
+TRACE 15:40:53,524 reporting /127.0.0.1
+TRACE 15:40:53,524 reporting /127.0.0.13
+TRACE 15:40:53,525 @@@@ Size of GossipDigestAckMessage is 48
+TRACE 15:40:53,526 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:22
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:53,531 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:40:53,532 reporting /127.0.0.1
+TRACE 15:40:53,532 reporting /127.0.0.13
+TRACE 15:40:53,533 marking as alive /127.0.0.1
+TRACE 15:40:53,533 Updating heartbeat state version to 53 from 52 for /127.0.0.1 ...
+TRACE 15:40:53,534 marking as alive /127.0.0.13
+TRACE 15:40:53,534 Updating heartbeat state version to 18 from 17 for /127.0.0.13 ...
+node1 recorded Tokensize 4
+- Nodes not connected...
+TRACE 15:40:54,218 Gossip Digests are : /127.0.0.11:1308955251:3 /127.0.0.12:1308955161:50 /127.0.0.11:1308955251:3 /127.0.0.13:1308955223:18 /127.0.0.1:1308955160:53 
+TRACE 15:40:54,219 Sending a GossipDigestSynMessage to /127.0.0.13 ...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:23
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+TRACE 15:40:54,220 Performing status check ...
+TRACE 15:40:54,221 PHI for /127.0.0.13 : 1.4880813419827126
+TRACE 15:40:54,221 PHI for /127.0.0.1 : 0.5832921988915019
+TRACE 15:40:54,224 PHI for /127.0.0.12 : 0.8633774300236646
+TRACE 15:40:54,225 Received a GossipDigestAckMessage from /127.0.0.13
+TRACE 15:40:54,226 Scanning for state greater than 2 for /127.0.0.11
+TRACE 15:40:54,226 Scanning for state greater than 2 for /127.0.0.11
+TRACE 15:40:54,227 Sending a GossipDigestAck2Message to /127.0.0.13
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:24
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+DEBUG 15:40:54,231 Disseminating load info ...
+TRACE 15:40:54,524 Received a GossipDigestSynMessage from /127.0.0.13
+TRACE 15:40:54,525 reporting /127.0.0.13
+TRACE 15:40:54,525 reporting /127.0.0.13
+TRACE 15:40:54,526 reporting /127.0.0.1
+TRACE 15:40:54,526 reporting /127.0.0.12
+TRACE 15:40:54,527 Scanning for state greater than 3 for /127.0.0.11
+TRACE 15:40:54,528 Adding state LOAD-INFORMATION: 495.0
+TRACE 15:40:54,528 @@@@ Size of GossipDigestAckMessage is 107
+TRACE 15:40:54,529 Sending a GossipDigestAckMessage to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:25
+FROM:/127.0.0.11
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+TRACE 15:40:54,537 Received a GossipDigestAck2Message from /127.0.0.13
+TRACE 15:40:54,537 reporting /127.0.0.12
+TRACE 15:40:54,538 reporting /127.0.0.13
+TRACE 15:40:54,538 reporting /127.0.0.1
+TRACE 15:40:54,539 marking as alive /127.0.0.12
+TRACE 15:40:54,539 Updating heartbeat state version to 51 from 50 for /127.0.0.12 ...
+TRACE 15:40:54,541 marking as alive /127.0.0.13
+TRACE 15:40:54,542 Updating heartbeat state version to 19 from 18 for /127.0.0.13 ...
+TRACE 15:40:54,542 marking as alive /127.0.0.1
+TRACE 15:40:54,543 Updating heartbeat state version to 54 from 53 for /127.0.0.1 ...
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node1 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node1 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+DEBUG 15:41:08,891 Applying RowMutation(table='Keyspace1', key='key-004', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955268869,])])
+DEBUG 15:41:08,902 RowMutation(table='Keyspace1', key='key-004', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955268869,])]) applied.  Sending response to 214@/127.0.0.1
+Sending message ::
+-->ID:214
+FROM:/127.0.0.11
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
