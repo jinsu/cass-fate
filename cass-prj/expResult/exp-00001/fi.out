@@ -1,0 +1,903 @@
+FMDriver.Main: Starting ...
+FMDRIVER.Main: before calling fm.start()
+- Starting XML-RPC Server...
+- Waiting for incoming ...
+- After webserver.start ...
+FMDriver.Main: after calling fm.start()
+FMDriver.Main: Stopping ...
+Receive sendContext: [2855259]
+
+  [targetIO][NetIO-Node0:127.0.0.11:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+     [iajc] warning at call(void java.io.DataOutputStream.write(byte[], int, int)) 
+     [iajc] ^^^^^^^^^^    
+     [iajc] org/apache/cassandra/net/OutboundTcpConnection.java:101:0:0 warningHooks:javaIO ...
+     [messageType] Undecided
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [78366110]
+
+  [targetIO][NetIO-Node0:127.0.0.12:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [3611465]
+
+  [targetIO][NetIO-Node0:127.0.0.13:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [82084012]
+
+  [targetIO][NetIO-Node0:127.0.0.12:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [98576886]
+
+  [targetIO][NetIO-Node0:127.0.0.11:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [5714191]
+
+  [targetIO][NetIO-Node0:127.0.0.12:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+     [iajc] warning at call(void java.io.DataOutputStream.flush()) 
+     [iajc] ^^^^^^^^^^    
+     [iajc] org/apache/cassandra/net/OutboundTcpConnection.java:104:0:0 warningHooks:javaIO ...
+     [messageType] Undecided
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [46490246]
+
+  [targetIO][NetIO-Node0:127.0.0.13:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [19427469]
+
+  [targetIO][NetIO-Node0:127.0.0.12:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [82546668]
+
+  [targetIO][NetIO-Node0:127.0.0.11:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [22020296]
+
+  [targetIO][NetIO-Node0:127.0.0.13:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [51948774]
+
+  [targetIO][NetIO-Node0:127.0.0.11:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [19369462]
+
+  [targetIO][NetIO-Node0:127.0.0.13:7000] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [76424108]
+
+  [targetIO][NetIO-Node0:127.0.0.1:42401] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+     [iajc] warning at call(int java.io.DataInputStream.readInt()) 
+     [iajc] ^^^^^^^^^^    
+     [iajc] org/apache/cassandra/net/IncomingTcpConnection.java:59:0:0 warningHooks:javaIO ...
+     [messageType] Undecided
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [13828211]
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [79663185]
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+     [iajc] warning at call(int java.io.DataInputStream.readInt()) 
+     [iajc] ^^^^^^^^^^    
+     [iajc] org/apache/cassandra/net/IncomingTcpConnection.java:60:0:0 warningHooks:javaIO ...
+     [messageType] Undecided
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [14054945]
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [32496963]
+
+  [targetIO][NetIO-Node0:127.0.0.1:42401] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [14998866]
+
+  [targetIO][NetIO-Node0:127.0.0.1:39566] at *Node3* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [56106090]
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+     [iajc] warning at call(int java.io.DataInputStream.readInt()) 
+     [iajc] ^^^^^^^^^^    
+     [iajc] org/apache/cassandra/net/IncomingTcpConnection.java:71:0:0 warningHooks:javaIO ...
+     [messageType] Undecided
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [43776778]
+
+  [targetIO][NetIO-Node0:127.0.0.1:42401] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [74310319]
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [11533771]
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+     [iajc] warning at call(void java.io.DataInputStream.readFully(byte[])) 
+     [iajc] ^^^^^^^^^^    
+     [iajc] org/apache/cassandra/net/IncomingTcpConnection.java:73:0:0 warningHooks:javaIO ...
+     [messageType] Undecided
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [13543361]
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [3770100]
+
+  [targetIO][NetIO-Node0:127.0.0.1:42401] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [88285508]
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [55284514]
+
+  [targetIO][NetIO-Node0:127.0.0.1:42401] at *Node1* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [98707023]
+
+  [targetIO][NetIO-Node0:127.0.0.12] at *Node2* :: [Digest] message 
+
+  call(void org.apache.cassandra.net.MessagingService.sendOneWay(Message, InetAddress))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/db/ReadVerbHandler.java(102)
+
+      [0] org.apache.cassandra.db.ReadVerbHandler (doVerb:102)
+      [1] org.apache.cassandra.net.MessageDeliveryTask (run:49)
+
+
+     [iajc] warning at call(void org.apache.cassandra.net.MessagingService.sendOneWay(Message, InetAddress)) 
+     [iajc] ^^^^^^^^^^    
+     [iajc] org/apache/cassandra/db/ReadVerbHandler.java:102:0:0 warningHooks:javaIO ...
+     [messageType] Digest
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 1
+FMLogic tThisF : chkpt 2
+corrupt :: rfl1 :: show me FailType => CORRUPTION
+corrupt :: rfl2 :: checkpoint
+corrupt :: sf4 checkpoint
+corrupt :: rfl3 :: checkpoint
+
+## ############################################
+## MESSAGE: Server: I'm failing this (see above) [ft:CORRUPTION]
+## ############################################
+
+Receive sendContext: [43771722]
+
+  [targetIO][NetIO-Node0:127.0.0.1:42401] at *Node1* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+|| ctx ||   [targetIO][NetIO-Node0:127.0.0.1:42401] at *Node1* :: [Undecided] message 
+
+FMLogic tThisF : chkpt 1
+FMLogic tThisF : chkpt 2
+corrupt :: rfl1 :: show me FailType => CRASH
+corrupt :: rfl2 :: checkpoint
+corrupt :: sf4 checkpoint
+corrupt :: rfl3 :: checkpoint
+
+## ############################################
+## MESSAGE: Server: I'm failing this (see above) [ft:CRASH]
+## ############################################
+
+Receive sendContext: [80013623]
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [4789197]
+
+  [targetIO][NetIO-Node0:127.0.0.1:39566] at *Node3* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [51563655]
+
+  [targetIO][NetIO-Node2:127.0.0.12:35195] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [44268437]
+
+  [targetIO][NetIO-Node0:127.0.0.1:39566] at *Node3* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [8990069]
+
+  [targetIO][NetIO-Node2:127.0.0.12:35195] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [81073373]
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [29445003]
+
+  [targetIO][NetIO-Node0:127.0.0.1:39566] at *Node3* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [88257952]
+
+  [targetIO][NetIO-Node0:127.0.0.1:39566] at *Node3* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [8793401]
+
+  [targetIO][NetIO-Node2:127.0.0.12:35195] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [21215732]
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [3399931]
+
+  [targetIO][NetIO-Node0:127.0.0.1:39566] at *Node3* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [33823324]
+
+  [targetIO][NetIO-Node2:127.0.0.12:35195] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [11042247]
+
+  [targetIO][NetIO-Node0:127.0.0.1:39566] at *Node3* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [31851268]
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [62566906]
+
+  [targetIO][NetIO-Node2:127.0.0.12:35195] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [57795258]
+
+  [targetIO][NetIO-Node2:127.0.0.12:35195] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [61496932]
+
+  [targetIO][NetIO-Node0:127.0.0.1:39566] at *Node3* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [39896220]
+
+  [targetIO][NetIO-Node2:127.0.0.12:35195] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [55209168]
+
+  [targetIO][NetIO-Node0:127.0.0.13] at *Node3* :: [Digest] message 
+
+  call(void org.apache.cassandra.net.MessagingService.sendOneWay(Message, InetAddress))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/db/ReadVerbHandler.java(102)
+
+      [0] org.apache.cassandra.db.ReadVerbHandler (doVerb:102)
+      [1] org.apache.cassandra.net.MessageDeliveryTask (run:49)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [186977]
+
+  [targetIO][NetIO-Node3:127.0.0.1:7000] at *Node3* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [52121876]
+
+  [targetIO][NetIO-Node2:127.0.0.12:35195] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [97744697]
+
+  [targetIO][NetIO-Node3:127.0.0.13:47542] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [87861363]
+
+  [targetIO][NetIO-Node3:127.0.0.1:7000] at *Node3* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [70870626]
+
+  [targetIO][NetIO-Node3:127.0.0.13:47542] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [56932943]
+
+  [targetIO][NetIO-Node3:127.0.0.1:7000] at *Node3* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [33930466]
+
+  [targetIO][NetIO-Node3:127.0.0.13:47542] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [83105087]
+
+  [targetIO][NetIO-Node3:127.0.0.13:47542] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [64553873]
+
+  [targetIO][NetIO-Node3:127.0.0.1:7000] at *Node3* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [53791112]
+
+  [targetIO][NetIO-Node3:127.0.0.13:47542] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [24479380]
+
+  [targetIO][NetIO-Node3:127.0.0.13:47542] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3
+Receive sendContext: [25845897]
+
+  [targetIO][NetIO-Node3:127.0.0.13:47542] at *Node0* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+Receive sendContext: [48610383]
+
+  [targetIO][NetIO-Node3:127.0.0.13:47542] at *Node0* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+FMLogic run : chkpnt 1
+FMLogic tTF : chkpt 1
+FMLogic tThisF : chkpt 3
+FMLogic tThisF : chkpt 3

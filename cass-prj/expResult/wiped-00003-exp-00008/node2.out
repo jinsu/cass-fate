@@ -1,0 +1,4293 @@
+Listening for transport dt_socket at address: 9002
+ INFO 15:39:19,042 JNA not found. Native methods will be disabled.
+DEBUG 15:39:19,135 Loading settings from /home/jinsu/research/cass-prj/trunk/stable_cass/conf/conf2/storage-conf.xml
+DEBUG 15:39:19,802 Syncing log with a period of 10000
+ INFO 15:39:19,819 DiskAccessMode 'auto' determined to be standard, indexAccessMode is standard
+DEBUG 15:39:20,159 setting autoBootstrap to false
+DEBUG 15:39:20,315 setting hintedHandoffEnabled to true
+DEBUG 15:39:20,637 adding Super1 as 0
+DEBUG 15:39:20,638 adding Standard2 as 1
+DEBUG 15:39:20,641 adding Super2 as 2
+DEBUG 15:39:20,641 adding Standard1 as 3
+DEBUG 15:39:20,642 adding StandardByUUID1 as 4
+DEBUG 15:39:20,642 adding LocationInfo as 5
+DEBUG 15:39:20,643 adding HintsColumnFamily as 6
+DEBUG 15:39:20,883 Starting CFS LocationInfo
+DEBUG 15:39:20,907 key cache capacity for LocationInfo is 1
+DEBUG 15:39:20,909 Starting CFS HintsColumnFamily
+DEBUG 15:39:20,909 key cache capacity for HintsColumnFamily is 1
+DEBUG 15:39:21,011 opening keyspace Keyspace1
+DEBUG 15:39:21,011 Starting CFS Standard2
+DEBUG 15:39:21,012 key cache capacity for Standard2 is 1
+DEBUG 15:39:21,013 Starting CFS Super1
+DEBUG 15:39:21,020 key cache capacity for Super1 is 200000
+DEBUG 15:39:21,020 Starting CFS Standard1
+DEBUG 15:39:21,021 key cache capacity for Standard1 is 200000
+DEBUG 15:39:21,022 Starting CFS Super2
+DEBUG 15:39:21,023 key cache capacity for Super2 is 1
+DEBUG 15:39:21,023 row cache capacity for Super2 is 10000
+DEBUG 15:39:21,024 Starting CFS StandardByUUID1
+DEBUG 15:39:21,025 key cache capacity for StandardByUUID1 is 200000
+DEBUG 15:39:21,025 opening keyspace system
+DEBUG 15:39:21,160 Estimating compactions for Super1
+DEBUG 15:39:21,170 Estimating compactions for Standard2
+DEBUG 15:39:21,170 Estimating compactions for Super2
+DEBUG 15:39:21,174 Estimating compactions for Standard1
+DEBUG 15:39:21,175 Estimating compactions for StandardByUUID1
+DEBUG 15:39:21,175 Estimating compactions for LocationInfo
+DEBUG 15:39:21,175 Estimating compactions for HintsColumnFamily
+DEBUG 15:39:21,176 Checking to see if compaction of Super1 would be useful
+DEBUG 15:39:21,176 Checking to see if compaction of Standard2 would be useful
+DEBUG 15:39:21,177 Checking to see if compaction of Super2 would be useful
+DEBUG 15:39:21,177 Checking to see if compaction of Standard1 would be useful
+DEBUG 15:39:21,177 Checking to see if compaction of StandardByUUID1 would be useful
+DEBUG 15:39:21,178 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:39:21,178 Checking to see if compaction of HintsColumnFamily would be useful
+ INFO 15:39:21,168 Saved Token not found. Using 50016043385412673101145352720806872521
+ INFO 15:39:21,181 Saved ClusterName not found. Using Test Cluster
+ INFO 15:39:21,189 Creating new commitlog segment /tmp/fi/cassandra/node2/commitlog/CommitLog-1308955161189.log
+ INFO 15:39:21,310 LocationInfo has reached its threshold; switching in a fresh Memtable at CommitLogContext(file='/tmp/fi/cassandra/node2/commitlog/CommitLog-1308955161189.log', position=419)
+ INFO 15:39:21,315 Enqueuing flush of Memtable-LocationInfo@31497899(169 bytes, 4 operations)
+ INFO 15:39:21,316 Writing Memtable-LocationInfo@31497899(169 bytes, 4 operations)
+ INFO 15:39:21,655 Completed flushing /tmp/fi/cassandra/node2/data/system/LocationInfo-1-Data.db
+DEBUG 15:39:21,676 Checking to see if compaction of LocationInfo would be useful
+DEBUG 15:39:21,678 discard completed log segments for CommitLogContext(file='/tmp/fi/cassandra/node2/commitlog/CommitLog-1308955161189.log', position=419), column family 5. CFIDs are {Keyspace1: TableMetadata({Standard2: 1, Super1: 0, Standard1: 3, Super2: 2, StandardByUUID1: 4, }), system: TableMetadata({LocationInfo: 5, HintsColumnFamily: 6, }), }
+DEBUG 15:39:21,678 Marking replay position 419 on commit log CommitLogSegment(/tmp/fi/cassandra/node2/commitlog/CommitLog-1308955161189.log)
+ INFO 15:39:21,707 Starting up server gossip
+- TM uNT(1) : size of sortedToken = 0
+- TM uNT(2) : size of sortedToken = 1 ... leavingEndPoints = []
+TokenSizeTest:1:-1009863
+ INFO 15:39:21,792 Binding thrift service to /127.0.0.12:9160
+ INFO 15:39:21,798 Cassandra starting up...
+node2 recorded Tokensize 1
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+DEBUG 15:39:22,747 GC for ParNew: 77 ms, 31001480 reclaimed leaving 44989552 used; max is 654114816
+Sending message ::
+-->ID:1
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:39:22,751 attempting to connect to /127.0.0.13
+&&&Added socket : 47615
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:2
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:3
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:4
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+ INFO 15:39:23,699 Node /127.0.0.13 is now part of the cluster
+DEBUG 15:39:23,700 Resetting pool for /127.0.0.13
+DEBUG 15:39:23,701 Node /127.0.0.13 state normal, token 134140860703304622046874136584427140839
+- TM uNT(1) : size of sortedToken = 1
+- TM uNT(2) : size of sortedToken = 2 ... leavingEndPoints = []
+TokenSizeTest:2:-1009861
+DEBUG 15:39:23,702 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:39:23,703 Node /127.0.0.1 is now part of the cluster
+DEBUG 15:39:23,704 Resetting pool for /127.0.0.1
+DEBUG 15:39:23,704 Node /127.0.0.1 state normal, token 151364447406687126714367278325169556726
+- TM uNT(1) : size of sortedToken = 2
+- TM uNT(2) : size of sortedToken = 3 ... leavingEndPoints = []
+TokenSizeTest:3:-1009861
+DEBUG 15:39:23,705 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+ INFO 15:39:23,705 Node /127.0.0.11 is now part of the cluster
+DEBUG 15:39:23,706 Resetting pool for /127.0.0.11
+DEBUG 15:39:23,708 Node /127.0.0.11 state normal, token 80350880557606004731164003019085394895
+- TM uNT(1) : size of sortedToken = 3
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009861
+DEBUG 15:39:23,709 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:5
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+DEBUG 15:39:23,722 attempting to connect to /127.0.0.13
+Sending message ::
+-->ID:5
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+&&&Added socket : 37529
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:6
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:7
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+DEBUG 15:39:23,755 Disseminating load info ...
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:8
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:39:23,774 attempting to connect to /127.0.0.11
+&&&Added socket : 49521
+ INFO 15:39:23,803 InetAddress /127.0.0.11 is now UP
+ INFO 15:39:23,803 Started hinted handoff for endPoint /127.0.0.11
+ INFO 15:39:23,803 /127.0.0.11is cassReady
+ INFO 15:39:23,812 Finished hinted handoff of 0 rows to endpoint /127.0.0.11
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:9
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:39:24,303 attempting to connect to /127.0.0.1
+&&&Added socket : 35195
+ INFO 15:39:24,311 InetAddress /127.0.0.1 is now UP
+ INFO 15:39:24,311 /127.0.0.1is cassReady
+ INFO 15:39:24,311 Started hinted handoff for endPoint /127.0.0.1
+ INFO 15:39:24,312 Finished hinted handoff of 0 rows to endpoint /127.0.0.1
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:10
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:10
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+ INFO 15:39:24,732 InetAddress /127.0.0.13 is now UP
+ INFO 15:39:24,732 /127.0.0.13is cassReady
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:11
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+ INFO 15:39:24,733 Started hinted handoff for endPoint /127.0.0.13
+ INFO 15:39:24,734 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:12
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:13
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:14
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:15
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:16
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:17
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:18
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:19
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:20
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:21
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:22
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:23
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:39:30,138 Applying RowMutation(table='Keyspace1', key='key-001', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955170070,])])
+DEBUG 15:39:30,148 RowMutation(table='Keyspace1', key='key-001', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955170070,])]) applied.  Sending response to 28@/127.0.0.1
+Sending message ::
+-->ID:28
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+DEBUG 15:39:31,129 digest is 437f3645dbd8a641aa0971e1efa8c7e1
+DEBUG 15:39:31,131 Read key key-001; sending response to EA532C82-1D7E-6343-A393-2AC19FAEDF82@/127.0.0.1
+wRRPATH ReadVerbHanlder doVerb(): Read key key-001; sending response to EA532C82-1D7E-6343-A393-2AC19FAEDF82@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node0:127.0.0.12
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:40844] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+corrupt :: failType returned :: CORRUPTION
+corrupt :: byte array length 16
+corrupt :: array [B@c1429c
+corrupt :: cor_array [B@1fc3828
+corrupt :: response created
+Sending message ::
+-->ID:EA532C82-1D7E-6343-A393-2AC19FAEDF82
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+DEBUG 15:39:43,251 Applying RowMutation(table='Keyspace1', key='key-001', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955183224,])])
+DEBUG 15:39:43,256 RowMutation(table='Keyspace1', key='key-001', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955183224,])]) applied.  Sending response to 31@/127.0.0.1
+Sending message ::
+-->ID:31
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:24
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+ INFO 15:39:43,733 InetAddress /127.0.0.1 is now dead.
+DEBUG 15:39:43,735 Resetting pool for /127.0.0.1
+ INFO 15:39:43,738 InetAddress /127.0.0.11 is now dead.
+DEBUG 15:39:43,739 Resetting pool for /127.0.0.11
+ INFO 15:39:43,741 InetAddress /127.0.0.1 is now UP
+ INFO 15:39:43,741 Started hinted handoff for endPoint /127.0.0.1
+ INFO 15:39:43,741 /127.0.0.1is cassReady
+- Experiment not running, continue ===>GDAckVHandler
+ INFO 15:39:43,743 Finished hinted handoff of 0 rows to endpoint /127.0.0.1
+Sending message ::
+-->ID:25
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:26
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:27
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:27
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:39:44,734 attempting to connect to /127.0.0.11
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:27
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:28
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:29
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:30
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:39:45,294 attempting to connect to /127.0.0.1
+&&&Added socket : 43041
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:31
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:32
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:32
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:33
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:34
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:35
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:35
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:36
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:37
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:38
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:38
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:39
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:40
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:41
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:42
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:43
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:43
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:44
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:45
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:46
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:46
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:47
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:48
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:49
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:50
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:50
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:50
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:51
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:52
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:53
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:53
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:54
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:55
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:56
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:57
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:58
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:39:52,713 GC for ParNew: 13 ms, 32823680 reclaimed leaving 47263992 used; max is 654114816
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:59
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:59
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:60
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:61
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:62
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:62
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:62
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:63
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:64
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:65
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:66
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:67
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:67
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:68
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:69
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:70
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+ INFO 15:39:55,689 Node /127.0.0.11 has restarted, now UP again
+ INFO 15:39:55,689 Started hinted handoff for endPoint /127.0.0.11
+ INFO 15:39:55,691 Finished hinted handoff of 0 rows to endpoint /127.0.0.11
+DEBUG 15:39:55,692 Node /127.0.0.11 state normal, token 15453506791999469697616307346078709122
+ INFO 15:39:55,692 Node /127.0.0.11 state jump to normal
+- TM uNT(1) : size of sortedToken = 4
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009829
+DEBUG 15:39:55,693 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:71
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:72
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:73
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:39:56,241 attempting to connect to /127.0.0.11
+&&&Added socket : 42318
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:74
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:75
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:76
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:77
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:39:58,732 Applying RowMutation(table='Keyspace1', key='key-002', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955198707,])])
+DEBUG 15:39:58,733 RowMutation(table='Keyspace1', key='key-002', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955198707,])]) applied.  Sending response to 91@/127.0.0.1
+Sending message ::
+-->ID:91
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:36221] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:36221] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:36221] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:36221] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:36221] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:36221] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:36221] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+DEBUG 15:39:58,933 digest is ebd43bf0e9e877b57ba06092b6201d08
+DEBUG 15:39:58,936 Read key key-002; sending response to 8F2E4680-D8CC-5753-E798-39B9347E4F88@/127.0.0.1
+wRRPATH ReadVerbHanlder doVerb(): Read key key-002; sending response to 8F2E4680-D8CC-5753-E798-39B9347E4F88@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node0:127.0.0.12
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:36221] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+corrupt :: failType returned :: CORRUPTION
+corrupt :: byte array length 16
+corrupt :: array [B@f346dc
+corrupt :: cor_array [B@1b14530
+corrupt :: response created
+Sending message ::
+-->ID:8F2E4680-D8CC-5753-E798-39B9347E4F88
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+DEBUG 15:40:11,772 Applying RowMutation(table='Keyspace1', key='key-002', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955211763,])])
+DEBUG 15:40:11,773 RowMutation(table='Keyspace1', key='key-002', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955211763,])]) applied.  Sending response to 94@/127.0.0.1
+Sending message ::
+-->ID:94
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:78
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+ INFO 15:40:12,735 InetAddress /127.0.0.1 is now dead.
+DEBUG 15:40:12,736 Resetting pool for /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:79
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+ INFO 15:40:13,240 InetAddress /127.0.0.1 is now UP
+ INFO 15:40:13,240 Started hinted handoff for endPoint /127.0.0.1
+ INFO 15:40:13,240 /127.0.0.1is cassReady
+ INFO 15:40:13,241 Finished hinted handoff of 0 rows to endpoint /127.0.0.1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:80
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+DEBUG 15:40:13,303 attempting to connect to /127.0.0.1
+&&&Added socket : 48181
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:81
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:82
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:83
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:84
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:85
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:86
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:87
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:88
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:89
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+ INFO 15:40:15,737 error writing to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:90
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:91
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:92
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:40:16,737 attempting to connect to /127.0.0.13
+ INFO 15:40:16,737 InetAddress /127.0.0.13 is now dead.
+DEBUG 15:40:16,739 Resetting pool for /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:93
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:94
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:95
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:96
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:96
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:97
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:98
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:99
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:100
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:100
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:100
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:101
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:102
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:103
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:104
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:105
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:105
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:106
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:107
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:108
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:109
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:110
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:111
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:111
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:112
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:113
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:114
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:115
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:116
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:116
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:117
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:118
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:119
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:120
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:120
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:121
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:122
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:123
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:124
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:125
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+&&&Added socket : 51523
+DEBUG 15:40:23,624 attempting to connect to /127.0.0.13
+&&&Added socket : 37595
+ INFO 15:40:23,715 Node /127.0.0.13 has restarted, now UP again
+DEBUG 15:40:23,716 Node /127.0.0.13 state normal, token 58047798338695792608178760357740705284
+ INFO 15:40:23,716 Started hinted handoff for endPoint /127.0.0.13
+ INFO 15:40:23,717 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+ INFO 15:40:23,716 Node /127.0.0.13 state jump to normal
+- TM uNT(1) : size of sortedToken = 4
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009801
+DEBUG 15:40:23,721 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:126
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:127
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:128
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:40:23,755 Disseminating load info ...
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:129
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:130
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:131
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:132
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:133
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:134
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:135
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:136
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:137
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:138
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:139
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:40:27,206 Applying RowMutation(table='Keyspace1', key='key-003', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955227197,])])
+DEBUG 15:40:27,207 RowMutation(table='Keyspace1', key='key-003', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955227197,])]) applied.  Sending response to 159@/127.0.0.1
+Sending message ::
+-->ID:159
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:55790] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:55790] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:55790] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:55790] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:55790] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:55790] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:55790] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+DEBUG 15:40:27,413 digest is 21089c647067cd8a88c6f1f7e1984803
+DEBUG 15:40:27,413 Read key key-003; sending response to EBBD2043-86A0-3738-B741-114A438625DD@/127.0.0.1
+wRRPATH ReadVerbHanlder doVerb(): Read key key-003; sending response to EBBD2043-86A0-3738-B741-114A438625DD@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node0:127.0.0.12
+corrupt :: failType returned :: CORRUPTION
+corrupt :: byte array length 16
+corrupt :: array [B@6e56ae
+corrupt :: cor_array [B@1fcbac1
+corrupt :: response created
+Sending message ::
+-->ID:EBBD2043-86A0-3738-B741-114A438625DD
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:55790] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+DEBUG 15:40:40,246 Applying RowMutation(table='Keyspace1', key='key-003', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955240242,])])
+DEBUG 15:40:40,247 RowMutation(table='Keyspace1', key='key-003', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955240242,])]) applied.  Sending response to 162@/127.0.0.1
+Sending message ::
+-->ID:162
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:140
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:141
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:142
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:143
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:144
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+ INFO 15:40:41,739 error writing to /127.0.0.11
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:145
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:146
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:40:42,739 attempting to connect to /127.0.0.11
+ INFO 15:40:42,739 InetAddress /127.0.0.11 is now dead.
+DEBUG 15:40:42,741 Resetting pool for /127.0.0.11
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:147
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:147
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:148
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:149
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:150
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:150
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:150
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:151
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:152
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:153
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:154
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:154
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:155
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:156
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:157
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:158
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:158
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:159
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:160
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:161
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:161
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:162
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:163
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:164
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:165
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:165
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:165
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:166
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:167
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:168
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:168
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:168
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:169
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:170
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:171
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:171
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:172
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:173
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:174
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:175
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:175
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:175
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:176
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:177
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+&&&Added socket : 36257
+DEBUG 15:40:52,288 attempting to connect to /127.0.0.11
+&&&Added socket : 58596
+ INFO 15:40:52,419 Node /127.0.0.11 has restarted, now UP again
+DEBUG 15:40:52,420 Node /127.0.0.11 state normal, token 90155846607461294516970726905988850646
+ INFO 15:40:52,420 Node /127.0.0.11 state jump to normal
+- TM uNT(1) : size of sortedToken = 4
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009772
+DEBUG 15:40:52,420 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:178
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+ INFO 15:40:52,421 Started hinted handoff for endPoint /127.0.0.11
+ INFO 15:40:52,422 Finished hinted handoff of 0 rows to endpoint /127.0.0.11
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:179
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:180
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:181
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:182
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:183
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:184
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:185
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:186
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:187
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:188
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:189
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:190
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:191
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:40:55,753 Applying RowMutation(table='Keyspace1', key='key-004', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955255744,])])
+DEBUG 15:40:55,754 RowMutation(table='Keyspace1', key='key-004', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955255744,])]) applied.  Sending response to 213@/127.0.0.1
+Sending message ::
+-->ID:213
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+DEBUG 15:41:08,876 Applying RowMutation(table='Keyspace1', key='key-004', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955268869,])])
+DEBUG 15:41:08,877 RowMutation(table='Keyspace1', key='key-004', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955268869,])]) applied.  Sending response to 214@/127.0.0.1
+Sending message ::
+-->ID:214
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:41:10,204 Applying RowMutation(table='Keyspace1', key='key-005', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955270199,])])
+DEBUG 15:41:10,205 RowMutation(table='Keyspace1', key='key-005', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955270199,])]) applied.  Sending response to 215@/127.0.0.1
+Sending message ::
+-->ID:215
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:42774] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:42774] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:42774] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:42774] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:42774] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:42774] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:42774] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+DEBUG 15:41:10,388 digest is 0290f7dc563c73fadb83f5a790b74a22
+DEBUG 15:41:10,388 Read key key-005; sending response to 70F4E96E-3381-5F85-A6F3-746F0BDD4824@/127.0.0.1
+wRRPATH ReadVerbHanlder doVerb(): Read key key-005; sending response to 70F4E96E-3381-5F85-A6F3-746F0BDD4824@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node0:127.0.0.12
+corrupt :: failType returned :: NONE
+Sending message ::
+-->ID:70F4E96E-3381-5F85-A6F3-746F0BDD4824
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:42774] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+DEBUG 15:41:10,751 GC for ParNew: 6 ms, 32892736 reclaimed leaving 47664472 used; max is 654114816
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+DEBUG 15:41:23,236 Applying RowMutation(table='Keyspace1', key='key-005', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955283225,])])
+DEBUG 15:41:23,236 RowMutation(table='Keyspace1', key='key-005', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955283225,])]) applied.  Sending response to 218@/127.0.0.1
+Sending message ::
+-->ID:218
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:192
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:193
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:41:23,755 Disseminating load info ...
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:194
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:195
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:196
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:197
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:198
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:199
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:200
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:201
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:202
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:203
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:204
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:205
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+ INFO 15:41:27,752 error writing to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:206
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:207
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:208
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:209
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:41:29,753 attempting to connect to /127.0.0.13
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:210
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:211
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:212
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:213
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:214
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:215
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:216
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:217
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:218
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:219
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:220
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:221
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:222
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:223
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+&&&Added socket : 37523
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:224
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+ INFO 15:41:35,351 Node /127.0.0.13 has restarted, now UP again
+DEBUG 15:41:35,351 Node /127.0.0.13 state normal, token 130852257641755848276505319203002680367
+ INFO 15:41:35,351 Node /127.0.0.13 state jump to normal
+- TM uNT(1) : size of sortedToken = 4
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009729
+DEBUG 15:41:35,352 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:225
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+ INFO 15:41:35,353 Started hinted handoff for endPoint /127.0.0.13
+ INFO 15:41:35,354 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:226
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:227
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:228
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:229
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:230
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:231
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:232
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:233
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:234
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:235
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:236
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:237
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:238
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:239
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:240
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:41:39,629 Applying RowMutation(table='Keyspace1', key='key-006', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955299622,])])
+DEBUG 15:41:39,629 RowMutation(table='Keyspace1', key='key-006', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955299622,])]) applied.  Sending response to 268@/127.0.0.1
+Sending message ::
+-->ID:268
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+DEBUG 15:41:52,666 Applying RowMutation(table='Keyspace1', key='key-006', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955312652,])])
+DEBUG 15:41:52,667 RowMutation(table='Keyspace1', key='key-006', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955312652,])]) applied.  Sending response to 269@/127.0.0.1
+Sending message ::
+-->ID:269
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:41:53,955 Applying RowMutation(table='Keyspace1', key='key-007', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955313950,])])
+DEBUG 15:41:53,956 RowMutation(table='Keyspace1', key='key-007', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955313950,])]) applied.  Sending response to 270@/127.0.0.1
+Sending message ::
+-->ID:270
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:44005] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:44005] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:44005] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:44005] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:44005] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:44005] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:44005] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+DEBUG 15:41:54,166 digest is 7d769c210e0c3c8f90508a5ac040fad9
+DEBUG 15:41:54,166 Read key key-007; sending response to 09AAAD96-2316-725A-C9F5-43B40B93D12A@/127.0.0.1
+wRRPATH ReadVerbHanlder doVerb(): Read key key-007; sending response to 09AAAD96-2316-725A-C9F5-43B40B93D12A@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node0:127.0.0.12
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:44005] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+corrupt :: failType returned :: NONE
+Sending message ::
+-->ID:09AAAD96-2316-725A-C9F5-43B40B93D12A
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Experiment running, Gossiper returning  [part of workload]
+DEBUG 15:42:06,981 Applying RowMutation(table='Keyspace1', key='key-007', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955326975,])])
+DEBUG 15:42:06,982 RowMutation(table='Keyspace1', key='key-007', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955326975,])]) applied.  Sending response to 273@/127.0.0.1
+Sending message ::
+-->ID:273
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:241
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:242
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+ INFO 15:42:07,757 InetAddress /127.0.0.13 is now dead.
+DEBUG 15:42:07,758 Resetting pool for /127.0.0.13
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:243
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:243
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:243
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:42:08,758 attempting to connect to /127.0.0.13
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:244
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:245
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:246
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:247
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:248
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:248
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:249
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:250
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:251
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:251
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:252
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:253
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:254
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:255
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:255
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:256
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:257
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:258
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:259
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:259
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:259
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:260
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:261
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:262
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:263
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:263
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:263
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:264
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:265
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:266
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:267
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:267
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:268
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:269
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:270
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:271
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:271
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:271
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:272
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:273
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:274
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:275
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:276
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:276
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:276
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:277
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:278
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:279
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:279
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:279
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:280
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:281
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:282
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:283
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:284
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:284
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:285
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:286
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:287
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+ INFO 15:42:19,257 Node /127.0.0.13 has restarted, now UP again
+ INFO 15:42:19,258 Started hinted handoff for endPoint /127.0.0.13
+ INFO 15:42:19,259 Finished hinted handoff of 0 rows to endpoint /127.0.0.13
+DEBUG 15:42:19,260 Node /127.0.0.13 state normal, token 76123975191475619051558893617268117241
+ INFO 15:42:19,260 Node /127.0.0.13 state jump to normal
+- TM uNT(1) : size of sortedToken = 4
+- TM uNT(2) : size of sortedToken = 4 ... leavingEndPoints = []
+TokenSizeTest:4:-1009686
+DEBUG 15:42:19,261 No bootstrapping or leaving nodes -> empty pending ranges for Keyspace1
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:288
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:289
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+DEBUG 15:42:19,758 attempting to connect to /127.0.0.13
+&&&Added socket : 44866
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:290
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:291
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes not connected...
+- Experiment not running, continue ===>sendGossip
+Sending message ::
+-->ID:292
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_SYN
+
+- Experiment not running, continue ===>GDAckVHandler
+Sending message ::
+-->ID:293
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK2
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:294
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+- Experiment not running, continue ===>GDSynVHandler
+Sending message ::
+-->ID:295
+FROM:/127.0.0.12
+TYPE:GS
+VERB:GOSSIP_DIGEST_ACK
+
+node2 recorded Tokensize 4
+- Nodes connected, Gossiper returning 
+DEBUG 15:42:22,505 Applying RowMutation(table='Keyspace1', key='key-008', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955342498,])])
+DEBUG 15:42:22,506 RowMutation(table='Keyspace1', key='key-008', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:false:8@1308955342498,])]) applied.  Sending response to 326@/127.0.0.1
+Sending message ::
+-->ID:326
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:54863] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:54863] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:54863] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(60)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:60)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:54863] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:54863] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(71)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:71)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:54863] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:54863] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataInputStream.readFully(byte[]))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(73)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:73)
+
+
+DEBUG 15:42:22,652 digest is 6c73f2974bfc93a991adba2e4115be08
+DEBUG 15:42:22,653 Read key key-008; sending response to 0C6D7549-0363-35CB-35AC-79A22B9113DA@/127.0.0.1
+wRRPATH ReadVerbHanlder doVerb(): Read key key-008; sending response to 0C6D7549-0363-35CB-35AC-79A22B9113DA@/127.0.0.1 [part of workload]
+    [00] java.lang.Thread.getStackTrace(Thread.java:1436) 
+    [01] org.apache.cassandra.Util.getStackTrace(Util.java:136) 
+    [02] org.apache.cassandra.Util.printStackTrace(Util.java:123) 
+    [03] org.apache.cassandra.Util.printStackTrace(Util.java:130) 
+    [04] org.apache.cassandra.db.ReadVerbHandler.doVerb(ReadVerbHandler.java:100) 
+    [05] org.apache.cassandra.net.MessageDeliveryTask.run(MessageDeliveryTask.java:49) 
+    [06] java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886) 
+    [07] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908) 
+    [08] java.lang.Thread.run(Thread.java:619) 
+cutSendOneWay targetIO : NetIO-Node0:127.0.0.12
+corrupt :: failType returned :: NONE
+Sending message ::
+-->ID:0C6D7549-0363-35CB-35AC-79A22B9113DA
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+ [part of workload]
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.write(byte[], int, int))
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(101)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:101)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node0:127.0.0.1:54863] at *Node2* :: [Undecided] message 
+
+  call(int java.io.DataInputStream.readInt())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:READ **
+    SourceLoc: org/apache/cassandra/net/IncomingTcpConnection.java(59)
+
+      [0] org.apache.cassandra.net.IncomingTcpConnection (run:59)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:BEFORE / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+
+## ############################################
+## MESSAGE: I'm failing this (see below) with FailType: NONE
+## ############################################
+
+  [targetIO][NetIO-Node2:127.0.0.1:7000] at *Node2* :: [Undecided] message 
+
+  call(void java.io.DataOutputStream.flush())
+   ** PL:AFTER / EX:IO / BOOL:NO / IO:WRITE **
+    SourceLoc: org/apache/cassandra/net/OutboundTcpConnection.java(104)
+
+      [0] org.apache.cassandra.net.OutboundTcpConnection (writeConnected:104)
+      [1] org.apache.cassandra.net.OutboundTcpConnection (run:90)
+
+
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+DEBUG 15:42:23,756 Disseminating load info ...
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+node2 recorded Tokensize 4 [part of workload]
+- Nodes connected, Gossiper returning  [part of workload]
+DEBUG 15:42:26,161 Applying RowMutation(table='Keyspace1', key='key-008', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955346155,])])
+DEBUG 15:42:26,162 RowMutation(table='Keyspace1', key='key-008', modifications=[ColumnFamily(Standard1 [6578706572696d656e7456616c7565:true:4@1308955346155,])]) applied.  Sending response to 329@/127.0.0.1
+Sending message ::
+-->ID:329
+FROM:/127.0.0.12
+TYPE:RESPONSE-STAGE
+VERB:READ_RESPONSE
+
