@@ -60,7 +60,7 @@ public abstract class AbstractReplicationStrategy
      * we return a List to avoid an extra allocation when sorting by proximity later.
      */
     public abstract ArrayList<InetAddress> getNaturalEndpoints(Token token, TokenMetadata metadata, String table);
-    
+
     public WriteResponseHandler getWriteResponseHandler(int blockFor, ConsistencyLevel consistency_level, String table)
     {
         return new WriteResponseHandler(blockFor, table);
@@ -72,14 +72,14 @@ public abstract class AbstractReplicationStrategy
        * Jin-Su Hacking this part:
        * Order the endpoints so that every insert will send data to the same set of nodes.
        */
-      return Util.orderEndpoints(token, tokenMetadata_, table);
+      //return Util.orderEndpoints(token, tokenMetadata_, table);
       /* end of hacking
-      */   
-      
+      */
+
       //JINSU : uncomment this line to remove the hack.
-      //return getNaturalEndpoints(token, tokenMetadata_, table);
+      return getNaturalEndpoints(token, tokenMetadata_, table);
     }
-    
+
     /**
      * returns multimap of {live destination: ultimate targets}, where if target is not the same
      * as the destination, it is a "hinted" write, and will need to be sent to
@@ -94,15 +94,15 @@ public abstract class AbstractReplicationStrategy
         // first, add the live endpoints
         for (InetAddress ep : targets)
         {
-            
+
           //JINSU
           Util.debug(ep.getHostAddress() + " isAlive? " + FailureDetector.instance.isAlive(ep));
-          
+
 
           if (FailureDetector.instance.isAlive(ep))
                 map.put(ep, ep);
         }
-        
+
         //JINSU
         Util.debug("gHE(1) map size : " + map.size());
 
@@ -128,10 +128,10 @@ public abstract class AbstractReplicationStrategy
                                     : endPointSnitch.getSortedListByProximity(localAddress, map.keySet()).get(0);
             map.put(destination, ep);
         }
-        
+
         //JINSU
         Util.debug("gHE(2) map size : " + map.size());
-        
+
         return map;
     }
 
