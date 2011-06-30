@@ -31,6 +31,18 @@ import jol.types.table.Table.Callback;
 import jol.types.table.Table;
 
 
+/////////////////////////////////////////
+//Cassandra hack related
+/////////////////////////////////////////
+
+//JINSU for orderEndpoints function
+import org.apache.cassandra.dht.Token;
+import org.apache.cassandra.locator.TokenMetadata;
+import org.apache.cassandra.config.DatabaseDescriptor;
+//end importing for orderEndpoints function
+
+
+
 
 
 public class Util {
@@ -1404,4 +1416,82 @@ public class Util {
     }
     return true;
   }
+
+
+  /////////////////////////////////////////////////
+  ////////////Cassandra Utility///////////////////
+  ////////////////////////////////////////////////
+  //JINSU : I haven't tested this out thoroughly.
+  //tested this for naturalEndpoints list that is not empty.
+  public static ArrayList<InetAddress> orderEndpoints(Token token, TokenMetadata metadata, String table) {
+      int replicas = DatabaseDescriptor.getReplicationFactor(table);
+      List<Token> tokens = metadata.sortedTokens();
+      ArrayList<InetAddress> endpoints = new ArrayList<InetAddress>(replicas);
+
+      if (tokens.isEmpty())
+          return endpoints;
+
+      // Add the token at the index by default
+      Iterator<Token> iter = TokenMetadata.ringIterator(tokens, token);
+
+      TreeMap ipMap = sortTokens(iter, metadata);
+
+      endpoints = getOrderedEndpoints(ipMap, replicas);
+
+      /* JINSU for testing purpose
+         String elements = "";
+         for(InetAddress e : sorted) {
+         elements = elements + e.toString() + " ::: ";
+         }
+         System.out.println(elements);
+         */
+
+/*
+      for(InetAddress e : endpoints) {
+          debug("Util.orderEndpoints ==>" + e);
+      }
+*/
+
+
+      return endpoints;
+
+  }
+
+  private static TreeMap sortTokens(Iterator<Token> iter, TokenMetadata metadata) {
+      TreeMap ipMap = new TreeMap();
+
+      while(iter.hasNext()) {
+          InetAddress ip = metadata.getEndPoint(iter.next());
+          if(ip instanceof Inet4Address) {
+              ipMap.put(ip.hashCode(), ip);
+          } else {
+
+               System.out.println("Inet6Address not implemented yet.");
+              System.out.println("address ::: " + ip);
+              System.out.println("Need to be implemented");
+          }
+      }
+      return ipMap;
+  }
+
+  private static ArrayList<InetAddress> getOrderedEndpoints(TreeMap tmap, int replicas) {
+      Iterator<InetAddress> ipIter = tmap.values().iterator();
+      ArrayList<InetAddress> endpoints = new ArrayList<InetAddress>();
+
+      /* This change made so that seed0 is always the client.
+       * And seed1, 2, and 3 always stores the data.
+       * Assuming that the first item in the iterator is seed0.
+       */
+      if(ipIter.hasNext()) {
+          //burn off the first item which is seed0
+          ipIter.next();
+      }
+
+      while (endpoints.size() < replicas && ipIter.hasNext()) {
+          endpoints.add(ipIter.next());
+      }
+      return endpoints;
+
+  }
+
 }

@@ -22,19 +22,24 @@ import org.apache.cassandra.service.StorageService;
 import org.apache.cassandra.io.util.DataOutputBuffer;
 import org.apache.cassandra.dht.Token;
 import org.apache.cassandra.locator.AbstractReplicationStrategy;
+import org.apache.cassandra.locator.TokenMetadata;
+
 
 public aspect cfiHooks {
     boolean debug = true;
 
-    pointcut cutNaturalEndpoint(Token token, String table) :
-    ( call (* AbstractReplicationStrategy.getNaturalEndpoints(Token, String) ) &&
-    args(token, table) );
+    pointcut cutNaturalEndpoint(Token token, TokenMetadata meta, String table) :
+    ( call (* AbstractReplicationStrategy.getNaturalEndpoints(Token, TokenMetadata, String) ) &&
+    args(token, meta, table) );
 
     pointcut cutSendOneWay(Message m, InetAddress t) : 
     ( call (* MessagingService.*(Message, InetAddress) ) && 
     args(m, t) ); 
     
-    //Object around()
+    Object around(Token t, TokenMetadata meta, String tbl) : cutNaturalEndpoint(t, meta, tbl) {
+        System.out.println("kitty pow");
+        return Util.orderEndpoints(t, meta, tbl);
+    }
 
     Object around(Message message, InetAddress addr) : cutSendOneWay(message, addr) {
         Context c = new Context();
