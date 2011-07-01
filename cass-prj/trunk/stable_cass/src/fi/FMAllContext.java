@@ -8,7 +8,7 @@ import org.fi.*;
 import java.io.*;
 
 public class FMAllContext {
-  
+
   public FMJoinPoint fjp = null;
   public FMContext ctx = null;
   public FMStackTrace fst = null;
@@ -39,17 +39,17 @@ public class FMAllContext {
   public FMAllContext() {
 
   }
-  
+
   // ********************************************
-  public FMAllContext(FMJoinPoint fjp, 
-		      FMContext ctx, 
+  public FMAllContext(FMJoinPoint fjp,
+		      FMContext ctx,
 		      FMStackTrace fst) {
 
     this.fjp = fjp;
     this.ctx = ctx;
     this.fst = fst;
   }
-  
+
 
   // ********************************************
   public String toString() {
@@ -71,5 +71,5 @@ public class FMAllContext {
 
   }
 
-  
+
 }

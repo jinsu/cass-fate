@@ -55,7 +55,7 @@ import org.apache.cassandra.utils.FBUtilities;
 import org.apache.cassandra.utils.LatencyTracker;
 import org.apache.cassandra.utils.WrappedRunnable;
 
-//JINSU hack. for the use of Util.orderEndpoints function
+//JINSU
 import org.apache.cassandra.Util;
 
 public class StorageProxy implements StorageProxyMBean
@@ -553,7 +553,7 @@ public class StorageProxy implements StorageProxyMBean
 			for(InetAddress ep : commandEndPoints.get(i)) {
 				Util.debug("RRPATH SP.strongRead() : sending ReadRepair message to " + ep);
 			}
-			//JINS to
+			//JINSU to
                     MessagingService.instance.sendRR(messageRepair, commandEndPoints.get(i), qrhRepair);
                     if (repairResponseHandlers == null)
                         repairResponseHandlers = new ArrayList<QuorumResponseHandler<Row>>();

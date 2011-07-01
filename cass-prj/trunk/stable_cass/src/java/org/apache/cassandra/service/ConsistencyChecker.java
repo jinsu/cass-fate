@@ -119,12 +119,7 @@ class ConsistencyChecker implements Runnable
 
 		//JINSU hack
 		//original
-                //if (!Arrays.equals(ColumnFamily.digest(row_.cf), digest))
-		//
-		//hack
-		if (!Arrays.equals(ColumnFamily.digest(row_.cf), digest) || Util.checkRRFlag())
-
-                {
+                if (!Arrays.equals(ColumnFamily.digest(row_.cf), digest)) {
                     IResponseResolver<Row> readResponseResolver = new ReadResponseResolver(table_, replicas_.size());
                     IAsyncCallback responseHandler;
                     if (replicas_.contains(FBUtilities.getLocalAddress()))
@@ -145,7 +140,7 @@ class ConsistencyChecker implements Runnable
                       if (!endpoint.equals(FBUtilities.getLocalAddress())) {
                         Util.debug("wRRPATH CC DigestResHand : sending read-repair messages to" + endpoint);
 
-                        MessagingService.instance.sendOneWay(message, endpoint); 
+                        MessagingService.instance.sendOneWay(message, endpoint);
                       }
                     }
 
@@ -164,11 +159,11 @@ class ConsistencyChecker implements Runnable
 		private final Collection<Message> responses_ = new LinkedBlockingQueue<Message>();
 		private final IResponseResolver<Row> readResponseResolver_;
 		private final int majority_;
-		
+
 		DataRepairHandler(int responseCount, IResponseResolver<Row> readResponseResolver)
 		{
 			readResponseResolver_ = readResponseResolver;
-			majority_ = (responseCount / 2) + 1;  
+			majority_ = (responseCount / 2) + 1;
 		}
 
         public DataRepairHandler(Row localRow, int responseCount, IResponseResolver<Row> readResponseResolver) throws IOException

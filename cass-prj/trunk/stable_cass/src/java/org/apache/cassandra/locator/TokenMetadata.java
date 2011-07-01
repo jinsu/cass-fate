@@ -105,10 +105,7 @@ public class TokenMetadata
         try
         {
 
-            //JINSU
-            //remove later
-          Util.debug("- TM uNT(1) : size of sortedToken = " + sortedTokens.size());
-          bootstrapTokens.inverse().remove(endpoint);
+            bootstrapTokens.inverse().remove(endpoint);
             tokenToEndPointMap.inverse().remove(endpoint);
             if (!endpoint.equals(tokenToEndPointMap.put(token, endpoint)))
             {
@@ -116,10 +113,7 @@ public class TokenMetadata
             }
             leavingEndPoints.remove(endpoint);
 
-            //JINSU
-            //REMOVE LATER
-            Util.debug("- TM uNT(2) : size of sortedToken = " + sortedTokens.size() + " ... leavingEndPoints = " + leavingEndPoints);
-
+            //JINSU HACK
             //change this line to use logger.INFO
             Util.debug("TokenSizeTest:" + sortedTokens.size() + ":" + ((int) System.currentTimeMillis() / 1000L));
 
@@ -224,7 +218,7 @@ public class TokenMetadata
     {
         assert endpoint != null;
         assert isMember(endpoint); // don't want to return nulls
-        
+
         lock.readLock().lock();
         try
         {
@@ -235,7 +229,7 @@ public class TokenMetadata
             lock.readLock().unlock();
         }
     }
-    
+
     public boolean isMember(InetAddress endpoint)
     {
         assert endpoint != null;

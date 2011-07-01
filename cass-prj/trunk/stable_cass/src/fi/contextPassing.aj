@@ -112,7 +112,7 @@ aspect contextOrigin {
 	//Making ipfiles to identify cassandra nodes
 	//every starting node will call this function to get which ip they need to connect to.
 	//so catch this and make ip history function.
-	/*
+	
 	Object around() : (within(org.apache.cassandra.thrift.CassandraDaemon) && (call (* org.apache.cassandra.utils.FBUtilities.*(..)) || call (* org.apache.cassandra.config.DatabaseDescriptor.*(..)))) {
 		Object tmp = proceed();
 		if(tmp instanceof InetAddress) {
@@ -122,7 +122,7 @@ aspect contextOrigin {
 		}
 		return tmp;
 	} 
-	*/
+	
 	
 	//Context creation for OutputStream
   //happens inside OutboundTcpConnection
@@ -133,7 +133,7 @@ aspect contextOrigin {
   		System.out.println("&&&Outbound socket.new cut");
   	}
   	Util.addIpHistory(lp);
-  	Util.addIpHistory(ep);
+  	//Util.addIpHistory(ep);
   	Object tmp = proceed(ep, eport, lp, lport);
   	if (tmp instanceof Socket) {
 			Socket s = (Socket) tmp;
@@ -165,7 +165,7 @@ aspect contextOrigin {
   	System.out.println("&&&Incoming socket.new cut");
 		InetAddress lp = null;
   	Util.addIpHistory(lp);
-  	//Util.addIpHistory(ep);
+  	Util.addIpHistory(ep);
   	Object tmp = proceed(s);
   	if (tmp instanceof Socket) {
 			Socket s = (Socket) tmp;

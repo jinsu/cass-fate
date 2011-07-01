@@ -52,14 +52,25 @@ public class FMFilter {
 
   }
 
-    private static boolean cassCorruptTest(FIState fis) {
+    //JINSU : Checks if to see if we are dealing with digest messages.
+    private static boolean cassDigestTest(FIState fis) {
         FMJoinPoint fjp = fis.fjp;
         FMContext ctx = fis.ctx;
         FailType ft = fis.ft;
-        if ( ctx.getMessageType().equalsIgnoreCase("Digest") && ft == FailType.CORRUPTION)
+        if ( ctx.getMessageType().equalsIgnoreCase("Digest")
+            && ft == FailType.CORRUPTION
+            && cassNodeTest(ctx, "Node2") ) {
             return true;
+        }
         return false;
     }
+
+
+    //JINSU : Checks to see if the context contains node.
+    private static boolean cassNodeTest(FMContext ctx, String node) {
+        return ctx.getNodeId().equalsIgnoreCase(node);
+    }
+
 	// ************************************************************
 	// JINSU: A small filter function that only returns true when the failure type is CRASH and the join place is before.
 	private static boolean filterReadRepairTest(FMAllContext fac, FailType ft, FIState fis) {
@@ -69,13 +80,14 @@ public class FMFilter {
 		//boolean containsCondition = //fjp.getJoinPointStr().contains("DataInputStream.readFully");
 		//														 ctx.getNodeId().contains("Node0");
 //																&& ctx.getTargetIO().contains("Node0");
-        if ( FMLogic.getCurrentFsn() == 1 && cassCorruptTest(fis) )
+        if ( FMLogic.getCurrentFsn() == 1 && cassDigestTest(fis) )
             return true;
 
 		if( FMLogic.getCurrentFsn() == 2 && ft == FailType.CRASH
-                && fjp.getJoinPlc() == JoinPlc.BEFORE ) {
-                //&& ctx.getNodeId().contains("Node3")) {
-            System.out.println("|| ctx || " + ctx);
+                && fjp.getJoinPlc() == JoinPlc.BEFORE
+                && fjp.getJoinPointStr().contains("DataOutputStream")
+                && cassNodeTest(ctx, "Node2" ) ) {
+            System.out.println("filter JPS || " + fjp.getJoinPointStr() + "\nfilter ctx || " + ctx);
             return true;
 
                 }

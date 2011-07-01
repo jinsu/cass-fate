@@ -68,15 +68,6 @@ public abstract class AbstractReplicationStrategy
 
     public ArrayList<InetAddress> getNaturalEndpoints(Token token, String table)
     {
-      /*
-       * Jin-Su Hacking this part:
-       * Order the endpoints so that every insert will send data to the same set of nodes.
-       */
-      //return Util.orderEndpoints(token, tokenMetadata_, table);
-      /* end of hacking
-      */
-
-      //JINSU : uncomment this line to remove the hack.
       return getNaturalEndpoints(token, tokenMetadata_, table);
     }
 

@@ -1,0 +1,17 @@
+[11:08:32 AM PDT] Jin-Su Oh: add a page number = DONE
+[11:08:39 AM PDT] Jin-Su Oh: crash the node when its sending data = DONE
+[11:16:51 AM PDT] Jin-Su Oh: label phases for every cloud
+[11:20:04 AM PDT] Jin-Su Oh: understand where the failure's coming from and what code is generating the exception
+-exp5, 8
+
+[11:22:27 AM PDT] Jin-Su Oh: read upon anti-entropy
+[11:27:20 AM PDT] haryadi.gunawi: failure case 1:
+[11:27:41 AM PDT] haryadi.gunawi: CL = 3, N2 corrupt, N1/N3 crash ---> ?
+[11:27:57 AM PDT] haryadi.gunawi: CL = 3, N2 corrupt, N2 crash ---> ?
+Test : N3 corrupt, N3 crash =>
+Two failed experiments. In both cases N0 returns TimeOutException.
+
+[11:28:14 AM PDT] haryadi.gunawi: CL = 2, (same as above)
+[11:29:51 AM PDT] haryadi.gunawi: CL = ALL,
+[11:29:58 AM PDT] haryadi.gunawi: CL = Quorum (2)
+

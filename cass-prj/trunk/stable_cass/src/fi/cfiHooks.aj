@@ -56,7 +56,7 @@ public aspect cfiHooks {
                     JoinPlc.AFTER , JoinIot.READ,
                     JoinExc.IO     , JoinRbl.NO);
             //returns targetIO
-            String IoNode = Util.getNetIOContextFromInetAddr(message.getFrom());
+            String IoNode = Util.getNetIOContextFromInetAddr(addr);
             c.setTargetIO(IoNode);
             if(debug) System.out.println("cutSendOneWay targetIO : " + c.getTargetIO());
             
@@ -74,15 +74,15 @@ public aspect cfiHooks {
                 }
                 
                 //Corrupting the digest!
-                /*
                 int cor = corrupted_digest[1] << 2;
                 corrupted_digest[1] = new Integer(cor).byteValue();
+                /*
                 int cor2 = ~corrupted_digest[2];
                 corrupted_digest[2] = new Integer(cor2).byteValue();
                 int cor3 = ~corrupted_digest[3];
                 corrupted_digest[3] = new Integer(cor3).byteValue();
                 */
-                corrupted_digest = ByteBuffer.allocate(16).putInt(52).array();
+                //corrupted_digest = ByteBuffer.allocate(16).putInt(52).array();
 
                 if(debug) System.out.println("corrupt :: cor_array " + corrupted_digest);
 
