@@ -74,8 +74,13 @@ public class Experiment {
   // *******************************************
   // Print the current stack trace and also the exception stack trace
   public void addExceptionToNonFrogReport(Exception e) {
-				
-		
+
+
+    //JINSU
+    addNonFrogReport("Exception Message: ");
+    addNonFrogReport(e.getMessage());
+    //USNIJ
+
     addNonFrogReport("The experiment stack trace is: ");
     addNonFrogReport(u.getStackTrace());
 
@@ -97,7 +102,7 @@ public class Experiment {
     if (failFromFrog || failFromNonFrog) {
       recordFailExperiment();
     }
-    
+
 
   }
 
@@ -138,15 +143,15 @@ public class Experiment {
 
   // *******************************************
   public void printFailHistorySummary() {
-    
+
     String buf = "\n";
     buf += String.format("summary %05d : ", expNum);
-    
+
     File expNumDir = getExpNumDir();
     if (!expNumDir.exists() || !expNumDir.isDirectory()) {
       return;
     }
-    
+
     for (int fsn = 1; fsn <= Driver.MAX_FSN; fsn++) {
       String[] children = expNumDir.list();
       for (int i = 0; i < children.length; i++) {
@@ -173,15 +178,15 @@ public class Experiment {
     u.print(String.format
 	    ("\n\n- Experiment %d does not reach maxFsn %d, wiping out ... \n\n",
 	     expNum, Driver.MAX_FSN));
-    
+
     String newDirName = String.format("%s/wiped-%05d-%s",
 				      Driver.EXP_RESULT_DIR,
 				      Driver.getWipedOutNum(),
 				      getExpNumShortDirName());
     File newDir = new File(newDirName);
-    
+
     File oldDir = getExpNumDir();
-    
+
     try {
       boolean ok = oldDir.renameTo(newDir);
       if (!ok) {
@@ -191,7 +196,7 @@ public class Experiment {
       u.EXCEPTION("wipe out fail", e);
     }
 
-    
+
     Driver.incrementWipedOutNum();
 
   }
@@ -221,7 +226,7 @@ public class Experiment {
 	}
       }
     }
-    
+
     if (count != Driver.MAX_FSN)
       return false;
     return true;
@@ -265,7 +270,7 @@ public class Experiment {
   }
 
   // ********************************************
-  // If you change the name of the exp dir, 
+  // If you change the name of the exp dir,
   // DON'T FORGET TO CHANGE THE FORMAT AT THE FM SERVER TOO !!!
   // ********************************************
   private String getExpNumShortDirName() {
@@ -291,7 +296,7 @@ public class Experiment {
 
   // *******************************************
   // chmod the expdir to 777 so it's bold yellow,
-  // and also mark the experiment fail with 
+  // and also mark the experiment fail with
   private void markFailExperiment() {
 
     // mark this in the directory
@@ -352,7 +357,7 @@ public class Experiment {
   // print the experiment number ...
   public void printBegin() {
 
-    
+
 
 
     String full =

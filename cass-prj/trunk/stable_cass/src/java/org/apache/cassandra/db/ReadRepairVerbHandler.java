@@ -33,7 +33,7 @@ public class ReadRepairVerbHandler implements IVerbHandler
 
     public void doVerb(Message message)
     {
-        Util.debug("RRVerbHandler being called");
+        Util.debug("boom RRVerbHandler being called ");
         byte[] body = message.getMessageBody();
         ByteArrayInputStream buffer = new ByteArrayInputStream(body);
 

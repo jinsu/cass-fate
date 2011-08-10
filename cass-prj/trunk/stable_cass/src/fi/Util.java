@@ -65,6 +65,20 @@ public class Util {
 
   public Util() {  }
 
+
+  // ############################################################
+  // ##                   OS UTILITY                           ##
+  // ############################################################
+
+  // *****************************************
+  public static void sleep(int ms) {
+      try {
+          Thread.sleep(ms);
+      } catch (Exception e) {}
+
+  }
+
+
   // #######################################################################
   // #######################################################################
   // ####                                                               ####
@@ -74,6 +88,12 @@ public class Util {
   // #######################################################################
 
   private static long lastTime = 0;
+
+  public static String curTime() {
+  long currentTime = System.currentTimeMillis();
+    return "";
+  }
+
   public static String diff() {
     long currentTime = System.currentTimeMillis();
     double diff = 0.0;

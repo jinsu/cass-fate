@@ -75,7 +75,14 @@ public class ReadResponseResolver implements IResponseResolver<Row>
 		List<ColumnFamily> versions = new ArrayList<ColumnFamily>(responses.size());
 		List<InetAddress> endPoints = new ArrayList<InetAddress>(responses.size());
 		String key = null;
-		byte[] digest = new byte[0];
+        //JINSU patch
+        //original line
+		//byte[] digest = new byte[0];
+
+        //JINSU patch
+        //patched line
+        byte[] digest = null;
+
 		boolean isDigestQuery = false;
 
 
@@ -92,8 +99,10 @@ public class ReadResponseResolver implements IResponseResolver<Row>
             ReadResponse result = ReadResponse.serializer().deserialize(new DataInputStream(bufIn));
             if (result.isDigestQuery())
             {
-                digest = result.digest();
-                isDigestQuery = true;
+                //JINSU original line
+                //digest = result.digest();
+                //isDigestQuery = true;
+
                 //JINSU start PATCH
                 //This is the patched code from Cassandra 6.9 because the old code does not
                 //compare the difference among the digests themselves.
@@ -102,20 +111,24 @@ public class ReadResponseResolver implements IResponseResolver<Row>
                     digest = result.digest();
                     //JINSU
                     Util.debug("RRPATH RRResolver.resolve(1) : collected a DIGEST message id: "+ response.getMessageId() + " from " + response.getFrom());
-                    Util.debug("RRPATH RRResolver.resolve(1.5) : digest value = " + FBUtilities.bytesToHex(digest) );
+                    Util.debug("RRPATH RRResolver.resolve(1.1) : digest value = " + FBUtilities.bytesToHex(digest) );
 
                 }
                 else
                 {
-                    ByteBuffer digest2 = result.digest();
+                    byte[] digest2 = result.digest();
 
                     //JINSU
-                    Util.debug("RRPATH RRResolver.resolve(1) : collected a DIGEST message id: "+ response.getMessageId() + " from " + response.getFrom());
-                    Util.debug("RRPATH RRResolver.resolve(1.5) : digest value = " + FBUtilities.bytesToHex(digest2) );
+                    Util.debug("RRPATH RRResolver.resolve(2) : collected a DIGEST message id: "+ response.getMessageId() + " from " + response.getFrom());
+                    Util.debug("RRPATH RRResolver.resolve(2.1) : digest value = " + FBUtilities.bytesToHex(digest2) );
+                    Util.debug("RRPATH RRResolver.resolve(2.2) : comparing digest values = \n" + FBUtilities.bytesToHex(digest) + " || " +   FBUtilities.bytesToHex(digest2) );
 
-                    if (!digest.equals(digest2))
-                        throw new DigestMismatchException(key, digest, digest2);
-                }
+                    if (!Arrays.equals(digest2, digest)) {
+                     /* Wrap the key as the context in this exception */
+                    String s = String.format("Mismatch for key %s (%s vs %s)", key, FBUtilities.bytesToHex(digest2), FBUtilities.bytesToHex(digest));
+                    throw new DigestMismatchException(s);
+                    }
+                                    }
                 //JINSU end PATCH
             }
             else
@@ -130,6 +143,7 @@ public class ReadResponseResolver implements IResponseResolver<Row>
         }
 		// If there was a digest query compare it with all the data digests
         // If there is a mismatch then throw an exception so that read repair can happen.
+        /*
         if (isDigestQuery)
         {
             //JINSU from
@@ -144,7 +158,7 @@ public class ReadResponseResolver implements IResponseResolver<Row>
 
                 if (!Arrays.equals(ColumnFamily.digest(cf), digest))
                 {
-                    /* Wrap the key as the context in this exception */
+                    // Wrap the key as the context in this exception
                     String s = String.format("Mismatch for key %s (%s vs %s)", key, FBUtilities.bytesToHex(ColumnFamily.digest(cf)), FBUtilities.bytesToHex(digest));
                     throw new DigestMismatchException(s);
                 }
@@ -153,6 +167,23 @@ public class ReadResponseResolver implements IResponseResolver<Row>
             }
 
         }
+        */
+
+        //JINSU start of patch
+        if(digest != null) {
+            for (ColumnFamily cf : versions) {
+                byte[] digest2 = ColumnFamily.digest(cf);
+                Util.debug("RRPATH RRResolver.resolve(3) koolz : comparing digest values = \n" + FBUtilities.bytesToHex(digest) + " || " +   FBUtilities.bytesToHex(digest2) );
+                if (!Arrays.equals(digest2, digest)) {
+
+
+                    String s = String.format("Mismatch for key %s (%s vs %s)", key, FBUtilities.bytesToHex(digest2), FBUtilities.bytesToHex(digest));
+
+                    throw new DigestMismatchException(s);
+                }
+            }
+        }
+        //JINSU end of patch
 
         ColumnFamily resolved = resolveSuperset(versions);
 
@@ -160,7 +191,6 @@ public class ReadResponseResolver implements IResponseResolver<Row>
         Util.debug("RRPATH RRResolver.resolve(4) : resolveSuperset - resolved data messages... " + resolved);
 
         maybeScheduleRepairs(resolved, table, key, versions, endPoints);
-        Util.printStackTrace();
         if (logger_.isDebugEnabled())
             logger_.debug("resolve: " + (System.currentTimeMillis() - startTime) + " ms.");
         return new Row(key, resolved);
@@ -172,6 +202,7 @@ public class ReadResponseResolver implements IResponseResolver<Row>
      */
     public static void maybeScheduleRepairs(ColumnFamily resolved, String table, String key, List<ColumnFamily> versions, List<InetAddress> endPoints)
     {
+        int ms_size = 0;
         for (int i = 0; i < versions.size(); i++)
         {
             ColumnFamily diffCf = ColumnFamily.diff(versions.get(i), resolved);
@@ -193,7 +224,9 @@ public class ReadResponseResolver implements IResponseResolver<Row>
             }
             Util.debug("RRResolver.mSRepair(1) sending repair message to " + endPoints.get(i));
             MessagingService.instance.sendOneWay(repairMessage, endPoints.get(i));
+            ms_size++;
         }
+        Util.debug("RRRssolver.mSRepair(2) message collection size : " + ms_size);
     }
 
     static ColumnFamily resolveSuperset(List<ColumnFamily> versions)

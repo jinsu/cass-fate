@@ -478,6 +478,8 @@ public class StorageProxy implements StorageProxyMBean
             List<InetAddress> endpointList = StorageService.instance.getLiveNaturalEndpoints(command.table, command.key);
             final String table = command.table;
             int responseCount = determineBlockFor(DatabaseDescriptor.getReplicationFactor(table), consistency_level);
+            //JINSU
+            Util.debug("cassnum responseCount = " + responseCount);
             if (endpointList.size() < responseCount)
                 throw new UnavailableException();
 
@@ -486,8 +488,8 @@ public class StorageProxy implements StorageProxyMBean
             // data-request message is sent to dataPoint, the node that will actually get
             // the data for us. The other replicas are only sent a digest query.
             int n = 0;
-	//JINSu
-	Util.debug("...Issuing read messages...");
+            //JINSu
+            Util.debug("...Issuing read messages...");
             for (InetAddress endpoint : endpointList)
             {
                 Message m = endpoint.equals(dataPoint) ? message : messageDigestOnly;
@@ -496,8 +498,9 @@ public class StorageProxy implements StorageProxyMBean
                 if (logger.isDebugEnabled())
                     logger.debug("strongread reading " + (m == message ? "data" : "digest") + " for " + command + " from " + m.getMessageId() + "@" + endpoint);
 
-		//JINSU
-		 Util.debug("RRPATH strongread reading " + (m == message ? "data" : "digest") + " for " + command + " from " + m.getMessageId() + "@" + endpoint);            }
+                //JINSU
+                Util.debug("RRPATH strongread reading " + (m == message ? "data" : "digest") + " for " + command + " from " + m.getMessageId() + "@" + endpoint);
+            }
             QuorumResponseHandler<Row> quorumResponseHandler = new QuorumResponseHandler<Row>(responseCount, new ReadResponseResolver(command.table, responseCount));
             MessagingService.instance.sendRR(messages, endPoints, quorumResponseHandler);
             quorumResponseHandlers.add(quorumResponseHandler);
@@ -508,6 +511,7 @@ public class StorageProxy implements StorageProxyMBean
         List<QuorumResponseHandler<Row>> repairResponseHandlers = null;
         for (int i = 0; i < commands.size(); i++)
         {
+            //Throws TimeOutException
             QuorumResponseHandler<Row> quorumResponseHandler = quorumResponseHandlers.get(i);
             Row row;
             ReadCommand command = commands.get(i);

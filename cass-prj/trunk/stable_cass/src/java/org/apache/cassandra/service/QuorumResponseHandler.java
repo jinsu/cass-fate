@@ -35,6 +35,10 @@ import org.apache.cassandra.utils.SimpleCondition;
 
 import org.apache.log4j.Logger;
 
+
+//JINSU
+import org.apache.cassandra.Util;
+
 public class QuorumResponseHandler<T> implements IAsyncCallback
 {
     protected static final Logger logger = Logger.getLogger( QuorumResponseHandler.class );
@@ -49,8 +53,8 @@ public class QuorumResponseHandler<T> implements IAsyncCallback
         this.responseResolver = responseResolver;
         startTime = System.currentTimeMillis();
     }
-    
-    
+
+
     public T get() throws TimeoutException, DigestMismatchException, IOException
     {
         try
@@ -73,6 +77,10 @@ public class QuorumResponseHandler<T> implements IAsyncCallback
                 {
                     sb.append(message.getFrom());
                 }
+
+                //JINSU
+                Util.debug("quack || Exception message is:\n " + "Operation timed out - received only " + responses.size() + " responses from " + sb.toString() + " ." );
+
                 throw new TimeoutException("Operation timed out - received only " + responses.size() + " responses from " + sb.toString() + " .");
             }
         }
@@ -86,7 +94,7 @@ public class QuorumResponseHandler<T> implements IAsyncCallback
 
         return responseResolver.resolve(responses);
     }
-    
+
     public void response(Message message)
     {
         responses.add(message);

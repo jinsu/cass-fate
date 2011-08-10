@@ -310,6 +310,10 @@ public class Cass {
 
       exp.markFailFromNonFrog();
       exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
+      //JINSU: I want to see the exception's name..
+      exp.addNonFrogReport("--- Exception =>\t" + e.toString());
+      exp.addNonFrogReport("--- Exception Message =>\t" + e.getMessage());
+
       exp.addExceptionToNonFrogReport(e);
     }
   }
@@ -318,11 +322,11 @@ public class Cass {
   // *******************************************
   public void getEntry(String key, Experiment exp, String consistency) {
     ConsistencyLevel consis;
-    if (consistency.equals("all")) {
+    if (consistency.equalsIgnoreCase("all")) {
       consis = ConsistencyLevel.ALL;
-    } else if (consistency.equals("quorum")) {
+    } else if (consistency.equalsIgnoreCase("quorum")) {
       consis = ConsistencyLevel.QUORUM;
-    } else if (consistency.equals("one")) {
+    } else if (consistency.equalsIgnoreCase("one")) {
       consis = ConsistencyLevel.ONE;
     } else {
       u.WARNING("Consistency level is not supported. going to default case");
@@ -366,6 +370,35 @@ public class Cass {
       //String exp_key = key + exp.getExpNum();
       long timestamp = System.currentTimeMillis();
       client.remove(keyspace, key, columnPath, timestamp, ConsistencyLevel.ALL);
+    } catch (Exception e) {
+      u.EXCEPTION("Cass.delete fails", e);
+
+    exp.markFailFromNonFrog();
+      exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
+      exp.addExceptionToNonFrogReport(e);
+
+    }
+  }
+
+  // *******************************************
+  public void delete(String key, Experiment exp, String consistency) {
+
+      ConsistencyLevel consis;
+      if (consistency.equalsIgnoreCase("all")) {
+          consis = ConsistencyLevel.ALL;
+      } else if (consistency.equalsIgnoreCase("quorum")) {
+          consis = ConsistencyLevel.QUORUM;
+      } else if (consistency.equalsIgnoreCase("one")) {
+          consis = ConsistencyLevel.ONE;
+      } else {
+          u.WARNING("Consistency level is not supported. going to default case");
+          consis = ConsistencyLevel.ONE;
+      }
+
+    try {
+      //String exp_key = key + exp.getExpNum();
+      long timestamp = System.currentTimeMillis();
+      client.remove(keyspace, key, columnPath, timestamp, consis);
     } catch (Exception e) {
       u.EXCEPTION("Cass.delete fails", e);
 

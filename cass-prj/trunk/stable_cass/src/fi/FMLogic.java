@@ -64,14 +64,22 @@ public class FMLogic {
    // private boolean debug = false;
     private static boolean debug = true;
   private static boolean isDigestReadResponse(FMAllContext fac) {
-      if(fac.ctx.getMessageType().equalsIgnoreCase("Digest")
+      if(fac.ctx.getMessageType().equalsIgnoreCase(FMClient.READ_RESPONSE_DIGEST)
               && fac.fjp.contains("sendOneWay")) {
 
-          //System.out.println("POW POW kitty");
+          System.out.println("POW POW kitty");
           //System.out.println("FMLogic can run the corruption!!!");
           return true;
     }
     return false;
+  }
+
+  private static boolean isDataReadResponse(FMAllContext fac) {
+      if(fac.ctx.getMessageType().equalsIgnoreCase(FMClient.READ_RESPONSE_NORMAL)
+              && fac.fjp.contains("sendOneWay") ) {
+            return true;
+              }
+      return false;
   }
 
   // *********************************************
@@ -155,13 +163,15 @@ public class FMLogic {
       corruption = true;
     }
     */
-    if (isDigestReadResponse(fac)) {
+    //JINSU: change this when we are adding more corruption cases.
+    if (isDigestReadResponse(fac) || isDataReadResponse(fac)) {
         corruption = true;
     }
 
     // crash for read and write (before or after is fine)
     if (fac.fjp.getJoinIot() == JoinIot.READ ||
-        fac.fjp.getJoinIot() == JoinIot.WRITE) {
+        fac.fjp.getJoinIot() == JoinIot.WRITE ||
+        isDataReadResponse(fac) ) {
       crash = true;
     }
 

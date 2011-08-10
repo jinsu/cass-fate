@@ -50,7 +50,11 @@ public class FMClient {
 
   public static final int FAAS_SYSTEM_EXIT_STATUS = 13;
 
+  //JINSU for cfiHooks
 
+  public static String READ_RESPONSE_DIGEST = "ReadResponseDigest";
+  public static String READ_RESPONSE_NORMAL = "ReadResponseNormal";
+  public static String UNKNOWN_MESSAGE = "Unknown";
 
   // #####################################################################
   // #####################################################################
@@ -328,7 +332,7 @@ public class FMClient {
                                     FailType ft) {
 
 
-    if (ft != FailType.NONE)
+    if (ft == FailType.NONE)
       return;
 
     if (!FMServer.debug)
@@ -660,5 +664,30 @@ public class FMClient {
         FailType ft = sendContextViaXmlRpc(fac);
 
         return ft;
+  }
+  public static void callProcessCrash() {
+
+    String pidToCrash = Util.getPid();
+
+    Util.WARNING("I'm crahing here, and should see no more output");
+
+    // 1) let's do the forceful way, use kill
+    // String cmd = String.format("kill -s KILL %5s", pidToCrash);
+    // String cmdout = Util.runCommand(cmd);
+
+		//#################################
+		//#################################
+		//JINSU: We are crashing a node so all nodes aren't connected anymore.
+		//IMPORTANT HACK
+		//#################################
+		//#################################
+		org.apache.cassandra.Util.debug("In FMClient callProcessCrash(), deleting nodeConnectedFlag");
+		Util.deleteNodeConnectedFlag();
+
+    // )2 or, let's do the normal way
+    System.exit(FAAS_SYSTEM_EXIT_STATUS);
+    Util.ERROR("if you see this, we are not crashing properly");
+
+
   }
 }

@@ -1,0 +1,8 @@
+Data corruption improved
+    ColumnFamily adds a new column named "Corrupted"
+
+CHECK THESE
+    node1's data is being corrupted at phase1
+    node1's response at phase2 contains "corrupted value"
+    need to write new lines into ClientReadRepairWorkload
+    to fetch "corrupted value" columnPath.and display it.

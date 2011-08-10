@@ -25,6 +25,8 @@ public class ClientReadRepairWorkload implements Workload {
   private String COLUMNPATH = "experimentValue";
   private String VALUE = "berkeley";
   private static final String ENCODING = "UTF8";
+  //private static final String CONSIS = "QUORUM";
+  private static final String CONSIS = "ALL";
 
 
   // *******************************************
@@ -64,8 +66,13 @@ public class ClientReadRepairWorkload implements Workload {
 
     // get entry which is reading the data.
     String key = String.format("key-%03d", exp.getExpNum());
-	u.println("performing consistency all");
-    cass.getEntry(key, exp, "all");
+
+    //u.println("performing consistency all");
+    //cass.getEntry(key, exp, "all");
+
+    u.println("performing consistency " + CONSIS);
+    cass.getEntry(key, exp, CONSIS);
+
 	//u.println("performing consistency one");
     //cass.getEntry(key, exp, "one");
     u.sleep(3000);
@@ -123,7 +130,7 @@ public class ClientReadRepairWorkload implements Workload {
     //cass.getEntry(key, exp);
 
     // then delete the file
-    cass.delete(key, exp);
+    cass.delete(key, exp, CONSIS);
 
 
     //Doesn't work when the experiment fails because the folder name changes to wiped-exp-..s.dfa

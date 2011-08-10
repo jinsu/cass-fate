@@ -20,7 +20,7 @@ public class Context {
   private final String HADOOP_USERNAME = "hadoop-" + System.getenv("USER") ;
   private final String HADOOP_STORAGE_DIR = TMPFI + HADOOP_USERNAME + "/";
 
-  private String messageType = "Undecided";
+  private String messageType = "Unidentified";
 
   //********************************************
   // rest
