@@ -45,8 +45,9 @@ public class FMLogic {
 	public static final String NODES_CONNECTED_FLAG = TMPFI + "nodesConnectedFlag";
 	public static final String EXPERIMENT_RUN_FLAG = TMPFI + "experimentRunning";
 
-
-
+    //JINSU
+    public static final String EXP_PROP_DIR = TMPFI + "expProp/";
+    public static String FILTER_ID = "";
   // ########################################################################
   // ########################################################################
   // ##                                                                    ##
@@ -57,7 +58,10 @@ public class FMLogic {
 
 
   // *********************************************
-  public FMLogic() {  }
+  public FMLogic() {
+  //JINSU hack
+  getExpProp();
+  }
 
 
   //JINSU hack for cass corruption
@@ -67,7 +71,7 @@ public class FMLogic {
       if(fac.ctx.getMessageType().equalsIgnoreCase(FMClient.READ_RESPONSE_DIGEST)
               && fac.fjp.contains("sendOneWay")) {
 
-          System.out.println("POW POW kitty");
+          //System.out.println("POW POW kitty");
           //System.out.println("FMLogic can run the corruption!!!");
           return true;
     }
@@ -77,6 +81,7 @@ public class FMLogic {
   private static boolean isDataReadResponse(FMAllContext fac) {
       if(fac.ctx.getMessageType().equalsIgnoreCase(FMClient.READ_RESPONSE_NORMAL)
               && fac.fjp.contains("sendOneWay") ) {
+          //System.out.println("logic DRR :: " + fac.ctx.getMessageType() + " :: " + fac.fjp.contains("sendOneWay") );
             return true;
               }
       return false;
@@ -96,9 +101,6 @@ public class FMLogic {
     FailType ft;
       // check if we need to reset anything?
     checkResetExperiment();
-
-   //JINSU
-   if(debug) System.out.println("FMLogic run : chkpnt 1");
 
     // generate all possible failures
     FailType [] failures = listPossibleFailures(fac);
@@ -283,9 +285,6 @@ public class FMLogic {
     if (failures == null)
       return ft;
 
-    //JINSU
-    if(debug) System.out.println("FMLogic tTF : chkpt 1");
-
     for (int i = 0; i < failures.length; i++) {
       ft = tryThisFailure(fac, failures[i]);
       if (ft != FailType.NONE) {
@@ -309,8 +308,6 @@ public class FMLogic {
 
 
     if (FMFilter.passServerFilter(fac, ft, fis)) {
-        //JINSU
-        if(debug) System.out.println("FMLogic tThisF : chkpt 1");
       // if pass the server filter, we want to measure the stats
       // that have been filtered ..
       Coverage.recordStatAfterFilter(fac, ft, fis);
@@ -321,14 +318,11 @@ public class FMLogic {
       // just check if
       if (isEnableFailureFlagExist()) {
 
-        if(debug) System.out.println("FMLogic tThisF : chkpt 2");
-
         FailType retFt = runFailLogic(fac, ft, fis);
         return retFt;
 
       }
     }
-    if(debug) System.out.println("FMLogic tThisF : chkpt 3");
     return FailType.NONE;
   }
 
@@ -351,13 +345,11 @@ public class FMLogic {
   // *************************************************
   private static FailType runFailLogic(FMAllContext fac, FailType ft, FIState fis) {
 
-    System.out.println("corrupt :: rfl1 :: show me FailType => " + ft);
     // if i have reached max fsn ...
     // just continue ...
     if (hasReachedMaxFsn()) {
       return FailType.NONE;
     }
-     System.out.println("corrupt :: rfl2 :: checkpoint");
 
     // let's get current failure number
     int fsn = getCurrentFsn();
@@ -367,7 +359,6 @@ public class FMLogic {
       return FailType.NONE;
     }
 
-     System.out.println("corrupt :: rfl3 :: checkpoint");
     // if we reach this point we're doing failure ..
     recordFailure(fac, ft, fis, fsn);
 
@@ -396,11 +387,9 @@ public class FMLogic {
     if (isFsnLocked(fsn)) {
       if (isFsnAndHashMatched(fsn, fis.getHashId())) {
         shouldFail = true;
-        System.out.println("corrupt :: sf1 checkpoint");
       }
       else {
         shouldFail = false;
-        System.out.println("corrupt :: sf2 checkpoint");
       }
     }
     else {
@@ -408,11 +397,9 @@ public class FMLogic {
         // System.out.format("_We have injected %d in the past_\n",
         // fis.getHashId());
         shouldFail = false;
-        System.out.println("corrupt :: sf3 checkpoint");
       }
       else  {
         shouldFail = true;
-        System.out.println("corrupt :: sf4 checkpoint");
 
       }
     }
@@ -738,11 +725,24 @@ public class FMLogic {
 
   // ***********************************************************
   public static boolean isEnableFailureFlagExist() {
-    File f = new File(ENABLE_FAILURE_FLAG);
-    if (f.exists())
-      return true;
-    return false;
+      File f = new File(ENABLE_FAILURE_FLAG);
+      if (f.exists())
+          return true;
+      return false;
   }
 
+  public static void getExpProp(){
+      FILTER_ID = getFilterId();
+  }
+
+  //JINSU hack: get the filter id from /tmp/fi/FILTERID file.
+  public static String getFilterId() {
+      String ret = Util.fileContentToString(EXP_PROP_DIR + "FILTERID");
+      if(ret == null) {
+          Util.WARNING("filterId is null");
+          ret = "";
+      }
+      return ret;
+  }
 
 }

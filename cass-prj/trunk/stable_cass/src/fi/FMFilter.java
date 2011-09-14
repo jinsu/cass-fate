@@ -13,6 +13,9 @@ import java.util.*;
 
 public class FMFilter {
 
+    //JINSU hack
+    //Filter Id specified in wl-config.xml
+    //public static String FID = FMLogic.FILTER_ID;
   public FMFilter() {}
 
   // *************************************************
@@ -21,15 +24,49 @@ public class FMFilter {
   // want to exercise
   // *************************************************
   public static boolean passServerFilter(FMAllContext fac, FailType ft, FIState fis) {
-
+    String FID = FMLogic.FILTER_ID;
+    if(FID.equals("") || FID == null) {
+        FID = FMLogic.getFilterId();
+    }
     boolean passFilter = false;
+    FID = FID.toLowerCase().trim();
+    if(FID.equals("readrepair1")) {
+        passFilter = filterReadRepairTest1(fac, ft, fis);
+
+    }
+    else if(FID.equals("readrepair2")) {
+        passFilter = filterReadRepairTest2(fac, ft, fis);
+
+    }
+    else if(FID.equals("readrepair3")) {
+        passFilter = filterReadRepairTest3(fac, ft, fis);
+
+    }
+    else if(FID.equals("insertion1")) {
+        passFilter = filterInsertionTest1(fac, ft, fis);
+    }
+    else if(FID.equals("insertion2")) {
+        passFilter = filterInsertionTest2(fac, ft, fis);
+
+    }
+    else {
+        passFilter = filterReadRepairTest3(fac, ft, fis);
+
+    }
+
     //boolean passFilter = true;
 
     //JINSU hack for Cassandra corruption to pass by.
-    //passFilter = filterReadRepairTest(fac, ft, fis);
+    //passFilter = filterReadRepairTest1(fac, ft, fis);
 //    passFilter = filterReadRepairTest2(fac, ft, fis);
-    passFilter = filterReadRepairTest3(fac, ft, fis);
-    //passFilter = filterSimpleRRTest(fac, ft, fis);
+
+
+
+//passFilter = filterReadRepairTest3(fac, ft, fis);
+
+
+
+//passFilter = filterSimpleRRTest(fac, ft, fis);
 
     // passFilter = filterWriteBug1(fac, ft, fis);
     // passFilter = filterWriteBug3(fac, ft, fis);
@@ -86,22 +123,38 @@ public class FMFilter {
         return ctx.getNodeId().equalsIgnoreCase(node);
     }
 
-    // ****************
-    // JINSU: A simple filter function that injects crashes
-    // node1 at phase1 of readrepair.
-    private static boolean filterSimpleRRTest(FMAllContext fac, FailType ft, FIState fis) {
-     	FMJoinPoint fjp = fac.fjp;
-		FMContext ctx = fac.ctx;
-		if( FMLogic.getCurrentFsn() == 1 && ft == FailType.CRASH
-                && fjp.getJoinPlc() == JoinPlc.BEFORE
+    private static boolean filterInsertionTest1(FMAllContext fac, FailType ft, FIState fis) {
+        FMJoinPoint fjp = fac.fjp;
+        FMContext ctx = fac.ctx;
+        System.out.println("filter JPS || " + fjp.getJoinPointStr() + "\nfilter ctx || " + ctx);
+
+        if( FMLogic.getCurrentFsn() == 1 && ft == FailType.CRASH
                 && fjp.getJoinPointStr().contains("DataOutputStream")
                 && (cassNodeTest(ctx, "Node1")
-                    //|| cassNodeTest(ctx, "Node3")
                     ) ) {
-            System.out.println("filter JPS || " + fjp.getJoinPointStr() + "\nfilter ctx || " + ctx);
-            return true;
+             return true;
 
-                }
+                   }
+
+
+        return false;
+    }
+
+    private static boolean filterInsertionTest2(FMAllContext fac, FailType ft, FIState fis) {
+        FMJoinPoint fjp = fac.fjp;
+        FMContext ctx = fac.ctx;
+        System.out.println("filter JPS || " + fjp.getJoinPointStr() + "\nfilter ctx || " + ctx);
+
+        if( FMLogic.getCurrentFsn() == 1 && ft == FailType.CRASH
+                && fjp.getJoinPlc() == JoinPlc.BEFORE
+                && fjp.getJoinPointStr().contains("DataInputStream")
+                && (cassNodeTest(ctx, "Node0")
+                    ) ) {
+             return true;
+
+                   }
+
+
         return false;
     }
 
@@ -113,12 +166,12 @@ public class FMFilter {
 		FMContext ctx = fac.ctx;
         int fsnNum = FMLogic.getCurrentFsn();
 
-        System.out.println("meow failtye" + ft);
         if ( ( fsnNum == 1  )
                     && cassDigestTest(fis, "Node2") )
             return true;
-
-        if( ( fsnNum == 2 || fsnNum == 3 )
+        if( fsnNum == 3) {
+                }
+               if( ( fsnNum == 2 || fsnNum == 3 )
                && (cassDataTest(fis, "Node2") )
                && ft == FailType.CORRUPTION
           )
@@ -129,7 +182,6 @@ public class FMFilter {
                 && ft == FailType.CRASH )
             return true;
 
-        System.out.println("meow ch3");
         return false;
     }
 
@@ -141,7 +193,6 @@ public class FMFilter {
 		FMContext ctx = fac.ctx;
         int fsnNum = FMLogic.getCurrentFsn();
 
-        System.out.println("meow failtye" + ft);
         if ( ( fsnNum == 1 || fsnNum == 2 || fsnNum == 3 )
                     && cassDataTest(fis, "Node1")
                     && ft == FailType.CORRUPTION )
@@ -152,77 +203,40 @@ public class FMFilter {
                 && fjp.getJoinPointStr().contains("DataOutputStream")
                 && (cassNodeTest(ctx, "Node1") )
                 ) {
-            System.out.println("JoinPlc || " + fjp.getJoinPlc() + "\nfilter JPS || " + fjp.getJoinPointStr() + "\nfilter ctx || " + ctx);
             return true;
 
                    }
-        System.out.println("meow ch3");
         return false;
     }
 
 
 	// ************************************************************
 	// JINSU: A small filter function that only returns true when the failure type is CRASH and the join place is before.
-	private static boolean filterReadRepairTest(FMAllContext fac, FailType ft, FIState fis) {
+	private static boolean filterReadRepairTest1(FMAllContext fac, FailType ft, FIState fis) {
 		FMJoinPoint fjp = fac.fjp;
 		FMContext ctx = fac.ctx;
         int fsnNum = FMLogic.getCurrentFsn();
 
-/*
-        if( cassNodeTest(ctx, "Node3")
-                && fjp.getJoinPointStr().contains("sendOneWay")
-                ) {
-                //introduce delay
-                //so node1 and node2's msgs get to node0 before node3's.
-                System.out.println("forcing Node3 to sleep");
-                Util.sleep(200);
-                }
-*/
-
-
-        System.out.println("meow failtye" + ft);
-		//boolean condition = ctx.getTargetIO().contains("Node3") && ctx.getTargetIO().contains("Node1");
-		//boolean containsCondition = //fjp.getJoinPointStr().contains("DataInputStream.readFully");
-		//														 ctx.getNodeId().contains("Node0");
-//																&& ctx.getTargetIO().contains("Node0");
         if ( fsnNum == 1 && cassDigestTest(fis, "Node2") )
             return true;
-        System.out.println("meow ch1");
         if( ( fsnNum == 2
                     || fsnNum == 3 )
                 && ft == FailType.CRASH
                 && fjp.getJoinPlc() == JoinPlc.BEFORE
                 && fjp.getJoinPointStr().contains("DataOutputStream")
-                && (cassNodeTest(ctx, "Node1")
-                    //|| cassNodeTest(ctx, "Node3")
+                && (cassNodeTest(ctx, "Node3")
                    ) ) {
-            System.out.println("JoinPlc || " + fjp.getJoinPlc() + "\nfilter JPS || " + fjp.getJoinPointStr() + "\nfilter ctx || " + ctx);
             return true;
 
                    }
-        System.out.println("meow dt curFsn = " + FMLogic.getCurrentFsn());
-        System.out.println("meow dt " + cassDataTest(fis, "Node1"));
         if ( ( fsnNum == 2 || fsnNum  == 3 )
                 && cassDataTest(fis, "Node1")
                 && ft == FailType.CORRUPTION
-                ) {
+           ) {
             return true;
-                }
-        System.out.println("meow ch3");
-
-/*
-        if(ft == FailType.CRASH
-		&& fjp.getJoinPlc() == JoinPlc.AFTER
-//		&& fjp.getJoinIot() == JoinIot.READ
-//		&& fjp.getJoinExc() == JoinExc.IO
-//		&& fjp.getJoinRbl() == JoinRbl.NO
-		&& containsCondition) {
-
-				return true;
-			}
-            */
-		return false;
-	}
+           }
+        return false;
+    }
 
   // **************************************************
   private static boolean filterTransientDisk(FMAllContext fac,

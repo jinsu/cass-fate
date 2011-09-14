@@ -42,18 +42,19 @@ public class Cass {
 
   //Jinsu
   Driver driver;
+  static ConsistencyLevel consis;
+
 
   String keyspace;
   String columnFamily;
   ColumnPath columnPath;
   String encoding;
 
-
   // *******************************************
   public Cass(Driver d) {
 		this.driver = d;
     this.u = d.getUtility();
-
+    consis = getConsistencyLevel();
   }
 
 
@@ -225,20 +226,13 @@ public class Cass {
   // *******************************************
   public void insertEntry(String key, String value, Experiment exp) {
 
-    u.print("- Cass.insertEntry : [ " + key + ", " + value + " ]" + "... Consistency => ALL\n");
+    u.println("- Cass.insertEntry : [ " + key + ", " + value + " ]" + "... Consistency => " + consis);
 
     try {
-
-
-        u.println("inserting for key... ");
-
-        // u.sleep(3000);
-
-
-        long timestamp = System.currentTimeMillis();
+       long timestamp = System.currentTimeMillis();
 
         client.insert(keyspace, key, columnPath, value.getBytes(encoding),
-                      timestamp, ConsistencyLevel.ALL);
+                      timestamp, consis);
 
 
 
@@ -281,8 +275,7 @@ public class Cass {
 
   // *******************************************
   public void getEntry(String key, Experiment exp) {
-
-    u.print("- Cass.getEntry " + key +  "...\n");
+    u.println("- Cass.getEntry " + key +  "... consis " + consis);
 
     // if the Experiment already fails .. no need to move on
     if (exp.isFail()) {
@@ -297,13 +290,28 @@ public class Cass {
       u.println("single column:");
       Column col = client.get(keyspace, key, columnPath,
                               //ConsistencyLevel.QUORUM)
-                              ConsistencyLevel.ONE)
+                              consis)
         .getColumn();
 
       u.println("column name: " + new String(col.name, encoding));
       u.println("column value: " + new String(col.value, encoding));
       u.println("column timestamp: " + new Date(col.timestamp));
     } catch (Exception e) {
+
+        u.EXCEPTION("Cass.getEntry fails", e);
+
+        u.ERROR("Cass.getEntry fails");
+
+				//REMOVE THIS LATER
+    		//JINSU: I want to see the out file for successful this experiment.
+    		String from = Driver.CASS_LOGS_DIR;
+    		String to = exp.getExpNumDir().getAbsolutePath();
+    		u.copyFile(from+"fi.out", to+"/fi.out");
+				u.copyFile(from+"node0.out", to+"/node0.out");
+				u.copyFile(from+"node1.out", to+"/node1.out");
+				u.copyFile(from+"node2.out", to+"/node2.out");
+				u.copyFile(from+"node3.out", to+"/node3.out");
+
       u.EXCEPTION("Cass.getEntry fails", e);
 
       u.ERROR("Cass.getEntry fails");
@@ -354,6 +362,16 @@ public class Cass {
       u.println("column value: " + new String(col.value, encoding));
       u.println("column timestamp: " + new Date(col.timestamp));
     } catch (Exception e) {
+				//REMOVE THIS LATER
+    		//JINSU: I want to see the out file for successful this experiment.
+    		String from = Driver.CASS_LOGS_DIR;
+    		String to = exp.getExpNumDir().getAbsolutePath();
+    		u.copyFile(from+"fi.out", to+"/fi.out");
+				u.copyFile(from+"node0.out", to+"/node0.out");
+				u.copyFile(from+"node1.out", to+"/node1.out");
+				u.copyFile(from+"node2.out", to+"/node2.out");
+				u.copyFile(from+"node3.out", to+"/node3.out");
+
       u.EXCEPTION("Cass.getEntry fails", e);
 
       u.ERROR("Cass.getEntry fails");
@@ -367,14 +385,26 @@ public class Cass {
   // *******************************************
   public void delete(String key, Experiment exp) {
     try {
-      //String exp_key = key + exp.getExpNum();
+        u.println("performing consistency " + consis);
+
+        //String exp_key = key + exp.getExpNum();
       long timestamp = System.currentTimeMillis();
-      client.remove(keyspace, key, columnPath, timestamp, ConsistencyLevel.ALL);
+      client.remove(keyspace, key, columnPath, timestamp, consis);
     } catch (Exception e) {
+				//REMOVE THIS LATER
+    		//JINSU: I want to see the out file for successful this experiment.
+    		String from = Driver.CASS_LOGS_DIR;
+    		String to = exp.getExpNumDir().getAbsolutePath();
+    		u.copyFile(from+"fi.out", to+"/fi.out");
+				u.copyFile(from+"node0.out", to+"/node0.out");
+				u.copyFile(from+"node1.out", to+"/node1.out");
+				u.copyFile(from+"node2.out", to+"/node2.out");
+				u.copyFile(from+"node3.out", to+"/node3.out");
+
       u.EXCEPTION("Cass.delete fails", e);
 
     exp.markFailFromNonFrog();
-      exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
+      exp.addNonFrogReport("Cass.delete(" + key + ") FAILS!");
       exp.addExceptionToNonFrogReport(e);
 
     }
@@ -403,10 +433,29 @@ public class Cass {
       u.EXCEPTION("Cass.delete fails", e);
 
     exp.markFailFromNonFrog();
-      exp.addNonFrogReport("Cass.getEntry(" + key + ") FAILS!");
+      exp.addNonFrogReport("Cass.delete(" + key + ") FAILS!");
       exp.addExceptionToNonFrogReport(e);
 
     }
+  }
+
+  //jinsu: figure out the consistency level
+  public ConsistencyLevel getConsistencyLevel() {
+
+      ConsistencyLevel consis;
+      String consistency = driver.CONSISTENCY;
+      if (consistency.equalsIgnoreCase("all")) {
+          consis = ConsistencyLevel.ALL;
+      } else if (consistency.equalsIgnoreCase("quorum")) {
+          consis = ConsistencyLevel.QUORUM;
+      } else if (consistency.equalsIgnoreCase("one")) {
+          consis = ConsistencyLevel.ONE;
+      } else {
+          u.WARNING("Consistency level is not supported. going to default case");
+          consis = ConsistencyLevel.ALL;
+      }
+
+      return consis;
   }
 
 }

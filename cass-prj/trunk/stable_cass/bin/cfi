@@ -1,16 +1,19 @@
 #!/bin/sh
 
+# ------------------------------------------------------
+#cassandra_home=/home/jinsu/research/cass-prj/trunk/stable_cass
+cassandra_home=$(awk '/Cassandra run homepath/ {save=$NF} END {print save}' /tmp/cassandra-fi-build-info)
 
 # /////////////////////////////////////////
 # not a portable code
 # napc
 # change the path appropriately
 #///////////////////////////////////////////
-CASSANDRA_INCLUDE=/home/jinsu/research/cass-prj/trunk/stable_cass/bin/cfi.in.sh
+CASSANDRA_INCLUDE=$cassandra_home/bin/cfi.in.sh
 #CASSANDRA_INCLUDE=`dirname $0`/..
 
 export CASSANDRA_INCLUDE
-cd ~/research/cass-prj/trunk/stable_cass
+cd ${cassandra_home}
 
 #/////////////////////////////////////////////
 . $CASSANDRA_INCLUDE

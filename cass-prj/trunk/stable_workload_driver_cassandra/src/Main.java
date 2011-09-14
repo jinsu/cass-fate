@@ -1,4 +1,4 @@
- 
+
 
 package org.fi;
 
@@ -25,22 +25,20 @@ public class Main {
   // remember that since we are in the same package org.fi,
   // don't add conflicting class names with HDFS fi classes
   static Utility u = new Utility();
-  
 
-  
+
+
   // *******************************************
   public Main() {
-    
+
   }
 
 
   // *******************************************
   public static void main(String[] args) throws IOException {
-    System.out.println("hello"); 
-
     //System.exit(0);
     // just initialize driver
-    
+
     //testing org.apache.cassandra.Util functions
     /*
     if(false) {
@@ -81,14 +79,14 @@ public class Main {
     }
     */
 
-     
+
     Driver d = new Driver();
-    
+
     // let's run the driver
     d.run();
-    
+
   }
 
 
-  
+
 }

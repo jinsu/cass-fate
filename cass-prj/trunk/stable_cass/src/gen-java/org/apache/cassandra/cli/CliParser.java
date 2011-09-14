@@ -1,4 +1,4 @@
-// $ANTLR 3.1.3 Mar 18, 2009 10:09:25 /home/jinsu/research/cass-prj/trunk/stable_cass/src/java/org/apache/cassandra/cli/Cli.g 2011-07-14 08:28:53
+// $ANTLR 3.1.3 Mar 18, 2009 10:09:25 /home/jinsu/research/cass-prj/trunk/stable_cass/src/java/org/apache/cassandra/cli/Cli.g 2011-08-22 22:14:10
 
 package org.apache.cassandra.cli;
 
@@ -573,7 +573,7 @@ public class CliParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: port, host
+                    // elements: host, port
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -626,7 +626,7 @@ public class CliParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: ipaddr, port
+                    // elements: port, ipaddr
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1076,7 +1076,7 @@ public class CliParser extends Parser {
 
 
             // AST REWRITE
-            // elements: columnFamilyExpr, value
+            // elements: value, columnFamilyExpr
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2001,7 +2001,7 @@ public class CliParser extends Parser {
 
 
             // AST REWRITE
-            // elements: a, columnFamily, rowKey, table
+            // elements: table, rowKey, columnFamily, a
             // token labels: 
             // rule labels: retval
             // token list labels: 

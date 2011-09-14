@@ -560,19 +560,17 @@ public class FMClient {
     DataOutputStream dos = Util.getRpcOutputStream(randId);
 
     try {
-
-      fac.write(dos);
+     fac.write(dos);
       dos.close();
 
-      // System.out.format("- Sending %d \n", randId);
+//       System.out.format("- Sending %d \n", randId);
 
       Object[] params = new Object[]{new Integer(randId)};
       Integer result = 0;
       result = (Integer) fmClient.execute("FMServer.sendContext", params);
-
       ft = Util.intToFailType(result);
 
-      // System.out.format("- Received %d %s \n", result, ft);
+//       System.out.format("- Received %d %s \n", result, ft);
 
       f.delete();
 

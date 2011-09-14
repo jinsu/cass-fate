@@ -10,8 +10,15 @@ fi
 
 
 export NODE_ID=$1
+
+#######################################################################
+# please modify cassandra_home to the path of your cassandra directory.
+#######################################################################
+#cassandra_home=absolute_path
+cassandra_home=$(awk '/Cassandra run homepath/ {save=$NF} END {print save}' /tmp/cassandra-fi-build-info)
+
 #BIN_DIR=`dirname $0`
-BIN_DIR=/home/jinsu/research/cass-prj/trunk/stable_cass/bin
+BIN_DIR=$cassandra_home/bin
 CASSANDRA_INCLUDE=$BIN_DIR/cnode.in.sh
 #CASSANDRA_INCLUDE=/home/jin-su/cnode.in.sh
 

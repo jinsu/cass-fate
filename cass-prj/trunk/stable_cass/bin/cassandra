@@ -98,6 +98,9 @@ case "`uname`" in
     ;;
 esac
 
+
+
+
 launch_service()
 {
     pidpath=$1
@@ -117,16 +120,7 @@ launch_service()
                 org.apache.cassandra.thrift.CassandraDaemon
     # Startup CassandraDaemon, background it, and write the pid.
     else
-        #exec $JAVA $JVM_OPTS $cassandra_parms -cp $CLASSPATH $props \
-    #     org.apache.cassandra.thrift.CassandraDaemon <&- &
-    #     [ ! -z $pidpath ] && printf "%d" $! > $pidpath
-	# haryadi:
-    #jinsu because system.out closes when you do -p option...
-    #cassandra_parms="$cassandra_parms -Dcassandra-foreground=yes"
-    #    exec $JAVA $JVM_OPTS $cassandra_parms -cp $CLASSPATH $props \
-    #        org.apache.cassandra.thrift.CassandraDaemon <&- \
-    #        > /tmp/fi/logs/node$pidpath.out &
-    #    [ ! -z $pidpath ] && printf "%d" $! > /tmp/fi/pids/node$pidpath.pid 
+    #Jinsu, hack, because system.out closes when you do -p option...
 
     cassandra_parms="$cassandra_parms -Dcassandra-foreground=yes"
         exec $JAVA $JVM_OPTS $cassandra_parms -cp $CLASSPATH $props \

@@ -19,32 +19,33 @@ public class Driver {
 
   public static int NUM_OF_CASS_NODES = 4;
 
-  public static int BREAK_EXP_NUMBER = 100000;
+  public static int BREAK_EXP_NUMBER = Parameters.BREAK_EXP_NUMBER;
   //public static int BREAK_EXP_NUMBER = 2;
 
-  public static final int MAX_FSN = 3;
+  public static final int MAX_FSN = Parameters.MAX_FSN;
 
 
 
   public static boolean
 
                //  enableFailure = false,
-                enableFailure = true,
+                enableFailure = Parameters.enableFailure,
 
                   //enableOptimizer = true,
                   enableOptimizer = false,
 
-                  enableCoverage = true,
+                  enableCoverage = Parameters.enableCoverage,
                   // enableCoverage = false,
 
-                  debug = true,
+                  debug = Parameters.debug,
                   // debug = false,
 
                   // enableFrog = true,
                   enableFrog = false,
 
                   junk;
-
+  public static final String FILTER_ID = Parameters.filter;
+  public static final String CONSISTENCY = Parameters.clevel;
 
   // ########################################################################
   // ########################################################################
@@ -66,7 +67,7 @@ public class Driver {
   //jinsu for net stuff
   public static final String IP_HISTORY_DIR        = TMPFI + "ipHistory/";
   public static final String TOKENS_DIR        = TMPFI + "tokens/";
-
+  public static final String EXP_PROP_DIR = TMPFI + "expProp/";
 
   public static final String COVERAGE_COMPLETE_DIR = TMPFI + "coverageComplete/";
   public static final String COVERAGE_STATIC_DIR   = TMPFI + "coverageStatic/";
@@ -115,7 +116,6 @@ public class Driver {
   // 4. final message or check
   // *******************************************
   public void run() {
-
     // a big preparation state before we
     // run a set of long experiments
     setUpBeforeEverything();
@@ -165,6 +165,7 @@ public class Driver {
     //JINSU
     rmIpHistory();
     rmTokens();
+    rmExpProp();
 
     // 5. clear any failure flags
     clearAllFlagsFailure();
@@ -174,6 +175,8 @@ public class Driver {
     clearAllFailHistory();
 
     // ------------------------------ setup stuffs
+    // 7. write Experiment configurations/properties to a file.
+    recordExpProp();
 
     // 9. start the failure manager
     startFailureManager();
@@ -445,9 +448,29 @@ public class Driver {
     //remove this later to enable insert workload.
     //ClientInsertWorkload ciw = new ClientInsertWorkload(this, exp);
     //ciw.run();
+    selectWorkloadToRun(FILTER_ID, exp);
 
-    ClientReadRepairWorkload crrw = new ClientReadRepairWorkload(this, exp);
-    crrw.run();
+    //ClientReadRepairWorkload crrw = new ClientReadRepairWorkload(this, exp);
+    //crrw.run();
+  }
+
+  //JINSU : for configurable experiments
+  public void selectWorkloadToRun(String filter, Experiment exp) {
+      String delimiter = "\\d";
+      String[] temp;
+      temp = filter.split(delimiter);
+      String experiment_name = temp[0];
+      //System.out.println("######## experiment name = " + experiment_name);
+      if(experiment_name.equalsIgnoreCase("readrepair")) {
+          ClientReadRepairWorkload crrw = new ClientReadRepairWorkload(this, exp);
+          crrw.run();
+      } else if(experiment_name.equalsIgnoreCase("insertion")) {
+          ClientInsertWorkload ciw = new ClientInsertWorkload(this, exp);
+          ciw.run();
+      } else { //default case is read repair workload
+          ClientReadRepairWorkload crrw = new ClientReadRepairWorkload(this, exp);
+          crrw.run();
+      }
   }
 
   // *******************************************
@@ -765,6 +788,14 @@ public class Driver {
     if (!u.deleteDirContent(TOKENS_DIR)) {
       u.ERROR("Can't delete " + TOKENS_DIR);
     }
+  }
+
+  public void rmExpProp() {
+    u.print("- Removing ExpProps ...\n");
+    if (!u.deleteDirContent(EXP_PROP_DIR)) {
+      u.ERROR("Can't delete " + EXP_PROP_DIR);
+    }
+
   }
 
   // *******************************************
@@ -1320,10 +1351,12 @@ public class Driver {
     u.mkDir(SOCKET_HISTORY_DIR);
     u.mkDir(CASS_PIDS_DIR);
 
-		//jinsu for net contextPassing
-		u.mkDir(IP_HISTORY_DIR);
-                //jinsu for checking tokenSize
-                u.mkDir(TOKENS_DIR);
+    //jinsu for net contextPassing
+    u.mkDir(IP_HISTORY_DIR);
+    //jinsu for checking tokenSize
+    u.mkDir(TOKENS_DIR);
+    //jinsu for experiment configurations
+    u.mkDir(EXP_PROP_DIR);
   }
 
 
@@ -1346,8 +1379,19 @@ public class Driver {
 
 
   }
-
-  public static void main(String[] args) {
-    System.out.println("Hello");
+  public void recordExpProp() {
+      //writing filter value to a file.
+      recordFilterId();
   }
+  // *******************************************
+  public void recordFilterId() {
+    String fpath = EXP_PROP_DIR + "FILTERID";
+    boolean succ = u.stringToFileContent(FILTER_ID, fpath);
+    if(!succ) {
+        u.ERROR("Can't create " + fpath);
+    }
+  }
+  public static void main(String[] args) {
+  }
+
 }

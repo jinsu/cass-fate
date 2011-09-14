@@ -1,18 +1,48 @@
 
 
 <project name="test" default="run" basedir=".">
-  
-  
-  <!-- some shortchuts 
-       in general, grep for all "haryadi" .. if you find my name 
-       that is specific to my setup -->
-  <property name="cassandra.root.dir" 
-    location="/home/jinsu/research/cass-prj/trunk/stable_cass"/>
+
+<!-- =================================================================
+       FI properties (please modify accordingly, my setup is for MAC)
+
+            * - cassandra.root.dir is where cassandra-fate-system folder is
+
+================================================================= -->
+ <property name="cassandra.root.dir" 
+     location="../stable_cass"/>
+
+
   <property name="cassandra.build.class" location="${cassandra.root.dir}/build/classes"/>
+  <!--
   <property name="myJars" value="/home/jinsu/research/java-rtjar"/>
   <property name="rpclib" location="${myJars}/apache-xmlrpc-3.1.3/lib"/>
+-->
+  <!-- This is a possible setup for MAC -->  
+<!--
+
+  <property name="java.classes.dir" location="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Classes"/>
+  <property name="jsse.file" location="${java.classes.dir}/jsse.jar"/>
+  <property name="jce.file"  location="${java.classes.dir}/jce.jar"/>
+-->
+
+  
+  <!-- This is a possible setup for Linux -->
+  <property name="java.classes.dir" location="/usr/lib/jvm/java-6-sun/jre/lib"/>         
+  <property name="jsse.file" location="${java.classes.dir}/jsse.jar"/>                   
+  <property name="jce.file"  location="${java.classes.dir}/jce.jar"/>                    
 
 
+
+
+  <!-- =================================================================
+       No need to modify.
+       ================================================================= -->
+  <property name="cassandra.build.dir" location="${cassandra.root.dir}/build/classes"/>
+  <property name="fi.lib.dir" value="${cassandra.root.dir}/lib/fi"/>
+
+  <property name="rpclib" location="${fi.lib.dir}/xmlrpc"/>
+  <property name="jollib" location="${fi.lib.dir}/jol"/>
+  
   <!-- NOTE: we need paths to: -->
   <path id="required.lib.path">
     
@@ -26,15 +56,18 @@
 
 
     <!-- 3. aspectj jars (because we're calling DFS Client and dfs client
-	 might have been woven by us) -->
+     might have been woven by us) -->
+     <!--
     <pathelement location="${myJars}/aspectj/aspectjrt-1.6.4.jar"/>
     <pathelement location="${myJars}/aspectj/aspectjtools-1.6.4.jar"/>
-    
+    -->
+
     <!-- 3. jsse.jar (because we're booting from woven-rt.jar) -->
-    <pathelement location="${myJars}/sdk/jsse.jar"/>
+    <pathelement location="${jsse.file}"/>
+    <pathelement location="${jce.file}"/>
 
     <!-- 4. jol.jar (for FROG only, thanh doesn't need this -->
-    <pathelement location="${myJars}/jol/jol.jar"/>
+    <pathelement location="${jollib}/jol.jar"/>
 
     <!-- 5. xml rpc -->
     <pathelement location="${rpclib}/xmlrpc-server-3.1.3.jar"/>
@@ -56,17 +89,22 @@
   <!-- compile -->
   <target name="compile" depends="init">
     <javac srcdir="src" destdir="build" debug="on"
-        includes="*.java" includeantruntime="false" 
+        includeantruntime="false" 
+        classpath="${cassandra.build.dir}" 
         classpathref="required.lib.path"/>
   </target>
   
 
   <!-- run: note that we set dir to cassandra.root.dir so the execution
        of this driver is on cassandra -->
-  <target name="run" depends="compile">
+  <import file="wl-config.xml" />
+  <echo>what experiment is it? ${experimentName} </echo>
+  <echo>what filter is it? ${filter} </echo>
+
+ <target name="run" depends="compile"> 
 
     <java classname="org.fi.Main" 
-      classpath="build"
+        classpath="build; ${cassandra.build.dir};"
       fork="true"
       dir="${cassandra.root.dir}"
       classpathref="required.lib.path" >
@@ -74,7 +112,17 @@
         <!-- since dfs client might be woven, we need to
              boot using the woven-rt.jar -->
         <pathelement location="${cassandra.root.dir}/build/woven-rt.jar"/>
-      </bootclasspath>
+        <pathelement location="${jce.file}"/>
+        <pathelement location="${jsse.file}"/>
+
+    </bootclasspath>
+    <jvmarg value="-DBREAK_EXP_NUMBER=${BREAK_EXP_NUMBER}"/>
+    <jvmarg value="-DMAX_FSN=${MAX_FSN}"/>
+    <jvmarg value="-DenableFailure=${enableFailure}"/>
+    <jvmarg value="-DenableCoverage=${enableCoverage}"/>
+    <jvmarg value="-Ddebug=${debug}"/>
+    <jvmarg value="-Dfilter=${filter}"/>
+
     </java> 
   </target>
 
@@ -82,6 +130,5 @@
   <target name="clean">
     <delete dir="build"/>
   </target>
-
 </project>
 

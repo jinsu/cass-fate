@@ -1,0 +1,309 @@
+
+<project name="apache-cassandra With FI" default="compile-fi">
+
+  <!-- <import file="build.xml"/> -->
+
+  <target name="compile-fi" depends="build"/>
+
+
+  <!-- =================================================================
+
+       Main things:
+
+       - fibase : compile src/fi/base/*
+       - firt   : weave src/fi/base* to rt.jar/classes.jar
+
+
+
+
+       - fijav  : just quickly compile src/fi/*.java
+       - fiaj   : just quickly compile src/fi/*.aj to see errors/warnings
+
+       ================================================================= -->
+
+
+  <!-- =================================================================
+       FI properties (please modify accordingly, my setup is for MAC)
+       ================================================================= -->
+
+  <!-- This is a possible setup for MAC -->
+  <!--
+
+     <property name="java.classes.dir" location="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Classes"/>
+     <property name="javasdk.file" location="${java.classes.dir}/classes.jar"/>
+     <property name="jsse.file" location="${java.classes.dir}/jsse.jar"/>
+     <property name="jce.file"  location="${java.classes.dir}/jce.jar"/>
+     <property name="antjar.file" location="/usr/share/ant/lib/ant.jar"/>
+-->
+
+  <!-- This is a possible setup for Linux -->
+  <property name="java.classes.dir" location="/usr/lib/jvm/java-6-sun/jre/lib"/>
+  <property name="javasdk.file" location="${java.classes.dir}/rt.jar"/>
+  <property name="jsse.file" location="${java.classes.dir}/jsse.jar"/>
+  <property name="jce.file"  location="${java.classes.dir}/jce.jar"/>
+  <property name="antjar.file" location="/usr/share/ant/lib/ant.jar"/>
+
+
+  <!-- =================================================================
+       No need to be modified
+       ================================================================= -->
+  <property name="fi.lib.dir" location="${basedir}/lib/fi"/>
+  <property name="jollib" location="${fi.lib.dir}/jol"/>
+  <property name="rpclib" location="${fi.lib.dir}/xmlrpc"/>
+  <property name="fi.src.dir" value="${basedir}/src/fi"/>
+
+
+  <path id="weave.class.path">
+    <pathelement location="build/woven-rt.jar"/>
+    <pathelement location="${jce.file}"/>
+    <pathelement location="${jsse.file}"/>
+    <pathelement location="${antjar.file}"/>
+    <pathelement location="${jollib}/jol.jar"/>
+    <!--
+         Don't need this because destini isn't incorporated.
+         <pathelement location="dist/olg.jar"/>
+    -->
+    <!-- <fileset dir="${rpclib}" includes="*.jar"/> -->
+    <pathelement location="${rpclib}/xmlrpc-server-3.1.3.jar"/>
+    <pathelement location="${rpclib}/xmlrpc-client-3.1.3.jar"/>
+    <pathelement location="${rpclib}/xmlrpc-common-3.1.3.jar"/>
+    <pathelement location="${rpclib}/ws-commons-util-1.0.2.jar"/>
+    <pathelement location="${rpclib}/commons-logging-1.1.jar"/>
+  </path>
+
+  <!-- Java Compiler setting -->
+
+  <property name="javac.debug" value="on"/>
+  <property name="javac.optimize" value="on"/>
+  <property name="javac.deprecation" value="off"/>
+  <property name="javac.version" value="1.6"/>
+  <property name="javac.args" value=""/>
+  <property name="javac.args.warnings" value="-Xlint:unchecked"/>
+  <property name="build.encoding" value="ISO-8859-1"/>
+
+
+
+  <!-- =================================================================
+       compile src/fi and weave to core and hdfs classes
+       ================================================================= -->
+  <target name="fi" depends="ficass"/>
+
+
+  <!-- =================================================================
+       ficore: we try not to weave all cass classes, because it is slow,
+       so, we just pick classes that deal with failures.
+       ================================================================= -->
+  <target name="ficass" depends="build-project">
+
+
+    <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+      <classpath>
+	<fileset dir="${build.lib}" includes="aspect*.jar"/>
+      </classpath>
+    </taskdef>
+
+    <echo message="Start FI-CASS ..."/>
+
+    <!--
+     net/OutboundTcpConnection.java : Tcp connection wrapper
+     net/IncomingTcpConnection.java : Tcp connection wrapper
+     db/ReadVerbHandler.java : doVerb() sendOneWay function weaved for Read Repair Workload
+     locator/AbstractReplicationStrategy.java : getNaturalEndpoint() overwritten for deterministic behavior in choosing replica nodes.
+     thrift/CassandraDaemon.java : used in setting up ipHistory information
+     contextPassing.aj : passing IoContexts around the function calls
+      -->
+
+<iajc  encoding="${build.encoding}"
+        srcdir="${build.src};${fi.src.dir}"
+        includes="
+        org/apache/cassandra/net/OutboundTcpConnection.java,
+        org/apache/cassandra/net/IncomingTcpConnection.java,
+        org/apache/cassandra/db/ReadVerbHandler.java,
+        org/apache/cassandra/locator/AbstractReplicationStrategy.java,
+        org/apache/cassandra/thrift/CassandraDaemon.java,
+        contextPassing.aj,
+        *.aj, *.java"
+        destdir="${build.classes}"
+        debug="${javac.debug}"
+        target="${javac.version}"
+        source="${javac.version}"
+        deprecation="${javac.deprecation}"
+        classpathref="weave.class.path"
+        bootclasspathRef="weave.class.path">
+        <classpath refid="cassandra.classpath"/>
+    </iajc>
+
+    </target>
+
+
+
+
+  <!-- =================================================================
+       fioneclass:
+       specify a dir/a file that you want to weave
+       ================================================================= -->
+  <target name="fioneclass" depends="init">
+
+    <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+      <classpath>
+	<fileset dir="${build.lib}" includes="aspect*.jar"/>
+      </classpath>
+    </taskdef>
+
+    <echo message="Start FI-ONE CLASS ..."/>
+
+    <iajc  encoding="${build.encoding}"
+           srcdir="${core.src.dir};${fi.src.dir};${hdfs.src.dir}"
+           includes="org/apache/hadoop/hdfs/server/common/Storage.java,
+                     *.aj"
+           destdir="${build.classes}"
+           debug="${javac.debug}"
+           target="${javac.version}"
+           source="${javac.version}"
+           deprecation="${javac.deprecation}"
+           classpathref="weave.class.path"
+           bootclasspathRef="weave.class.path">
+      <classpath refid="classpath"/>
+    </iajc>
+
+  </target>
+
+
+
+
+
+  <!-- Don't need this. Destini stuff.
+       =================================================================
+       olg: compile fi/*.olg
+       =================================================================
+
+  <target name="olg">
+    <jar jarfile="build/classes/olg.jar">
+      <fileset dir="src/fi/destini" includes="*.olg"/>
+    </jar>
+  </target>
+
+  -->
+    <!-- haven't implemented -->
+  <!-- =================================================================
+       fiaj: compile fi/*.aj only
+       ================================================================= -->
+  <target name="fiaj" depends="init">
+
+    <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+      <classpath>
+	<fileset dir="${build.lib}" includes="aspect*.jar"/>
+      </classpath>
+    </taskdef>
+
+    <echo message="Start FI-AJ Fast ..."/>
+
+    <iajc encoding="${build.encoding}"
+          srcdir="${fi.src.dir}"
+          includes="*.aj, *.java"
+          destDir="${build.classes}"
+          debug="${javac.debug}"
+          target="${javac.version}"
+          source="${javac.version}"
+          deprecation="${javac.deprecation}"
+          classpathref="weave.class.path"
+          bootclasspathRef="weave.class.path">
+      <classpath refid="cassandra.classpath"/>
+    </iajc>
+
+
+  </target>
+
+
+    <!-- Haven't implemented -->
+  <!-- =================================================================
+       fijav: compile fi/*.java only
+       ================================================================= -->
+  <target name="fijav" depends="init">
+
+    <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+      <classpath>
+	<fileset dir="${build.lib}" includes="aspect*.jar"/>
+      </classpath>
+    </taskdef>
+
+    <echo message="Start FI-JAVA Fast ..."/>
+
+    <iajc encoding="${build.encoding}"
+          srcdir="${fi.src.dir}"
+          includes="*.java"
+          destDir="${build.classes}"
+          debug="${javac.debug}"
+          target="${javac.version}"
+          source="${javac.version}"
+          deprecation="${javac.deprecation}"
+          classpathref="weave.class.path"
+          bootclasspathRef="weave.class.path">
+      <classpath refid="classpath"/>
+    </iajc>
+
+
+  </target>
+
+
+
+
+
+  <!-- =================================================================
+       fibase: compile fi/base/*.java, *.aj
+       ================================================================= -->
+  <target name="fibase" depends="init">
+
+    <echo message="Start FI-BASE ..."/>
+
+    <javac
+       encoding="${build.encoding}"
+       srcdir="${fi.src.dir}"
+       includes="base/*.java"
+       destdir="${build.classes}"
+       debug="${javac.debug}"
+       optimize="${javac.optimize}"
+       target="${javac.version}"
+       source="${javac.version}"
+       deprecation="${javac.deprecation}"
+       includeantruntime="false">
+      <compilerarg line="${javac.args} ${javac.args.warnings}" />
+      <classpath refid="cassandra.classpath"/>
+    </javac>
+  </target>
+
+
+  <!-- =================================================================
+       firt: weave src/fi/base/ to rt.jar
+       ================================================================= -->
+  <target name="firt" depends="fibase">
+
+    <echo message="  fi.lib.dir = ${fi.lib.dir} "/>
+
+    <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+      <classpath>
+	<fileset dir="${build.lib}" includes="aspect*.jar"/>
+      </classpath>
+    </taskdef>
+
+    <path id="ajlibclasspath">
+      <fileset dir="${build.lib}" includes="aspect*.jar"/>
+      <!-- must add this because iajc cannot find this path automatically -->
+      <!-- <pathelement path="/usr/share/ant/lib/ant.jar"/> -->
+    </path>
+
+    <echo message="Weaving rt.jar ..."/>
+
+    <iajc inpath="${javasdk.file}"
+          outjar="build/woven-rt.jar"
+          outxml="true"
+          srcdir="${fi.src.dir}"
+          includes="base/weavert.aj, base/Context.java, base/ClassWC.java"
+          classpathref="ajlibclasspath">
+      <classpath refid="cassandra.classpath"/>
+    </iajc>
+  </target>
+
+
+</project>
+

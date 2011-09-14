@@ -26,7 +26,7 @@ public class ClientReadRepairWorkload implements Workload {
   private String VALUE = "berkeley";
   private static final String ENCODING = "UTF8";
   //private static final String CONSIS = "QUORUM";
-  private static final String CONSIS = "ALL";
+  //private static String CONSIS = "ALL";
 
 
   // *******************************************
@@ -70,11 +70,12 @@ public class ClientReadRepairWorkload implements Workload {
     //u.println("performing consistency all");
     //cass.getEntry(key, exp, "all");
 
-    u.println("performing consistency " + CONSIS);
-    cass.getEntry(key, exp, CONSIS);
+    //u.println("performing consistency " + CONSIS);
+    //cass.getEntry(key, exp, CONSIS);
 
 	//u.println("performing consistency one");
     //cass.getEntry(key, exp, "one");
+    cass.getEntry(key, exp);
     u.sleep(3000);
 
     //delete the repair flag
@@ -130,26 +131,8 @@ public class ClientReadRepairWorkload implements Workload {
     //cass.getEntry(key, exp);
 
     // then delete the file
-    cass.delete(key, exp, CONSIS);
-
-
-    //Doesn't work when the experiment fails because the folder name changes to wiped-exp-..s.dfa
-    //REMOVE THIS LATER
-    		//JINSU: I want to see the out file for successful this experiment.
-    		String from = Driver.CASS_LOGS_DIR;
-    		String to = exp.getExpNumDir().getAbsolutePath();
-    		if(!(new File(to).exists())) {
-    			String temp = String.format("%s/wiped-%05d-%s",
-				      Driver.EXP_RESULT_DIR,
-				      Driver.getWipedOutNum(),
-				      to);
-				  to = temp;
-    		}
-    		u.copyFile(from+"fi.out", to+"/fi.out");
-				u.copyFile(from+"node0.out", to+"/node0.out");
-				u.copyFile(from+"node1.out", to+"/node1.out");
-				u.copyFile(from+"node2.out", to+"/node2.out");
-				u.copyFile(from+"node3.out", to+"/node3.out");
+    //cass.delete(key, exp, CONSIS);
+    cass.delete(key, exp);
 
   }
 

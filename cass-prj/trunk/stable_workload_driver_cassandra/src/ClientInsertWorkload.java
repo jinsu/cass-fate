@@ -13,7 +13,7 @@ import java.util.TreeMap;
 
 
 public class ClientInsertWorkload implements Workload {
-  
+
   private Driver     driver;
   private Cass       cass;
   private Utility    u;
@@ -26,15 +26,14 @@ public class ClientInsertWorkload implements Workload {
   private String VALUE = "berkeley";
   private static final String ENCODING = "UTF8";
 
-
   // *******************************************
   public ClientInsertWorkload(Driver driver, Experiment exp) {
     this.driver = driver;
     this.cass = driver.getCass();
     this.u = driver.getUtility();
     this.exp = exp;
-  }
-  
+   }
+
 
   // *******************************************
   // the algorithm
@@ -44,16 +43,16 @@ public class ClientInsertWorkload implements Workload {
 
     // 1. setup for this specific workload
     preSetup();
-    
+
 
     // 3. the exact workload where we want to run with failure
     runWithFailure();
-    
-    // 5. run post setup 
+
+    // 5. run post setup
     postSetup();
   }
-  
-  
+
+
   // *******************************************
   public void runWithFailure() {
   	//TODO remove this
@@ -66,9 +65,9 @@ public class ClientInsertWorkload implements Workload {
     // put it in exp
     String key = String.format("key-%03d", exp.getExpNum());
     cass.insertEntry(key, VALUE , exp);
-    
+
     u.deleteFile(Driver.EXPERIMENT_RUN_FLAG);
-    
+
   }
 
 
@@ -80,36 +79,36 @@ public class ClientInsertWorkload implements Workload {
     cass.setColumnFamily(COLUMNFAMILY);
     cass.setColumnPath(COLUMNPATH);
 
-    
-    
+
+
     // 2. enable failures (and optimizer)
     Driver.enableFailureManager();
     Driver.enableClientOptimizer();
     Driver.enableFrog();
     Driver.enableCoverage();
-    
+
     // 3. let's make sure, we setup the connection before we go
     // into the run with failure
     cass.assertConnection();
   }
 
   // *******************************************
-  public void postSetup() {    
+  public void postSetup() {
 
     // 4. stop the failure
     Driver.disableCoverage();
     Driver.disableFrog();
     Driver.disableFailureManager();
     Driver.disableClientOptimizer();
-    
+
     // get entry
     String key = String.format("key-%03d", exp.getExpNum());
     cass.getEntry(key, exp);
-    
+
     // then delete the file
     cass.delete(key, exp);
-    
-    
+
+
     //Doesn't work when the experiment fails because the folder name changes to wiped-exp-..s.dfa
     //REMOVE THIS LATER
     		//JINSU: I want to see the out file for successful this experiment.
@@ -127,8 +126,8 @@ public class ClientInsertWorkload implements Workload {
 				u.copyFile(from+"node1.out", to+"/node1.out");
 				u.copyFile(from+"node2.out", to+"/node2.out");
 				u.copyFile(from+"node3.out", to+"/node3.out");
-    
+
   }
 
-  
+
 }

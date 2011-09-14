@@ -14,11 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+#######################################################################
+# please modify cassandra_home to the path of your cassandra directory.
+#######################################################################
 #cassandra_home=`dirname $0`/..
 cassandra_home=/home/jinsu/research/cass-prj/trunk/stable_cass
 
-FM_MY_JARS=/home/jinsu/research/java-rtjar
+#FM_MY_JARS=/home/jinsu/research/java-rtjar
 
 #jinsu commented out FROM
 
@@ -48,13 +50,13 @@ FM_MY_JARS=/home/jinsu/research/java-rtjar
 # ------------------------
 # 1) cassandra classes
 # ------------------------
-cassandra_classes="$cassandra_home/build/classes"
-CLASSPATH=${CLASSPATH}:$cassandra_classes
+#cassandra_classes="$cassandra_home/build/classes"
+#CLASSPATH=${CLASSPATH}:$cassandra_classes
 # ------------------------
 # 2) conf folder
 # ------------------------
-CASSANDRA_CONF="$cassandra_home/conf"
-CLASSPATH=${CLASSPATH}:$CASSANDRA_CONF
+#CASSANDRA_CONF="$cassandra_home/conf"
+#CLASSPATH=${CLASSPATH}:$CASSANDRA_CONF
 # ------------------------
 # 3) lib jars
 # ------------------------
@@ -88,6 +90,78 @@ FM_WOVENRT="$cassandra_home/build/woven-rt.jar"
 FM_BOOT_OPTS="-Xbootclasspath:$FM_WOVENRT"
 
 
+
+# #######################################################################
+# jinsu, boot class path, add FI_BOOT_OPTS,
+# #######################################################################
+
+
+# -------------------------------------------------------
+# please modify these three entries accordingly  (see MAC and Linux configuration)
+# -------------------------------------------------------
+# This is a possible MAC configuration
+# -------------------------------------------------------
+
+#FI_JAVA_CLASSES_DIR=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Classes/
+#FI_JSSE="$FI_JAVA_CLASSES_DIR/jsse.jar"
+#FI_JCE="$FI_JAVA_CLASSES_DIR/jce.jar"
+
+# -------------------------------------------------------
+# This is a possible Linux configuration
+# -------------------------------------------------------
+FI_JAVA_CLASSES_DIR=/usr/lib/jvm/java-6-sun/jre/lib
+FI_JSSE="$FI_JAVA_CLASSES_DIR/jsse.jar"
+FI_JCE="$FI_JAVA_CLASSES_DIR/jce.jar"
+
+
+
+
+# -------------------------------------------------------
+# boot classs
+# -------------------------------------------------------
+FI_LIB_DIR="$cassandra_home/lib/fi"
+FI_WOVENRT="$cassandra_home/build/woven-rt.jar"
+FI_BOOT_OPTS="-Xbootclasspath:$FI_WOVENRT:$FI_JSSE:$FI_JCE"
+# -------------------------------------------------------
+# add extra classes stuff
+# -------------------------------------------------------
+FI_JOL="$FI_LIB_DIR/jol/jol.jar"
+#FI_OLG="build/classes/olg.jar"
+FI_RPC1="$FI_LIB_DIR/xmlrpc/xmlrpc-client-3.1.3.jar"
+FI_RPC2="$FI_LIB_DIR/xmlrpc/xmlrpc-server-3.1.3.jar"
+FI_RPC3="$FI_LIB_DIR/xmlrpc/xmlrpc-common-3.1.3.jar"
+FI_RPC4="$FI_LIB_DIR/xmlrpc/ws-commons-util-1.0.2.jar"
+FI_RPC5="$FI_LIB_DIR/xmlrpc/commons-logging-1.1.jar"
+# -------------------------------------------------------
+# the final classpath
+# -------------------------------------------------------
+CLASSPATH=${CLASSPATH}:${FI_JOL} #:${FI_OLG}
+CLASSPATH=${CLASSPATH}:${FI_RPC1}:${FI_RPC2}:${FI_RPC3}:${FI_RPC4}:${FI_RPC5}
+# adding:
+# ------------------------
+# 1) cassandra classes
+# ------------------------
+cassandra_classes="$cassandra_home/build/classes"
+CLASSPATH=${CLASSPATH}:$cassandra_classes
+# ------------------------
+# 2) conf folder
+# ------------------------
+CASSANDRA_CONF="$cassandra_home/conf"
+CLASSPATH=${CLASSPATH}:$CASSANDRA_CONF
+# ------------------------
+# 3) lib jars
+# ------------------------
+for jar in $cassandra_home/lib/*.jar; do
+    CLASSPATH=${CLASSPATH}:$jar
+done
+
+touch /tmp/cassandra-fi-build-info
+echo "Cassandra run classpath --> $CLASSPATH" >> /tmp/cassandra-fi-build-info
+echo "Cassandra run homepath --> $cassandra_home" >> /tmp/cassandra-fi-build-info
+# -------------------------------------------------------
+
+
+
 # Arguments to pass to the JVM
 JVM_OPTS=" \
         -ea \
@@ -102,4 +176,4 @@ JVM_OPTS=" \
         -Dcom.sun.management.jmxremote.port=8080 \
         -Dcom.sun.management.jmxremote.ssl=false \
         -Dcom.sun.management.jmxremote.authenticate=false
-        $FM_BOOT_OPTS"
+        $FI_BOOT_OPTS"
