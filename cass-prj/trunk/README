@@ -5,20 +5,15 @@ Date : May 4th, 2011
 // Files that need paths corrected when transferred to a different machine.//
 /////////////////////////////////////////////////////////////////////////////
 *files
-stable_cass/build.xml
+stable_cass/fi-build.xml
 stable_cass/bin/
-		cfi.in.sh
-		cif
-		cassandra
 		cassandra.in.sh
-		cnode
-		cnode.in.sh
 stable_workload_driver_cassandra/build.xml
 
 *symbolic links
 stable_cass/
-		cassandra
-		fi
+    		cassandra
+	    	fi
 
 //////////////////////////////
 //End of a Section////////////
