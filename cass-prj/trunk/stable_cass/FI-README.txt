@@ -30,7 +30,7 @@
    (It's okay to see lots of warnings!)
 
 
-7. Then see cass-prefail-workload/README.txt
+7. Then see cassandra-fate-workload-x.y/README.txt
 
 
 

@@ -2,13 +2,13 @@
 [[ 1. Notes ]]
 
 
-If you haven't read the cass-prefail-x.x-system/FI-README.txt file, then 
+If you haven't read the cassandra-fate-system-x.y/FI-README.txt file, then 
 stop reading this. Read that FI-README first. Then continue here.
 
 
 [[ 2. How to Setup the Configuration ]]
 
-To build the cass-prefail-system, you need to setup some paths 
+To build the cassandra-fate-system-x.y, you need to setup some paths 
 to your java and ant jar files. These are the steps:
 
 - Open build.xml
@@ -19,10 +19,10 @@ to your java and ant jar files. These are the steps:
   property names).  
 
   The "cassandra.root.dir" is the path to your
-  cass-prefail-system directory.  If you put
-  cass-prefail-system and cass-prefail-workload in
+  cassandra-fate-system-x.y directory.  If you put
+  cassandra-fate-system-x.y and cassandra-fate-workload-x.y in
   the same directory, then the location is
-  "../cass-prefail-system".
+  "../cassandra-fate-system-x.y".
 
 
 [[ How to Build ]]
@@ -37,40 +37,37 @@ the run process. Just follow the instruction in the next section.
 Simply, run these steps:
 
  % make kill
- % ./scripts/run-one-fail.py 
-
-   (This will only run 2 or 3 experiments, where in each experiment we
-   just run one failure.  You could see /tmp/fi/expResult/ folder to
-   see how many experiments have been run so far.  To stop just hit
-   control-C and then make kill).
-
+ % ant
  % make kill
+
+   (This will run the experiment specified in wl-config.xml file.  
+   You could see /tmp/fi/expResult/ folder to
+   see how many experiments have been run so far.
+
+   You can select which experiment to run by changing the content of wl-config.xml.
+   wl-config.xml file specifies what experiment will be run by the workload.
+
+   To stop just hit control-C and then make kill).
 
  % ls /tmp/fi/expResult
    (if you see exp-00XX directories, then you've succesfully run our
    program.)
 
 
-To run two failures per experiment, you can try this policy below:
+To run a sample workload experiment, you can try the below:
 
+ % cp wl-config-readrepair3-all.xml wl-config.xml
  % make kill
- % ./scripts/run-two-fail.py
+ % ant
+ % make kill
 
-This policy should run 2 experiments, where in each experiment we
-inject specific two failures (as defined in the policy).
+     IMPORTANT NOTE: always run "make kill" before and after running
+     each of these policies.
 
+The above should run read repair experiment with readrepair3 filter, where we
+inject specific three failures (as defined in the configuration file).
 
-Finally, if you want to run all combinations of two failures,
-you can try this policy:
-
- % ./scripts/run-brute.py 2
-
-This will run a very long time.  Again, you could see
-/tmp/fi/expResult/ folder to see how many experiments have been run so
-far.  To stop just hit control-C and then make kill.
-
-
-In every of the experiment directory, you will see some file, such as
+In every experiment directory, you will see some file, such as
 fsnN-<failureid>.txt.  N represents the i-th injected failure. If you
 inject two failures (see the next section below), then you will find
 fsn1-<failureid.txt> and fsn2-<failureid.txt>.  Open the files(s), and
@@ -83,88 +80,51 @@ what's the stack trace look like, and other information).
     way to kill Java programs run by this framework.
 
 
-If everything is smooth up to this point, then let's move on to the
-next section.
+If everything is smooth up to this point, then let's try different experiments.
 
 
+[[ All experiments ]]
 
-[[ Test Program and Pruning Policies ]]
+We have provided some configuration files that you could try. Basically, the
+configuration files written in xml format, provides suggested failure numbers
+and filters for each experiment:
 
+ % cp wl-config-EXPERIMENT_NAME-CONSISTENCY.xml wl-config.xml
+    EXPERIMENT_NAME can be 
+ {readrepair1, readrepair2, readrepair3, insertion1, insertion2}
+    CONSISTENCY can be
+ {all, quorum}
+    example
+ % cp wl-config-insertion1-all.xml wl-config.xml
 
-We have provided some policies that you could try. Basically, the
-policy is written in a python script, and can be run in this format:
+ % cp wl-config-insertion2-all.xml wl-config.xml
 
-% scripts/run-SOMEPOLICY.py  N
+ % cp wl-config-readrepair1-all.xml wl-config.xml
 
-where N is the number of failures that you want to inject per experiment.
-We have provided six policies that you could try (explained below).
-For example, you could try running these policies:
+ % cp wl-config-readrepair2-all.xml wl-config.xml
 
+ % cp wl-config-readrepair3-all.xml wl-config.xml
 
-     IMPORTANT NOTE: always run "make kill" before and after running
-     each of these policies.
+ % cp wl-config-insertion1-quorum.xml wl-config.xml
 
- % scripts/run-brute.py 2
-
- % scripts/run-newsrc.py 2
-
- % scripts/run-rec-src.py 2
-
- % scripts/run-rec-src-stack.py 2
- 
- % scripts/run-rec-src-node.py 2
- 
- % scripts/run-rec-all.py 2
-
+ % cp wl-config-readrepair1-quorum.xml wl-config.xml
+ ...
+ you get the pattern.
 
 Here are the explanations:
-
   
-a) Brute-force policy. This runs all possible failure experiments.
-   Run ./scripts/run-brute.py <N> for the policy.
-   (N is the maximum number of injections in each run)
+All experiments are Brute-force policy. This runs all possible failure experiments.
+ReadRepair experiment:
+Injects maximum three failures during the read and read repair operation.
+The workload will intercept digest messages and data messages being sent from
+replica nodes and corrupt the messages. It will also crash some replica nodes. 
+Corrupting the messages will force read repair mechanism among the replica nodes.
 
+Insertion exepriment:
+Injects one failure during the write operation.
+The workload will crash a replica node when the node tries to
+send a callback messages for writing an entry into its storage file/memtable.
  
-b) New source location policy. This runs experiments that cover 
-   unexplored source locations.
-   Run ./scripts/run-newsrc.py <N> for the policy.
-   (N is the maximum number of injections in each run)
-
-  
-c) Recovery clustering policy using source locations. This clusters 
-   failure experiments according to their recovery behavior that 
-   is characterized using source locations of failure injection tasks.
-   Run ./scripts/run-rec-src.py <N> for the policy.
-   (N is the maximum number of injections in each run)
-
-  
-d) Recovery clustering policy using source locations and stacks. This 
-   clusters failure experiments according to their recovery behavior that 
-   is characterized using source locations and stacks of failure injection 
-   tasks.
-   Run ./scripts/run-rec-src-stack.py <N> for the policy.
-   (N is the maximum number of injections in each run)
-
-
-e) Recovery clustering policy using source locations and nodes. This 
-   clusters failure experiments according to their recovery behavior that 
-   is characterized using source locations and nodes of failure injection 
-   tasks.
-   Run ./scripts/run-rec-src-node.py <N> for the policy.
-   (N is the maximum number of injections in each run)
-
-
-f) Recovery clustering policy using various fields of failure injection 
-   tasks. 
-
-   This clusters failure experiments according to their recovery behavior 
-   that is characterized using source locations, stacks, nodes, target 
-   nodes, target IO types, RPC contexts, and file types of failure injection
-   tasks. 
-
-   Run ./scripts/run-rec-all.py <N> for the policy.
-   (N is the maximum number of injections in each run)
-
 [[ More Documents ]]
 
 For more, please read our papers available on our project page.

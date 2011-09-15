@@ -98,9 +98,7 @@
   <!-- run: note that we set dir to cassandra.root.dir so the execution
        of this driver is on cassandra -->
   <import file="wl-config.xml" />
-  <echo>what experiment is it? ${experimentName} </echo>
-  <echo>what filter is it? ${filter} </echo>
-
+ 
  <target name="run" depends="compile"> 
 
     <java classname="org.fi.Main" 

@@ -1,0 +1,62 @@
+<project name="apache-cassandra workload configuration">
+    <property name="BREAK_EXP_NUMBER" value="100000"/>
+    <property name="enableFailure" value="true"/>
+    <property name="enableCoverage" value="true"/>
+    <property name="debug" value="true"/>
+
+    <!--
+         consistency level refers to how many replicas are going to be
+         in the cluster.
+         Currently
+            - 'all' - replica in each node of the cluster
+            - 'quorum' - replica in majority(all_nodes / 2 + 1) of the cluster
+            are accepted.
+
+         -->
+    <property name="consistencyLevel" value="quorum" />
+
+    <!--
+         For Read repair workload set it to 3
+         For Insertion workload set it to 1
+         -->
+    <property name="MAX_FSN" value="3"/>
+
+    <!--
+         selecting different filter values will run different experiments.
+         List of implemented filters
+         ReadRepair1 - runs read repair workload with first filter
+             Node0 sends a read message
+            -> node2's read digest message gets corrupted.
+            -> node1's read data message gets corrupted.
+            -> node3 crashes.
+
+         ReadRepair2 - ... second filter
+            Node0 sends a read message
+            -> node1's read data message gets corrupted.
+            -> node1 crashes.
+
+         ReadRepair3 - ... third filter
+            simulates a read repair mechanism by corrupting
+            Node0 sends a read message
+            -> node2's read digest message gets corrupted
+            -> node2's read data message gets corrupted.
+            -> node3 crashes.
+            *refer to read repair section in Cassandra manual for the explanation of read repair mechanism.
+
+         Insertion1 - runs insertion workload with first filter
+            Crashes any nodes when it is sending out any message through
+            DataOutputStream. In higher level picture, we fail any messages
+            sent during the insert operation.
+
+         Insertion2 - ... second filter
+            Crashes node0 when it receives any callback messages. -->
+
+    <property name="filter" value="ReadRepair3" />
+    <!--
+
+    <property name="" value="" />
+    <property name="" value="" />
+    <property name="" value="" />
+    <property name="" value="" />
+    -->
+</project>

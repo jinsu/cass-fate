@@ -26,14 +26,11 @@ import org.apache.cassandra.io.util.DataOutputBuffer;
 import org.apache.cassandra.dht.Token;
 import org.apache.cassandra.locator.AbstractReplicationStrategy;
 import org.apache.cassandra.locator.TokenMetadata;
+import org.apache.cassandra.utils.FBUtilities;
 
 
 public aspect cfiHooks {
     boolean debug = true;
-    
-    pointcut cutGetData(DataOutputBuffer b):
-    ( call (* DataOutputBuffer.getData() ) &&
-    target(b) );
 
     pointcut cutNaturalEndpoint(Token token, TokenMetadata meta, String table) :
     ( call (* AbstractReplicationStrategy.getNaturalEndpoints(Token, TokenMetadata, String) ) &&
@@ -42,19 +39,7 @@ public aspect cfiHooks {
     pointcut cutSendOneWay(Message m, InetAddress t) : 
     ( call (* MessagingService.*(Message, InetAddress) ) && 
     args(m, t) ); 
-    /*
-    Object around(DataOutputBuffer b) : cutGetData() {
-        System.out.println("kitty plob");
-        byte[] buf_to_crrpt = proceed(b);
-        
-        int buf_len = b.getLength();
-        for(int i = 0; i <= buf_len; i++) {
-        int bint = ~(buf_to_crrpt[i] & 0xff);
-        
-        }
-        return buf_to_crrpt;
-    }
-*/
+
     Object around(Token t, TokenMetadata meta, String tbl) : cutNaturalEndpoint(t, meta, tbl) {
         return Util.orderEndpoints(t, meta, tbl);
     }
@@ -79,12 +64,13 @@ public aspect cfiHooks {
             //returns targetIO
             String IoNode = Util.getNetIOContextFromInetAddr(addr);
             c.setTargetIO(IoNode);
+
             if(debug) System.out.println("cutSendOneWay targetIO : " + c.getTargetIO());
             
             FailType ft = FMClient.doCfiHook(fjp, c);
-            //Why is FailType none?? it shouldn't be. It should be corruption
+            
+            if(debug) System.out.println("corrupt :: failType returned :: " + ft);
 
-            System.out.println("corrupt :: failType returned :: " + ft);
             //add a check for FailType
             if (ft == FailType.CORRUPTION) {
                 if( c.getMessageType().equals(FMClient.READ_RESPONSE_NORMAL) ) {
@@ -97,31 +83,24 @@ public aspect cfiHooks {
                     
                     //need to convert to string value ...crrpt_row.key = crrpt_row.key.hashCode();
                     //crrpt_row.key = "corrupted_key_value";
-                    System.out.println("corrupt :: old cf = " + cleanRow.cf + "\nnew cf = " + newCf);
+                    if(debug) System.out.println("corrupt :: old cf = " + cleanRow.cf + "\nnew cf = " + newCf);
                     corrupted = new ReadResponse(crrpt_row);
                     
                 } else { 
-                    byte[] corrupted_digest = result.digest();
+                    byte[] original_digest = result.digest();
+                    byte[] corrupted_digest;
                     if(debug) {
-                        System.out.println("corrupt :: byte array length " + corrupted_digest.length);
-                        System.out.println("corrupt :: array " + corrupted_digest);
+                        System.out.println("corrupt :: og byte array length " + original_digest.length);
+                        System.out.println("corrupt :: display og array " + original_digest);
                     }
 
                     //Corrupting the digest!
-                    int cor = corrupted_digest[1] << 2;
-                    corrupted_digest[1] = new Integer(cor).byteValue();
-                    /*
-                       int cor2 = ~corrupted_digest[2];
-                       corrupted_digest[2] = new Integer(cor2).byteValue();
-                       int cor3 = ~corrupted_digest[3];
-                       corrupted_digest[3] = new Integer(cor3).byteValue();
-                     */
-                    corrupted_digest = ByteBuffer.allocate(16).putInt(52).array();
+                    int og = FBUtilities.byteArrayToInt(original_digest);
+                    corrupted_digest = FBUtilities.toByteArray(~og);
+
+                    //corrupted_digest = ByteBuffer.allocate(16).putInt(52).array();
 
                     if(debug) System.out.println("corrupt :: cor_array " + corrupted_digest);
-
-                    //Type mismatch: cannot convert from int to byte
-                    //corrupted_digest[1] =~ corrupted_digest[1];
 
                     //Make a new digest message
                     corrupted = new ReadResponse(corrupted_digest);

@@ -1,14 +1,3 @@
-Inject failure at node1 in phase 1 only. No corrupted digest.
-
-When all keys are inserted into the nodes. Do they have the same timestamps?
-Yes. Client specifies the timestamp when you are doing an insert call.
+1. Transform all the source hacks on Gossiper calls to aspectJ hacks.
 
 
-What is the digest? Is it the checksum of data and timestamp? or just the data itself?
-
-
-
-Write detailed filter functions to outline each experiments.
-FilterReadRepairBug1 blah blah
-
-Why is the data returned successfully? Does the read operation look into the data values?
