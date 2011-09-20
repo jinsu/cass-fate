@@ -1,119 +1,0 @@
-10
-
-dir
-1
-file:///home/jinsu/research/svnrepo/cass/trunk/stable_cass/src/java/org/apache/cassandra
-file:///home/jinsu/research/svnrepo/cass
-
-
-
-2011-01-05T07:42:08.086498Z
-1
-root
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8c8d7ad9-3266-4d06-a74a-5cf118133208
-
-dht
-dir
-
-concurrent
-dir
-
-db
-dir
-
-net
-dir
-
-gms
-dir
-
-streaming
-dir
-
-glue
-dir
-
-Util.java
-file
-
-
-
-
-2011-03-18T23:36:08.130639Z
-7558abc6ecc686de3eaec79a77afbf5d
-2011-01-05T07:42:08.086498Z
-1
-root
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9307
-
-service
-dir
-
-thrift
-dir
-
-tools
-dir
-
-utils
-dir
-
-auth
-dir
-
-locator
-dir
-
-cache
-dir
-
-config
-dir
-
-io
-dir
-
-cli
-dir
-
-hadoop
-dir
-
-client
-dir
-

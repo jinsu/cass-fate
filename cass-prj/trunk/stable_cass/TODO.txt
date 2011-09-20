@@ -1,3 +1,10 @@
+
 1. Transform all the source hacks on Gossiper calls to aspectJ hacks.
 
+2. Create a html file that will show my releases, link and some description.
+
+3. Name the project cass-fate-system, cass-fate-workload
+
+4. make releases. When making releases, make sure to clean everything in the build
+    folder.
 
