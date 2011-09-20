@@ -9,7 +9,7 @@
 
 ================================================================= -->
  <property name="cassandra.root.dir" 
-     location="../stable_cass"/>
+     location="../cass-fate-system-0.1"/>
 
 
   <property name="cassandra.build.class" location="${cassandra.root.dir}/build/classes"/>

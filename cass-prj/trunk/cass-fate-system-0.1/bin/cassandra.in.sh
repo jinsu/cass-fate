@@ -18,7 +18,7 @@
 # please modify cassandra_home to the path of your cassandra directory.
 #######################################################################
 #cassandra_home=`dirname $0`/..
-cassandra_home=/home/jinsu/research/cass-prj/trunk/stable_cass
+cassandra_home=/home/jinsu/research/cass-prj/trunk/cass-fate-system-0.1
 
 #FM_MY_JARS=/home/jinsu/research/java-rtjar
 
