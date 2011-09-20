@@ -9,8 +9,8 @@ need ant installed
 
 uses thrift
 
-cass-prj/trunk contains the modified code for cassandra and its workload driver.
-see cass-prj/trunk/README for more details regarding the code.
+cass-prj/ contains the modified code for cassandra and its workload driver.
+see cass-prj/README for more details regarding the code.
 
 Releases :
 - 0.1
